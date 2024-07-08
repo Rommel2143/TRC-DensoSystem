@@ -33,14 +33,14 @@ Partial Class Mainframe
         Me.Panel1.Size = New System.Drawing.Size(1380, 695)
         Me.Panel1.TabIndex = 0
         '
-        'molding_mainframe
+        'Mainframe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1380, 695)
         Me.Controls.Add(Me.Panel1)
-        Me.Name = "molding_mainframe"
-        Me.Text = "molding_mainframe"
+        Me.Name = "Mainframe"
+        Me.Text = "Retainer Assy System"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 

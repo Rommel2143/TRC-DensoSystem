@@ -20,13 +20,7 @@ Public Class Login
 
                 If result = DialogResult.OK Then
                     display_form(Register_PC)
-                    'With Register_PC
-                    '    .Refresh()
-                    '    .TopLevel = False
-                    '    Inventory_Mainframe.Panel1.Controls.Add(Register_PC)
-                    '    .BringToFront()
-                    '    .Show()
-                    'End With
+
                 ElseIf result = DialogResult.Cancel Then
                     con.Close()
                     Application.Exit()
@@ -48,40 +42,47 @@ Public Class Login
     Private Sub txtbarcode_TextChanged(sender As Object, e As EventArgs) Handles txtbarcode.TextChanged
 
     End Sub
-
     Private Sub txtbarcode_KeyDown(sender As Object, e As KeyEventArgs) Handles txtbarcode.KeyDown
-
         If e.KeyCode = Keys.Enter Then
             Try
                 Dim idwithA As String = "A" & txtbarcode.Text & "A"
                 Dim idwithoutA As String = txtbarcode.Text.TrimStart("A"c).TrimEnd("A"c)
                 Dim idwithoutasmall As String = txtbarcode.Text.TrimStart("a"c).TrimEnd("a"c)
-                con.Close()
-                con.Open()
-                Dim cmd As New MySqlCommand("SELECT * FROM `tblscanoperator_ms` WHERE `IDno` = '" & idwithoutA & "' or `IDno` = '" & idwithA & "' or `IDno` = '" & idwithoutasmall & "' ", con)
-                dr = cmd.ExecuteReader
-                If dr.Read = True Then
-                    fname = dr("fullname").ToString
-                    idno = dr("IDno").ToString
 
-                    display_form(sub_FRAME)
-                    sub_FRAME.userstrip.Text = fname
-                    labelerror.Visible = False
-                Else
-                    noid()
-                End If
+                con.Close()
+
+                con.Open()
+
+                    Dim query As String = "SELECT * FROM tblscanoperator_ms WHERE IDno = @idwithoutA OR IDno = @idwithA OR IDno = @idwithoutasmall"
+                    Using cmd As New MySqlCommand(query, con)
+                        cmd.Parameters.AddWithValue("@idwithA", idwithA)
+                        cmd.Parameters.AddWithValue("@idwithoutA", idwithoutA)
+                        cmd.Parameters.AddWithValue("@idwithoutasmall", idwithoutasmall)
+
+                        Using dr As MySqlDataReader = cmd.ExecuteReader()
+                            If dr.Read() Then
+                                fname = dr("fullname").ToString()
+                                idno = dr("IDno").ToString()
+
+                                display_form(sub_FRAME)
+                                sub_FRAME.userstrip.Text = fname
+                                labelerror.Visible = False
+                            Else
+                                noid()
+                            End If
+                        End Using
+                    End Using
+
 
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
-
             Finally
-                con.Close()
                 txtbarcode.Clear()
-
             End Try
         End If
-
     End Sub
+
+
     Private Sub noid()
         Try
             labelerror.Visible = True
