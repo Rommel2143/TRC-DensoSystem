@@ -544,7 +544,7 @@ Partial Class INFG
         Me.Controls.Add(Me.datagrid1)
         Me.Controls.Add(Me.panelset)
         Me.Name = "INFG"
-        Me.Text = "INFG"
+        Me.Text = " "
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel1.ResumeLayout(False)
         Me.panelset.ResumeLayout(False)

@@ -40,7 +40,10 @@ Public Class sub_FRAME
     End Sub
 
     Private Sub ManageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageToolStripMenuItem.Click
-        Add_item.Show()
-        Add_item.BringToFront()
+        display_formscan(Add_item)
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class

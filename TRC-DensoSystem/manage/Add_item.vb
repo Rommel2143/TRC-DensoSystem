@@ -1,133 +1,118 @@
 ﻿Imports MySql.Data.MySqlClient
+
 Public Class Add_item
     Dim qrcode As String
+    Dim partNumber As String
+    Dim quantity As String
+    Dim colorcode As String
+    Dim productionDate As String
     Dim partcode As String
     Dim supplier As String
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    Dim customerNumber As String
+    Dim qrlenght As Integer
 
+    Private Sub processQRcode()
         Try
-            If P_partcode.Text = "" Then
-                MessageBox.Show("Scan QR first!")
-            Else
-                con.Close()
-                con.Open()
-                Dim cmdinsert As New MySqlCommand(" INSERT INTO `f2_parts_masterlist`
-(`partname`, `partcode`, `supplier`, `stockf2`, `wipstockf2`) 
-VALUES ('" & P_Partname.Text & "','" & P_partcode.Text & "','" & P_supplier.Text & "','0','0')", con)
-                cmdinsert.ExecuteNonQuery()
-                MessageBox.Show("Partcode Added successfully!")
-                con.Close()
-                txtqr.Text = ""
-                txtqr.Focus()
+            Dim serialNumber As String = fg_txtqr.Text
+
+            ' Extract parts based on fixed positions
+            partNumber = serialNumber.Substring(0, 10)
+            quantity = serialNumber.Substring(10, 2)
+            colorcode = serialNumber.Substring(12, 3)
+
+            Dim productionDateRaw As String = serialNumber.Substring(15)
+            Dim year As Integer = Integer.Parse(productionDateRaw.Substring(0, 2))
+            Dim month As Integer = Integer.Parse(productionDateRaw.Substring(2, 2))
+            Dim day As Integer = Integer.Parse(productionDateRaw.Substring(4, 2))
+
+            ' Convert to yyyy-MM-dd format
+            Dim productionDateDateTime As New DateTime(2000 + year, month, day)
+            productionDate = productionDateDateTime.ToString("yyyy-MM-dd")
+            qrlenght = serialNumber.Length
+
+            txt_qty.Text = quantity
+            txt_prod.Text = productionDate
+            partno.Text = partNumber
+            txt_color.Text = colorcode
+            qr_lenght.Text = qrlenght.ToString()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub processQRcodeTDE()
+        Try
+            Dim serialNumber As String = fg_txtqr.Text
+
+            ' Extract parts based on fixed positions
+            customerNumber = serialNumber.Substring(0, 15)
+            partNumber = serialNumber.Substring(15, 10)
+            quantity = serialNumber.Substring(25, 2)
+
+
+            ' Convert to yyyy-MM-dd format
+            Dim productionDateRaw As String = serialNumber.Substring(29, 10)
+            Dim year As Integer = Integer.Parse(productionDateRaw.Substring(0, 2))
+            Dim month As Integer = Integer.Parse(productionDateRaw.Substring(2, 2))
+            Dim day As Integer = Integer.Parse(productionDateRaw.Substring(4, 2))
+            Dim productionDateDateTime As New DateTime(2000 + year, month, day)
+            productionDate = productionDateDateTime.ToString("yyyy-MM-dd")
+
+            'Qr Lenght
+            qrlenght = serialNumber.Length
+
+            'Covert Color if no colorcode
+            colorcode = serialNumber.Substring(27, 3)
+            If colorcode.Contains("--") Then
+                colorcode = "--"
             End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        Finally
-            con.Close()
-        End Try
-
-    End Sub
-
-    Private Sub processQRcode(qrcode As String)
-        Try
-
-            Dim parts() As String = qrcode.Split("|")
-
-            'CON 1 : QR SPLITING
-            If parts.Length >= 5 AndAlso parts.Length <= 8 Then
-                partcode = parts(0).Remove(0, 2).Trim
-
-                supplier = parts(1).Remove(0, 2).Trim
-
-            Else  'CON 1 : QR SPLITING
-                MessageBox.Show("Invalid QR!")
-                con.Close()
-                txtqr.Text = ""
-                txtqr.Focus()
-            End If
 
 
+            txt_qty.Text = quantity
+            txt_prod.Text = productionDate
+            partno.Text = partNumber
+            txt_color.Text = colorcode
+            txt_customerno.Text = customerNumber
+            qr_lenght.Text = qrlenght.ToString()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-
     End Sub
 
 
-
-
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
-        If fgcode.Text = "" Then
-            MessageBox.Show("Scan QR first!")
-        Else
-
-
-            Try
-
-                con.Close()
-                con.Open()
-                Dim cmdinsert As New MySqlCommand(" INSERT INTO `f2_fg_masterlist`
-(`partname`, `partcode`, `stockf2`) 
-VALUES ('" & fg_partname.Text & "','" & fgcode.Text & "','0')", con)
-                cmdinsert.ExecuteNonQuery()
-                MessageBox.Show("FG Added successfully!")
-                con.Close()
-                txtqr.Text = ""
-                txtqr.Focus()
-
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            Finally
-                con.Close()
-            End Try
-        End If
-    End Sub
-
-    Private Sub Guna2TextBox2_TextChanged_1(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub txtqr_TextChanged(sender As Object, e As EventArgs) Handles txtqr.TextChanged
-
-    End Sub
-
-    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
-        Try
-
-            con.Close()
-            con.Open()
-            Dim cmdinsert As New MySqlCommand(" INSERT INTO `f2_scanoperator_is`(`IDno`, `Fullname`, `status`) VALUES ('" & idno.Text & "','" & fname.Text & "','user')", con)
-            cmdinsert.ExecuteNonQuery()
-            MessageBox.Show("USER Added successfully!")
-            con.Close()
-            txtqr.Text = ""
-            txtqr.Focus()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        Finally
-            con.Close()
-        End Try
-
-    End Sub
-
-    Private Sub fg_txtqr_TextChanged(sender As Object, e As EventArgs) Handles fg_txtqr.TextChanged
-
-    End Sub
 
     Private Sub fg_txtqr_KeyDown(sender As Object, e As KeyEventArgs) Handles fg_txtqr.KeyDown
         If e.KeyCode = Keys.Enter Then
-            qrcode = txtqr.Text
-            processQRcode(fg_txtqr.Text)
-            fgcode.Text = partcode
+            qrcode = fg_txtqr.Text
+
+            cleartext()
+
+            qrlenght = qrcode.Length
+
+            Select Case qrlenght
+                Case 23 To 28
+                    processQRcode()
+                Case 26
+                    processQRcode()
+                    txt_type.Text = "VT"
+                Case 40 To 43
+                    processQRcodeTDE()
+                    txt_type.Text = "TDE"
+            End Select
+
+            fg_txtqr.Clear()
         End If
     End Sub
 
-    Private Sub txtqr_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            qrcode = txtqr.Text
-            processQRcode(txtqr.Text)
-            P_partcode.Text = partcode
-            P_supplier.Text = supplier
-        End If
+    Private Sub cleartext()
+        partno.Clear()
+        partname.Clear()
+        txt_customerno.Clear()
+        txt_color.Clear()
+        qr_lenght.Clear()
+        txt_prod.Clear()
+        txt_type.Clear()
     End Sub
+
+
 End Class
