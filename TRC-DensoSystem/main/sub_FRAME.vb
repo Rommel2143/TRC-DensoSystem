@@ -47,4 +47,8 @@ Public Class sub_FRAME
     Private Sub PARTSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PARTSToolStripMenuItem.Click
         display_formscan(INFG)
     End Sub
+
+    Private Sub MixedPalletToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MixedPalletToolStripMenuItem.Click
+        display_formscan(mixed_pallet)
+    End Sub
 End Class

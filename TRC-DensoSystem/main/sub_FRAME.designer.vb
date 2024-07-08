@@ -28,6 +28,7 @@ Partial Class sub_FRAME
         Me.PARTSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RETURNToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MixedPalletToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.userstrip = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -38,7 +39,6 @@ Partial Class sub_FRAME
         Me.StockMonitoringToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.MixedPalletToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -81,6 +81,12 @@ Partial Class sub_FRAME
         Me.RETURNToolStripMenuItem.Name = "RETURNToolStripMenuItem"
         Me.RETURNToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RETURNToolStripMenuItem.Text = "RETURN"
+        '
+        'MixedPalletToolStripMenuItem
+        '
+        Me.MixedPalletToolStripMenuItem.Name = "MixedPalletToolStripMenuItem"
+        Me.MixedPalletToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MixedPalletToolStripMenuItem.Text = "Mixed Pallet"
         '
         'userstrip
         '
@@ -166,12 +172,6 @@ Partial Class sub_FRAME
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1208, 636)
         Me.Panel1.TabIndex = 12
-        '
-        'MixedPalletToolStripMenuItem
-        '
-        Me.MixedPalletToolStripMenuItem.Name = "MixedPalletToolStripMenuItem"
-        Me.MixedPalletToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.MixedPalletToolStripMenuItem.Text = "Mixed Pallet"
         '
         'sub_FRAME
         '

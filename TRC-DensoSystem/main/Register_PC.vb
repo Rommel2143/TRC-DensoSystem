@@ -10,7 +10,7 @@ Public Class Register_PC
             con.Close()
             con.Open()
             Dim cmdselect As New MySqlCommand("INSERT INTO `computer_location`(`PCname`, `PCmac`, `location`) VALUES ('" & PCname & "','" & PCmac & "','" & cmblocation.Text & "')", con)
-            dr = cmdselect.ExecuteReader
+            cmdselect.ExecuteNonQuery()
             Dim result As DialogResult = MessageBox.Show("Machine Verified!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             If result = DialogResult.OK Then

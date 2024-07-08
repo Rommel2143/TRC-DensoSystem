@@ -53,8 +53,8 @@ Public Class Login
 
                 con.Open()
 
-                    Dim query As String = "SELECT * FROM tblscanoperator_ms WHERE IDno = @idwithoutA OR IDno = @idwithA OR IDno = @idwithoutasmall"
-                    Using cmd As New MySqlCommand(query, con)
+                Dim query As String = "SELECT * FROM denso_scanoperator WHERE IDno = @idwithoutA OR IDno = @idwithA OR IDno = @idwithoutasmall"
+                Using cmd As New MySqlCommand(query, con)
                         cmd.Parameters.AddWithValue("@idwithA", idwithA)
                         cmd.Parameters.AddWithValue("@idwithoutA", idwithoutA)
                         cmd.Parameters.AddWithValue("@idwithoutasmall", idwithoutasmall)

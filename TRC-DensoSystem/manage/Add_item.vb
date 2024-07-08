@@ -119,4 +119,34 @@ Public Class Add_item
     Private Sub Guna2GroupBox2_Click(sender As Object, e As EventArgs) Handles Guna2GroupBox2.Click
 
     End Sub
+
+    Private Sub fg_txtqr_TextChanged(sender As Object, e As EventArgs) Handles fg_txtqr.TextChanged
+
+    End Sub
+
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+        Try
+            con.Close()
+            con.Open()
+            Dim cmdselect As New MySqlCommand("SELECT IDno FROM `denso_scanoperator` WHERE IDno= '" & idno.Text & "'", con)
+            dr = cmdselect.ExecuteReader()
+            If dr.Read = True Then
+                lbl_duplicate.Visible = True
+            Else
+                con.Close()
+                con.Open()
+                Dim cmdinsert As New MySqlCommand(" INSERT INTO `denso_scanoperator`(`IDno`, `Fullname`, `status`) VALUES ('" & idno.Text & "','" & fname.Text & "','user')", con)
+                cmdinsert.ExecuteNonQuery()
+                MessageBox.Show("USER Added successfully!")
+                con.Close()
+                lbl_duplicate.Visible = False
+
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            con.Close()
+        End Try
+    End Sub
+
 End Class

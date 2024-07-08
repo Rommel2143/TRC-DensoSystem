@@ -51,6 +51,7 @@ Partial Class Add_item
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.idno = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.lbl_duplicate = New System.Windows.Forms.Label()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Guna2GroupBox3.SuspendLayout()
         Me.SuspendLayout()
@@ -81,7 +82,7 @@ Partial Class Add_item
         Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.SystemColors.MenuHighlight
         Me.Guna2GroupBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(635, 39)
+        Me.Guna2GroupBox2.Location = New System.Drawing.Point(384, 12)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
         Me.Guna2GroupBox2.Size = New System.Drawing.Size(505, 587)
         Me.Guna2GroupBox2.TabIndex = 14
@@ -411,6 +412,7 @@ Partial Class Add_item
         '
         'Guna2GroupBox3
         '
+        Me.Guna2GroupBox3.Controls.Add(Me.lbl_duplicate)
         Me.Guna2GroupBox3.Controls.Add(Me.Label9)
         Me.Guna2GroupBox3.Controls.Add(Me.fname)
         Me.Guna2GroupBox3.Controls.Add(Me.Guna2Button3)
@@ -419,9 +421,9 @@ Partial Class Add_item
         Me.Guna2GroupBox3.CustomBorderColor = System.Drawing.SystemColors.MenuHighlight
         Me.Guna2GroupBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox3.Location = New System.Drawing.Point(24, 39)
+        Me.Guna2GroupBox3.Location = New System.Drawing.Point(12, 12)
         Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
-        Me.Guna2GroupBox3.Size = New System.Drawing.Size(505, 335)
+        Me.Guna2GroupBox3.Size = New System.Drawing.Size(366, 263)
         Me.Guna2GroupBox3.TabIndex = 15
         Me.Guna2GroupBox3.Text = "ADD USER"
         '
@@ -466,7 +468,7 @@ Partial Class Add_item
         Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button3.ForeColor = System.Drawing.Color.White
         Me.Guna2Button3.Image = CType(resources.GetObject("Guna2Button3.Image"), System.Drawing.Image)
-        Me.Guna2Button3.Location = New System.Drawing.Point(175, 213)
+        Me.Guna2Button3.Location = New System.Drawing.Point(107, 199)
         Me.Guna2Button3.Name = "Guna2Button3"
         Me.Guna2Button3.Size = New System.Drawing.Size(126, 37)
         Me.Guna2Button3.TabIndex = 6
@@ -501,6 +503,18 @@ Partial Class Add_item
         Me.idno.SelectedText = ""
         Me.idno.Size = New System.Drawing.Size(139, 36)
         Me.idno.TabIndex = 5
+        '
+        'lbl_duplicate
+        '
+        Me.lbl_duplicate.AutoSize = True
+        Me.lbl_duplicate.BackColor = System.Drawing.Color.White
+        Me.lbl_duplicate.ForeColor = System.Drawing.Color.Tomato
+        Me.lbl_duplicate.Location = New System.Drawing.Point(188, 88)
+        Me.lbl_duplicate.Name = "lbl_duplicate"
+        Me.lbl_duplicate.Size = New System.Drawing.Size(108, 15)
+        Me.lbl_duplicate.TabIndex = 10
+        Me.lbl_duplicate.Text = "User Already Exists!"
+        Me.lbl_duplicate.Visible = False
         '
         'Add_item
         '
@@ -548,4 +562,5 @@ Partial Class Add_item
     Friend WithEvents txt_prod As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents txt_qty As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents lbl_duplicate As Label
 End Class
