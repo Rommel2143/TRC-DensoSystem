@@ -43,4 +43,14 @@ Public Class sub_FRAME
         Add_item.Show()
         Add_item.BringToFront()
     End Sub
+
+    Private Sub PARTSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PARTSToolStripMenuItem.Click
+        With INFG
+            .Refresh()
+            .TopLevel = False
+            Panel1.Controls.Add(INFG)
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
 End Class
