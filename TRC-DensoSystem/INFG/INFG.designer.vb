@@ -60,6 +60,7 @@ Partial Class INFG
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtname = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.txthide2 = New Guna.UI2.WinForms.Guna2TextBox()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         Me.panelset.SuspendLayout()
@@ -156,6 +157,7 @@ Partial Class INFG
         '
         'panelset
         '
+        Me.panelset.Controls.Add(Me.txthide2)
         Me.panelset.Controls.Add(Me.txtcolor1)
         Me.panelset.Controls.Add(Me.txtcolor)
         Me.panelset.Controls.Add(Me.txthide1)
@@ -646,6 +648,27 @@ Partial Class INFG
         '
         Me.Timer1.Enabled = True
         '
+        'txthide2
+        '
+        Me.txthide2.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txthide2.DefaultText = ""
+        Me.txthide2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txthide2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txthide2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txthide2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txthide2.Enabled = False
+        Me.txthide2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txthide2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txthide2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txthide2.Location = New System.Drawing.Point(1051, 42)
+        Me.txthide2.Name = "txthide2"
+        Me.txthide2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txthide2.PlaceholderText = ""
+        Me.txthide2.SelectedText = ""
+        Me.txthide2.Size = New System.Drawing.Size(44, 23)
+        Me.txthide2.TabIndex = 193
+        Me.txthide2.Visible = False
+        '
         'INFG
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -700,4 +723,5 @@ Partial Class INFG
     Friend WithEvents txthide1 As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtcolor As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtcolor1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txthide2 As Guna.UI2.WinForms.Guna2TextBox
 End Class
