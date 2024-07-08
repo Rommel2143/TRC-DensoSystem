@@ -154,4 +154,8 @@ Public Class INFG
     Public Sub save1()
 
     End Sub
+
+    Private Sub txtcolor_TextChanged(sender As Object, e As EventArgs) Handles txtcolor.TextChanged
+
+    End Sub
 End Class

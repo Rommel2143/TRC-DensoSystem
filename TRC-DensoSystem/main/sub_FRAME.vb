@@ -44,8 +44,6 @@ Public Class sub_FRAME
     End Sub
 
 
-    End Sub
-
     Private Sub PARTSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PARTSToolStripMenuItem.Click
         display_formscan(INFG)
     End Sub
