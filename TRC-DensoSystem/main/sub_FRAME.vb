@@ -17,17 +17,6 @@ Public Class sub_FRAME
         End With
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
-
-    Private Sub unitdisplay_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
-
-    End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         con.Close()
@@ -50,4 +39,8 @@ Public Class sub_FRAME
         suggest_improvent.BringToFront()
     End Sub
 
+    Private Sub ManageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageToolStripMenuItem.Click
+        Add_item.Show()
+        Add_item.BringToFront()
+    End Sub
 End Class

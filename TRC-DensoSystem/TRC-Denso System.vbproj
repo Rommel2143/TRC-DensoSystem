@@ -155,6 +155,12 @@
     <Compile Include="main\suggest_improvent.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="manage\Add_item.designer.vb">
+      <DependentUpon>Add_item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="manage\Add_item.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="main\suggest_improvent.resx">
       <DependentUpon>suggest_improvent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manage\Add_item.resx">
+      <DependentUpon>Add_item.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
