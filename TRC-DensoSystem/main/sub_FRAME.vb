@@ -43,5 +43,7 @@ Public Class sub_FRAME
         display_formscan(Add_item)
     End Sub
 
-
+    Private Sub MixedPalletToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MixedPalletToolStripMenuItem.Click
+        display_formscan(mixed_pallet)
+    End Sub
 End Class
