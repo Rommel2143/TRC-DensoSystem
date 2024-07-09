@@ -23,9 +23,9 @@ Partial Class INFG
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(INFG))
         Me.datagrid1 = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
@@ -33,6 +33,7 @@ Partial Class INFG
         Me.panelset = New Guna.UI2.WinForms.Guna2Panel()
         Me.txtproddate = New Guna.UI2.WinForms.Guna2TextBox()
         Me.labelerror2 = New System.Windows.Forms.Label()
+        Me.boxshift = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.txtcustomer = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtmodel = New Guna.UI2.WinForms.Guna2TextBox()
@@ -53,44 +54,50 @@ Partial Class INFG
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtname = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.boxshift = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txthide = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txthide1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtcolor = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtcolor1 = New Guna.UI2.WinForms.Guna2TextBox()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         Me.panelset.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'datagrid1
         '
         Me.datagrid1.AllowUserToAddRows = False
         Me.datagrid1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle13.BackColor = System.Drawing.Color.White
-        Me.datagrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
+        Me.datagrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
         Me.datagrid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datagrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datagrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.datagrid1.ColumnHeadersHeight = 30
         Me.datagrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.datagrid1.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.datagrid1.DefaultCellStyle = DataGridViewCellStyle12
         Me.datagrid1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.datagrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid1.Location = New System.Drawing.Point(0, 192)
+        Me.datagrid1.Location = New System.Drawing.Point(0, 232)
         Me.datagrid1.Name = "datagrid1"
         Me.datagrid1.ReadOnly = True
         Me.datagrid1.RowHeadersVisible = False
-        Me.datagrid1.Size = New System.Drawing.Size(1193, 410)
+        Me.datagrid1.Size = New System.Drawing.Size(1193, 370)
         Me.datagrid1.TabIndex = 192
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -119,9 +126,9 @@ Partial Class INFG
         Me.Guna2Panel1.BackColor = System.Drawing.Color.White
         Me.Guna2Panel1.Controls.Add(Me.cmbsearch)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 142)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 181)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1193, 50)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1193, 51)
         Me.Guna2Panel1.TabIndex = 181
         '
         'cmbsearch
@@ -149,6 +156,11 @@ Partial Class INFG
         '
         'panelset
         '
+        Me.panelset.Controls.Add(Me.txtcolor1)
+        Me.panelset.Controls.Add(Me.txtcolor)
+        Me.panelset.Controls.Add(Me.txthide1)
+        Me.panelset.Controls.Add(Me.txthide)
+        Me.panelset.Controls.Add(Me.Panel1)
         Me.panelset.Controls.Add(Me.txtproddate)
         Me.panelset.Controls.Add(Me.labelerror2)
         Me.panelset.Controls.Add(Me.boxshift)
@@ -175,7 +187,7 @@ Partial Class INFG
         Me.panelset.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelset.Location = New System.Drawing.Point(0, 0)
         Me.panelset.Name = "panelset"
-        Me.panelset.Size = New System.Drawing.Size(1193, 192)
+        Me.panelset.Size = New System.Drawing.Size(1193, 232)
         Me.panelset.TabIndex = 191
         '
         'txtproddate
@@ -190,7 +202,7 @@ Partial Class INFG
         Me.txtproddate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtproddate.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtproddate.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtproddate.Location = New System.Drawing.Point(866, 45)
+        Me.txtproddate.Location = New System.Drawing.Point(867, 85)
         Me.txtproddate.Name = "txtproddate"
         Me.txtproddate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtproddate.PlaceholderText = "Production Date..."
@@ -204,12 +216,30 @@ Partial Class INFG
         Me.labelerror2.BackColor = System.Drawing.Color.Red
         Me.labelerror2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelerror2.ForeColor = System.Drawing.Color.White
-        Me.labelerror2.Location = New System.Drawing.Point(1008, 49)
+        Me.labelerror2.Location = New System.Drawing.Point(1012, 79)
         Me.labelerror2.Name = "labelerror2"
         Me.labelerror2.Size = New System.Drawing.Size(178, 25)
         Me.labelerror2.TabIndex = 187
         Me.labelerror2.Text = "DUPLICATE QR"
         Me.labelerror2.Visible = False
+        '
+        'boxshift
+        '
+        Me.boxshift.BackColor = System.Drawing.Color.Transparent
+        Me.boxshift.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.boxshift.DropDownHeight = 200
+        Me.boxshift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.boxshift.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.boxshift.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.boxshift.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.boxshift.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.boxshift.IntegralHeight = False
+        Me.boxshift.ItemHeight = 20
+        Me.boxshift.Items.AddRange(New Object() {"DAY SHIFT", "NIGHT SHIFT"})
+        Me.boxshift.Location = New System.Drawing.Point(320, 55)
+        Me.boxshift.Name = "boxshift"
+        Me.boxshift.Size = New System.Drawing.Size(149, 26)
+        Me.boxshift.TabIndex = 186
         '
         'txtcustomer
         '
@@ -223,7 +253,7 @@ Partial Class INFG
         Me.txtcustomer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtcustomer.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcustomer.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtcustomer.Location = New System.Drawing.Point(628, 45)
+        Me.txtcustomer.Location = New System.Drawing.Point(629, 85)
         Me.txtcustomer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcustomer.Name = "txtcustomer"
         Me.txtcustomer.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -236,7 +266,7 @@ Partial Class INFG
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(519, 49)
+        Me.Label6.Location = New System.Drawing.Point(520, 89)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(105, 13)
         Me.Label6.TabIndex = 184
@@ -254,12 +284,12 @@ Partial Class INFG
         Me.txtmodel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtmodel.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtmodel.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtmodel.Location = New System.Drawing.Point(866, 99)
+        Me.txtmodel.Location = New System.Drawing.Point(867, 139)
         Me.txtmodel.Name = "txtmodel"
         Me.txtmodel.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtmodel.PlaceholderText = "Model..."
         Me.txtmodel.SelectedText = ""
-        Me.txtmodel.Size = New System.Drawing.Size(131, 23)
+        Me.txtmodel.Size = New System.Drawing.Size(65, 23)
         Me.txtmodel.TabIndex = 182
         '
         'txtqty
@@ -274,7 +304,7 @@ Partial Class INFG
         Me.txtqty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtqty.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtqty.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtqty.Location = New System.Drawing.Point(628, 99)
+        Me.txtqty.Location = New System.Drawing.Point(629, 139)
         Me.txtqty.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtqty.Name = "txtqty"
         Me.txtqty.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -287,11 +317,11 @@ Partial Class INFG
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(485, 102)
+        Me.Label1.Location = New System.Drawing.Point(450, 142)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(140, 13)
+        Me.Label1.Size = New System.Drawing.Size(178, 13)
         Me.Label1.TabIndex = 179
-        Me.Label1.Text = "Quantity / Lotno / Model :"
+        Me.Label1.Text = "Quantity / Lotno / Model / Color :"
         '
         'txtlot
         '
@@ -305,7 +335,7 @@ Partial Class INFG
         Me.txtlot.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtlot.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtlot.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtlot.Location = New System.Drawing.Point(734, 99)
+        Me.txtlot.Location = New System.Drawing.Point(735, 139)
         Me.txtlot.Name = "txtlot"
         Me.txtlot.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtlot.PlaceholderText = "Lot number..."
@@ -317,7 +347,7 @@ Partial Class INFG
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(80, 85)
+        Me.Label5.Location = New System.Drawing.Point(81, 123)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(36, 13)
         Me.Label5.TabIndex = 176
@@ -327,7 +357,7 @@ Partial Class INFG
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(9, 48)
+        Me.Label3.Location = New System.Drawing.Point(10, 88)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(111, 13)
         Me.Label3.TabIndex = 175
@@ -345,7 +375,7 @@ Partial Class INFG
         Me.txtoperator.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtoperator.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.txtoperator.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtoperator.Location = New System.Drawing.Point(122, 45)
+        Me.txtoperator.Location = New System.Drawing.Point(123, 85)
         Me.txtoperator.Name = "txtoperator"
         Me.txtoperator.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtoperator.PlaceholderText = "Operator..."
@@ -366,7 +396,7 @@ Partial Class INFG
         Me.boxtype.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.boxtype.IntegralHeight = False
         Me.boxtype.ItemHeight = 20
-        Me.boxtype.Location = New System.Drawing.Point(122, 81)
+        Me.boxtype.Location = New System.Drawing.Point(123, 119)
         Me.boxtype.Name = "boxtype"
         Me.boxtype.Size = New System.Drawing.Size(346, 26)
         Me.boxtype.TabIndex = 173
@@ -377,7 +407,7 @@ Partial Class INFG
         Me.labelerror1.BackColor = System.Drawing.Color.Red
         Me.labelerror1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelerror1.ForeColor = System.Drawing.Color.White
-        Me.labelerror1.Location = New System.Drawing.Point(1023, 82)
+        Me.labelerror1.Location = New System.Drawing.Point(1027, 112)
         Me.labelerror1.Name = "labelerror1"
         Me.labelerror1.Size = New System.Drawing.Size(139, 25)
         Me.labelerror1.TabIndex = 169
@@ -388,7 +418,7 @@ Partial Class INFG
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(276, 21)
+        Me.Label12.Location = New System.Drawing.Point(277, 61)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(37, 13)
         Me.Label12.TabIndex = 168
@@ -398,7 +428,7 @@ Partial Class INFG
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(82, 21)
+        Me.Label4.Location = New System.Drawing.Point(83, 61)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(37, 13)
         Me.Label4.TabIndex = 166
@@ -416,7 +446,7 @@ Partial Class INFG
         Me.txtdate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtdate.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.txtdate.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtdate.Location = New System.Drawing.Point(122, 17)
+        Me.txtdate.Location = New System.Drawing.Point(123, 57)
         Me.txtdate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtdate.Name = "txtdate"
         Me.txtdate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -429,7 +459,7 @@ Partial Class INFG
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(568, 14)
+        Me.Label2.Location = New System.Drawing.Point(569, 54)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(56, 13)
         Me.Label2.TabIndex = 164
@@ -449,7 +479,7 @@ Partial Class INFG
         Me.txtqr.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtqr.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.txtqr.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtqr.Location = New System.Drawing.Point(628, 10)
+        Me.txtqr.Location = New System.Drawing.Point(629, 50)
         Me.txtqr.Name = "txtqr"
         Me.txtqr.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr.PlaceholderText = "Scan QR..."
@@ -469,7 +499,7 @@ Partial Class INFG
         Me.txtcode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtcode.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtcode.Location = New System.Drawing.Point(628, 72)
+        Me.txtcode.Location = New System.Drawing.Point(629, 112)
         Me.txtcode.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtcode.Name = "txtcode"
         Me.txtcode.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -482,7 +512,7 @@ Partial Class INFG
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(513, 76)
+        Me.Label9.Location = New System.Drawing.Point(514, 116)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(111, 13)
         Me.Label9.TabIndex = 152
@@ -500,7 +530,7 @@ Partial Class INFG
         Me.txtname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtname.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtname.Location = New System.Drawing.Point(734, 72)
+        Me.txtname.Location = New System.Drawing.Point(735, 112)
         Me.txtname.Name = "txtname"
         Me.txtname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtname.PlaceholderText = "Part name..."
@@ -512,23 +542,109 @@ Partial Class INFG
         '
         Me.Timer1.Enabled = True
         '
-        'boxshift
+        'Panel1
         '
-        Me.boxshift.BackColor = System.Drawing.Color.Transparent
-        Me.boxshift.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.boxshift.DropDownHeight = 200
-        Me.boxshift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.boxshift.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.boxshift.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.boxshift.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.boxshift.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.boxshift.IntegralHeight = False
-        Me.boxshift.ItemHeight = 20
-        Me.boxshift.Items.AddRange(New Object() {"DAY SHIFT", "NIGHT SHIFT"})
-        Me.boxshift.Location = New System.Drawing.Point(319, 15)
-        Me.boxshift.Name = "boxshift"
-        Me.boxshift.Size = New System.Drawing.Size(149, 26)
-        Me.boxshift.TabIndex = 186
+        Me.Panel1.BackColor = System.Drawing.SystemColors.Highlight
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1193, 36)
+        Me.Panel1.TabIndex = 189
+        '
+        'txthide
+        '
+        Me.txthide.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txthide.DefaultText = "IN"
+        Me.txthide.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txthide.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txthide.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txthide.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txthide.Enabled = False
+        Me.txthide.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txthide.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txthide.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txthide.Location = New System.Drawing.Point(1151, 42)
+        Me.txthide.Name = "txthide"
+        Me.txthide.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txthide.PlaceholderText = ""
+        Me.txthide.SelectedText = ""
+        Me.txthide.Size = New System.Drawing.Size(30, 23)
+        Me.txthide.TabIndex = 182
+        Me.txthide.Visible = False
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label7.Location = New System.Drawing.Point(10, 1)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(202, 32)
+        Me.Label7.TabIndex = 6
+        Me.Label7.Text = "Daily Output (IN)"
+        '
+        'txthide1
+        '
+        Me.txthide1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txthide1.DefaultText = ""
+        Me.txthide1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txthide1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txthide1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txthide1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txthide1.Enabled = False
+        Me.txthide1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txthide1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txthide1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txthide1.Location = New System.Drawing.Point(1101, 42)
+        Me.txthide1.Name = "txthide1"
+        Me.txthide1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txthide1.PlaceholderText = ""
+        Me.txthide1.SelectedText = ""
+        Me.txthide1.Size = New System.Drawing.Size(44, 23)
+        Me.txthide1.TabIndex = 190
+        Me.txthide1.Visible = False
+        '
+        'txtcolor
+        '
+        Me.txtcolor.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtcolor.DefaultText = ""
+        Me.txtcolor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtcolor.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtcolor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtcolor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtcolor.Enabled = False
+        Me.txtcolor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtcolor.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcolor.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtcolor.Location = New System.Drawing.Point(936, 138)
+        Me.txtcolor.Name = "txtcolor"
+        Me.txtcolor.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtcolor.PlaceholderText = "Color..."
+        Me.txtcolor.SelectedText = ""
+        Me.txtcolor.Size = New System.Drawing.Size(62, 23)
+        Me.txtcolor.TabIndex = 191
+        '
+        'txtcolor1
+        '
+        Me.txtcolor1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtcolor1.DefaultText = ""
+        Me.txtcolor1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtcolor1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtcolor1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtcolor1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtcolor1.Enabled = False
+        Me.txtcolor1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtcolor1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcolor1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtcolor1.Location = New System.Drawing.Point(1017, 139)
+        Me.txtcolor1.Name = "txtcolor1"
+        Me.txtcolor1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtcolor1.PlaceholderText = "Color..."
+        Me.txtcolor1.SelectedText = ""
+        Me.txtcolor1.Size = New System.Drawing.Size(173, 23)
+        Me.txtcolor1.TabIndex = 192
+        Me.txtcolor1.Visible = False
         '
         'INFG
         '
@@ -545,6 +661,8 @@ Partial Class INFG
         Me.Guna2Panel1.ResumeLayout(False)
         Me.panelset.ResumeLayout(False)
         Me.panelset.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -576,4 +694,10 @@ Partial Class INFG
     Friend WithEvents labelerror2 As Label
     Friend WithEvents txtproddate As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents boxshift As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents txthide As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txthide1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtcolor As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtcolor1 As Guna.UI2.WinForms.Guna2TextBox
 End Class
