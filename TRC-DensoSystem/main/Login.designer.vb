@@ -72,11 +72,12 @@ Partial Class Login
         Me.txtpclocation.AutoSize = True
         Me.txtpclocation.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtpclocation.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.txtpclocation.Location = New System.Drawing.Point(387, 156)
+        Me.txtpclocation.Location = New System.Drawing.Point(342, 156)
         Me.txtpclocation.Name = "txtpclocation"
         Me.txtpclocation.Size = New System.Drawing.Size(36, 25)
         Me.txtpclocation.TabIndex = 5
         Me.txtpclocation.Text = "---"
+        Me.txtpclocation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'txtpcmac
         '
@@ -101,11 +102,11 @@ Partial Class Login
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label2.Location = New System.Drawing.Point(330, 131)
+        Me.Label2.Location = New System.Drawing.Point(317, 131)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(151, 25)
+        Me.Label2.Size = New System.Drawing.Size(177, 25)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Molding System"
+        Me.Label2.Text = "Denso Assy System"
         '
         'Label1
         '
