@@ -81,7 +81,7 @@ Partial Class Add_item
         Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.SystemColors.MenuHighlight
         Me.Guna2GroupBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(548, 31)
+        Me.Guna2GroupBox2.Location = New System.Drawing.Point(635, 39)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
         Me.Guna2GroupBox2.Size = New System.Drawing.Size(505, 587)
         Me.Guna2GroupBox2.TabIndex = 14
@@ -419,11 +419,11 @@ Partial Class Add_item
         Me.Guna2GroupBox3.CustomBorderColor = System.Drawing.SystemColors.MenuHighlight
         Me.Guna2GroupBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox3.Location = New System.Drawing.Point(26, 386)
+        Me.Guna2GroupBox3.Location = New System.Drawing.Point(24, 39)
         Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
         Me.Guna2GroupBox3.Size = New System.Drawing.Size(505, 335)
         Me.Guna2GroupBox3.TabIndex = 15
-        Me.Guna2GroupBox3.Text = "n"
+        Me.Guna2GroupBox3.Text = "ADD USER"
         '
         'Label9
         '

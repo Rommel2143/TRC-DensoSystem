@@ -92,9 +92,7 @@ Public Class Add_item
             Select Case qrlenght
                 Case 23 To 28
                     processQRcode()
-                Case 26
-                    processQRcode()
-                    txt_type.Text = "VT"
+
                 Case 40 To 43
                     processQRcodeTDE()
                     txt_type.Text = "TDE"
@@ -114,5 +112,11 @@ Public Class Add_item
         txt_type.Clear()
     End Sub
 
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
 
+    End Sub
+
+    Private Sub Guna2GroupBox2_Click(sender As Object, e As EventArgs) Handles Guna2GroupBox2.Click
+
+    End Sub
 End Class

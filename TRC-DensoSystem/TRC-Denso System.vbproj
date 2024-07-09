@@ -238,5 +238,8 @@
   <ItemGroup>
     <None Include="Resources\duplicate.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="mixed_pallet\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

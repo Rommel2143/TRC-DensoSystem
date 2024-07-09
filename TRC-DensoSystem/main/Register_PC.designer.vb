@@ -196,11 +196,11 @@ Partial Class Register_PC
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label2.Location = New System.Drawing.Point(324, 65)
+        Me.Label2.Location = New System.Drawing.Point(308, 65)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(163, 25)
+        Me.Label2.Size = New System.Drawing.Size(194, 25)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Inventory System"
+        Me.Label2.Text = "Retainer Assy System"
         '
         'Label1
         '
