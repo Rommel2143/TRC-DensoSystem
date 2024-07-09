@@ -98,4 +98,61 @@ Module Module1
 
         End Try
     End Sub
+    Public Sub insertitem(ByVal sql As String)
+        Try
+            con.Close()
+            con.Open()
+            With cmd
+                .Connection = con
+                .CommandText = sql
+                result = cmd.ExecuteNonQuery
+                If result = 0 Then
+                    MessageBox.Show("Failed to send!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+            End With
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            con.Close()
+
+        End Try
+    End Sub
+    Public Sub reload(ByVal sql As String, ByVal DTG As Object)
+        Try
+            dt = New DataTable
+            con.Close()
+            con.Open()
+            With cmd
+                .Connection = con
+                .CommandText = sql
+            End With
+            da.SelectCommand = cmd
+            da.Fill(dt)
+            DTG.DataSource = dt
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            con.Close()
+            da.Dispose()
+
+        End Try
+    End Sub
+    Public Sub updates(ByVal sql As String)
+        Try
+            con.Open()
+            With cmd
+                .Connection = con
+                .CommandText = sql
+                result = cmd.ExecuteNonQuery
+                If result = 0 Then
+                    MessageBox.Show("Failed to Update!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+            End With
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            con.Close()
+
+        End Try
+    End Sub
 End Module
