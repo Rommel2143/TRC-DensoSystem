@@ -36,9 +36,14 @@ Public Class INFG
                 txtqty.Text = qrcode.Substring(14, 3)
                 txtlot.Text = qrcode.Substring(qrcode.Length - 12)
                 colorcode()
-
-
-
+                Dim prodd As String = txtlot.Text
+                Dim proddate As String = prodd.Substring(0, 6)
+                Dim year As Integer = Integer.Parse(proddate.Substring(0, 2))
+                Dim month As Integer = Integer.Parse(proddate.Substring(2, 2))
+                Dim day As Integer = Integer.Parse(proddate.Substring(4, 2))
+                Dim prodf As New DateTime(2000 + year, month, day)
+                txtproddate.Text = prodf.ToString("yyyy-MM-dd")
+                Dim ddate As String = prodf.ToString("yyyy-MM-dd")
                 con.Close()
                 con.Open()
                 Dim cmd As New MySqlCommand("Select * FROM `denso_fg_scan` where `qrcode` = '" & txtqr.Text & "'", con)
@@ -132,14 +137,9 @@ Public Class INFG
         Dim lpart As String = txtlot.Text
         Dim rpart As String = sn.Replace(fpart, "").Replace(lpart, "")
         txtcolor.Text = rpart
-        Dim prodd As String = txtlot.Text
-        Dim proddate As String = prodd.Substring(0, 6)
-        Dim year As Integer = Integer.Parse(proddate.Substring(0, 2))
-        Dim month As Integer = Integer.Parse(proddate.Substring(2, 2))
-        Dim day As Integer = Integer.Parse(proddate.Substring(4, 2))
-        Dim prodf As New DateTime(2000 + year, month, day)
-        txtproddate.Text = prodf.ToString("yyyy-MM-dd")
-        Dim ddate As String = prodf.ToString("yyyy-MM-dd")
+
+
+
     End Sub
     Public Sub reloadgrid()
         Try
