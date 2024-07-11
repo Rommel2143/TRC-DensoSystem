@@ -51,4 +51,16 @@ Public Class sub_FRAME
     Private Sub MixedPalletToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MixedPalletToolStripMenuItem.Click
         display_formscan(mixed_pallet)
     End Sub
+
+    Private Sub QRCheckerToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles QRCheckerToolStripMenuItem1.Click
+
+    End Sub
+
+    Private Sub StockMonitoringToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StockMonitoringToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub FGToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles FGToolStripMenuItem1.Click
+        display_formscan(FG_monitoring)
+    End Sub
 End Class

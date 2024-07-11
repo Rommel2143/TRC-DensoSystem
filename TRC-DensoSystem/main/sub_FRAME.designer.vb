@@ -39,6 +39,7 @@ Partial Class sub_FRAME
         Me.StockMonitoringToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.FGToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -65,27 +66,27 @@ Partial Class sub_FRAME
         '
         Me.PARTSToolStripMenuItem.Image = CType(resources.GetObject("PARTSToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PARTSToolStripMenuItem.Name = "PARTSToolStripMenuItem"
-        Me.PARTSToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PARTSToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.PARTSToolStripMenuItem.Text = "IN"
         '
         'FGToolStripMenuItem
         '
         Me.FGToolStripMenuItem.Image = CType(resources.GetObject("FGToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FGToolStripMenuItem.Name = "FGToolStripMenuItem"
-        Me.FGToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.FGToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.FGToolStripMenuItem.Text = "OUT"
         '
         'RETURNToolStripMenuItem
         '
         Me.RETURNToolStripMenuItem.Image = CType(resources.GetObject("RETURNToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RETURNToolStripMenuItem.Name = "RETURNToolStripMenuItem"
-        Me.RETURNToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RETURNToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.RETURNToolStripMenuItem.Text = "RETURN"
         '
         'MixedPalletToolStripMenuItem
         '
         Me.MixedPalletToolStripMenuItem.Name = "MixedPalletToolStripMenuItem"
-        Me.MixedPalletToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MixedPalletToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.MixedPalletToolStripMenuItem.Text = "Mixed Pallet"
         '
         'userstrip
@@ -153,6 +154,7 @@ Partial Class sub_FRAME
         '
         'StockMonitoringToolStripMenuItem
         '
+        Me.StockMonitoringToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FGToolStripMenuItem1})
         Me.StockMonitoringToolStripMenuItem.Image = CType(resources.GetObject("StockMonitoringToolStripMenuItem.Image"), System.Drawing.Image)
         Me.StockMonitoringToolStripMenuItem.Name = "StockMonitoringToolStripMenuItem"
         Me.StockMonitoringToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
@@ -172,6 +174,12 @@ Partial Class sub_FRAME
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1208, 636)
         Me.Panel1.TabIndex = 12
+        '
+        'FGToolStripMenuItem1
+        '
+        Me.FGToolStripMenuItem1.Name = "FGToolStripMenuItem1"
+        Me.FGToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.FGToolStripMenuItem1.Text = "FG"
         '
         'sub_FRAME
         '
@@ -206,4 +214,5 @@ Partial Class sub_FRAME
     Friend WithEvents StockMonitoringToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManageToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MixedPalletToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FGToolStripMenuItem1 As ToolStripMenuItem
 End Class

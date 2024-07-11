@@ -19,7 +19,7 @@ Module Module1
     Public designation As String
     Public PCname As String = Environment.MachineName
     Public PCmac As String = GetMacAddress()
-    Public PClocation As String = "U1-4"
+    Public PClocation As String
 
     Public date1 As String = Date.Now.ToString("MMMM-dd-yyyy")
     Public datedb As String = Date.Now.ToString("yyyy-MM-dd")
