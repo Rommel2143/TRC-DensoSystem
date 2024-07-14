@@ -27,6 +27,7 @@ Partial Class sub_FRAME
         Me.MasterlistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PARTSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DMTNToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RETURNToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MixedPalletToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.userstrip = New System.Windows.Forms.ToolStripMenuItem()
@@ -37,9 +38,10 @@ Partial Class sub_FRAME
         Me.QRCheckerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QRCheckerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.StockMonitoringToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FGToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.FGToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IdentifyQRToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -71,10 +73,17 @@ Partial Class sub_FRAME
         '
         'FGToolStripMenuItem
         '
+        Me.FGToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DMTNToolStripMenuItem})
         Me.FGToolStripMenuItem.Image = CType(resources.GetObject("FGToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FGToolStripMenuItem.Name = "FGToolStripMenuItem"
         Me.FGToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.FGToolStripMenuItem.Text = "OUT"
+        '
+        'DMTNToolStripMenuItem
+        '
+        Me.DMTNToolStripMenuItem.Name = "DMTNToolStripMenuItem"
+        Me.DMTNToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
+        Me.DMTNToolStripMenuItem.Text = "DMTN"
         '
         'RETURNToolStripMenuItem
         '
@@ -160,8 +169,15 @@ Partial Class sub_FRAME
         Me.StockMonitoringToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
         Me.StockMonitoringToolStripMenuItem.Text = "Stock Monitoring"
         '
+        'FGToolStripMenuItem1
+        '
+        Me.FGToolStripMenuItem1.Name = "FGToolStripMenuItem1"
+        Me.FGToolStripMenuItem1.Size = New System.Drawing.Size(96, 22)
+        Me.FGToolStripMenuItem1.Text = "FG"
+        '
         'ManageToolStripMenuItem
         '
+        Me.ManageToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IdentifyQRToolStripMenuItem})
         Me.ManageToolStripMenuItem.Image = CType(resources.GetObject("ManageToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ManageToolStripMenuItem.Name = "ManageToolStripMenuItem"
         Me.ManageToolStripMenuItem.Size = New System.Drawing.Size(99, 37)
@@ -175,11 +191,11 @@ Partial Class sub_FRAME
         Me.Panel1.Size = New System.Drawing.Size(1208, 636)
         Me.Panel1.TabIndex = 12
         '
-        'FGToolStripMenuItem1
+        'IdentifyQRToolStripMenuItem
         '
-        Me.FGToolStripMenuItem1.Name = "FGToolStripMenuItem1"
-        Me.FGToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.FGToolStripMenuItem1.Text = "FG"
+        Me.IdentifyQRToolStripMenuItem.Name = "IdentifyQRToolStripMenuItem"
+        Me.IdentifyQRToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.IdentifyQRToolStripMenuItem.Text = "Identify QR"
         '
         'sub_FRAME
         '
@@ -215,4 +231,6 @@ Partial Class sub_FRAME
     Friend WithEvents ManageToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MixedPalletToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FGToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents DMTNToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents IdentifyQRToolStripMenuItem As ToolStripMenuItem
 End Class

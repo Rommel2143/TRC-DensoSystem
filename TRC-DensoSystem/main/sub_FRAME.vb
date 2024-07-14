@@ -63,4 +63,12 @@ Public Class sub_FRAME
     Private Sub FGToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles FGToolStripMenuItem1.Click
         display_formscan(FG_monitoring)
     End Sub
+
+    Private Sub DMTNToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DMTNToolStripMenuItem.Click
+        display_formscan(OUT_DMTN)
+    End Sub
+
+    Private Sub IdentifyQRToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IdentifyQRToolStripMenuItem.Click
+        display_formscan(QR_identifier)
+    End Sub
 End Class

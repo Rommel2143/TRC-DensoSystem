@@ -163,4 +163,7 @@ Public Class INFG
         End Try
     End Sub
 
+    Private Sub txtqr_TextChanged(sender As Object, e As EventArgs) Handles txtqr.TextChanged
+
+    End Sub
 End Class

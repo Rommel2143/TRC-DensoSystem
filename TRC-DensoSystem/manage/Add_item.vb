@@ -139,18 +139,23 @@ Public Class Add_item
                     ' Extract parts based on fixed positions
                     partNumber = serialNumber.Substring(0, 10)
                     quantity = serialNumber.Substring(10, 2)
-                    productionDate = serialNumber.Substring(serialNumber.Length - 12, 12)
-                    colorcode = serialNumber.Replace(partNumber, "").Replace(quantity, "").Replace(productionDate, "")
+                    colorcode = serialNumber.Substring(12, 3)
 
                 Case "26"
                     ' Extract parts based on fixed positions
                     partNumber = serialNumber.Substring(0, 10)
                     quantity = serialNumber.Substring(10, 2)
-                    productionDate = serialNumber.Substring(serialNumber.Length - 12, 12)
-                    colorcode = serialNumber.Replace(partNumber, "")
-                    colorcode = colorcode.Replace(quantity, "")
-                    prodcolor = colorcode.Substring(colorcode.Length - 12, 12)
-                    colorcode = colorcode.Replace(prodcolor, "")
+                    colorcode = serialNumber.Substring(12, 2)
+                Case "31"
+                    ' Extract parts based on fixed positions
+                    partNumber = serialNumber.Substring(0, 14)
+                    quantity = serialNumber.Substring(14, 2)
+                    colorcode = serialNumber.Substring(16, 3)
+                Case "23"
+                    ' Extract parts based on fixed positions
+                    partNumber = serialNumber.Substring(0, 14)
+                    quantity = serialNumber.Substring(14, 2)
+                    colorcode = serialNumber.Substring(16, 3)
             End Select
 
             ListBox1.Items.Add(partNumber)
@@ -294,6 +299,10 @@ Public Class Add_item
     End Sub
 
     Private Sub txt_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txt_type.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub txt_partno_TextChanged(sender As Object, e As EventArgs) Handles txt_partno.TextChanged
 
     End Sub
 End Class
