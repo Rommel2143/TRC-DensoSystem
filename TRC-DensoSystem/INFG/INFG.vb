@@ -20,8 +20,22 @@ Public Class INFG
     End Sub
 
     Private Sub boxtype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles boxtype.SelectedIndexChanged
-        txtqr.Enabled = True
-        txtqr.Focus()
+        If boxtype.Text = "TDE" Then
+            tdeqr.Visible = True
+            tdeqr.Enabled = True
+            tdeqr.Focus()
+            tdepartno.Visible = True
+            tdeserial.Visible = True
+            tdecustomer.Visible = True
+        Else
+            tdeqr.Visible = False
+            tdepartno.Visible = False
+            tdeserial.Visible = False
+            tdecustomer.Visible = False
+            txtqr.Enabled = True
+            txtqr.Focus()
+        End If
+
     End Sub
 
     Private Sub txtqr_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr.KeyDown
@@ -83,6 +97,13 @@ Public Class INFG
                 txtqty.Text = qrcode.Substring(10, 2)
                 txtlot.Text = qrcode.Substring(qrcode.Length - 11)
                 saveupdate()
+            ElseIf boxtype.Text = "TDE" Then
+                txtcustomer.Text = qrcode.Substring(0, 13)
+                txtcolor1.Text = qrcode.Substring(0, 27)
+                txtcode.Text = qrcode.Substring(15, 10)
+                txtqty.Text = qrcode.Substring(25, 2)
+                txtlot.Text = qrcode.Substring(qrcode.Length - 12)
+                saveupdate()
             Else
                 labelerror1.Visible = True 'INVALID QR
             End If
@@ -106,6 +127,25 @@ Public Class INFG
         txtcolor.Text = Nothing
         txtcolor1.Text = Nothing
         txthide2.Text = Nothing
+        tdeserial.Text = Nothing
+        tdepartno.Text = Nothing
+        tdeqr.Text = Nothing
+        If boxtype.Text = "TDE" Then
+            tdeqr.Visible = True
+            tdeqr.Enabled = True
+            tdeqr.Text = Nothing
+            tdeqr.Focus()
+            tdepartno.Visible = True
+            tdeserial.Visible = True
+            tdecustomer.Visible = True
+        Else
+            tdeqr.Visible = False
+            tdepartno.Visible = False
+            tdeserial.Visible = False
+            tdecustomer.Visible = False
+            txtqr.Enabled = True
+            txtqr.Focus()
+        End If
     End Sub
 
     Public Sub saveupdate()
@@ -146,8 +186,8 @@ Public Class INFG
                 con.Close()
                 updates("Update `denso_fg_masterlist` set `qty`='" & Val(txtqty.Text) + x & "' where `partno` = '" & txtcode.Text & "' and `qrtype`='" & boxtype.Text & "' and `customerno`='" & txtcustomer.Text & "'and `color`='" & txthide2.Text & "'")
                 con.Close()
-                insertitem("Insert into `denso_fg_scan` (`status`,`datein`,`shift`,`operator`,`type`,`qrcode`,`partno`,`customerno`,`model`,`color`,`quantity`,`lotnumber`,`proddate`)
-                                    values ('" & txthide.Text & "','" & datedb & "','" & boxshift.Text & "','" & txtoperator.Text & "','" & boxtype.Text & "','" & txtqr.Text & "','" & txtcode.Text & "','" & txtcustomer.Text & "','" & txtmodel.Text & "','" & txtcolor.Text & "','" & txtqty.Text & "','" & txtlot.Text & "','" & ddate & "')")
+                insertitem("Insert into `denso_fg_scan` (`status`,`datein`,`shift`,`operator`,`type`,`qrcode`,`partno`,`customerno`,`model`,`color`,`quantity`,`lotnumber`,`proddate`,`serial`,`qrtde`)
+                                    values ('" & txthide.Text & "','" & datedb & "','" & boxshift.Text & "','" & txtoperator.Text & "','" & boxtype.Text & "','" & txtqr.Text & "','" & txtcode.Text & "','" & txtcustomer.Text & "','" & txtmodel.Text & "','" & txtcolor.Text & "','" & txtqty.Text & "','" & txtlot.Text & "','" & ddate & "','" & tdeserial.Text & "','" & tdeqr.Text & "')")
             Else
                 labelerror1.Visible = True
 
@@ -162,5 +202,53 @@ Public Class INFG
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+    Private Sub tdeqr_KeyDown(sender As Object, e As KeyEventArgs) Handles tdeqr.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Dim tdeqrcode As String = tdeqr.Text
+            tdecustomer.Text = tdeqrcode.Substring(96, 13)
+            tdeserial.Text = tdeqrcode.Substring(154, 7)
+            con.Close()
+            con.Open()
+            Dim cmd As New MySqlCommand("Select * FROM `denso_fg_scan` where `qrtde` = '" & tdeqr.Text & "'", con)
+            dr = cmd.ExecuteReader
+            If dr.Read = True Then
+                labelerror2.Visible = True 'DUPLICATE
+            Else
+                labelerror2.Visible = False
+                con.Close()
+                con.Open()
+                Dim cmd2 As New MySqlCommand("Select * FROM `denso_fg_scan` where `customerno` = '" & tdecustomer.Text & "' and `serial` = '" & tdeserial.Text & "' and `type` = '" & boxtype.Text & "'", con)
+                dr = cmd2.ExecuteReader
+                If dr.Read = True Then
+                    labelerror2.Visible = True 'DUPLICATE
+                Else
+                    con.Close()
+                    con.Open()
+                    Dim cmd1 As New MySqlCommand("Select * FROM `denso_fg_masterlist` where `customerno` = '" & tdecustomer.Text & "' and `qrtype`='" & boxtype.Text & "'", con)
+                    dr = cmd1.ExecuteReader
+                    labelerror2.Visible = False
+                    If dr.Read = True Then
+                        tdepartno.Text = (dr.GetString("partno"))
+                        txtqr.Text = Nothing
+                        txtqr.Enabled = True
+                        txtqr.Focus()
+                    Else
+                        labelerror1.Visible = True
+                    End If
 
+                End If
+            End If
+
+        End If
+    End Sub
+
+    Private Sub cmbsearch_TextChanged(sender As Object, e As EventArgs) Handles cmbsearch.TextChanged
+        Try
+            reload("Select * FROM `denso_fg_scan` where `datein` = '" & txtdate.Text & "' and `shift`='" & boxshift.Text & "' and `type`='" & boxtype.Text & "' and `customerno` REGEXP '" & cmbsearch.Text & "'", datagrid1)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+
+    End Sub
 End Class
