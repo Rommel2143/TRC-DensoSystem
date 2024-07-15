@@ -130,6 +130,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DMTN\Inner_Tag.Designer.vb">
+      <DependentUpon>Inner_Tag.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DMTN\Inner_Tag.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="INFG\INFG.designer.vb">
       <DependentUpon>INFG.vb</DependentUpon>
     </Compile>
@@ -173,10 +179,28 @@
     <Compile Include="manage\Add_item.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="manage\add_item2.Designer.vb">
+      <DependentUpon>add_item2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="manage\add_item2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manage\QR_identifier.Designer.vb">
+      <DependentUpon>QR_identifier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="manage\QR_identifier.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="mixed_pallet\mixed_pallet.Designer.vb">
       <DependentUpon>mixed_pallet.vb</DependentUpon>
     </Compile>
     <Compile Include="mixed_pallet\mixed_pallet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="monitoring\FG_monitoring.Designer.vb">
+      <DependentUpon>FG_monitoring.vb</DependentUpon>
+    </Compile>
+    <Compile Include="monitoring\FG_monitoring.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -201,8 +225,17 @@
     <Compile Include="main\Register_PC.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DMTN\OUT_DMTN.Designer.vb">
+      <DependentUpon>OUT_DMTN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DMTN\OUT_DMTN.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DMTN\Inner_Tag.resx">
+      <DependentUpon>Inner_Tag.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="INFG\INFG.resx">
       <DependentUpon>INFG.vb</DependentUpon>
     </EmbeddedResource>
@@ -224,8 +257,17 @@
     <EmbeddedResource Include="manage\Add_item.resx">
       <DependentUpon>Add_item.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="manage\add_item2.resx">
+      <DependentUpon>add_item2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manage\QR_identifier.resx">
+      <DependentUpon>QR_identifier.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mixed_pallet\mixed_pallet.resx">
       <DependentUpon>mixed_pallet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="monitoring\FG_monitoring.resx">
+      <DependentUpon>FG_monitoring.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -235,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="main\Register_PC.resx">
       <DependentUpon>Register_PC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMTN\OUT_DMTN.resx">
+      <DependentUpon>OUT_DMTN.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

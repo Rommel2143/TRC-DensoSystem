@@ -1,128 +1,70 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Add_item
-    Dim qrcode As String
-    Dim partNumber As String
-    Dim quantity As String
-    Dim colorcode As String
-    Dim productionDate As String
-    Dim partcode As String
-    Dim supplier As String
-    Dim customerNumber As String
-    Dim qrlenght As Integer
 
-    Private Sub processQRcode()
-        Try
-            Dim serialNumber As String = fg_txtqr.Text
+    Dim cmbselect As String
+    Private Sub Add_item_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-            ' Extract parts based on fixed positions
-            partNumber = serialNumber.Substring(0, 10)
-            quantity = serialNumber.Substring(10, 2)
-            colorcode = serialNumber.Substring(12, 3)
-
-            Dim productionDateRaw As String = serialNumber.Substring(15)
-            Dim year As Integer = Integer.Parse(productionDateRaw.Substring(0, 2))
-            Dim month As Integer = Integer.Parse(productionDateRaw.Substring(2, 2))
-            Dim day As Integer = Integer.Parse(productionDateRaw.Substring(4, 2))
-
-            ' Convert to yyyy-MM-dd format
-            Dim productionDateDateTime As New DateTime(2000 + year, month, day)
-            productionDate = productionDateDateTime.ToString("yyyy-MM-dd")
-            qrlenght = serialNumber.Length
-
-            txt_qty.Text = quantity
-            txt_prod.Text = productionDate
-            partno.Text = partNumber
-            txt_color.Text = colorcode
-            qr_lenght.Text = qrlenght.ToString()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-    End Sub
-
-    Private Sub processQRcodeTDE()
-        Try
-            Dim serialNumber As String = fg_txtqr.Text
-
-            ' Extract parts based on fixed positions
-            customerNumber = serialNumber.Substring(0, 15)
-            partNumber = serialNumber.Substring(15, 10)
-            quantity = serialNumber.Substring(25, 2)
-
-
-            ' Convert to yyyy-MM-dd format
-            Dim productionDateRaw As String = serialNumber.Substring(29, 10)
-            Dim year As Integer = Integer.Parse(productionDateRaw.Substring(0, 2))
-            Dim month As Integer = Integer.Parse(productionDateRaw.Substring(2, 2))
-            Dim day As Integer = Integer.Parse(productionDateRaw.Substring(4, 2))
-            Dim productionDateDateTime As New DateTime(2000 + year, month, day)
-            productionDate = productionDateDateTime.ToString("yyyy-MM-dd")
-
-            'Qr Lenght
-            qrlenght = serialNumber.Length
-
-            'Covert Color if no colorcode
-            colorcode = serialNumber.Substring(27, 3)
-            If colorcode.Contains("--") Then
-                colorcode = "--"
-            End If
-
-
-            txt_qty.Text = quantity
-            txt_prod.Text = productionDate
-            partno.Text = partNumber
-            txt_color.Text = colorcode
-            txt_customerno.Text = customerNumber
-            qr_lenght.Text = qrlenght.ToString()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
     End Sub
 
 
-
-    Private Sub fg_txtqr_KeyDown(sender As Object, e As KeyEventArgs) Handles fg_txtqr.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            qrcode = fg_txtqr.Text
-
-            cleartext()
-
-            qrlenght = qrcode.Length
-
-            Select Case qrlenght
-                Case 23 To 28
-                    processQRcode()
-
-                Case 40 To 43
-                    processQRcodeTDE()
-                    txt_type.Text = "TDE"
-            End Select
-
-            fg_txtqr.Clear()
-        End If
+    Private Sub return_ok()
+        fg_txtqr.Clear()
+        fg_txtqr.Focus()
+        lbl_fgerror.Visible = False
     End Sub
 
     Private Sub cleartext()
-        partno.Clear()
-        partname.Clear()
+        txt_partno.Clear()
+        txt_partname.Clear()
         txt_customerno.Clear()
         txt_color.Clear()
-        qr_lenght.Clear()
-        txt_prod.Clear()
-        txt_type.Clear()
-    End Sub
+        txt_qrlenght.Clear()
+        fg_txtqr.Clear()
 
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
 
     End Sub
 
-    Private Sub Guna2GroupBox2_Click(sender As Object, e As EventArgs) Handles Guna2GroupBox2.Click
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles btn_fg_save.Click
+        Try
+            If txt_partname.Text = "" Then
+                lbl_fgerror.Visible = True
+                lbl_fgerror.Text = "Please Input Partname!"
+            Else
+                con.Close()
+                con.Open()
+                Dim cmdselect As New MySqlCommand("SELECT * FROM `denso_fg_masterlist` WHERE partno= '" & txt_partno.Text & "' and customerno = '" & txt_customerno.Text & "'", con)
+                dr = cmdselect.ExecuteReader()
+                If dr.Read = True Then
+                    lbl_fgerror.Visible = True
+                    lbl_fgerror.Text = "FG Already Exists!"
+                Else
+                    con.Close()
+                    con.Open()
+                    Dim cmdinsert As New MySqlCommand("INSERT INTO `denso_fg_masterlist`
+                                                            (`partno`, `customerno`, `partname`, `model`, `color`, `qrtype`, `qrlenght`) 
+                                                    VALUES ('" & txt_partno.Text & "',
+                                                            '" & txt_customerno.Text & "',
+                                                            '" & txt_partname.Text & "',
+                                                            '" & txt_model.Text & "',
+                                                            '" & txt_color.Text & "',
+                                                            '" & cmbselect & "',
+                                                            '" & txt_qrlenght.Text & "')", con)
+                    cmdinsert.ExecuteNonQuery()
+                    MessageBox.Show("USER Added successfully!")
+                    con.Close()
+                    lbl_duplicate.Visible = False
 
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            con.Close()
+        End Try
     End Sub
 
-    Private Sub fg_txtqr_TextChanged(sender As Object, e As EventArgs) Handles fg_txtqr.TextChanged
 
-    End Sub
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
         Try
@@ -148,5 +90,36 @@ Public Class Add_item
             con.Close()
         End Try
     End Sub
+
+    Private Sub txtpassword_TextChanged(sender As Object, e As EventArgs) Handles txtpassword.TextChanged
+        If txtpassword.Text = "123" Then
+            btn_fg_save.Enabled = True
+        Else
+            btn_fg_save.Enabled = False
+        End If
+    End Sub
+
+
+    Private Sub cmb_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_type.SelectedIndexChanged
+        Select Case cmb_type.Text
+            Case "DMTN"
+                cmbselect = "DMTN"
+            Case " DMTN Inner Tag"
+                cmbselect = "DMTN-IT"
+            Case "INTELLI IV"
+                cmbselect = "INT4"
+            Case "TDE"
+                cmbselect = "TDE"
+            Case "20CY"
+                cmbselect = "20CY"
+            Case "VT"
+                cmbselect = "VT"
+            Case "2T"
+                cmbselect = "2T"
+
+
+        End Select
+    End Sub
+
 
 End Class
