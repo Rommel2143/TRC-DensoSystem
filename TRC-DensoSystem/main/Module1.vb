@@ -57,6 +57,8 @@ Module Module1
         My.Computer.Audio.Play(My.Resources.duplicate, AudioPlayMode.Background)
     End Sub
 
+
+
     Public Sub viewdata(ByVal sql As String)
         con.Close()
         con.Open()

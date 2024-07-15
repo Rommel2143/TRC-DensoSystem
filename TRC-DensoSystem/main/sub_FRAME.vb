@@ -71,4 +71,8 @@ Public Class sub_FRAME
     Private Sub IdentifyQRToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IdentifyQRToolStripMenuItem.Click
         display_formscan(QR_identifier)
     End Sub
+
+    Private Sub ScanInnerTagToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ScanInnerTagToolStripMenuItem.Click
+        display_formscan(Inner_Tag)
+    End Sub
 End Class

@@ -5,7 +5,7 @@ Public Class OUT_DMTN
     Private Sub txtqr_TextChanged(sender As Object, e As EventArgs) Handles txtqr.TextChanged
 
     End Sub
-    Private Sub processQRcodeTDE()
+    Private Sub processQRcode(type As String)
         Try
 
             serialNumber = txtqr.Text
@@ -15,7 +15,7 @@ Public Class OUT_DMTN
 
             con.Close()
             con.Open()
-            Dim cmdselect As New MySqlCommand("SELECT `id`, `qrtype`, `qrlenght`, `partno`, `qty`, `customer`, `color`, `proddate`, `shift`, `machine`, `line`, `series` FROM `denso_qrtype` WHERE qrlenght= '" & qrlenght & "'", con)
+            Dim cmdselect As New MySqlCommand("SELECT `id`, `qrtype`, `qrlenght`, `partno`, `qty`, `customer`, `color`, `proddate`, `shift`, `machine`, `line`, `series` FROM `denso_qrtype` WHERE qrlenght= '" & qrlenght & "' and qrtype  = '" & type & "'", con)
             dr = cmdselect.ExecuteReader()
             If dr.Read = True Then
 
@@ -51,12 +51,14 @@ Public Class OUT_DMTN
 
     Private Sub txtqr_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr.KeyDown
         If e.KeyCode = Keys.Enter Then
-            processQRcodeTDE()
+            processQRcode("TDE")
             txtqr.Clear()
             txtqr.Focus()
 
         End If
     End Sub
 
+    Private Sub OUT_DMTN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class

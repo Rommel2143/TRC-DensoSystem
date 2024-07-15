@@ -22,10 +22,11 @@ Partial Class QR_identifier
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(QR_identifier))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.qr_lenght = New Guna.UI2.WinForms.Guna2TextBox()
         Me.panel_toogle = New Guna.UI2.WinForms.Guna2Panel()
@@ -57,7 +58,6 @@ Partial Class QR_identifier
         Me.val_shift = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txt_shift = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.count = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.qrbar = New Guna.UI2.WinForms.Guna2TrackBar()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cmb_type = New Guna.UI2.WinForms.Guna2ComboBox()
@@ -74,9 +74,16 @@ Partial Class QR_identifier
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.datagrid1 = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.countbar = New Guna.UI2.WinForms.Guna2TrackBar()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Guna2ImageButton1 = New Guna.UI2.WinForms.Guna2ImageButton()
+        Me.Guna2ImageButton2 = New Guna.UI2.WinForms.Guna2ImageButton()
+        Me.Guna2ImageButton3 = New Guna.UI2.WinForms.Guna2ImageButton()
+        Me.Guna2ImageButton4 = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.panel_toogle.SuspendLayout()
-        CType(Me.count, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2GroupBox2.SuspendLayout()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -84,6 +91,7 @@ Partial Class QR_identifier
         'Guna2GroupBox1
         '
         Me.Guna2GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Guna2GroupBox1.Controls.Add(Me.Label10)
         Me.Guna2GroupBox1.Controls.Add(Me.qr_lenght)
         Me.Guna2GroupBox1.Controls.Add(Me.panel_toogle)
         Me.Guna2GroupBox1.Controls.Add(Me.txt_qr)
@@ -91,7 +99,7 @@ Partial Class QR_identifier
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.MenuHighlight
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(76, 87)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(729, 698)
         Me.Guna2GroupBox1.TabIndex = 42
@@ -122,6 +130,13 @@ Partial Class QR_identifier
         Me.panel_toogle.AutoScroll = True
         Me.panel_toogle.AutoScrollMargin = New System.Drawing.Size(0, 40)
         Me.panel_toogle.BackColor = System.Drawing.Color.Transparent
+        Me.panel_toogle.Controls.Add(Me.Guna2ImageButton3)
+        Me.panel_toogle.Controls.Add(Me.Guna2ImageButton4)
+        Me.panel_toogle.Controls.Add(Me.Guna2ImageButton2)
+        Me.panel_toogle.Controls.Add(Me.Guna2ImageButton1)
+        Me.panel_toogle.Controls.Add(Me.Label12)
+        Me.panel_toogle.Controls.Add(Me.Label11)
+        Me.panel_toogle.Controls.Add(Me.countbar)
         Me.panel_toogle.Controls.Add(Me.btn_fg_save)
         Me.panel_toogle.Controls.Add(Me.Guna2CustomRadioButton9)
         Me.panel_toogle.Controls.Add(Me.val_qty)
@@ -150,7 +165,6 @@ Partial Class QR_identifier
         Me.panel_toogle.Controls.Add(Me.val_shift)
         Me.panel_toogle.Controls.Add(Me.Label5)
         Me.panel_toogle.Controls.Add(Me.txt_shift)
-        Me.panel_toogle.Controls.Add(Me.count)
         Me.panel_toogle.Controls.Add(Me.qrbar)
         Me.panel_toogle.Controls.Add(Me.Label3)
         Me.panel_toogle.Controls.Add(Me.cmb_type)
@@ -204,7 +218,7 @@ Partial Class QR_identifier
         'val_qty
         '
         Me.val_qty.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.val_qty.DefaultText = ""
+        Me.val_qty.DefaultText = "0,0"
         Me.val_qty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.val_qty.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.val_qty.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
@@ -366,6 +380,7 @@ Partial Class QR_identifier
         '
         'Guna2CustomRadioButton1
         '
+        Me.Guna2CustomRadioButton1.Checked = True
         Me.Guna2CustomRadioButton1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2CustomRadioButton1.CheckedState.BorderThickness = 0
         Me.Guna2CustomRadioButton1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -383,7 +398,7 @@ Partial Class QR_identifier
         'val_prod
         '
         Me.val_prod.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.val_prod.DefaultText = ""
+        Me.val_prod.DefaultText = "0,0"
         Me.val_prod.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.val_prod.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.val_prod.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
@@ -434,7 +449,7 @@ Partial Class QR_identifier
         'val_series
         '
         Me.val_series.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.val_series.DefaultText = ""
+        Me.val_series.DefaultText = "0,0"
         Me.val_series.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.val_series.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.val_series.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
@@ -485,7 +500,7 @@ Partial Class QR_identifier
         'val_line
         '
         Me.val_line.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.val_line.DefaultText = ""
+        Me.val_line.DefaultText = "0,0"
         Me.val_line.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.val_line.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.val_line.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
@@ -536,7 +551,7 @@ Partial Class QR_identifier
         'val_machine
         '
         Me.val_machine.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.val_machine.DefaultText = ""
+        Me.val_machine.DefaultText = "0,0"
         Me.val_machine.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.val_machine.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.val_machine.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
@@ -587,7 +602,7 @@ Partial Class QR_identifier
         'val_shift
         '
         Me.val_shift.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.val_shift.DefaultText = ""
+        Me.val_shift.DefaultText = "0,0"
         Me.val_shift.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.val_shift.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.val_shift.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
@@ -635,23 +650,14 @@ Partial Class QR_identifier
         Me.txt_shift.Size = New System.Drawing.Size(139, 36)
         Me.txt_shift.TabIndex = 35
         '
-        'count
-        '
-        Me.count.BackColor = System.Drawing.Color.Transparent
-        Me.count.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.count.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.count.Location = New System.Drawing.Point(178, 35)
-        Me.count.Name = "count"
-        Me.count.Size = New System.Drawing.Size(56, 36)
-        Me.count.TabIndex = 33
-        '
         'qrbar
         '
-        Me.qrbar.Location = New System.Drawing.Point(270, 35)
+        Me.qrbar.Location = New System.Drawing.Point(376, 36)
         Me.qrbar.Name = "qrbar"
-        Me.qrbar.Size = New System.Drawing.Size(196, 36)
+        Me.qrbar.Size = New System.Drawing.Size(139, 36)
         Me.qrbar.TabIndex = 32
         Me.qrbar.ThumbColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.qrbar.Value = 0
         '
         'Label3
         '
@@ -674,7 +680,7 @@ Partial Class QR_identifier
         Me.cmb_type.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cmb_type.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmb_type.ItemHeight = 30
-        Me.cmb_type.Items.AddRange(New Object() {"DMTN", "INTELLI IV", "TDE", "20CY", "VT", "2T"})
+        Me.cmb_type.Items.AddRange(New Object() {"DMTN", "DMTN Inner Tag", "INTELLI IV", "TDE", "20CY", "VT", "2T"})
         Me.cmb_type.Location = New System.Drawing.Point(375, 366)
         Me.cmb_type.Name = "cmb_type"
         Me.cmb_type.Size = New System.Drawing.Size(201, 36)
@@ -683,7 +689,7 @@ Partial Class QR_identifier
         'val_color
         '
         Me.val_color.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.val_color.DefaultText = ""
+        Me.val_color.DefaultText = "0,0"
         Me.val_color.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.val_color.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.val_color.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
@@ -734,7 +740,7 @@ Partial Class QR_identifier
         'val_customer
         '
         Me.val_customer.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.val_customer.DefaultText = ""
+        Me.val_customer.DefaultText = "0,0"
         Me.val_customer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.val_customer.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.val_customer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
@@ -785,7 +791,7 @@ Partial Class QR_identifier
         'val_partno
         '
         Me.val_partno.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.val_partno.DefaultText = ""
+        Me.val_partno.DefaultText = "0,0"
         Me.val_partno.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.val_partno.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.val_partno.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
@@ -869,9 +875,9 @@ Partial Class QR_identifier
         Me.Guna2GroupBox2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Guna2GroupBox2.Controls.Add(Me.datagrid1)
         Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.SystemColors.MenuHighlight
-        Me.Guna2GroupBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2GroupBox2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(747, 12)
+        Me.Guna2GroupBox2.Location = New System.Drawing.Point(811, 87)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
         Me.Guna2GroupBox2.Size = New System.Drawing.Size(518, 698)
         Me.Guna2GroupBox2.TabIndex = 43
@@ -881,32 +887,46 @@ Partial Class QR_identifier
         '
         Me.datagrid1.AllowUserToAddRows = False
         Me.datagrid1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.datagrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.datagrid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datagrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.datagrid1.AllowUserToResizeRows = False
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.datagrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
+        Me.datagrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datagrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.datagrid1.ColumnHeadersHeight = 30
         Me.datagrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.datagrid1.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.datagrid1.DefaultCellStyle = DataGridViewCellStyle11
         Me.datagrid1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.datagrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.datagrid1.Location = New System.Drawing.Point(0, 40)
         Me.datagrid1.Name = "datagrid1"
         Me.datagrid1.ReadOnly = True
+        Me.datagrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
         Me.datagrid1.RowHeadersVisible = False
         Me.datagrid1.Size = New System.Drawing.Size(518, 658)
         Me.datagrid1.TabIndex = 193
@@ -932,20 +952,120 @@ Partial Class QR_identifier
         Me.datagrid1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.datagrid1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
+        'countbar
+        '
+        Me.countbar.Location = New System.Drawing.Point(71, 36)
+        Me.countbar.Maximum = 30
+        Me.countbar.Name = "countbar"
+        Me.countbar.Size = New System.Drawing.Size(139, 36)
+        Me.countbar.TabIndex = 69
+        Me.countbar.ThumbColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(113, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.countbar.Value = 0
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.White
+        Me.Label10.ForeColor = System.Drawing.Color.Gray
+        Me.Label10.Location = New System.Drawing.Point(450, 54)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(66, 15)
+        Me.Label10.TabIndex = 32
+        Me.Label10.Text = "QR Lenght:"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.White
+        Me.Label11.ForeColor = System.Drawing.Color.Gray
+        Me.Label11.Location = New System.Drawing.Point(68, 18)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(33, 15)
+        Me.Label11.TabIndex = 70
+        Me.Label11.Text = "Size :"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.White
+        Me.Label12.ForeColor = System.Drawing.Color.Gray
+        Me.Label12.Location = New System.Drawing.Point(376, 18)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(48, 15)
+        Me.Label12.TabIndex = 71
+        Me.Label12.Text = "Locate :"
+        '
+        'Guna2ImageButton1
+        '
+        Me.Guna2ImageButton1.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.Guna2ImageButton1.HoverState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.Guna2ImageButton1.Image = CType(resources.GetObject("Guna2ImageButton1.Image"), System.Drawing.Image)
+        Me.Guna2ImageButton1.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.Guna2ImageButton1.ImageRotate = 0!
+        Me.Guna2ImageButton1.ImageSize = New System.Drawing.Size(25, 25)
+        Me.Guna2ImageButton1.Location = New System.Drawing.Point(558, 41)
+        Me.Guna2ImageButton1.Name = "Guna2ImageButton1"
+        Me.Guna2ImageButton1.PressedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.Guna2ImageButton1.Size = New System.Drawing.Size(26, 26)
+        Me.Guna2ImageButton1.TabIndex = 72
+        '
+        'Guna2ImageButton2
+        '
+        Me.Guna2ImageButton2.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.Guna2ImageButton2.HoverState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.Guna2ImageButton2.Image = CType(resources.GetObject("Guna2ImageButton2.Image"), System.Drawing.Image)
+        Me.Guna2ImageButton2.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.Guna2ImageButton2.ImageRotate = 0!
+        Me.Guna2ImageButton2.ImageSize = New System.Drawing.Size(25, 25)
+        Me.Guna2ImageButton2.Location = New System.Drawing.Point(526, 41)
+        Me.Guna2ImageButton2.Name = "Guna2ImageButton2"
+        Me.Guna2ImageButton2.PressedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.Guna2ImageButton2.Size = New System.Drawing.Size(26, 26)
+        Me.Guna2ImageButton2.TabIndex = 73
+        '
+        'Guna2ImageButton3
+        '
+        Me.Guna2ImageButton3.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.Guna2ImageButton3.HoverState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.Guna2ImageButton3.Image = CType(resources.GetObject("Guna2ImageButton3.Image"), System.Drawing.Image)
+        Me.Guna2ImageButton3.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.Guna2ImageButton3.ImageRotate = 0!
+        Me.Guna2ImageButton3.ImageSize = New System.Drawing.Size(25, 25)
+        Me.Guna2ImageButton3.Location = New System.Drawing.Point(221, 41)
+        Me.Guna2ImageButton3.Name = "Guna2ImageButton3"
+        Me.Guna2ImageButton3.PressedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.Guna2ImageButton3.Size = New System.Drawing.Size(26, 26)
+        Me.Guna2ImageButton3.TabIndex = 75
+        '
+        'Guna2ImageButton4
+        '
+        Me.Guna2ImageButton4.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.Guna2ImageButton4.HoverState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.Guna2ImageButton4.Image = CType(resources.GetObject("Guna2ImageButton4.Image"), System.Drawing.Image)
+        Me.Guna2ImageButton4.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.Guna2ImageButton4.ImageRotate = 0!
+        Me.Guna2ImageButton4.ImageSize = New System.Drawing.Size(25, 25)
+        Me.Guna2ImageButton4.Location = New System.Drawing.Point(253, 41)
+        Me.Guna2ImageButton4.Name = "Guna2ImageButton4"
+        Me.Guna2ImageButton4.PressedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.Guna2ImageButton4.Size = New System.Drawing.Size(26, 26)
+        Me.Guna2ImageButton4.TabIndex = 74
+        '
         'QR_identifier
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1277, 722)
+        Me.ClientSize = New System.Drawing.Size(1404, 872)
         Me.Controls.Add(Me.Guna2GroupBox2)
         Me.Controls.Add(Me.Guna2GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "QR_identifier"
         Me.Text = "QR_identifier"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Guna2GroupBox1.ResumeLayout(False)
         Me.Guna2GroupBox1.PerformLayout()
         Me.panel_toogle.ResumeLayout(False)
         Me.panel_toogle.PerformLayout()
-        CType(Me.count, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2GroupBox2.ResumeLayout(False)
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -980,7 +1100,6 @@ Partial Class QR_identifier
     Friend WithEvents Label5 As Label
     Friend WithEvents txt_shift As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents val_prod As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents count As Guna.UI2.WinForms.Guna2NumericUpDown
     Friend WithEvents qrbar As Guna.UI2.WinForms.Guna2TrackBar
     Friend WithEvents Label4 As Label
     Friend WithEvents txt_prod As Guna.UI2.WinForms.Guna2TextBox
@@ -1000,4 +1119,12 @@ Partial Class QR_identifier
     Friend WithEvents qr_lenght As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2GroupBox2 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents datagrid1 As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents countbar As Guna.UI2.WinForms.Guna2TrackBar
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Guna2ImageButton2 As Guna.UI2.WinForms.Guna2ImageButton
+    Friend WithEvents Guna2ImageButton1 As Guna.UI2.WinForms.Guna2ImageButton
+    Friend WithEvents Guna2ImageButton3 As Guna.UI2.WinForms.Guna2ImageButton
+    Friend WithEvents Guna2ImageButton4 As Guna.UI2.WinForms.Guna2ImageButton
 End Class

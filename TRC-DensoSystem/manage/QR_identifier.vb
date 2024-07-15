@@ -3,9 +3,9 @@ Public Class QR_identifier
     Dim partNumber As String
     Dim serialNumber As String
     Dim qrlenght As Integer
-
-    Dim txtbox As Guna.UI2.WinForms.Guna2TextBox
-    Dim txtval As Guna.UI2.WinForms.Guna2TextBox
+    Dim cmbselect As String
+    Dim txtbox As Guna.UI2.WinForms.Guna2TextBox = txt_partno
+    Dim txtval As Guna.UI2.WinForms.Guna2TextBox = val_partno
     Private Sub txt_qr_TextChanged(sender As Object, e As EventArgs) Handles txt_qr.TextChanged
         If txt_qr.Text = "" Then
             panel_toogle.Enabled = False
@@ -21,13 +21,12 @@ Public Class QR_identifier
             qrlenght = serialNumber.Length
             qr_lenght.Text = qrlenght
 
-            qrbar.Maximum = Math.Max(0, qrlenght - count.Value)
+            qrbar.Maximum = Math.Max(0, qrlenght - countbar.Value)
             qrbar.Value = 0
 
 
         End If
     End Sub
-
 
     Private Sub updatevalue(txt As Guna.UI2.WinForms.Guna2TextBox, val As Guna.UI2.WinForms.Guna2TextBox)
         Try
@@ -36,14 +35,14 @@ Public Class QR_identifier
             ' Update the TextBox with the current value of the TrackBar
             Dim qrvalue As Integer = qrbar.Value ' Get the current value of the TrackBar
 
-            If qrvalue + count.Value <= serialNumber.Length Then
+            If qrvalue + countbar.Value <= serialNumber.Length Then
                 ' Check if the substring can be safely extracted without going out of bounds
-                txt.Text = serialNumber.Substring(qrvalue, count.Value) ' Extract substring
-                val.Text = $"{qrvalue},{count.Value}" ' Update the second TextBox with indices
+                txt.Text = serialNumber.Substring(qrvalue, countbar.Value) ' Extract substring
+                val.Text = $"{qrvalue},{countbar.Value}" ' Update the second TextBox with indices
 
                 ' Set focus and select the extracted substring in the txt_qr TextBox
                 txt_qr.Focus()
-                txt_qr.Select(qrvalue, count.Value)
+                txt_qr.Select(qrvalue, countbar.Value)
             Else
                 ' Handle case where the substring would go out of bounds
                 txt.Text = String.Empty ' Clear the text if out of bounds
@@ -57,13 +56,12 @@ Public Class QR_identifier
     End Sub
 
 
-
     Private Sub Guna2TrackBar1_Scroll_1(sender As Object, e As ScrollEventArgs) Handles qrbar.Scroll
         updatevalue(txtbox, txtval)
 
     End Sub
 
-    Private Sub count_ValueChanged(sender As Object, e As EventArgs) Handles count.ValueChanged
+    Private Sub count_ValueChanged(sender As Object, e As EventArgs)
         updatevalue(txtbox, txtval)
     End Sub
 
@@ -141,10 +139,10 @@ Public Class QR_identifier
                                                                             `color`,
                                                                             `proddate`,
                                                                             `shift`,
-                                                                            `machine`,
+                                                                            `process`,
                                                                             `line`, 
                                                                             `series`)
-                                                                    VALUES ('" & cmb_type.Text & "',
+                                                                    VALUES ('" & cmbselect & "',
                                                                             '" & qrlenght & "',
                                                                             '" & val_partno.Text & "',
                                                                             '" & val_qty.Text & "',
@@ -167,5 +165,66 @@ Public Class QR_identifier
         Finally
             con.Close()
         End Try
+    End Sub
+
+    Private Sub countbar_Scroll(sender As Object, e As ScrollEventArgs) Handles countbar.Scroll
+        updatevalue(txtbox, txtval)
+
+    End Sub
+
+    Private Sub cmb_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_type.SelectedIndexChanged
+        Select Case cmb_type.Text
+            Case "DMTN"
+                cmbselect = "DMTN"
+            Case " DMTN Inner Tag"
+                cmbselect = "DMTN-IT"
+            Case "INTELLI IV"
+                cmbselect = "INT4"
+            Case "TDE"
+                cmbselect = "TDE"
+            Case "20CY"
+                cmbselect = "20CY"
+            Case "VT"
+                cmbselect = "VT"
+            Case "2T"
+                cmbselect = "2T"
+
+
+        End Select
+    End Sub
+
+    Private Sub Guna2ImageButton1_Click(sender As Object, e As EventArgs) Handles Guna2ImageButton1.Click
+        If qrbar.Value > qrlenght Then
+        Else
+            qrbar.Value += 1
+            updatevalue(txtbox, txtval)
+        End If
+    End Sub
+
+    Private Sub Guna2ImageButton3_Click(sender As Object, e As EventArgs) Handles Guna2ImageButton3.Click
+        If countbar.Value <= 0 Then
+        Else
+
+            countbar.Value -= 1
+            updatevalue(txtbox, txtval)
+        End If
+    End Sub
+
+    Private Sub Guna2ImageButton4_Click(sender As Object, e As EventArgs) Handles Guna2ImageButton4.Click
+        If countbar.Value >= countbar.Maximum Then
+        Else
+            countbar.Value += 1
+            updatevalue(txtbox, txtval)
+        End If
+
+    End Sub
+
+    Private Sub Guna2ImageButton2_Click(sender As Object, e As EventArgs) Handles Guna2ImageButton2.Click
+        If qrbar.Value < 0 Then
+        Else
+
+            qrbar.Value -= 1
+            updatevalue(txtbox, txtval)
+        End If
     End Sub
 End Class

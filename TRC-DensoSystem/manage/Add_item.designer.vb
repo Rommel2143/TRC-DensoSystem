@@ -24,7 +24,7 @@ Partial Class Add_item
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Add_item))
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.txt_type = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.cmb_type = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.txtpassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
         Me.lbl_fgerror = New System.Windows.Forms.Label()
@@ -51,14 +51,13 @@ Partial Class Add_item
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.idno = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Guna2GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2GroupBox2
         '
-        Me.Guna2GroupBox2.Controls.Add(Me.txt_type)
+        Me.Guna2GroupBox2.Controls.Add(Me.cmb_type)
         Me.Guna2GroupBox2.Controls.Add(Me.txtpassword)
         Me.Guna2GroupBox2.Controls.Add(Me.Guna2Separator1)
         Me.Guna2GroupBox2.Controls.Add(Me.lbl_fgerror)
@@ -81,27 +80,27 @@ Partial Class Add_item
         Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.SystemColors.MenuHighlight
         Me.Guna2GroupBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(23, 307)
+        Me.Guna2GroupBox2.Location = New System.Drawing.Point(547, 27)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
         Me.Guna2GroupBox2.Size = New System.Drawing.Size(505, 468)
         Me.Guna2GroupBox2.TabIndex = 14
         Me.Guna2GroupBox2.Text = "ADD FG"
         '
-        'txt_type
+        'cmb_type
         '
-        Me.txt_type.BackColor = System.Drawing.Color.Transparent
-        Me.txt_type.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.txt_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.txt_type.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_type.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_type.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.txt_type.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.txt_type.ItemHeight = 30
-        Me.txt_type.Items.AddRange(New Object() {"DMTN", "Intelli IV", "TDE", "20CY", "VT", "2T"})
-        Me.txt_type.Location = New System.Drawing.Point(110, 56)
-        Me.txt_type.Name = "txt_type"
-        Me.txt_type.Size = New System.Drawing.Size(186, 36)
-        Me.txt_type.TabIndex = 40
+        Me.cmb_type.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_type.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_type.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_type.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_type.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmb_type.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_type.ItemHeight = 30
+        Me.cmb_type.Items.AddRange(New Object() {"DMTN", "DMTN Inner Tag", "INTELLI IV", "TDE", "20CY", "VT", "2T"})
+        Me.cmb_type.Location = New System.Drawing.Point(114, 50)
+        Me.cmb_type.Name = "cmb_type"
+        Me.cmb_type.Size = New System.Drawing.Size(201, 36)
+        Me.cmb_type.TabIndex = 40
         '
         'txtpassword
         '
@@ -497,21 +496,12 @@ Partial Class Add_item
         Me.idno.Size = New System.Drawing.Size(139, 36)
         Me.idno.TabIndex = 5
         '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(548, 27)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(213, 264)
-        Me.ListBox1.TabIndex = 16
-        '
         'Add_item
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1227, 803)
-        Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.Guna2GroupBox3)
         Me.Controls.Add(Me.Guna2GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -550,8 +540,7 @@ Partial Class Add_item
     Friend WithEvents lbl_duplicate As Label
     Friend WithEvents txt_model As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents lbl_fgerror As Label
-    Friend WithEvents ListBox1 As ListBox
     Friend WithEvents Guna2Separator1 As Guna.UI2.WinForms.Guna2Separator
     Friend WithEvents txtpassword As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents txt_type As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents cmb_type As Guna.UI2.WinForms.Guna2ComboBox
 End Class

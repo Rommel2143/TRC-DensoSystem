@@ -130,6 +130,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DMTN\Inner_Tag.Designer.vb">
+      <DependentUpon>Inner_Tag.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DMTN\Inner_Tag.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="INFG\INFG.designer.vb">
       <DependentUpon>INFG.vb</DependentUpon>
     </Compile>
@@ -213,14 +219,17 @@
     <Compile Include="main\Register_PC.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OUTFG\OUT_DMTN.Designer.vb">
+    <Compile Include="DMTN\OUT_DMTN.Designer.vb">
       <DependentUpon>OUT_DMTN.vb</DependentUpon>
     </Compile>
-    <Compile Include="OUTFG\OUT_DMTN.vb">
+    <Compile Include="DMTN\OUT_DMTN.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DMTN\Inner_Tag.resx">
+      <DependentUpon>Inner_Tag.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="INFG\INFG.resx">
       <DependentUpon>INFG.vb</DependentUpon>
     </EmbeddedResource>
@@ -260,7 +269,7 @@
     <EmbeddedResource Include="main\Register_PC.resx">
       <DependentUpon>Register_PC.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OUTFG\OUT_DMTN.resx">
+    <EmbeddedResource Include="DMTN\OUT_DMTN.resx">
       <DependentUpon>OUT_DMTN.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
