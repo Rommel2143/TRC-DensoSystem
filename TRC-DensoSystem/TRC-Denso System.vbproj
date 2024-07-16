@@ -130,10 +130,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DMTN\Inner_Tag.Designer.vb">
-      <DependentUpon>Inner_Tag.vb</DependentUpon>
+    <Compile Include="DMTN\dmtn_cml.Designer.vb">
+      <DependentUpon>dmtn_cml.vb</DependentUpon>
     </Compile>
-    <Compile Include="DMTN\Inner_Tag.vb">
+    <Compile Include="DMTN\dmtn_cml.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DMTN\dmtn_inner_tag.Designer.vb">
+      <DependentUpon>dmtn_inner_tag.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DMTN\dmtn_inner_tag.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="INFG\INFG.designer.vb">
@@ -233,8 +239,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DMTN\Inner_Tag.resx">
-      <DependentUpon>Inner_Tag.vb</DependentUpon>
+    <EmbeddedResource Include="DMTN\dmtn_cml.resx">
+      <DependentUpon>dmtn_cml.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMTN\dmtn_inner_tag.resx">
+      <DependentUpon>dmtn_inner_tag.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="INFG\INFG.resx">
       <DependentUpon>INFG.vb</DependentUpon>

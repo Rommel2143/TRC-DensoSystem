@@ -48,7 +48,7 @@ Public Class sub_FRAME
         display_formscan(INFG)
     End Sub
 
-    Private Sub MixedPalletToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MixedPalletToolStripMenuItem.Click
+    Private Sub MixedPalletToolStripMenuItem_Click(sender As Object, e As EventArgs)
         display_formscan(mixed_pallet)
     End Sub
 
@@ -58,5 +58,13 @@ Public Class sub_FRAME
 
     Private Sub TDEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TDEToolStripMenuItem.Click
         display_formscan(OUTFG_TDE)
+    End Sub
+
+    Private Sub InnerTagToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InnerTagToolStripMenuItem.Click
+        display_formscan(dmtn_inner_tag)
+    End Sub
+
+    Private Sub CMLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CMLToolStripMenuItem.Click
+
     End Sub
 End Class

@@ -27,8 +27,11 @@ Partial Class sub_FRAME
         Me.MasterlistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PARTSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TDEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RETURNToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MixedPalletToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DMTNToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InnerTagToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CMLToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.userstrip = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -39,7 +42,6 @@ Partial Class sub_FRAME
         Me.StockMonitoringToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TDEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -56,7 +58,7 @@ Partial Class sub_FRAME
         '
         'MasterlistToolStripMenuItem
         '
-        Me.MasterlistToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PARTSToolStripMenuItem, Me.FGToolStripMenuItem, Me.RETURNToolStripMenuItem, Me.MixedPalletToolStripMenuItem})
+        Me.MasterlistToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PARTSToolStripMenuItem, Me.FGToolStripMenuItem, Me.RETURNToolStripMenuItem, Me.DMTNToolStripMenuItem})
         Me.MasterlistToolStripMenuItem.Image = CType(resources.GetObject("MasterlistToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MasterlistToolStripMenuItem.Name = "MasterlistToolStripMenuItem"
         Me.MasterlistToolStripMenuItem.Size = New System.Drawing.Size(56, 37)
@@ -77,6 +79,12 @@ Partial Class sub_FRAME
         Me.FGToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.FGToolStripMenuItem.Text = "OUT"
         '
+        'TDEToolStripMenuItem
+        '
+        Me.TDEToolStripMenuItem.Name = "TDEToolStripMenuItem"
+        Me.TDEToolStripMenuItem.Size = New System.Drawing.Size(101, 22)
+        Me.TDEToolStripMenuItem.Text = "TDE"
+        '
         'RETURNToolStripMenuItem
         '
         Me.RETURNToolStripMenuItem.Image = CType(resources.GetObject("RETURNToolStripMenuItem.Image"), System.Drawing.Image)
@@ -84,11 +92,24 @@ Partial Class sub_FRAME
         Me.RETURNToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RETURNToolStripMenuItem.Text = "RETURN"
         '
-        'MixedPalletToolStripMenuItem
+        'DMTNToolStripMenuItem
         '
-        Me.MixedPalletToolStripMenuItem.Name = "MixedPalletToolStripMenuItem"
-        Me.MixedPalletToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.MixedPalletToolStripMenuItem.Text = "Mixed Pallet"
+        Me.DMTNToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InnerTagToolStripMenuItem, Me.CMLToolStripMenuItem})
+        Me.DMTNToolStripMenuItem.Name = "DMTNToolStripMenuItem"
+        Me.DMTNToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DMTNToolStripMenuItem.Text = "DMTN"
+        '
+        'InnerTagToolStripMenuItem
+        '
+        Me.InnerTagToolStripMenuItem.Name = "InnerTagToolStripMenuItem"
+        Me.InnerTagToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.InnerTagToolStripMenuItem.Text = "Inner Tag to DMTN"
+        '
+        'CMLToolStripMenuItem
+        '
+        Me.CMLToolStripMenuItem.Name = "CMLToolStripMenuItem"
+        Me.CMLToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
+        Me.CMLToolStripMenuItem.Text = "DMTN to CML"
         '
         'userstrip
         '
@@ -175,12 +196,6 @@ Partial Class sub_FRAME
         Me.Panel1.Size = New System.Drawing.Size(1208, 636)
         Me.Panel1.TabIndex = 12
         '
-        'TDEToolStripMenuItem
-        '
-        Me.TDEToolStripMenuItem.Name = "TDEToolStripMenuItem"
-        Me.TDEToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.TDEToolStripMenuItem.Text = "TDE"
-        '
         'sub_FRAME
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -213,6 +228,8 @@ Partial Class sub_FRAME
     Friend WithEvents QRCheckerToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents StockMonitoringToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ManageToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MixedPalletToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TDEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DMTNToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents InnerTagToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CMLToolStripMenuItem As ToolStripMenuItem
 End Class
