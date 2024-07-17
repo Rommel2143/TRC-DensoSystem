@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class INFG
+
     Private Sub INFG_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         boxshift.Enabled = True
         txtdate.Text = datedb
@@ -249,6 +250,10 @@ Public Class INFG
             MessageBox.Show(ex.Message)
         End Try
 
+
+    End Sub
+
+    Private Sub tdeqr_TextChanged(sender As Object, e As EventArgs) Handles tdeqr.TextChanged
 
     End Sub
 End Class

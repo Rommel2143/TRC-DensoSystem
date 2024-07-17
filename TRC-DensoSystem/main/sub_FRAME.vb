@@ -40,7 +40,7 @@ Public Class sub_FRAME
     End Sub
 
     Private Sub ManageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageToolStripMenuItem.Click
-        display_formscan(Add_item)
+        'display_formscan(Add_item)
     End Sub
 
 
@@ -66,5 +66,9 @@ Public Class sub_FRAME
 
     Private Sub CMLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CMLToolStripMenuItem.Click
 
+    End Sub
+
+    Private Sub QRIdentifierToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QRIdentifierToolStripMenuItem.Click
+        display_formscan(QR_identifier)
     End Sub
 End Class
