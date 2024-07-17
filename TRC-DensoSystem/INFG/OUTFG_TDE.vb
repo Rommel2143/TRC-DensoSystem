@@ -18,7 +18,7 @@ Public Class OUTFG_TDE
             con.Open()
             Dim cmd As New MySqlCommand("Select * FROM `denso_fg_scan` where `status`='IN' and `qrtde`= '" & tdeqr.Text & "'", con)
             dr = cmd.ExecuteReader
-
+            '     GDF
             If dr.Read = True Then
                 labelerror1.Visible = False
                 Dim tdeqrcode As String = tdeqr.Text
