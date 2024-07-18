@@ -41,8 +41,9 @@ Partial Class sub_FRAME
         Me.QRCheckerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.StockMonitoringToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.QRIdentifierToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TrackCMLToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -162,7 +163,7 @@ Partial Class sub_FRAME
         '
         'QRCheckerToolStripMenuItem
         '
-        Me.QRCheckerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.QRCheckerToolStripMenuItem1, Me.StockMonitoringToolStripMenuItem})
+        Me.QRCheckerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.QRCheckerToolStripMenuItem1, Me.StockMonitoringToolStripMenuItem, Me.TrackCMLToolStripMenuItem})
         Me.QRCheckerToolStripMenuItem.Image = CType(resources.GetObject("QRCheckerToolStripMenuItem.Image"), System.Drawing.Image)
         Me.QRCheckerToolStripMenuItem.Name = "QRCheckerToolStripMenuItem"
         Me.QRCheckerToolStripMenuItem.Size = New System.Drawing.Size(115, 37)
@@ -190,6 +191,12 @@ Partial Class sub_FRAME
         Me.ManageToolStripMenuItem.Size = New System.Drawing.Size(99, 37)
         Me.ManageToolStripMenuItem.Text = "Manage"
         '
+        'QRIdentifierToolStripMenuItem
+        '
+        Me.QRIdentifierToolStripMenuItem.Name = "QRIdentifierToolStripMenuItem"
+        Me.QRIdentifierToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.QRIdentifierToolStripMenuItem.Text = "QR Identifier"
+        '
         'Panel1
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -198,11 +205,11 @@ Partial Class sub_FRAME
         Me.Panel1.Size = New System.Drawing.Size(1208, 636)
         Me.Panel1.TabIndex = 12
         '
-        'QRIdentifierToolStripMenuItem
+        'TrackCMLToolStripMenuItem
         '
-        Me.QRIdentifierToolStripMenuItem.Name = "QRIdentifierToolStripMenuItem"
-        Me.QRIdentifierToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.QRIdentifierToolStripMenuItem.Text = "QR Identifier"
+        Me.TrackCMLToolStripMenuItem.Name = "TrackCMLToolStripMenuItem"
+        Me.TrackCMLToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.TrackCMLToolStripMenuItem.Text = "Track CML"
         '
         'sub_FRAME
         '
@@ -241,4 +248,5 @@ Partial Class sub_FRAME
     Friend WithEvents InnerTagToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CMLToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QRIdentifierToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TrackCMLToolStripMenuItem As ToolStripMenuItem
 End Class

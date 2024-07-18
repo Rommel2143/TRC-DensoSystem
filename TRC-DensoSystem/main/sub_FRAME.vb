@@ -48,9 +48,6 @@ Public Class sub_FRAME
         display_formscan(INFG)
     End Sub
 
-    Private Sub MixedPalletToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        display_formscan(mixed_pallet)
-    End Sub
 
     Private Sub FGToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FGToolStripMenuItem.Click
 
@@ -65,10 +62,18 @@ Public Class sub_FRAME
     End Sub
 
     Private Sub CMLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CMLToolStripMenuItem.Click
-
+        display_formscan(dmtn_cml)
     End Sub
 
     Private Sub QRIdentifierToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QRIdentifierToolStripMenuItem.Click
         display_formscan(QR_identifier)
+    End Sub
+
+    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
+
+    End Sub
+
+    Private Sub TrackCMLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TrackCMLToolStripMenuItem.Click
+        display_formscan(cml_track)
     End Sub
 End Class

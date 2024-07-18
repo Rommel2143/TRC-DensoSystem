@@ -123,9 +123,9 @@ Partial Class dmtn_inner_tag
         Me.Label10.ForeColor = System.Drawing.Color.White
         Me.Label10.Location = New System.Drawing.Point(0, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(130, 21)
+        Me.Label10.Size = New System.Drawing.Size(148, 21)
         Me.Label10.TabIndex = 204
-        Me.Label10.Text = "DMTN-Inner Tag"
+        Me.Label10.Text = "Inner Tag to DMTN"
         '
         'txtdate
         '
@@ -316,9 +316,9 @@ Partial Class dmtn_inner_tag
         Me.lbl_qty.ForeColor = System.Drawing.Color.Gray
         Me.lbl_qty.Location = New System.Drawing.Point(579, 524)
         Me.lbl_qty.Name = "lbl_qty"
-        Me.lbl_qty.Size = New System.Drawing.Size(18, 17)
+        Me.lbl_qty.Size = New System.Drawing.Size(15, 17)
         Me.lbl_qty.TabIndex = 215
-        Me.lbl_qty.Text = "--"
+        Me.lbl_qty.Text = "0"
         '
         'Label3
         '
@@ -340,9 +340,9 @@ Partial Class dmtn_inner_tag
         Me.lbl_count.ForeColor = System.Drawing.Color.Gray
         Me.lbl_count.Location = New System.Drawing.Point(579, 502)
         Me.lbl_count.Name = "lbl_count"
-        Me.lbl_count.Size = New System.Drawing.Size(18, 17)
+        Me.lbl_count.Size = New System.Drawing.Size(15, 17)
         Me.lbl_count.TabIndex = 213
-        Me.lbl_count.Text = "--"
+        Me.lbl_count.Text = "0"
         '
         'Label8
         '
@@ -380,6 +380,7 @@ Partial Class dmtn_inner_tag
         Me.txtqr_fg.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtqr_fg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtqr_fg.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtqr_fg.Enabled = False
         Me.txtqr_fg.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtqr_fg.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtqr_fg.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))

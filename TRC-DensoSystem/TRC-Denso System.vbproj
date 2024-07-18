@@ -197,10 +197,10 @@
     <Compile Include="manage\QR_identifier.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mixed_pallet\mixed_pallet.Designer.vb">
-      <DependentUpon>mixed_pallet.vb</DependentUpon>
+    <Compile Include="monitoring\cml_track.Designer.vb">
+      <DependentUpon>cml_track.vb</DependentUpon>
     </Compile>
-    <Compile Include="mixed_pallet\mixed_pallet.vb">
+    <Compile Include="monitoring\cml_track.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="monitoring\FG_monitoring.Designer.vb">
@@ -229,12 +229,6 @@
       <DependentUpon>Register_PC.vb</DependentUpon>
     </Compile>
     <Compile Include="main\Register_PC.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DMTN\OUT_DMTN.Designer.vb">
-      <DependentUpon>OUT_DMTN.vb</DependentUpon>
-    </Compile>
-    <Compile Include="DMTN\OUT_DMTN.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -272,8 +266,8 @@
     <EmbeddedResource Include="manage\QR_identifier.resx">
       <DependentUpon>QR_identifier.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mixed_pallet\mixed_pallet.resx">
-      <DependentUpon>mixed_pallet.vb</DependentUpon>
+    <EmbeddedResource Include="monitoring\cml_track.resx">
+      <DependentUpon>cml_track.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="monitoring\FG_monitoring.resx">
       <DependentUpon>FG_monitoring.vb</DependentUpon>
@@ -286,9 +280,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="main\Register_PC.resx">
       <DependentUpon>Register_PC.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DMTN\OUT_DMTN.resx">
-      <DependentUpon>OUT_DMTN.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
