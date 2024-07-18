@@ -148,6 +148,12 @@
     <Compile Include="INFG\INFG.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="INFG\OUTFG_OTHER.Designer.vb">
+      <DependentUpon>OUTFG_OTHER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INFG\OUTFG_OTHER.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="INFG\OUTFG_TDE.Designer.vb">
       <DependentUpon>OUTFG_TDE.vb</DependentUpon>
     </Compile>
@@ -241,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="INFG\INFG.resx">
       <DependentUpon>INFG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INFG\OUTFG_OTHER.resx">
+      <DependentUpon>OUTFG_OTHER.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="INFG\OUTFG_TDE.resx">
       <DependentUpon>OUTFG_TDE.vb</DependentUpon>
