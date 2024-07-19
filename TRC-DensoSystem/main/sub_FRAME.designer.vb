@@ -41,8 +41,9 @@ Partial Class sub_FRAME
         Me.QRCheckerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.StockMonitoringToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ManageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.QRIdentifierToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.OTHERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -69,35 +70,35 @@ Partial Class sub_FRAME
         '
         Me.PARTSToolStripMenuItem.Image = CType(resources.GetObject("PARTSToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PARTSToolStripMenuItem.Name = "PARTSToolStripMenuItem"
-        Me.PARTSToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.PARTSToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PARTSToolStripMenuItem.Text = "IN"
         '
         'FGToolStripMenuItem
         '
-        Me.FGToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TDEToolStripMenuItem})
+        Me.FGToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TDEToolStripMenuItem, Me.OTHERToolStripMenuItem})
         Me.FGToolStripMenuItem.Image = CType(resources.GetObject("FGToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FGToolStripMenuItem.Name = "FGToolStripMenuItem"
-        Me.FGToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.FGToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.FGToolStripMenuItem.Text = "OUT"
         '
         'TDEToolStripMenuItem
         '
         Me.TDEToolStripMenuItem.Name = "TDEToolStripMenuItem"
-        Me.TDEToolStripMenuItem.Size = New System.Drawing.Size(101, 22)
+        Me.TDEToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.TDEToolStripMenuItem.Text = "TDE"
         '
         'RETURNToolStripMenuItem
         '
         Me.RETURNToolStripMenuItem.Image = CType(resources.GetObject("RETURNToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RETURNToolStripMenuItem.Name = "RETURNToolStripMenuItem"
-        Me.RETURNToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.RETURNToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RETURNToolStripMenuItem.Text = "RETURN"
         '
         'DMTNToolStripMenuItem
         '
         Me.DMTNToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InnerTagToolStripMenuItem, Me.CMLToolStripMenuItem})
         Me.DMTNToolStripMenuItem.Name = "DMTNToolStripMenuItem"
-        Me.DMTNToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.DMTNToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.DMTNToolStripMenuItem.Text = "DMTN"
         '
         'InnerTagToolStripMenuItem
@@ -190,6 +191,12 @@ Partial Class sub_FRAME
         Me.ManageToolStripMenuItem.Size = New System.Drawing.Size(99, 37)
         Me.ManageToolStripMenuItem.Text = "Manage"
         '
+        'QRIdentifierToolStripMenuItem
+        '
+        Me.QRIdentifierToolStripMenuItem.Name = "QRIdentifierToolStripMenuItem"
+        Me.QRIdentifierToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.QRIdentifierToolStripMenuItem.Text = "QR Identifier"
+        '
         'Panel1
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -198,11 +205,11 @@ Partial Class sub_FRAME
         Me.Panel1.Size = New System.Drawing.Size(1208, 636)
         Me.Panel1.TabIndex = 12
         '
-        'QRIdentifierToolStripMenuItem
+        'OTHERToolStripMenuItem
         '
-        Me.QRIdentifierToolStripMenuItem.Name = "QRIdentifierToolStripMenuItem"
-        Me.QRIdentifierToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.QRIdentifierToolStripMenuItem.Text = "QR Identifier"
+        Me.OTHERToolStripMenuItem.Name = "OTHERToolStripMenuItem"
+        Me.OTHERToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OTHERToolStripMenuItem.Text = "OTHER"
         '
         'sub_FRAME
         '
@@ -241,4 +248,5 @@ Partial Class sub_FRAME
     Friend WithEvents InnerTagToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CMLToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QRIdentifierToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OTHERToolStripMenuItem As ToolStripMenuItem
 End Class

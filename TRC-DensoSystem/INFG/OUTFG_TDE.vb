@@ -69,6 +69,7 @@ Public Class OUTFG_TDE
                             Dim x As String = dr("partno").ToString
                             Dim y As String = dr("customerno").ToString
                             If x = txtcode.Text And y = tdecustomer.Text Then
+
                                 labelerror1.Visible = False
                                 insertitem("Insert into `denso_temp` (`tdeqr`,`qr`,`partno`,`customerno`,`serial`,`qty`)
                                     values ('" & tdeqr.Text & "','" & txtqr.Text & "','" & txtcode.Text & "','" & tdecustomer.Text & "','" & tdeserial.Text & "','" & txtqty.Text & "')")
