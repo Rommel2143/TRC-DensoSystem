@@ -62,6 +62,7 @@ Partial Class dmtn_cml
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtdate = New System.Windows.Forms.Label()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         CType(Me.datagrid2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2GroupBox3.SuspendLayout()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,6 +71,7 @@ Partial Class dmtn_cml
         Me.labelerror.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel2.SuspendLayout()
+        Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'datagrid2
@@ -177,11 +179,11 @@ Partial Class dmtn_cml
         Me.Guna2GroupBox3.CustomBorderColor = System.Drawing.SystemColors.HotTrack
         Me.Guna2GroupBox3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox3.Location = New System.Drawing.Point(12, 59)
+        Me.Guna2GroupBox3.Location = New System.Drawing.Point(12, 17)
         Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
         Me.Guna2GroupBox3.Size = New System.Drawing.Size(629, 680)
         Me.Guna2GroupBox3.TabIndex = 221
-        Me.Guna2GroupBox3.Text = "DMTN"
+        Me.Guna2GroupBox3.Text = "STICKER LABEL"
         '
         'lbl_qty
         '
@@ -403,7 +405,7 @@ Partial Class dmtn_cml
         Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
         Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(563, 113)
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(563, 71)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
         Me.Guna2PictureBox1.Size = New System.Drawing.Size(218, 431)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -456,7 +458,7 @@ Partial Class dmtn_cml
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.HotTrack
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(707, 59)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(707, 17)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(629, 680)
         Me.Guna2GroupBox1.TabIndex = 222
@@ -533,16 +535,25 @@ Partial Class dmtn_cml
         Me.Guna2Panel2.Size = New System.Drawing.Size(1379, 20)
         Me.Guna2Panel2.TabIndex = 218
         '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox3)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox1)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2PictureBox1)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(14, 63)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1350, 714)
+        Me.Guna2Panel1.TabIndex = 223
+        '
         'dmtn_cml
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1379, 841)
-        Me.Controls.Add(Me.Guna2GroupBox3)
-        Me.Controls.Add(Me.Guna2GroupBox1)
+        Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.labelerror)
         Me.Controls.Add(Me.Guna2Panel2)
-        Me.Controls.Add(Me.Guna2PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "dmtn_cml"
         Me.Text = "dmtn_cml"
@@ -559,6 +570,7 @@ Partial Class dmtn_cml
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel2.ResumeLayout(False)
         Me.Guna2Panel2.PerformLayout()
+        Me.Guna2Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -594,4 +606,5 @@ Partial Class dmtn_cml
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
 End Class

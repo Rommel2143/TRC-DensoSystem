@@ -18,4 +18,16 @@
         End If
 
     End Sub
+
+    Private Sub datagrid1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid1.CellContentClick
+
+    End Sub
+
+    Private Sub datagrid1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid1.CellClick
+        reload("SELECT `innertag`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial`,`userin`, `datein` FROM `denso_dmtn_innertag` WHERE fglabel = '" & datagrid1.SelectedCells(0).Value.ToString() & "'", datagrid2)
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+
+    End Sub
 End Class

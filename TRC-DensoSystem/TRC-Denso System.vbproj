@@ -51,6 +51,10 @@
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>packages\BouncyCastle.Cryptography.2.3.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Google.Protobuf, Version=3.26.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>packages\Google.Protobuf.3.26.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -106,6 +110,7 @@
     </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -136,10 +141,24 @@
     <Compile Include="DMTN\dmtn_cml.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DMTN\dmtn_DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dmtn_DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DMTN\dmtn_DataSet1.vb">
+      <DependentUpon>dmtn_DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DMTN\dmtn_inner_tag.Designer.vb">
       <DependentUpon>dmtn_inner_tag.vb</DependentUpon>
     </Compile>
     <Compile Include="DMTN\dmtn_inner_tag.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DMTN\export_dmtn.Designer.vb">
+      <DependentUpon>export_dmtn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DMTN\export_dmtn.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="INFG\INFG.designer.vb">
@@ -203,10 +222,10 @@
     <Compile Include="manage\QR_identifier.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="monitoring\cml_track.Designer.vb">
+    <Compile Include="DMTN\cml_track.Designer.vb">
       <DependentUpon>cml_track.vb</DependentUpon>
     </Compile>
-    <Compile Include="monitoring\cml_track.vb">
+    <Compile Include="DMTN\cml_track.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="monitoring\FG_monitoring.Designer.vb">
@@ -245,6 +264,9 @@
     <EmbeddedResource Include="DMTN\dmtn_inner_tag.resx">
       <DependentUpon>dmtn_inner_tag.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DMTN\export_dmtn.resx">
+      <DependentUpon>export_dmtn.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="INFG\INFG.resx">
       <DependentUpon>INFG.vb</DependentUpon>
     </EmbeddedResource>
@@ -275,7 +297,7 @@
     <EmbeddedResource Include="manage\QR_identifier.resx">
       <DependentUpon>QR_identifier.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="monitoring\cml_track.resx">
+    <EmbeddedResource Include="DMTN\cml_track.resx">
       <DependentUpon>cml_track.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="monitoring\FG_monitoring.resx">
@@ -292,6 +314,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DMTN\dmtn_DataSet1.xsc">
+      <DependentUpon>dmtn_DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DMTN\dmtn_DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dmtn_DataSet1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DMTN\dmtn_DataSet1.xss">
+      <DependentUpon>dmtn_DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

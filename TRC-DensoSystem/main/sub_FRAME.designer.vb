@@ -28,7 +28,6 @@ Partial Class sub_FRAME
         Me.PARTSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TDEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RETURNToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DMTNToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InnerTagToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CMLToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -43,7 +42,7 @@ Partial Class sub_FRAME
         Me.ManageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QRIdentifierToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TrackCMLToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MONITORINGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -60,7 +59,7 @@ Partial Class sub_FRAME
         '
         'MasterlistToolStripMenuItem
         '
-        Me.MasterlistToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PARTSToolStripMenuItem, Me.FGToolStripMenuItem, Me.RETURNToolStripMenuItem, Me.DMTNToolStripMenuItem})
+        Me.MasterlistToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PARTSToolStripMenuItem, Me.FGToolStripMenuItem, Me.DMTNToolStripMenuItem})
         Me.MasterlistToolStripMenuItem.Image = CType(resources.GetObject("MasterlistToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MasterlistToolStripMenuItem.Name = "MasterlistToolStripMenuItem"
         Me.MasterlistToolStripMenuItem.Size = New System.Drawing.Size(56, 37)
@@ -70,7 +69,7 @@ Partial Class sub_FRAME
         '
         Me.PARTSToolStripMenuItem.Image = CType(resources.GetObject("PARTSToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PARTSToolStripMenuItem.Name = "PARTSToolStripMenuItem"
-        Me.PARTSToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.PARTSToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.PARTSToolStripMenuItem.Text = "IN"
         '
         'FGToolStripMenuItem
@@ -78,7 +77,7 @@ Partial Class sub_FRAME
         Me.FGToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TDEToolStripMenuItem})
         Me.FGToolStripMenuItem.Image = CType(resources.GetObject("FGToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FGToolStripMenuItem.Name = "FGToolStripMenuItem"
-        Me.FGToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.FGToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.FGToolStripMenuItem.Text = "OUT"
         '
         'TDEToolStripMenuItem
@@ -87,31 +86,30 @@ Partial Class sub_FRAME
         Me.TDEToolStripMenuItem.Size = New System.Drawing.Size(101, 22)
         Me.TDEToolStripMenuItem.Text = "TDE"
         '
-        'RETURNToolStripMenuItem
-        '
-        Me.RETURNToolStripMenuItem.Image = CType(resources.GetObject("RETURNToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.RETURNToolStripMenuItem.Name = "RETURNToolStripMenuItem"
-        Me.RETURNToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
-        Me.RETURNToolStripMenuItem.Text = "RETURN"
-        '
         'DMTNToolStripMenuItem
         '
-        Me.DMTNToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InnerTagToolStripMenuItem, Me.CMLToolStripMenuItem})
+        Me.DMTNToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InnerTagToolStripMenuItem, Me.CMLToolStripMenuItem, Me.MONITORINGToolStripMenuItem})
+        Me.DMTNToolStripMenuItem.Image = CType(resources.GetObject("DMTNToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.DMTNToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DMTNToolStripMenuItem.Name = "DMTNToolStripMenuItem"
-        Me.DMTNToolStripMenuItem.Size = New System.Drawing.Size(129, 22)
+        Me.DMTNToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.DMTNToolStripMenuItem.Text = "DMTN"
         '
         'InnerTagToolStripMenuItem
         '
+        Me.InnerTagToolStripMenuItem.Image = CType(resources.GetObject("InnerTagToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.InnerTagToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.InnerTagToolStripMenuItem.Name = "InnerTagToolStripMenuItem"
-        Me.InnerTagToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
-        Me.InnerTagToolStripMenuItem.Text = "Inner Tag to DMTN"
+        Me.InnerTagToolStripMenuItem.Size = New System.Drawing.Size(223, 38)
+        Me.InnerTagToolStripMenuItem.Text = "Inner Tag to LABEL"
         '
         'CMLToolStripMenuItem
         '
+        Me.CMLToolStripMenuItem.Image = CType(resources.GetObject("CMLToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CMLToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CMLToolStripMenuItem.Name = "CMLToolStripMenuItem"
-        Me.CMLToolStripMenuItem.Size = New System.Drawing.Size(207, 22)
-        Me.CMLToolStripMenuItem.Text = "DMTN to CML"
+        Me.CMLToolStripMenuItem.Size = New System.Drawing.Size(223, 38)
+        Me.CMLToolStripMenuItem.Text = "LABEL to CML"
         '
         'userstrip
         '
@@ -163,7 +161,7 @@ Partial Class sub_FRAME
         '
         'QRCheckerToolStripMenuItem
         '
-        Me.QRCheckerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.QRCheckerToolStripMenuItem1, Me.StockMonitoringToolStripMenuItem, Me.TrackCMLToolStripMenuItem})
+        Me.QRCheckerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.QRCheckerToolStripMenuItem1, Me.StockMonitoringToolStripMenuItem})
         Me.QRCheckerToolStripMenuItem.Image = CType(resources.GetObject("QRCheckerToolStripMenuItem.Image"), System.Drawing.Image)
         Me.QRCheckerToolStripMenuItem.Name = "QRCheckerToolStripMenuItem"
         Me.QRCheckerToolStripMenuItem.Size = New System.Drawing.Size(115, 37)
@@ -194,7 +192,7 @@ Partial Class sub_FRAME
         'QRIdentifierToolStripMenuItem
         '
         Me.QRIdentifierToolStripMenuItem.Name = "QRIdentifierToolStripMenuItem"
-        Me.QRIdentifierToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.QRIdentifierToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.QRIdentifierToolStripMenuItem.Text = "QR Identifier"
         '
         'Panel1
@@ -205,11 +203,13 @@ Partial Class sub_FRAME
         Me.Panel1.Size = New System.Drawing.Size(1208, 636)
         Me.Panel1.TabIndex = 12
         '
-        'TrackCMLToolStripMenuItem
+        'MONITORINGToolStripMenuItem
         '
-        Me.TrackCMLToolStripMenuItem.Name = "TrackCMLToolStripMenuItem"
-        Me.TrackCMLToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.TrackCMLToolStripMenuItem.Text = "Track CML"
+        Me.MONITORINGToolStripMenuItem.Image = CType(resources.GetObject("MONITORINGToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.MONITORINGToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.MONITORINGToolStripMenuItem.Name = "MONITORINGToolStripMenuItem"
+        Me.MONITORINGToolStripMenuItem.Size = New System.Drawing.Size(223, 38)
+        Me.MONITORINGToolStripMenuItem.Text = "MONITORING"
         '
         'sub_FRAME
         '
@@ -238,7 +238,6 @@ Partial Class sub_FRAME
     Friend WithEvents SuggestToImproveToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel1 As Panel
     Friend WithEvents DeviceInfoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RETURNToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QRCheckerToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QRCheckerToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents StockMonitoringToolStripMenuItem As ToolStripMenuItem
@@ -248,5 +247,5 @@ Partial Class sub_FRAME
     Friend WithEvents InnerTagToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CMLToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QRIdentifierToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TrackCMLToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MONITORINGToolStripMenuItem As ToolStripMenuItem
 End Class

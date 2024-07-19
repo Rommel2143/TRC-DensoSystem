@@ -73,7 +73,15 @@ Public Class sub_FRAME
 
     End Sub
 
-    Private Sub TrackCMLToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TrackCMLToolStripMenuItem.Click
+    Private Sub TrackCMLToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub QRCheckerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QRCheckerToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub MONITORINGToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MONITORINGToolStripMenuItem.Click
         display_formscan(cml_track)
     End Sub
 End Class

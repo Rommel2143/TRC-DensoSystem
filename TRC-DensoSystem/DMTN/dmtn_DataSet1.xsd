@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dmtn_DataSet1" targetNamespace="http://tempuri.org/dmtn_DataSet1.xsd" xmlns:mstns="http://tempuri.org/dmtn_DataSet1.xsd" xmlns="http://tempuri.org/dmtn_DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dmtn_DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dmtn_DataSet1" msprop:Generator_UserDSName="dmtn_DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="denso_dmtn_innertag" msprop:Generator_TableClassName="denso_dmtn_innertagDataTable" msprop:Generator_TableVarName="tabledenso_dmtn_innertag" msprop:Generator_TablePropName="denso_dmtn_innertag" msprop:Generator_RowDeletingName="denso_dmtn_innertagRowDeleting" msprop:Generator_RowChangingName="denso_dmtn_innertagRowChanging" msprop:Generator_RowEvHandlerName="denso_dmtn_innertagRowChangeEventHandler" msprop:Generator_RowDeletedName="denso_dmtn_innertagRowDeleted" msprop:Generator_UserTableName="denso_dmtn_innertag" msprop:Generator_RowChangedName="denso_dmtn_innertagRowChanged" msprop:Generator_RowEvArgName="denso_dmtn_innertagRowChangeEvent" msprop:Generator_RowClassName="denso_dmtn_innertagRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="innertag" msprop:Generator_ColumnVarNameInTable="columninnertag" msprop:Generator_ColumnPropNameInRow="innertag" msprop:Generator_ColumnPropNameInTable="innertagColumn" msprop:Generator_UserColumnName="innertag" type="xs:string" minOccurs="0" />
+              <xs:element name="partno" msprop:Generator_ColumnVarNameInTable="columnpartno" msprop:Generator_ColumnPropNameInRow="partno" msprop:Generator_ColumnPropNameInTable="partnoColumn" msprop:Generator_UserColumnName="partno" type="xs:string" minOccurs="0" />
+              <xs:element name="customerno" msprop:Generator_ColumnVarNameInTable="columncustomerno" msprop:Generator_ColumnPropNameInRow="customerno" msprop:Generator_ColumnPropNameInTable="customernoColumn" msprop:Generator_UserColumnName="customerno" type="xs:string" minOccurs="0" />
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:string" minOccurs="0" />
+              <xs:element name="serial" msprop:Generator_ColumnVarNameInTable="columnserial" msprop:Generator_ColumnPropNameInRow="serial" msprop:Generator_ColumnPropNameInTable="serialColumn" msprop:Generator_UserColumnName="serial" type="xs:string" minOccurs="0" />
+              <xs:element name="fglabel" msprop:Generator_ColumnVarNameInTable="columnfglabel" msprop:Generator_ColumnPropNameInRow="fglabel" msprop:Generator_ColumnPropNameInTable="fglabelColumn" msprop:Generator_UserColumnName="fglabel" type="xs:string" minOccurs="0" />
+              <xs:element name="cmlserial" msprop:Generator_ColumnVarNameInTable="columncmlserial" msprop:Generator_ColumnPropNameInRow="cmlserial" msprop:Generator_ColumnPropNameInTable="cmlserialColumn" msprop:Generator_UserColumnName="cmlserial" type="xs:string" minOccurs="0" />
+              <xs:element name="userout" msprop:Generator_ColumnVarNameInTable="columnuserout" msprop:Generator_ColumnPropNameInRow="userout" msprop:Generator_ColumnPropNameInTable="useroutColumn" msprop:Generator_UserColumnName="userout" type="xs:string" minOccurs="0" />
+              <xs:element name="dateout" msprop:Generator_ColumnVarNameInTable="columndateout" msprop:Generator_ColumnPropNameInRow="dateout" msprop:Generator_ColumnPropNameInTable="dateoutColumn" msprop:Generator_UserColumnName="dateout" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
