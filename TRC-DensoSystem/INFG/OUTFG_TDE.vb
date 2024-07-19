@@ -3,7 +3,7 @@ Public Class OUTFG_TDE
     Private Sub OUTFG_TDE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         boxshift.Enabled = True
         txtdate.Text = datedb
-        sub_FRAME.userstrip.Text = fname
+        sub_mainframe.userstrip.Text = fname
         txtoperator.Text = fname
         '   delete("Delete FROM `denso_temp`")
 

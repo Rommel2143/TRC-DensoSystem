@@ -192,10 +192,10 @@
     <Compile Include="main\Mainframe.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main\sub_FRAME.designer.vb">
-      <DependentUpon>sub_FRAME.vb</DependentUpon>
+    <Compile Include="main\sub_mainframe.Designer.vb">
+      <DependentUpon>sub_mainframe.vb</DependentUpon>
     </Compile>
-    <Compile Include="main\sub_FRAME.vb">
+    <Compile Include="main\sub_mainframe.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="main\suggest_improvent.designer.vb">
@@ -282,8 +282,8 @@
     <EmbeddedResource Include="main\Mainframe.resx">
       <DependentUpon>Mainframe.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="main\sub_FRAME.resx">
-      <DependentUpon>sub_FRAME.vb</DependentUpon>
+    <EmbeddedResource Include="main\sub_mainframe.resx">
+      <DependentUpon>sub_mainframe.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main\suggest_improvent.resx">
       <DependentUpon>suggest_improvent.vb</DependentUpon>

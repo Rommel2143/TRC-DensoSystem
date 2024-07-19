@@ -4,7 +4,7 @@ Public Class INFG
     Private Sub INFG_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         boxshift.Enabled = True
         txtdate.Text = datedb
-        sub_FRAME.userstrip.Text = fname
+        sub_mainframe.userstrip.Text = fname
         txtoperator.Text = fname
     End Sub
     Private Sub boxshift_SelectedIndexChanged(sender As Object, e As EventArgs) Handles boxshift.SelectedIndexChanged

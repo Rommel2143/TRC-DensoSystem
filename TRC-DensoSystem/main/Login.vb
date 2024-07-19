@@ -64,9 +64,9 @@ Public Class Login
                                 fname = dr("fullname").ToString()
                                 idno = dr("IDno").ToString()
 
-                                display_form(sub_FRAME)
-                                sub_FRAME.userstrip.Text = fname
-                                labelerror.Visible = False
+                            display_form(sub_mainframe)
+                            sub_mainframe.userstrip.Text = fname
+                            labelerror.Visible = False
                             Else
                                 noid()
                             End If

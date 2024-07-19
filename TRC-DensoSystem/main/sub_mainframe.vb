@@ -1,5 +1,5 @@
 ﻿Imports System
-Public Class sub_FRAME
+Public Class sub_mainframe
 
     Private Sub Scan_Frame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         userstrip.Text = fname
@@ -18,25 +18,21 @@ Public Class sub_FRAME
     End Sub
 
 
-    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
-        con.Close()
-        Application.Exit()
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogoutToolStripMenuItem.Click
-        display_form(Login)
-        Login.txtbarcode.Clear()
+    Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
-    Private Sub DeviceInfoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeviceInfoToolStripMenuItem.Click
-        MessageBox.Show($"Device loc: {PClocation}   /  Mac: {PCmac}   /  Device: {PCname}", "This Device is Registered", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    Private Sub DeviceInfoToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
 
-    Private Sub SuggestToImproveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SuggestToImproveToolStripMenuItem.Click
-        suggest_improvent.Show()
-        suggest_improvent.BringToFront()
+    Private Sub SuggestToImproveToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub ManageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageToolStripMenuItem.Click
@@ -69,24 +65,42 @@ Public Class sub_FRAME
         display_formscan(QR_identifier)
     End Sub
 
-<<<<<<< HEAD
+
     Private Sub OTHERToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OTHERToolStripMenuItem.Click
         display_formscan(OUTFG_OTHER)
-=======
+    End Sub
     Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
 
     End Sub
 
-    Private Sub TrackCMLToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
-    End Sub
-
-    Private Sub QRCheckerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QRCheckerToolStripMenuItem.Click
-
-    End Sub
 
     Private Sub MONITORINGToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MONITORINGToolStripMenuItem.Click
         display_formscan(cml_track)
->>>>>>> 9b77771674d49695a116ee829e8d46645ab2eea6
+
+    End Sub
+
+    Private Sub userstrip_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        display_form(Login)
+        Login.txtbarcode.Clear()
+    End Sub
+
+    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem5.Click
+        MessageBox.Show($"Device loc: {PClocation}   /  Mac: {PCmac}   /  Device: {PCname}", "This Device is Registered", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
+        con.Close()
+        Application.Exit()
+
+    End Sub
+
+    Private Sub ToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem4.Click
+        suggest_improvent.Show()
+        suggest_improvent.BringToFront()
     End Sub
 End Class
