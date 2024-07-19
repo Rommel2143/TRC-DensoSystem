@@ -45,12 +45,12 @@ Public Class dmtn_inner_tag
                 Dim day As Integer = Integer.Parse(productionDateRaw.Substring(4, 2))
                 Dim productionDateDateTime As New DateTime(2000 + year, month, day)
                 prod = productionDateDateTime.ToString("yyyy-MM-dd")
-
-
                 Return True
 
             Else
                 showerror("No Qrtype Detected! Please Register first")
+                txtqr.Clear()
+                txtqr.Focus()
                 Return False
             End If
 
@@ -121,6 +121,7 @@ Public Class dmtn_inner_tag
     Private Sub txtqr_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr.KeyDown
         If e.KeyCode = Keys.Enter Then
             Try
+
                 con.Close()
                 con.Open()
                 Dim cmdselect As New MySqlCommand("SELECT innertag, userin, datein FROM `denso_dmtn_innertag`
@@ -155,7 +156,7 @@ Public Class dmtn_inner_tag
                 con.Close()
                 con.Open()
                 Dim cmdselect As New MySqlCommand("SELECT dmtn, userin, datein FROM `denso_dmtn`
-                                                WHERE dmtn = '" & txtqr.Text & "'", con)
+                                                WHERE dmtn = '" & txtqr_fg.Text & "'", con)
                 dr = cmdselect.ExecuteReader()
                 If dr.Read = True Then
                     'duplicate
@@ -165,20 +166,28 @@ Public Class dmtn_inner_tag
                     If processQRcode("DMTN", txtqr_fg) Then
                         'saveqr
                         Dim partno_inner As String = datagrid1.Rows(0).Cells(1).Value.ToString()
+
                         If partno_inner.Replace("-", "") = partno Then
-                            saveqr()
-                            labelerror.Visible = False
+                            If lbl_qty.Text = qty Then
+                                saveqr()
+                                labelerror.Visible = False
+                                txtqr_fg.Clear()
+                                txtqr_fg.Enabled = False
+                                txtqr.Enabled = True
+                                txtqr.Clear()
+                                txtqr.Focus()
+                            Else
+                                showerror("QTY does'nt match the given Inner Tags!")
+                            End If
 
                         Else
-                            showerror("QR does'nt match the given Inner Tag!")
+                            showerror("QR does'nt match the given Inner Tags!")
 
                         End If
+                        End If
                     End If
-                End If
-                txtqr_fg.Clear()
-                    txtqr.Clear()
-                    txtqr.Focus()
-                     Catch ex As MySqlException
+
+            Catch ex As MySqlException
                 MessageBox.Show(ex.Message)
             Finally
                 con.Close()
@@ -234,8 +243,8 @@ Public Class dmtn_inner_tag
             con.Close()
             con.Open()
 
-            Dim cmdinsertdmtn As New MySqlCommand("INSERT INTO denso_dmtn (dmtn, partno, qty, customerno, color, proddate, shift, process, line, serial) " &
-                                      "VALUES (@dmtn, @partno, @qty, @customerno, @color, @proddate, @shift, @process, @line, @serial)", con)
+            Dim cmdinsertdmtn As New MySqlCommand("INSERT INTO denso_dmtn (dmtn, partno, qty, customerno, color, proddate, shift, process, line, serial,userin, datein) " &
+                                      "VALUES (@dmtn, @partno, @qty, @customerno, @color, @proddate, @shift, @process, @line, @serial, @userin, @datein)", con)
             With cmdinsertdmtn.Parameters
                 .AddWithValue("@dmtn", txtqr_fg.Text)
                 .AddWithValue("@partno", partno)
@@ -247,6 +256,8 @@ Public Class dmtn_inner_tag
                 .AddWithValue("@process", process)
                 .AddWithValue("@line", line)
                 .AddWithValue("@serial", series)
+                .AddWithValue("@userin", idno)
+                .AddWithValue("@datein", datedb)
             End With
             cmdinsertdmtn.ExecuteNonQuery()
             reload("SELECT `dmtn`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial` FROM `denso_dmtn`", datagrid2)
@@ -290,5 +301,20 @@ Public Class dmtn_inner_tag
 
     Private Sub txtqr_TextChanged(sender As Object, e As EventArgs) Handles txtqr.TextChanged
 
+    End Sub
+
+    Private Sub lbl_count_Click(sender As Object, e As EventArgs) Handles lbl_count.Click
+
+    End Sub
+
+    Private Sub lbl_count_TextChanged(sender As Object, e As EventArgs) Handles lbl_count.TextChanged
+        If lbl_count.Text = "8" Then
+            txtqr_fg.Enabled = True
+            txtqr.Enabled = False
+
+        Else
+            txtqr_fg.Enabled = False
+            txtqr.Enabled = True
+        End If
     End Sub
 End Class

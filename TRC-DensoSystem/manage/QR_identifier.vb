@@ -176,8 +176,10 @@ Public Class QR_identifier
         Select Case cmb_type.Text
             Case "DMTN"
                 cmbselect = "DMTN"
-            Case " DMTN Inner Tag"
+            Case " DMTN-Inner Tag"
                 cmbselect = "DMTN-IT"
+            Case "DMTN-CML"
+                cmbselect = "DMTN-CML"
             Case "INTELLI IV"
                 cmbselect = "INT4"
             Case "TDE"
