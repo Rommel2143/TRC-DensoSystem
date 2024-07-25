@@ -173,7 +173,7 @@ Public Class INFG
             labelerror2.Visible = False
             con.Close()
             con.Open()
-            Dim cmd1 As New MySqlCommand("Select * FROM `denso_fg_masterlist` where `partno` = '" & txtcode.Text & "' and `qrtype`='" & boxtype.Text & "'", con)
+            Dim cmd1 As New MySqlCommand("Select * FROM `denso_fg_masterlist` where `partno` = '" & txtcode.Text & "' and `qrtype`='" & boxtype.Text & "' and `color`='" & txtcolor.Text & "'", con)
             dr = cmd1.ExecuteReader
             If dr.Read = True Then
                 labelerror1.Visible = False
@@ -181,14 +181,16 @@ Public Class INFG
                 txtmodel.Text = (dr.GetString("model"))
                 txtname.Text = (dr.GetString("partname"))
                 txthide1.Text = (dr.GetInt32("qty"))
-                txthide2.Text = (dr.GetString("color"))
+                ' txthide2.Text = (dr.GetString("color"))
                 Dim x As Integer
                 x = Val(txthide1.Text)
                 con.Close()
-                updates("Update `denso_fg_masterlist` set `qty`='" & Val(txtqty.Text) + x & "' where `partno` = '" & txtcode.Text & "' and `qrtype`='" & boxtype.Text & "' and `customerno`='" & txtcustomer.Text & "'and `color`='" & txthide2.Text & "'")
+                updates("Update `denso_fg_masterlist` set `qty`='" & Val(txtqty.Text) + x & "' where `partno` = '" & txtcode.Text & "' and `qrtype`='" & boxtype.Text & "' and `color`='" & txtcolor.Text & "'")
+                '  updates("Update `denso_fg_masterlist` set `qty`='" & Val(txtqty.Text) + x & "' where `partno` = '" & txtcode.Text & "' and `qrtype`='" & boxtype.Text & "' and `customerno`='" & txtcustomer.Text & "'and `color`='" & txtcolor.Text & "'")
                 con.Close()
                 insertitem("Insert into `denso_fg_scan` (`status`,`datein`,`shift`,`operator`,`type`,`qrcode`,`partno`,`customerno`,`model`,`color`,`quantity`,`lotnumber`,`proddate`,`serial`,`qrtde`)
                                     values ('" & txthide.Text & "','" & datedb & "','" & boxshift.Text & "','" & txtoperator.Text & "','" & boxtype.Text & "','" & txtqr.Text & "','" & txtcode.Text & "','" & txtcustomer.Text & "','" & txtmodel.Text & "','" & txtcolor.Text & "','" & txtqty.Text & "','" & txtlot.Text & "','" & ddate & "','" & tdeserial.Text & "','" & tdeqr.Text & "')")
+                txtqty.Text = Nothing
             Else
                 labelerror1.Visible = True
 
