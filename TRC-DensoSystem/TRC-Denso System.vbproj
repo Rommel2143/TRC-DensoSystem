@@ -185,6 +185,12 @@
     <Compile Include="INFG\OUTFG_TDE.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="INFG\REPORT_TDE.Designer.vb">
+      <DependentUpon>REPORT_TDE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INFG\REPORT_TDE.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="main\Login.designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -285,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="INFG\OUTFG_TDE.resx">
       <DependentUpon>OUTFG_TDE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INFG\REPORT_TDE.resx">
+      <DependentUpon>REPORT_TDE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
