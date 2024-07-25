@@ -25,7 +25,9 @@ Option Explicit On
 Partial Public Class dmtn_DataSet1
     Inherits Global.System.Data.DataSet
     
-    Private tabledenso_dmtn_innertag As denso_dmtn_innertagDataTable
+    Private tabledenso_dmtn As denso_dmtnDataTable
+    
+    Private tabledenso_fg_scan As denso_fg_scanDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +58,11 @@ Partial Public Class dmtn_DataSet1
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("denso_dmtn_innertag")) Is Nothing) Then
-                MyBase.Tables.Add(New denso_dmtn_innertagDataTable(ds.Tables("denso_dmtn_innertag")))
+            If (Not (ds.Tables("denso_dmtn")) Is Nothing) Then
+                MyBase.Tables.Add(New denso_dmtnDataTable(ds.Tables("denso_dmtn")))
+            End If
+            If (Not (ds.Tables("denso_fg_scan")) Is Nothing) Then
+                MyBase.Tables.Add(New denso_fg_scanDataTable(ds.Tables("denso_fg_scan")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +85,19 @@ Partial Public Class dmtn_DataSet1
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property denso_dmtn_innertag() As denso_dmtn_innertagDataTable
+    Public ReadOnly Property denso_dmtn() As denso_dmtnDataTable
         Get
-            Return Me.tabledenso_dmtn_innertag
+            Return Me.tabledenso_dmtn
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property denso_fg_scan() As denso_fg_scanDataTable
+        Get
+            Return Me.tabledenso_fg_scan
         End Get
     End Property
     
@@ -153,8 +168,11 @@ Partial Public Class dmtn_DataSet1
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("denso_dmtn_innertag")) Is Nothing) Then
-                MyBase.Tables.Add(New denso_dmtn_innertagDataTable(ds.Tables("denso_dmtn_innertag")))
+            If (Not (ds.Tables("denso_dmtn")) Is Nothing) Then
+                MyBase.Tables.Add(New denso_dmtnDataTable(ds.Tables("denso_dmtn")))
+            End If
+            If (Not (ds.Tables("denso_fg_scan")) Is Nothing) Then
+                MyBase.Tables.Add(New denso_fg_scanDataTable(ds.Tables("denso_fg_scan")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +206,16 @@ Partial Public Class dmtn_DataSet1
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tabledenso_dmtn_innertag = CType(MyBase.Tables("denso_dmtn_innertag"),denso_dmtn_innertagDataTable)
+        Me.tabledenso_dmtn = CType(MyBase.Tables("denso_dmtn"),denso_dmtnDataTable)
         If (initTable = true) Then
-            If (Not (Me.tabledenso_dmtn_innertag) Is Nothing) Then
-                Me.tabledenso_dmtn_innertag.InitVars
+            If (Not (Me.tabledenso_dmtn) Is Nothing) Then
+                Me.tabledenso_dmtn.InitVars
+            End If
+        End If
+        Me.tabledenso_fg_scan = CType(MyBase.Tables("denso_fg_scan"),denso_fg_scanDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tabledenso_fg_scan) Is Nothing) Then
+                Me.tabledenso_fg_scan.InitVars
             End If
         End If
     End Sub
@@ -204,13 +228,21 @@ Partial Public Class dmtn_DataSet1
         Me.Namespace = "http://tempuri.org/dmtn_DataSet1.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tabledenso_dmtn_innertag = New denso_dmtn_innertagDataTable()
-        MyBase.Tables.Add(Me.tabledenso_dmtn_innertag)
+        Me.tabledenso_dmtn = New denso_dmtnDataTable()
+        MyBase.Tables.Add(Me.tabledenso_dmtn)
+        Me.tabledenso_fg_scan = New denso_fg_scanDataTable()
+        MyBase.Tables.Add(Me.tabledenso_fg_scan)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Private Function ShouldSerializedenso_dmtn_innertag() As Boolean
+    Private Function ShouldSerializedenso_dmtn() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+    Private Function ShouldSerializedenso_fg_scan() As Boolean
         Return false
     End Function
     
@@ -273,39 +305,52 @@ Partial Public Class dmtn_DataSet1
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Delegate Sub denso_dmtn_innertagRowChangeEventHandler(ByVal sender As Object, ByVal e As denso_dmtn_innertagRowChangeEvent)
+    Public Delegate Sub denso_dmtnRowChangeEventHandler(ByVal sender As Object, ByVal e As denso_dmtnRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+    Public Delegate Sub denso_fg_scanRowChangeEventHandler(ByVal sender As Object, ByVal e As denso_fg_scanRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class denso_dmtn_innertagDataTable
-        Inherits Global.System.Data.TypedTableBase(Of denso_dmtn_innertagRow)
+    Partial Public Class denso_dmtnDataTable
+        Inherits Global.System.Data.TypedTableBase(Of denso_dmtnRow)
         
-        Private columninnertag As Global.System.Data.DataColumn
+        Private columnid As Global.System.Data.DataColumn
+        
+        Private columndmtn As Global.System.Data.DataColumn
         
         Private columnpartno As Global.System.Data.DataColumn
         
         Private columncustomerno As Global.System.Data.DataColumn
         
+        Private columnproddate As Global.System.Data.DataColumn
+        
         Private columnqty As Global.System.Data.DataColumn
         
-        Private columnserial As Global.System.Data.DataColumn
+        Private columnd_serial As Global.System.Data.DataColumn
         
-        Private columnfglabel As Global.System.Data.DataColumn
+        Private columncml As Global.System.Data.DataColumn
         
-        Private columncmlserial As Global.System.Data.DataColumn
+        Private columnc_serial As Global.System.Data.DataColumn
         
         Private columnuserout As Global.System.Data.DataColumn
         
         Private columndateout As Global.System.Data.DataColumn
         
+        Private columninnertag_serial As Global.System.Data.DataColumn
+        
+        Private columninnertag_proddate As Global.System.Data.DataColumn
+        
+        Private columninnertag_qty As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "denso_dmtn_innertag"
+            Me.TableName = "denso_dmtn"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -338,9 +383,17 @@ Partial Public Class dmtn_DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property innertagColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property idColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columninnertag
+                Return Me.columnid
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property dmtnColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndmtn
             End Get
         End Property
         
@@ -362,6 +415,14 @@ Partial Public Class dmtn_DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property proddateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnproddate
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property qtyColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnqty
@@ -370,25 +431,25 @@ Partial Public Class dmtn_DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property serialColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property d_serialColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnserial
+                Return Me.columnd_serial
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property fglabelColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property cmlColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnfglabel
+                Return Me.columncml
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property cmlserialColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property c_serialColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columncmlserial
+                Return Me.columnc_serial
             End Get
         End Property
         
@@ -409,6 +470,30 @@ Partial Public Class dmtn_DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property innertag_serialColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columninnertag_serial
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property innertag_proddateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columninnertag_proddate
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property innertag_qtyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columninnertag_qty
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -419,44 +504,50 @@ Partial Public Class dmtn_DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As denso_dmtn_innertagRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As denso_dmtnRow
             Get
-                Return CType(Me.Rows(index),denso_dmtn_innertagRow)
+                Return CType(Me.Rows(index),denso_dmtnRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event denso_dmtn_innertagRowChanging As denso_dmtn_innertagRowChangeEventHandler
+        Public Event denso_dmtnRowChanging As denso_dmtnRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event denso_dmtn_innertagRowChanged As denso_dmtn_innertagRowChangeEventHandler
+        Public Event denso_dmtnRowChanged As denso_dmtnRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event denso_dmtn_innertagRowDeleting As denso_dmtn_innertagRowChangeEventHandler
+        Public Event denso_dmtnRowDeleting As denso_dmtnRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event denso_dmtn_innertagRowDeleted As denso_dmtn_innertagRowChangeEventHandler
+        Public Event denso_dmtnRowDeleted As denso_dmtnRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Sub Adddenso_dmtn_innertagRow(ByVal row As denso_dmtn_innertagRow)
+        Public Overloads Sub Adddenso_dmtnRow(ByVal row As denso_dmtnRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function Adddenso_dmtn_innertagRow(ByVal innertag As String, ByVal partno As String, ByVal customerno As String, ByVal qty As String, ByVal serial As String, ByVal fglabel As String, ByVal cmlserial As String, ByVal userout As String, ByVal dateout As String) As denso_dmtn_innertagRow
-            Dim rowdenso_dmtn_innertagRow As denso_dmtn_innertagRow = CType(Me.NewRow,denso_dmtn_innertagRow)
-            Dim columnValuesArray() As Object = New Object() {innertag, partno, customerno, qty, serial, fglabel, cmlserial, userout, dateout}
-            rowdenso_dmtn_innertagRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowdenso_dmtn_innertagRow)
-            Return rowdenso_dmtn_innertagRow
+        Public Overloads Function Adddenso_dmtnRow(ByVal id As String, ByVal dmtn As String, ByVal partno As String, ByVal customerno As String, ByVal proddate As Date, ByVal qty As Integer, ByVal d_serial As String, ByVal cml As String, ByVal c_serial As String, ByVal userout As String, ByVal dateout As String, ByVal innertag_serial As String, ByVal innertag_proddate As Date, ByVal innertag_qty As Integer) As denso_dmtnRow
+            Dim rowdenso_dmtnRow As denso_dmtnRow = CType(Me.NewRow,denso_dmtnRow)
+            Dim columnValuesArray() As Object = New Object() {id, dmtn, partno, customerno, proddate, qty, d_serial, cml, c_serial, userout, dateout, innertag_serial, innertag_proddate, innertag_qty}
+            rowdenso_dmtnRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowdenso_dmtnRow)
+            Return rowdenso_dmtnRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function FindByid(ByVal id As String) As denso_dmtnRow
+            Return CType(Me.Rows.Find(New Object() {id}),denso_dmtnRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As denso_dmtn_innertagDataTable = CType(MyBase.Clone,denso_dmtn_innertagDataTable)
+            Dim cln As denso_dmtnDataTable = CType(MyBase.Clone,denso_dmtnDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -464,70 +555,88 @@ Partial Public Class dmtn_DataSet1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New denso_dmtn_innertagDataTable()
+            Return New denso_dmtnDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columninnertag = MyBase.Columns("innertag")
+            Me.columnid = MyBase.Columns("id")
+            Me.columndmtn = MyBase.Columns("dmtn")
             Me.columnpartno = MyBase.Columns("partno")
             Me.columncustomerno = MyBase.Columns("customerno")
+            Me.columnproddate = MyBase.Columns("proddate")
             Me.columnqty = MyBase.Columns("qty")
-            Me.columnserial = MyBase.Columns("serial")
-            Me.columnfglabel = MyBase.Columns("fglabel")
-            Me.columncmlserial = MyBase.Columns("cmlserial")
+            Me.columnd_serial = MyBase.Columns("d_serial")
+            Me.columncml = MyBase.Columns("cml")
+            Me.columnc_serial = MyBase.Columns("c_serial")
             Me.columnuserout = MyBase.Columns("userout")
             Me.columndateout = MyBase.Columns("dateout")
+            Me.columninnertag_serial = MyBase.Columns("innertag_serial")
+            Me.columninnertag_proddate = MyBase.Columns("innertag_proddate")
+            Me.columninnertag_qty = MyBase.Columns("innertag_qty")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitClass()
-            Me.columninnertag = New Global.System.Data.DataColumn("innertag", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columninnertag)
+            Me.columnid = New Global.System.Data.DataColumn("id", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid)
+            Me.columndmtn = New Global.System.Data.DataColumn("dmtn", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndmtn)
             Me.columnpartno = New Global.System.Data.DataColumn("partno", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnpartno)
             Me.columncustomerno = New Global.System.Data.DataColumn("customerno", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncustomerno)
-            Me.columnqty = New Global.System.Data.DataColumn("qty", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnproddate = New Global.System.Data.DataColumn("proddate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnproddate)
+            Me.columnqty = New Global.System.Data.DataColumn("qty", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnqty)
-            Me.columnserial = New Global.System.Data.DataColumn("serial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnserial)
-            Me.columnfglabel = New Global.System.Data.DataColumn("fglabel", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnfglabel)
-            Me.columncmlserial = New Global.System.Data.DataColumn("cmlserial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columncmlserial)
+            Me.columnd_serial = New Global.System.Data.DataColumn("d_serial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnd_serial)
+            Me.columncml = New Global.System.Data.DataColumn("cml", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncml)
+            Me.columnc_serial = New Global.System.Data.DataColumn("c_serial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnc_serial)
             Me.columnuserout = New Global.System.Data.DataColumn("userout", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnuserout)
             Me.columndateout = New Global.System.Data.DataColumn("dateout", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndateout)
+            Me.columninnertag_serial = New Global.System.Data.DataColumn("innertag_serial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columninnertag_serial)
+            Me.columninnertag_proddate = New Global.System.Data.DataColumn("innertag_proddate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columninnertag_proddate)
+            Me.columninnertag_qty = New Global.System.Data.DataColumn("innertag_qty", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columninnertag_qty)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
+            Me.columnid.AllowDBNull = false
+            Me.columnid.Unique = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function Newdenso_dmtn_innertagRow() As denso_dmtn_innertagRow
-            Return CType(Me.NewRow,denso_dmtn_innertagRow)
+        Public Function Newdenso_dmtnRow() As denso_dmtnRow
+            Return CType(Me.NewRow,denso_dmtnRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New denso_dmtn_innertagRow(builder)
+            Return New denso_dmtnRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(denso_dmtn_innertagRow)
+            Return GetType(denso_dmtnRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.denso_dmtn_innertagRowChangedEvent) Is Nothing) Then
-                RaiseEvent denso_dmtn_innertagRowChanged(Me, New denso_dmtn_innertagRowChangeEvent(CType(e.Row,denso_dmtn_innertagRow), e.Action))
+            If (Not (Me.denso_dmtnRowChangedEvent) Is Nothing) Then
+                RaiseEvent denso_dmtnRowChanged(Me, New denso_dmtnRowChangeEvent(CType(e.Row,denso_dmtnRow), e.Action))
             End If
         End Sub
         
@@ -535,8 +644,8 @@ Partial Public Class dmtn_DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.denso_dmtn_innertagRowChangingEvent) Is Nothing) Then
-                RaiseEvent denso_dmtn_innertagRowChanging(Me, New denso_dmtn_innertagRowChangeEvent(CType(e.Row,denso_dmtn_innertagRow), e.Action))
+            If (Not (Me.denso_dmtnRowChangingEvent) Is Nothing) Then
+                RaiseEvent denso_dmtnRowChanging(Me, New denso_dmtnRowChangeEvent(CType(e.Row,denso_dmtnRow), e.Action))
             End If
         End Sub
         
@@ -544,8 +653,8 @@ Partial Public Class dmtn_DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.denso_dmtn_innertagRowDeletedEvent) Is Nothing) Then
-                RaiseEvent denso_dmtn_innertagRowDeleted(Me, New denso_dmtn_innertagRowChangeEvent(CType(e.Row,denso_dmtn_innertagRow), e.Action))
+            If (Not (Me.denso_dmtnRowDeletedEvent) Is Nothing) Then
+                RaiseEvent denso_dmtnRowDeleted(Me, New denso_dmtnRowChangeEvent(CType(e.Row,denso_dmtnRow), e.Action))
             End If
         End Sub
         
@@ -553,14 +662,14 @@ Partial Public Class dmtn_DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.denso_dmtn_innertagRowDeletingEvent) Is Nothing) Then
-                RaiseEvent denso_dmtn_innertagRowDeleting(Me, New denso_dmtn_innertagRowChangeEvent(CType(e.Row,denso_dmtn_innertagRow), e.Action))
+            If (Not (Me.denso_dmtnRowDeletingEvent) Is Nothing) Then
+                RaiseEvent denso_dmtnRowDeleting(Me, New denso_dmtnRowChangeEvent(CType(e.Row,denso_dmtnRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub Removedenso_dmtn_innertagRow(ByVal row As denso_dmtn_innertagRow)
+        Public Sub Removedenso_dmtnRow(ByVal row As denso_dmtnRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -587,7 +696,376 @@ Partial Public Class dmtn_DataSet1
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "denso_dmtn_innertagDataTable"
+            attribute2.FixedValue = "denso_dmtnDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class denso_fg_scanDataTable
+        Inherits Global.System.Data.TypedTableBase(Of denso_fg_scanRow)
+        
+        Private columnid As Global.System.Data.DataColumn
+        
+        Private columntype As Global.System.Data.DataColumn
+        
+        Private columnpartno As Global.System.Data.DataColumn
+        
+        Private columncustomerno As Global.System.Data.DataColumn
+        
+        Private columnquantity As Global.System.Data.DataColumn
+        
+        Private columnlotnumber As Global.System.Data.DataColumn
+        
+        Private columnproddate As Global.System.Data.DataColumn
+        
+        Private columnserial As Global.System.Data.DataColumn
+        
+        Private columnqrtde As Global.System.Data.DataColumn
+        
+        Private columncml As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "denso_fg_scan"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property typeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntype
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property partnoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpartno
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property customernoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncustomerno
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property quantityColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnquantity
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property lotnumberColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnlotnumber
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property proddateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnproddate
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property serialColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnserial
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property qrtdeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnqrtde
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property cmlColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncml
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As denso_fg_scanRow
+            Get
+                Return CType(Me.Rows(index),denso_fg_scanRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event denso_fg_scanRowChanging As denso_fg_scanRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event denso_fg_scanRowChanged As denso_fg_scanRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event denso_fg_scanRowDeleting As denso_fg_scanRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Event denso_fg_scanRowDeleted As denso_fg_scanRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Overloads Sub Adddenso_fg_scanRow(ByVal row As denso_fg_scanRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Overloads Function Adddenso_fg_scanRow(ByVal id As String, ByVal type As String, ByVal partno As String, ByVal customerno As String, ByVal quantity As String, ByVal lotnumber As String, ByVal proddate As String, ByVal serial As String, ByVal qrtde As String, ByVal cml As String) As denso_fg_scanRow
+            Dim rowdenso_fg_scanRow As denso_fg_scanRow = CType(Me.NewRow,denso_fg_scanRow)
+            Dim columnValuesArray() As Object = New Object() {id, type, partno, customerno, quantity, lotnumber, proddate, serial, qrtde, cml}
+            rowdenso_fg_scanRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowdenso_fg_scanRow)
+            Return rowdenso_fg_scanRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As denso_fg_scanDataTable = CType(MyBase.Clone,denso_fg_scanDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New denso_fg_scanDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnid = MyBase.Columns("id")
+            Me.columntype = MyBase.Columns("type")
+            Me.columnpartno = MyBase.Columns("partno")
+            Me.columncustomerno = MyBase.Columns("customerno")
+            Me.columnquantity = MyBase.Columns("quantity")
+            Me.columnlotnumber = MyBase.Columns("lotnumber")
+            Me.columnproddate = MyBase.Columns("proddate")
+            Me.columnserial = MyBase.Columns("serial")
+            Me.columnqrtde = MyBase.Columns("qrtde")
+            Me.columncml = MyBase.Columns("cml")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnid = New Global.System.Data.DataColumn("id", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid)
+            Me.columntype = New Global.System.Data.DataColumn("type", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntype)
+            Me.columnpartno = New Global.System.Data.DataColumn("partno", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpartno)
+            Me.columncustomerno = New Global.System.Data.DataColumn("customerno", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncustomerno)
+            Me.columnquantity = New Global.System.Data.DataColumn("quantity", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnquantity)
+            Me.columnlotnumber = New Global.System.Data.DataColumn("lotnumber", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlotnumber)
+            Me.columnproddate = New Global.System.Data.DataColumn("proddate", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnproddate)
+            Me.columnserial = New Global.System.Data.DataColumn("serial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnserial)
+            Me.columnqrtde = New Global.System.Data.DataColumn("qrtde", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnqrtde)
+            Me.columncml = New Global.System.Data.DataColumn("cml", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncml)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Newdenso_fg_scanRow() As denso_fg_scanRow
+            Return CType(Me.NewRow,denso_fg_scanRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New denso_fg_scanRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(denso_fg_scanRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.denso_fg_scanRowChangedEvent) Is Nothing) Then
+                RaiseEvent denso_fg_scanRowChanged(Me, New denso_fg_scanRowChangeEvent(CType(e.Row,denso_fg_scanRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.denso_fg_scanRowChangingEvent) Is Nothing) Then
+                RaiseEvent denso_fg_scanRowChanging(Me, New denso_fg_scanRowChangeEvent(CType(e.Row,denso_fg_scanRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.denso_fg_scanRowDeletedEvent) Is Nothing) Then
+                RaiseEvent denso_fg_scanRowDeleted(Me, New denso_fg_scanRowChangeEvent(CType(e.Row,denso_fg_scanRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.denso_fg_scanRowDeletingEvent) Is Nothing) Then
+                RaiseEvent denso_fg_scanRowDeleting(Me, New denso_fg_scanRowChangeEvent(CType(e.Row,denso_fg_scanRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Removedenso_fg_scanRow(ByVal row As denso_fg_scanRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As dmtn_DataSet1 = New dmtn_DataSet1()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "denso_fg_scanDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -634,30 +1112,41 @@ Partial Public Class dmtn_DataSet1
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class denso_dmtn_innertagRow
+    Partial Public Class denso_dmtnRow
         Inherits Global.System.Data.DataRow
         
-        Private tabledenso_dmtn_innertag As denso_dmtn_innertagDataTable
+        Private tabledenso_dmtn As denso_dmtnDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tabledenso_dmtn_innertag = CType(Me.Table,denso_dmtn_innertagDataTable)
+            Me.tabledenso_dmtn = CType(Me.Table,denso_dmtnDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property innertag() As String
+        Public Property id() As String
+            Get
+                Return CType(Me(Me.tabledenso_dmtn.idColumn),String)
+            End Get
+            Set
+                Me(Me.tabledenso_dmtn.idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property dmtn() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabledenso_dmtn_innertag.innertagColumn),String)
+                    Return CType(Me(Me.tabledenso_dmtn.dmtnColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'innertag' in table 'denso_dmtn_innertag' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'dmtn' in table 'denso_dmtn' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabledenso_dmtn_innertag.innertagColumn) = value
+                Me(Me.tabledenso_dmtn.dmtnColumn) = value
             End Set
         End Property
         
@@ -666,13 +1155,13 @@ Partial Public Class dmtn_DataSet1
         Public Property partno() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabledenso_dmtn_innertag.partnoColumn),String)
+                    Return CType(Me(Me.tabledenso_dmtn.partnoColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'partno' in table 'denso_dmtn_innertag' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'partno' in table 'denso_dmtn' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabledenso_dmtn_innertag.partnoColumn) = value
+                Me(Me.tabledenso_dmtn.partnoColumn) = value
             End Set
         End Property
         
@@ -681,73 +1170,88 @@ Partial Public Class dmtn_DataSet1
         Public Property customerno() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabledenso_dmtn_innertag.customernoColumn),String)
+                    Return CType(Me(Me.tabledenso_dmtn.customernoColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'customerno' in table 'denso_dmtn_innertag' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'customerno' in table 'denso_dmtn' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabledenso_dmtn_innertag.customernoColumn) = value
+                Me(Me.tabledenso_dmtn.customernoColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property qty() As String
+        Public Property proddate() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tabledenso_dmtn_innertag.qtyColumn),String)
+                    Return CType(Me(Me.tabledenso_dmtn.proddateColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'qty' in table 'denso_dmtn_innertag' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'proddate' in table 'denso_dmtn' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabledenso_dmtn_innertag.qtyColumn) = value
+                Me(Me.tabledenso_dmtn.proddateColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property serial() As String
+        Public Property qty() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tabledenso_dmtn_innertag.serialColumn),String)
+                    Return CType(Me(Me.tabledenso_dmtn.qtyColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'serial' in table 'denso_dmtn_innertag' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'qty' in table 'denso_dmtn' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabledenso_dmtn_innertag.serialColumn) = value
+                Me(Me.tabledenso_dmtn.qtyColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property fglabel() As String
+        Public Property d_serial() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabledenso_dmtn_innertag.fglabelColumn),String)
+                    Return CType(Me(Me.tabledenso_dmtn.d_serialColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'fglabel' in table 'denso_dmtn_innertag' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'd_serial' in table 'denso_dmtn' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabledenso_dmtn_innertag.fglabelColumn) = value
+                Me(Me.tabledenso_dmtn.d_serialColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property cmlserial() As String
+        Public Property cml() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabledenso_dmtn_innertag.cmlserialColumn),String)
+                    Return CType(Me(Me.tabledenso_dmtn.cmlColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'cmlserial' in table 'denso_dmtn_innertag' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'cml' in table 'denso_dmtn' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabledenso_dmtn_innertag.cmlserialColumn) = value
+                Me(Me.tabledenso_dmtn.cmlColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property c_serial() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledenso_dmtn.c_serialColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'c_serial' in table 'denso_dmtn' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledenso_dmtn.c_serialColumn) = value
             End Set
         End Property
         
@@ -756,13 +1260,13 @@ Partial Public Class dmtn_DataSet1
         Public Property userout() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabledenso_dmtn_innertag.useroutColumn),String)
+                    Return CType(Me(Me.tabledenso_dmtn.useroutColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'userout' in table 'denso_dmtn_innertag' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'userout' in table 'denso_dmtn' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabledenso_dmtn_innertag.useroutColumn) = value
+                Me(Me.tabledenso_dmtn.useroutColumn) = value
             End Set
         End Property
         
@@ -771,122 +1275,501 @@ Partial Public Class dmtn_DataSet1
         Public Property dateout() As String
             Get
                 Try 
-                    Return CType(Me(Me.tabledenso_dmtn_innertag.dateoutColumn),String)
+                    Return CType(Me(Me.tabledenso_dmtn.dateoutColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'dateout' in table 'denso_dmtn_innertag' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'dateout' in table 'denso_dmtn' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tabledenso_dmtn_innertag.dateoutColumn) = value
+                Me(Me.tabledenso_dmtn.dateoutColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsinnertagNull() As Boolean
-            Return Me.IsNull(Me.tabledenso_dmtn_innertag.innertagColumn)
+        Public Property innertag_serial() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledenso_dmtn.innertag_serialColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'innertag_serial' in table 'denso_dmtn' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledenso_dmtn.innertag_serialColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property innertag_proddate() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tabledenso_dmtn.innertag_proddateColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'innertag_proddate' in table 'denso_dmtn' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledenso_dmtn.innertag_proddateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property innertag_qty() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tabledenso_dmtn.innertag_qtyColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'innertag_qty' in table 'denso_dmtn' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledenso_dmtn.innertag_qtyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsdmtnNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_dmtn.dmtnColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetinnertagNull()
-            Me(Me.tabledenso_dmtn_innertag.innertagColumn) = Global.System.Convert.DBNull
+        Public Sub SetdmtnNull()
+            Me(Me.tabledenso_dmtn.dmtnColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IspartnoNull() As Boolean
-            Return Me.IsNull(Me.tabledenso_dmtn_innertag.partnoColumn)
+            Return Me.IsNull(Me.tabledenso_dmtn.partnoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetpartnoNull()
-            Me(Me.tabledenso_dmtn_innertag.partnoColumn) = Global.System.Convert.DBNull
+            Me(Me.tabledenso_dmtn.partnoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IscustomernoNull() As Boolean
-            Return Me.IsNull(Me.tabledenso_dmtn_innertag.customernoColumn)
+            Return Me.IsNull(Me.tabledenso_dmtn.customernoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetcustomernoNull()
-            Me(Me.tabledenso_dmtn_innertag.customernoColumn) = Global.System.Convert.DBNull
+            Me(Me.tabledenso_dmtn.customernoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsproddateNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_dmtn.proddateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetproddateNull()
+            Me(Me.tabledenso_dmtn.proddateColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsqtyNull() As Boolean
-            Return Me.IsNull(Me.tabledenso_dmtn_innertag.qtyColumn)
+            Return Me.IsNull(Me.tabledenso_dmtn.qtyColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetqtyNull()
-            Me(Me.tabledenso_dmtn_innertag.qtyColumn) = Global.System.Convert.DBNull
+            Me(Me.tabledenso_dmtn.qtyColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsserialNull() As Boolean
-            Return Me.IsNull(Me.tabledenso_dmtn_innertag.serialColumn)
+        Public Function Isd_serialNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_dmtn.d_serialColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetserialNull()
-            Me(Me.tabledenso_dmtn_innertag.serialColumn) = Global.System.Convert.DBNull
+        Public Sub Setd_serialNull()
+            Me(Me.tabledenso_dmtn.d_serialColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsfglabelNull() As Boolean
-            Return Me.IsNull(Me.tabledenso_dmtn_innertag.fglabelColumn)
+        Public Function IscmlNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_dmtn.cmlColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetfglabelNull()
-            Me(Me.tabledenso_dmtn_innertag.fglabelColumn) = Global.System.Convert.DBNull
+        Public Sub SetcmlNull()
+            Me(Me.tabledenso_dmtn.cmlColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IscmlserialNull() As Boolean
-            Return Me.IsNull(Me.tabledenso_dmtn_innertag.cmlserialColumn)
+        Public Function Isc_serialNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_dmtn.c_serialColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetcmlserialNull()
-            Me(Me.tabledenso_dmtn_innertag.cmlserialColumn) = Global.System.Convert.DBNull
+        Public Sub Setc_serialNull()
+            Me(Me.tabledenso_dmtn.c_serialColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsuseroutNull() As Boolean
-            Return Me.IsNull(Me.tabledenso_dmtn_innertag.useroutColumn)
+            Return Me.IsNull(Me.tabledenso_dmtn.useroutColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetuseroutNull()
-            Me(Me.tabledenso_dmtn_innertag.useroutColumn) = Global.System.Convert.DBNull
+            Me(Me.tabledenso_dmtn.useroutColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsdateoutNull() As Boolean
-            Return Me.IsNull(Me.tabledenso_dmtn_innertag.dateoutColumn)
+            Return Me.IsNull(Me.tabledenso_dmtn.dateoutColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetdateoutNull()
-            Me(Me.tabledenso_dmtn_innertag.dateoutColumn) = Global.System.Convert.DBNull
+            Me(Me.tabledenso_dmtn.dateoutColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isinnertag_serialNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_dmtn.innertag_serialColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setinnertag_serialNull()
+            Me(Me.tabledenso_dmtn.innertag_serialColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isinnertag_proddateNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_dmtn.innertag_proddateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setinnertag_proddateNull()
+            Me(Me.tabledenso_dmtn.innertag_proddateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isinnertag_qtyNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_dmtn.innertag_qtyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setinnertag_qtyNull()
+            Me(Me.tabledenso_dmtn.innertag_qtyColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class denso_fg_scanRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tabledenso_fg_scan As denso_fg_scanDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tabledenso_fg_scan = CType(Me.Table,denso_fg_scanDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property id() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledenso_fg_scan.idColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'id' in table 'denso_fg_scan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledenso_fg_scan.idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property type() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledenso_fg_scan.typeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'type' in table 'denso_fg_scan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledenso_fg_scan.typeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property partno() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledenso_fg_scan.partnoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'partno' in table 'denso_fg_scan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledenso_fg_scan.partnoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property customerno() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledenso_fg_scan.customernoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'customerno' in table 'denso_fg_scan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledenso_fg_scan.customernoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property quantity() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledenso_fg_scan.quantityColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'quantity' in table 'denso_fg_scan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledenso_fg_scan.quantityColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property lotnumber() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledenso_fg_scan.lotnumberColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'lotnumber' in table 'denso_fg_scan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledenso_fg_scan.lotnumberColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property proddate() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledenso_fg_scan.proddateColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'proddate' in table 'denso_fg_scan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledenso_fg_scan.proddateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property serial() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledenso_fg_scan.serialColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'serial' in table 'denso_fg_scan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledenso_fg_scan.serialColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property qrtde() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledenso_fg_scan.qrtdeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'qrtde' in table 'denso_fg_scan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledenso_fg_scan.qrtdeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property cml() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledenso_fg_scan.cmlColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'cml' in table 'denso_fg_scan' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledenso_fg_scan.cmlColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsidNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_fg_scan.idColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetidNull()
+            Me(Me.tabledenso_fg_scan.idColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IstypeNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_fg_scan.typeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SettypeNull()
+            Me(Me.tabledenso_fg_scan.typeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IspartnoNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_fg_scan.partnoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetpartnoNull()
+            Me(Me.tabledenso_fg_scan.partnoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IscustomernoNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_fg_scan.customernoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetcustomernoNull()
+            Me(Me.tabledenso_fg_scan.customernoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsquantityNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_fg_scan.quantityColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetquantityNull()
+            Me(Me.tabledenso_fg_scan.quantityColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IslotnumberNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_fg_scan.lotnumberColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetlotnumberNull()
+            Me(Me.tabledenso_fg_scan.lotnumberColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsproddateNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_fg_scan.proddateColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetproddateNull()
+            Me(Me.tabledenso_fg_scan.proddateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsserialNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_fg_scan.serialColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetserialNull()
+            Me(Me.tabledenso_fg_scan.serialColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsqrtdeNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_fg_scan.qrtdeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetqrtdeNull()
+            Me(Me.tabledenso_fg_scan.qrtdeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IscmlNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_fg_scan.cmlColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetcmlNull()
+            Me(Me.tabledenso_fg_scan.cmlColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -894,16 +1777,16 @@ Partial Public Class dmtn_DataSet1
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Class denso_dmtn_innertagRowChangeEvent
+    Public Class denso_dmtnRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As denso_dmtn_innertagRow
+        Private eventRow As denso_dmtnRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New(ByVal row As denso_dmtn_innertagRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As denso_dmtnRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -911,7 +1794,43 @@ Partial Public Class dmtn_DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Row() As denso_dmtn_innertagRow
+        Public ReadOnly Property Row() As denso_dmtnRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+    Public Class denso_fg_scanRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As denso_fg_scanRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub New(ByVal row As denso_fg_scanRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property Row() As denso_fg_scanRow
             Get
                 Return Me.eventRow
             End Get

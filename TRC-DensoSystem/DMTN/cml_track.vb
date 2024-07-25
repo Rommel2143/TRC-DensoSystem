@@ -12,6 +12,7 @@
             If txtqr.Text = "" Then
                 datagrid1.DataSource = Nothing
             Else
+                report_cmlqr = txtqr.Text
                 reload("SELECT `dmtn`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial`,`userin`, `datein`, `userout`, `dateout` FROM `denso_dmtn` WHERE cml REGEXP '" & txtqr.Text & "'", datagrid1)
 
             End If
@@ -28,6 +29,11 @@
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        export_dmtn.Show()
+        export_dmtn.BringToFront()
+    End Sub
+
+    Private Sub cml_track_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

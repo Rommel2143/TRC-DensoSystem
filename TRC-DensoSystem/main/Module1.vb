@@ -25,7 +25,7 @@ Module Module1
     Public datedb As String = Date.Now.ToString("yyyy-MM-dd")
     Public shift1 As String
 
-    Public report_dmtn As String
+    Public report_cmlqr As String
 
 
     Function GetMacAddress() As String

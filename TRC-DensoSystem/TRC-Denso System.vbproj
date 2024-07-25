@@ -161,6 +161,12 @@
     <Compile Include="DMTN\export_dmtn.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DMTN\report_dmtn.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>report_dmtn.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="INFG\INFG.designer.vb">
       <DependentUpon>INFG.vb</DependentUpon>
     </Compile>
@@ -267,6 +273,10 @@
     <EmbeddedResource Include="DMTN\export_dmtn.resx">
       <DependentUpon>export_dmtn.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DMTN\report_dmtn.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>report_dmtn.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="INFG\INFG.resx">
       <DependentUpon>INFG.vb</DependentUpon>
     </EmbeddedResource>
@@ -343,6 +353,8 @@
   <ItemGroup>
     <None Include="Resources\duplicate.wav" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
