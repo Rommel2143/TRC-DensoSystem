@@ -185,6 +185,12 @@
     <Compile Include="INFG\OUTFG_TDE.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="INFG\OUT_TDE.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OUT_TDE.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="INFG\REPORT_TDE.Designer.vb">
       <DependentUpon>REPORT_TDE.vb</DependentUpon>
     </Compile>
@@ -297,6 +303,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="INFG\OUTFG_TDE.resx">
       <DependentUpon>OUTFG_TDE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INFG\OUT_TDE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OUT_TDE.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="INFG\REPORT_TDE.resx">
       <DependentUpon>REPORT_TDE.vb</DependentUpon>

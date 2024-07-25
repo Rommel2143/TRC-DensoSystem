@@ -157,7 +157,7 @@ Public Class OUTFG_TDE
                         updates("Update `denso_fg_masterlist` set `qty` ='" & a - datagrid2.Rows(x).Cells(6).Value.ToString() & "' where `partno`= '" & datagrid2.Rows(x).Cells(3).Value.ToString() & "' and `customerno`= '" & datagrid2.Rows(x).Cells(4).Value.ToString() & "' and `qrtype`='TDE'")
                     End If
                     con.Close()
-                    updates("Update `denso_fg_scan` set `status` ='" & txthide3.Text & "' , `dateout` = '" & datedb & "', `cml`='" & txtcml1.Text & "' where `qrtde`= '" & datagrid2.Rows(x).Cells(1).Value.ToString() & "'")
+                    updates("Update `denso_fg_scan` set `status` ='" & txthide3.Text & "' , `dateout` = '" & datedb & "', `cml`='" & txtcml1.Text & "', `shiftout`='" & boxshift.Text & "', `operatorout`='" & txtoperator.Text & "' where `qrtde`= '" & datagrid2.Rows(x).Cells(1).Value.ToString() & "'")
                     x = x + 1
 
 

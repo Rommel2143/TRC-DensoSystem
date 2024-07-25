@@ -1003,7 +1003,7 @@ Partial Public Class dmtn_DataSet1
         Public Overloads Function Adddenso_fg_scanRow( _
                     ByVal id As String,  _
                     ByVal status As String,  _
-                    ByVal datein As String,  _
+                    ByVal datein As Date,  _
                     ByVal shift As String,  _
                     ByVal _operator As String,  _
                     ByVal type As String,  _
@@ -1012,9 +1012,9 @@ Partial Public Class dmtn_DataSet1
                     ByVal customerno As String,  _
                     ByVal model As String,  _
                     ByVal color As String,  _
-                    ByVal quantity As String,  _
+                    ByVal quantity As Integer,  _
                     ByVal lotnumber As String,  _
-                    ByVal proddate As String,  _
+                    ByVal proddate As Date,  _
                     ByVal dateout As String,  _
                     ByVal serial As String,  _
                     ByVal qrtde As String,  _
@@ -1024,6 +1024,12 @@ Partial Public Class dmtn_DataSet1
             rowdenso_fg_scanRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowdenso_fg_scanRow)
             Return rowdenso_fg_scanRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function FindByid(ByVal id As String) As denso_fg_scanRow
+            Return CType(Me.Rows.Find(New Object() {id}),denso_fg_scanRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1070,7 +1076,7 @@ Partial Public Class dmtn_DataSet1
             MyBase.Columns.Add(Me.columnid)
             Me.columnstatus = New Global.System.Data.DataColumn("status", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnstatus)
-            Me.columndatein = New Global.System.Data.DataColumn("datein", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columndatein = New Global.System.Data.DataColumn("datein", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndatein)
             Me.columnshift = New Global.System.Data.DataColumn("shift", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnshift)
@@ -1091,11 +1097,11 @@ Partial Public Class dmtn_DataSet1
             MyBase.Columns.Add(Me.columnmodel)
             Me.columncolor = New Global.System.Data.DataColumn("color", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncolor)
-            Me.columnquantity = New Global.System.Data.DataColumn("quantity", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnquantity = New Global.System.Data.DataColumn("quantity", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnquantity)
             Me.columnlotnumber = New Global.System.Data.DataColumn("lotnumber", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnlotnumber)
-            Me.columnproddate = New Global.System.Data.DataColumn("proddate", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnproddate = New Global.System.Data.DataColumn("proddate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnproddate)
             Me.columndateout = New Global.System.Data.DataColumn("dateout", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndateout)
@@ -1105,6 +1111,9 @@ Partial Public Class dmtn_DataSet1
             MyBase.Columns.Add(Me.columnqrtde)
             Me.columncml = New Global.System.Data.DataColumn("cml", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncml)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
+            Me.columnid.AllowDBNull = false
+            Me.columnid.Unique = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1631,11 +1640,7 @@ Partial Public Class dmtn_DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property id() As String
             Get
-                Try 
-                    Return CType(Me(Me.tabledenso_fg_scan.idColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'id' in table 'denso_fg_scan' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tabledenso_fg_scan.idColumn),String)
             End Get
             Set
                 Me(Me.tabledenso_fg_scan.idColumn) = value
@@ -1659,10 +1664,10 @@ Partial Public Class dmtn_DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property datein() As String
+        Public Property datein() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tabledenso_fg_scan.dateinColumn),String)
+                    Return CType(Me(Me.tabledenso_fg_scan.dateinColumn),Date)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'datein' in table 'denso_fg_scan' is DBNull.", e)
                 End Try
@@ -1794,10 +1799,10 @@ Partial Public Class dmtn_DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property quantity() As String
+        Public Property quantity() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tabledenso_fg_scan.quantityColumn),String)
+                    Return CType(Me(Me.tabledenso_fg_scan.quantityColumn),Integer)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'quantity' in table 'denso_fg_scan' is DBNull.", e)
                 End Try
@@ -1824,10 +1829,10 @@ Partial Public Class dmtn_DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property proddate() As String
+        Public Property proddate() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tabledenso_fg_scan.proddateColumn),String)
+                    Return CType(Me(Me.tabledenso_fg_scan.proddateColumn),Date)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'proddate' in table 'denso_fg_scan' is DBNull.", e)
                 End Try
@@ -1896,18 +1901,6 @@ Partial Public Class dmtn_DataSet1
                 Me(Me.tabledenso_fg_scan.cmlColumn) = value
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsidNull() As Boolean
-            Return Me.IsNull(Me.tabledenso_fg_scan.idColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetidNull()
-            Me(Me.tabledenso_fg_scan.idColumn) = Global.System.Convert.DBNull
-        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _

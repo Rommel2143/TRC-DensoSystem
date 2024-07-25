@@ -103,4 +103,8 @@ Public Class sub_mainframe
         suggest_improvent.Show()
         suggest_improvent.BringToFront()
     End Sub
+
+    Private Sub REPORTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles REPORTToolStripMenuItem.Click
+        display_formscan(REPORT_TDE)
+    End Sub
 End Class

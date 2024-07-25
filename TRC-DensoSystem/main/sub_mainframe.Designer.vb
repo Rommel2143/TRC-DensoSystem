@@ -27,6 +27,8 @@ Partial Class sub_mainframe
         Me.ManageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QRIdentifierToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StockMonitoringToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExpiringStockToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FGStockToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QRCheckerToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.QRCheckerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CMLToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,8 +47,7 @@ Partial Class sub_mainframe
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComputeActualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExpiringStockToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FGStockToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.REPORTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -82,6 +83,18 @@ Partial Class sub_mainframe
         Me.StockMonitoringToolStripMenuItem.Name = "StockMonitoringToolStripMenuItem"
         Me.StockMonitoringToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
         Me.StockMonitoringToolStripMenuItem.Text = "Stock Monitoring"
+        '
+        'ExpiringStockToolStripMenuItem
+        '
+        Me.ExpiringStockToolStripMenuItem.Name = "ExpiringStockToolStripMenuItem"
+        Me.ExpiringStockToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.ExpiringStockToolStripMenuItem.Text = "Expiring Stock"
+        '
+        'FGStockToolStripMenuItem
+        '
+        Me.FGStockToolStripMenuItem.Name = "FGStockToolStripMenuItem"
+        Me.FGStockToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
+        Me.FGStockToolStripMenuItem.Text = "FG Stock"
         '
         'QRCheckerToolStripMenuItem1
         '
@@ -144,7 +157,7 @@ Partial Class sub_mainframe
         '
         'FGToolStripMenuItem
         '
-        Me.FGToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TDEToolStripMenuItem, Me.OTHERToolStripMenuItem})
+        Me.FGToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TDEToolStripMenuItem, Me.OTHERToolStripMenuItem, Me.REPORTToolStripMenuItem})
         Me.FGToolStripMenuItem.Image = CType(resources.GetObject("FGToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FGToolStripMenuItem.Name = "FGToolStripMenuItem"
         Me.FGToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
@@ -231,17 +244,11 @@ Partial Class sub_mainframe
         Me.ComputeActualToolStripMenuItem.Text = "Compute Actual"
         Me.ComputeActualToolStripMenuItem.Visible = False
         '
-        'ExpiringStockToolStripMenuItem
+        'REPORTToolStripMenuItem
         '
-        Me.ExpiringStockToolStripMenuItem.Name = "ExpiringStockToolStripMenuItem"
-        Me.ExpiringStockToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ExpiringStockToolStripMenuItem.Text = "Expiring Stock"
-        '
-        'FGStockToolStripMenuItem
-        '
-        Me.FGStockToolStripMenuItem.Name = "FGStockToolStripMenuItem"
-        Me.FGStockToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.FGStockToolStripMenuItem.Text = "FG Stock"
+        Me.REPORTToolStripMenuItem.Name = "REPORTToolStripMenuItem"
+        Me.REPORTToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.REPORTToolStripMenuItem.Text = "REPORT"
         '
         'sub_mainframe
         '
@@ -285,4 +292,5 @@ Partial Class sub_mainframe
     Friend WithEvents ComputeActualToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExpiringStockToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FGStockToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents REPORTToolStripMenuItem As ToolStripMenuItem
 End Class
