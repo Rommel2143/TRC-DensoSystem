@@ -6,6 +6,7 @@ Public Class expiring_stock
     Dim cmdselect As String
 
     Private Sub cmb_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_type.SelectedIndexChanged
+<<<<<<< HEAD
         Select Case cmb_type.Text
             Case "DMTN"
                 reload("SELECT `id`,`serial`, `partno`, `customerno`,`proddate` FROM `denso_dmtn`", datagrid1)
@@ -16,6 +17,9 @@ Public Class expiring_stock
             Case "INTELLI IV"
                 reload("SELECT `id`,`lotnumber`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_fg_scan` WHERE type = 'INTELLI IV'", datagrid1)
         End Select
+=======
+
+>>>>>>> e0acdd6fceed6e644ab0855ef8627f421f38da71
     End Sub
 
     Private Sub datagrid1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles datagrid1.CellFormatting
