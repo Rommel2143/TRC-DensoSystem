@@ -104,16 +104,16 @@ Public Class sub_mainframe
         suggest_improvent.BringToFront()
     End Sub
 
-<<<<<<< HEAD
+
     Private Sub ExpiringStockToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExpiringStockToolStripMenuItem.Click
         display_formscan(expiring_stock)
-=======
+    End Sub
     Private Sub REPORTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles REPORTToolStripMenuItem.Click
         display_formscan(REPORT_TDE)
     End Sub
 
     Private Sub REPORTOTHERToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles REPORTOTHERToolStripMenuItem.Click
         display_formscan(REPORT_OTHER)
->>>>>>> e0acdd6fceed6e644ab0855ef8627f421f38da71
+
     End Sub
 End Class

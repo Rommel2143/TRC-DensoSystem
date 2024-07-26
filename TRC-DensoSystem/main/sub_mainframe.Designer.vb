@@ -48,10 +48,9 @@ Partial Class sub_mainframe
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComputeActualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-<<<<<<< HEAD
-=======
+
         Me.REPORTOTHERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
->>>>>>> e0acdd6fceed6e644ab0855ef8627f421f38da71
+
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -91,21 +90,21 @@ Partial Class sub_mainframe
         'ExpiringStockToolStripMenuItem
         '
         Me.ExpiringStockToolStripMenuItem.Name = "ExpiringStockToolStripMenuItem"
-<<<<<<< HEAD
+
         Me.ExpiringStockToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-=======
+
         Me.ExpiringStockToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
->>>>>>> e0acdd6fceed6e644ab0855ef8627f421f38da71
+
         Me.ExpiringStockToolStripMenuItem.Text = "Expiring Stock"
         '
         'FGStockToolStripMenuItem
         '
         Me.FGStockToolStripMenuItem.Name = "FGStockToolStripMenuItem"
-<<<<<<< HEAD
+
         Me.FGStockToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-=======
+
         Me.FGStockToolStripMenuItem.Size = New System.Drawing.Size(179, 22)
->>>>>>> e0acdd6fceed6e644ab0855ef8627f421f38da71
+
         Me.FGStockToolStripMenuItem.Text = "FG Stock"
         '
         'QRCheckerToolStripMenuItem1
@@ -262,15 +261,14 @@ Partial Class sub_mainframe
         Me.ComputeActualToolStripMenuItem.Text = "Compute Actual"
         Me.ComputeActualToolStripMenuItem.Visible = False
         '
-<<<<<<< HEAD
-=======
+
         'REPORTOTHERToolStripMenuItem
         '
         Me.REPORTOTHERToolStripMenuItem.Name = "REPORTOTHERToolStripMenuItem"
         Me.REPORTOTHERToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.REPORTOTHERToolStripMenuItem.Text = "REPORT OTHER"
         '
->>>>>>> e0acdd6fceed6e644ab0855ef8627f421f38da71
+
         'sub_mainframe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
