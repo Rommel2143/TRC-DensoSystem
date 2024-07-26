@@ -56,7 +56,7 @@ Public Class OUTFG_OTHER
                         con.Close()
                         updates("Update `denso_fg_masterlist` set `qty` ='" & a - Val(txtqty.Text) & "' where `partno`= '" & txtcode.Text & "' and `qrtype`='" & boxtype.Text & "' and `color`='" & txtcolor.Text & "'")
                         con.Close()
-                        updates("Update `denso_fg_scan` set `status` ='" & txthide.Text & "' , `dateout` = '" & datedb & "' where `qrcode` = '" & txtqr1.Text & "'")
+                        updates("Update `denso_fg_scan` set `status` ='" & txthide.Text & "' , `dateout` = '" & datedb & "', `shiftout`='" & boxshift.Text & "', `operatorout`='" & txtoperator.Text & "' where `qrcode` = '" & txtqr1.Text & "'")
 
                     End If
                 Else

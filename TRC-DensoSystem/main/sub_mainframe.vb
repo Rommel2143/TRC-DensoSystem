@@ -107,4 +107,8 @@ Public Class sub_mainframe
     Private Sub REPORTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles REPORTToolStripMenuItem.Click
         display_formscan(REPORT_TDE)
     End Sub
+
+    Private Sub REPORTOTHERToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles REPORTOTHERToolStripMenuItem.Click
+        display_formscan(REPORT_OTHER)
+    End Sub
 End Class

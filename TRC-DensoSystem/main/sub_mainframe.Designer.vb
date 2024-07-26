@@ -38,6 +38,7 @@ Partial Class sub_mainframe
         Me.OTHERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TDEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.REPORTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PARTSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MasterlistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -47,7 +48,7 @@ Partial Class sub_mainframe
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComputeActualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.REPORTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.REPORTOTHERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -157,11 +158,17 @@ Partial Class sub_mainframe
         '
         'FGToolStripMenuItem
         '
-        Me.FGToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TDEToolStripMenuItem, Me.OTHERToolStripMenuItem, Me.REPORTToolStripMenuItem})
+        Me.FGToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TDEToolStripMenuItem, Me.OTHERToolStripMenuItem, Me.REPORTToolStripMenuItem, Me.REPORTOTHERToolStripMenuItem})
         Me.FGToolStripMenuItem.Image = CType(resources.GetObject("FGToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FGToolStripMenuItem.Name = "FGToolStripMenuItem"
         Me.FGToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.FGToolStripMenuItem.Text = "OUT"
+        '
+        'REPORTToolStripMenuItem
+        '
+        Me.REPORTToolStripMenuItem.Name = "REPORTToolStripMenuItem"
+        Me.REPORTToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.REPORTToolStripMenuItem.Text = "REPORT TDE"
         '
         'PARTSToolStripMenuItem
         '
@@ -244,11 +251,11 @@ Partial Class sub_mainframe
         Me.ComputeActualToolStripMenuItem.Text = "Compute Actual"
         Me.ComputeActualToolStripMenuItem.Visible = False
         '
-        'REPORTToolStripMenuItem
+        'REPORTOTHERToolStripMenuItem
         '
-        Me.REPORTToolStripMenuItem.Name = "REPORTToolStripMenuItem"
-        Me.REPORTToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.REPORTToolStripMenuItem.Text = "REPORT"
+        Me.REPORTOTHERToolStripMenuItem.Name = "REPORTOTHERToolStripMenuItem"
+        Me.REPORTOTHERToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.REPORTOTHERToolStripMenuItem.Text = "REPORT OTHER"
         '
         'sub_mainframe
         '
@@ -293,4 +300,5 @@ Partial Class sub_mainframe
     Friend WithEvents ExpiringStockToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FGStockToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents REPORTToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents REPORTOTHERToolStripMenuItem As ToolStripMenuItem
 End Class

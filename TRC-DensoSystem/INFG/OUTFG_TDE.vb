@@ -89,7 +89,7 @@ Public Class OUTFG_TDE
                         dr = cmd2.ExecuteReader
                         If dr.Read = True Then
                             txtcount.Text = dr("totalcount").ToString
-                            If txtcount.Text = 6 Then
+                            If txtcount.Text = 24 Then
                                 txtcml1.Enabled = True
                                 txtcml1.Focus()
                             End If

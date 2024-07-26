@@ -43,7 +43,6 @@ Partial Class REPORT_TDE
         Me.boxdate.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.boxdate.DropDownHeight = 200
         Me.boxdate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.boxdate.Enabled = False
         Me.boxdate.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.boxdate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.boxdate.Font = New System.Drawing.Font("Segoe UI", 10.0!)
@@ -60,10 +59,11 @@ Partial Class REPORT_TDE
         Me.CrystalReportViewer1.ActiveViewIndex = -1
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(8, 58)
+        Me.CrystalReportViewer1.Location = New System.Drawing.Point(12, 64)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1050, 728)
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1026, 689)
         Me.CrystalReportViewer1.TabIndex = 179
+        Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
         'REPORT_TDE
         '
@@ -73,8 +73,11 @@ Partial Class REPORT_TDE
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.boxdate)
         Me.Controls.Add(Me.CrystalReportViewer1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "REPORT_TDE"
-        Me.Text = "REPORT_TDE"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = " "
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
