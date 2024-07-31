@@ -15,7 +15,8 @@ Public Class dmtn_cml
     Dim line As String
     Dim series As String
 
-
+    ' List to store scanned QR codes
+    Dim scannedQRCodes As New List(Of String)
     Private Function processQRcode(type As String, txtqr As Guna.UI2.WinForms.Guna2TextBox) As Boolean
         Try
 
@@ -209,50 +210,97 @@ Public Class dmtn_cml
             End Try
         End If
     End Sub
-
     Private Sub Guna2TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_fg.KeyDown
         If e.KeyCode = Keys.Enter Then
             Try
-
                 If processQRcodecml("DMTN-CML", txtqr_fg) Then
-                    con.Close()
-                    con.Open()
-                    Dim cmdselect As New MySqlCommand("SELECT cmlqr, userout, dateout FROM `denso_dmtn_cml`
-                                                WHERE cmlqr = '" & txtqr_fg.Text & "'", con)
-                    dr = cmdselect.ExecuteReader()
-                    If dr.Read = True Then
-                        'duplicate
-                        showduplicate(dr.GetString("userout"), dr.GetDateTime("dateout").ToString("yyy-MM-dd"))
+                    ' Add scanned QR code to the list
+                    scannedQRCodes.Add(txtqr_fg.Text)
+
+                    ' Check if three QR codes have been scanned
+                    If scannedQRCodes.Count = 3 Then
+                        ' Check if all three QR codes are the same
+                        If scannedQRCodes.Distinct().Count() = 1 Then
+                            con.Close()
+                            con.Open()
+                            Dim cmdselect As New MySqlCommand("SELECT cmlqr, userout, dateout FROM `denso_dmtn_cml`
+                                                                WHERE cmlqr = '" & txtqr_fg.Text & "'", con)
+                            dr = cmdselect.ExecuteReader()
+                            If dr.Read = True Then
+                                'duplicate
+                                showduplicate(dr.GetString("userout"), dr.GetDateTime("dateout").ToString("yyy-MM-dd"))
+                                txtqr_fg.Clear()
+                                txtqr_fg.Focus()
+                            Else
+                                saveqr()
+                                labelerror.Visible = False
+                                txtqr_fg.Clear()
+                                txtqr_fg.Enabled = False
+                                txtqr.Enabled = True
+                                txtqr.Clear()
+                                txtqr.Focus()
+                            End If
+                        Else
+                            ' Show error if QR codes do not match
+                            showerror("QR codes do not match. Please scan the same QR code three times.")
+                            scannedQRCodes.Clear()
+                            txtqr_fg.Clear()
+                            txtqr_fg.Focus()
+                        End If
+                    Else
                         txtqr_fg.Clear()
                         txtqr_fg.Focus()
-                    Else
-                        saveqr()
-                        labelerror.Visible = False
-                        txtqr_fg.Clear()
-                        txtqr_fg.Enabled = False
-                        txtqr.Enabled = True
-                        txtqr.Clear()
-                        txtqr.Focus()
-
                     End If
-
-
                 End If
-
-
-
-
             Catch ex As MySqlException
                 MessageBox.Show(ex.Message)
-
             Finally
                 con.Close()
             End Try
         End If
     End Sub
+    'Private Sub Guna2TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_fg.KeyDown
+    '    If e.KeyCode = Keys.Enter Then
+    '        Try
+
+    '            If processQRcodecml("DMTN-CML", txtqr_fg) Then
+    '                con.Close()
+    '                con.Open()
+    '                Dim cmdselect As New MySqlCommand("SELECT cmlqr, userout, dateout FROM `denso_dmtn_cml`
+    '                                            WHERE cmlqr = '" & txtqr_fg.Text & "'", con)
+    '                dr = cmdselect.ExecuteReader()
+    '                If dr.Read = True Then
+    '                    'duplicate
+    '                    showduplicate(dr.GetString("userout"), dr.GetDateTime("dateout").ToString("yyy-MM-dd"))
+    '                    txtqr_fg.Clear()
+    '                    txtqr_fg.Focus()
+    '                Else
+    '                    saveqr()
+    '                    labelerror.Visible = False
+    '                    txtqr_fg.Clear()
+    '                    txtqr_fg.Enabled = False
+    '                    txtqr.Enabled = True
+    '                    txtqr.Clear()
+    '                    txtqr.Focus()
+
+    '                End If
+
+
+    '            End If
+
+
+
+
+    '        Catch ex As MySqlException
+    '            MessageBox.Show(ex.Message)
+
+    '        Finally
+    '            con.Close()
+    '        End Try
+    '    End If
+    'End Sub
     Private Sub saveqr()
         Try
-            ' Define your MySQL connection string
 
 
             For Each row As DataGridViewRow In datagrid1.Rows
@@ -366,5 +414,9 @@ Public Class dmtn_cml
             txtqr_fg.Enabled = False
             txtqr.Enabled = True
         End If
+    End Sub
+
+    Private Sub dmtn_cml_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

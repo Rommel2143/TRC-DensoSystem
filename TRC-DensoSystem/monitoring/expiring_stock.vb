@@ -94,4 +94,8 @@ Public Class expiring_stock
             MessageBox.Show("Error exporting data: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+    Private Sub Guna2Shapes3_Click(sender As Object, e As EventArgs) Handles Guna2Shapes3.Click
+
+    End Sub
 End Class

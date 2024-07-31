@@ -18,28 +18,6 @@ Public Class sub_mainframe
     End Sub
 
 
-    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub DeviceInfoToolStripMenuItem_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-
-    Private Sub SuggestToImproveToolStripMenuItem_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub ManageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageToolStripMenuItem.Click
-        'display_formscan(Add_item)
-    End Sub
-
-
     Private Sub PARTSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PARTSToolStripMenuItem.Click
         display_formscan(INFG)
     End Sub
@@ -105,15 +83,41 @@ Public Class sub_mainframe
     End Sub
 
 
-    Private Sub ExpiringStockToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExpiringStockToolStripMenuItem.Click
-        display_formscan(expiring_stock)
-    End Sub
+
     Private Sub REPORTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles REPORTToolStripMenuItem.Click
         display_formscan(REPORT_TDE)
     End Sub
 
     Private Sub REPORTOTHERToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles REPORTOTHERToolStripMenuItem.Click
         display_formscan(REPORT_OTHER)
+
+    End Sub
+
+
+
+    Private Sub AddItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddItemToolStripMenuItem.Click
+        display_formscan(Add_item)
+    End Sub
+
+
+
+    Private Sub StockMonitoringToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StockMonitoringToolStripMenuItem.Click
+        display_formscan(FG_monitoring)
+    End Sub
+
+    Private Sub ExpiringStockToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ExpiringStockToolStripMenuItem1.Click
+        display_formscan(expiring_stock)
+    End Sub
+
+    Private Sub MIXEDPalletToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MIXEDPalletToolStripMenuItem.Click
+        display_formscan(dmtn_mixed)
+    End Sub
+
+    Private Sub MatrixToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MatrixToolStripMenuItem.Click
+        display_formscan(yt_matrix)
+    End Sub
+
+    Private Sub YTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles YTToolStripMenuItem.Click
 
     End Sub
 End Class

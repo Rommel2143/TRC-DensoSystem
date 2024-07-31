@@ -127,11 +127,20 @@ Public Class QR_identifier
     Private Sub btn_fg_save_Click(sender As Object, e As EventArgs) Handles btn_fg_save.Click
 
         Try
-
-
             con.Close()
             con.Open()
-            Dim cmdinsert As New MySqlCommand("INSERT INTO `denso_qrtype`( `qrtype`,
+            Dim cmdselect As New MySqlCommand("SELECT `qrtype`, `qrlenght` FROM `denso_qrtype`
+                                                WHERE qrlenght= '" & qrlenght & "' and qrtype  = '" & cmbselect & "'", con)
+            dr = cmdselect.ExecuteReader()
+            If dr.Read = True Then
+                'DUPLICATE
+                showduplicate()
+                txt_qr.Clear()
+                txt_qr.Focus()
+            Else
+                con.Close()
+                con.Open()
+                Dim cmdinsert As New MySqlCommand("INSERT INTO `denso_qrtype`( `qrtype`,
                                                                             `qrlenght`,
                                                                             `partno`,
                                                                             `qty`, 
@@ -154,12 +163,15 @@ Public Class QR_identifier
                                                                             '" & val_line.Text & "',
                                                                             '" & val_series.Text & "'
                                                                             )", con)
-            cmdinsert.ExecuteNonQuery()
-            MessageBox.Show("USER Added successfully!")
-            con.Close()
+                cmdinsert.ExecuteNonQuery()
+                MessageBox.Show("USER Added successfully!")
+                con.Close()
 
-            reloadgrid()
-
+                reloadgrid()
+                labelerror.Visible = False
+                txt_qr.Clear()
+                txt_qr.Focus()
+            End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         Finally
@@ -190,7 +202,10 @@ Public Class QR_identifier
                 cmbselect = "VT"
             Case "2T"
                 cmbselect = "2T"
-
+            Case "YT"
+                cmbselect = "YT"
+            Case "YT-Matrix"
+                cmbselect = "YT-M"
 
         End Select
     End Sub
@@ -228,5 +243,17 @@ Public Class QR_identifier
             qrbar.Value -= 1
             updatevalue(txtbox, txtval)
         End If
+    End Sub
+    Private Sub showduplicate()
+        Try
+            labelerror.Visible = True
+            texterror.Text = "QR type Already Registered!"
+            soundduplicate()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
     End Sub
 End Class

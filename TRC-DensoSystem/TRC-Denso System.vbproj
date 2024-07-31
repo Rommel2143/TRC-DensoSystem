@@ -14,6 +14,24 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>\\ptif1-ds\SHARED\it\System\Denso System\</UpdateUrl>
+    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,6 +64,21 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>412CA5D61D43D36E5E56F68C28CA7089E376C72E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>TRC-Denso System_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>INVENTORY %283%29.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
@@ -218,6 +251,12 @@
     <Compile Include="DMTN\dmtn_inner_tag.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DMTN\dmtn_mixed.Designer.vb">
+      <DependentUpon>dmtn_mixed.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DMTN\dmtn_mixed.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DMTN\export_dmtn.Designer.vb">
       <DependentUpon>export_dmtn.vb</DependentUpon>
     </Compile>
@@ -355,6 +394,12 @@
     <Compile Include="main\Register_PC.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="YT\yt_matrix.Designer.vb">
+      <DependentUpon>yt_matrix.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YT\yt_matrix.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DMTN\dmtn_cml.resx">
@@ -362,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DMTN\dmtn_inner_tag.resx">
       <DependentUpon>dmtn_inner_tag.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMTN\dmtn_mixed.resx">
+      <DependentUpon>dmtn_mixed.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DMTN\export_dmtn.resx">
       <DependentUpon>export_dmtn.vb</DependentUpon>
@@ -432,6 +480,9 @@
     <EmbeddedResource Include="main\Register_PC.resx">
       <DependentUpon>Register_PC.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="YT\yt_matrix.resx">
+      <DependentUpon>yt_matrix.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="DMTN\dmtn_DataSet1.xsc">
@@ -456,6 +507,7 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="TRC-Denso System_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\errorsound.wav" />
@@ -465,6 +517,22 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="INVENTORY %282%29.ico" />
+    <Content Include="INVENTORY %283%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

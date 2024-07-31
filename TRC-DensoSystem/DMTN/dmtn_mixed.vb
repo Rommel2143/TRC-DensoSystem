@@ -1,6 +1,8 @@
 ﻿Imports Guna.UI2.WinForms
 Imports MySql.Data.MySqlClient
-Public Class dmtn_inner_tag
+Public Class dmtn_mixed
+
+
     Dim qrlenght As Integer
     Dim serialNumber As String = ""
 
@@ -14,7 +16,8 @@ Public Class dmtn_inner_tag
     Dim line As String
     Dim series As String
 
-
+    ' List to store scanned QR codes
+    Dim scannedQRCodes As New List(Of String)
     Private Function processQRcode(type As String, txtqr As Guna.UI2.WinForms.Guna2TextBox) As Boolean
         Try
 
@@ -45,6 +48,8 @@ Public Class dmtn_inner_tag
                 Dim day As Integer = Integer.Parse(productionDateRaw.Substring(4, 2))
                 Dim productionDateDateTime As New DateTime(2000 + year, month, day)
                 prod = productionDateDateTime.ToString("yyyy-MM-dd")
+
+
                 Return True
 
             Else
@@ -57,6 +62,51 @@ Public Class dmtn_inner_tag
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
+
+            Return False
+        End Try
+    End Function
+
+    Private Function processQRcodecml(type As String, txtqr As Guna.UI2.WinForms.Guna2TextBox) As Boolean
+        Try
+
+            serialNumber = txtqr.Text
+
+            'Qr Lenght
+            qrlenght = serialNumber.Length
+            Dim productionDateRaw As String = ""
+            con.Close()
+            con.Open()
+            Dim cmdselect As New MySqlCommand("SELECT `id`, `qrtype`, `qrlenght`, `partno`, `qty`, `customer`, `color`, `proddate`, `shift`, `process`, `line`, `series` FROM `denso_qrtype`
+                                                WHERE qrlenght= '" & qrlenght & "' and qrtype  = '" & type & "'", con)
+            dr = cmdselect.ExecuteReader()
+            If dr.Read = True Then
+
+                getcoordinates(dr.GetString("partno"), partno)
+                getcoordinates(dr.GetString("qty"), qty)
+                getcoordinates(dr.GetString("customer"), customerno)
+                getcoordinates(dr.GetString("color"), color)
+                getcoordinates(dr.GetString("proddate"), productionDateRaw)
+                getcoordinates(dr.GetString("shift"), shift)
+                getcoordinates(dr.GetString("process"), process)
+                getcoordinates(dr.GetString("line"), line)
+                getcoordinates(dr.GetString("series"), series)
+
+
+
+                Return True
+
+            Else
+                showerror("No Qrtype Detected! Please Register first")
+                txtqr.Clear()
+                txtqr.Focus()
+                Return False
+            End If
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+
             Return False
         End Try
     End Function
@@ -72,18 +122,7 @@ Public Class dmtn_inner_tag
             End If
         Next
 
-        'Filter Duplicate on Partno and CustomerNO
-        If datagrid.Rows.Count > 0 Then
-            Dim firstPartno As String = datagrid.Rows(0).Cells(1).Value.ToString()
-            Dim firstCustomerno As String = datagrid.Rows(0).Cells(3).Value.ToString()
 
-            If partno <> firstPartno OrElse customerno <> firstCustomerno Then
-                labelerror.Visible = True
-                texterror.Text = "Part Number or Customer Number does not match. Please check the Table!"
-                soundduplicate()
-                Exit Sub
-            End If
-        End If
         'display grid
         Dim newrow As String() = New String() {serialNumber, partno, qty, customerno, color, prod, shift, process, line, series}
         datagrid.Rows.Add(newrow)
@@ -122,26 +161,38 @@ Public Class dmtn_inner_tag
         If e.KeyCode = Keys.Enter Then
             Try
 
-                con.Close()
-                con.Open()
-                Dim cmdselect As New MySqlCommand("SELECT innertag, userin, datein FROM `denso_dmtn_innertag`
-                                                WHERE innertag = '" & txtqr.Text & "'", con)
-                dr = cmdselect.ExecuteReader()
-                If dr.Read = True Then
-                    'duplicate
-                    showduplicate(dr.GetString("userin"), dr.GetDateTime("datein").ToString("yyy-MM-dd"))
 
-                Else
+                If processQRcode("DMTN", txtqr) Then
+                    con.Close()
+                    con.Open()
+                    Dim cmdselect As New MySqlCommand("SELECT dmtn,customerno, userin, datein,cml FROM `denso_dmtn`
+                                                WHERE dmtn = '" & txtqr.Text & "'", con)
+                    dr = cmdselect.ExecuteReader()
+                    If dr.Read = True Then
 
-                    If processQRcode("DMTN-IT", txtqr) Then
 
-                        displaygrid(datagrid1)
+                        If dr.GetString("cml") = "" Then
+                            'save
+                            customerno = dr.GetString("customerno")
+                            displaygrid(datagrid1)
+                        Else
+                            'duplicate
+                            showduplicate(dr.GetString("userin"), dr.GetDateTime("datein").ToString("yyy-MM-dd"))
+                        End If
+                    Else
+                        'invalid or not scanned
+                        showerror("QR not Recorded!")
+
 
                     End If
+                    txtqr.Clear()
+                    txtqr.Focus()
 
                 End If
-                txtqr.Clear()
-                txtqr.Focus()
+
+
+
+
             Catch ex As MySqlException
                 MessageBox.Show(ex.Message)
             Finally
@@ -149,26 +200,28 @@ Public Class dmtn_inner_tag
             End Try
         End If
     End Sub
-
     Private Sub Guna2TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_fg.KeyDown
         If e.KeyCode = Keys.Enter Then
             Try
-                con.Close()
-                con.Open()
-                Dim cmdselect As New MySqlCommand("SELECT dmtn, userin, datein FROM `denso_dmtn`
-                                                WHERE dmtn = '" & txtqr_fg.Text & "'", con)
-                dr = cmdselect.ExecuteReader()
-                If dr.Read = True Then
-                    'duplicate
-                    showduplicate(dr.GetString("userin"), dr.GetDateTime("datein").ToString("yyy-MM-dd"))
+                If processQRcodecml("DMTN-CML", txtqr_fg) Then
+                    ' Add scanned QR code to the list
+                    scannedQRCodes.Add(txtqr_fg.Text)
 
-                Else
-                    If processQRcode("DMTN", txtqr_fg) Then
-                        'saveqr
-                        Dim partno_inner As String = datagrid1.Rows(0).Cells(1).Value.ToString()
-
-                        If partno_inner.Replace("-", "") = partno Then
-                            If lbl_qty.Text = qty Then
+                    ' Check if three QR codes have been scanned
+                    If scannedQRCodes.Count = 3 Then
+                        ' Check if all three QR codes are the same
+                        If scannedQRCodes.Distinct().Count() = 1 Then
+                            con.Close()
+                            con.Open()
+                            Dim cmdselect As New MySqlCommand("SELECT cmlqr, userout, dateout FROM `denso_dmtn_cml`
+                                                                WHERE cmlqr = '" & txtqr_fg.Text & "'", con)
+                            dr = cmdselect.ExecuteReader()
+                            If dr.Read = True Then
+                                'duplicate
+                                showduplicate(dr.GetString("userout"), dr.GetDateTime("dateout").ToString("yyy-MM-dd"))
+                                txtqr_fg.Clear()
+                                txtqr_fg.Focus()
+                            Else
                                 saveqr()
                                 labelerror.Visible = False
                                 txtqr_fg.Clear()
@@ -176,19 +229,19 @@ Public Class dmtn_inner_tag
                                 txtqr.Enabled = True
                                 txtqr.Clear()
                                 txtqr.Focus()
-                                lbl_count.Text = "0"
-                                lbl_qty.Text = "0"
-                            Else
-                                showerror("QTY does'nt match the given Inner Tags!")
                             End If
-
                         Else
-                            showerror("QR does'nt match the given Inner Tags!")
-
+                            ' Show error if QR codes do not match
+                            showerror("QR codes do not match. Please scan the same QR code three times.")
+                            scannedQRCodes.Clear()
+                            txtqr_fg.Clear()
+                            txtqr_fg.Focus()
                         End If
-                        End If
+                    Else
+                        txtqr_fg.Clear()
+                        txtqr_fg.Focus()
                     End If
-
+                End If
             Catch ex As MySqlException
                 MessageBox.Show(ex.Message)
             Finally
@@ -196,6 +249,46 @@ Public Class dmtn_inner_tag
             End Try
         End If
     End Sub
+    'Private Sub Guna2TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_fg.KeyDown
+    '    If e.KeyCode = Keys.Enter Then
+    '        Try
+
+    '            If processQRcodecml("DMTN-CML", txtqr_fg) Then
+    '                con.Close()
+    '                con.Open()
+    '                Dim cmdselect As New MySqlCommand("SELECT cmlqr, userout, dateout FROM `denso_dmtn_cml`
+    '                                            WHERE cmlqr = '" & txtqr_fg.Text & "'", con)
+    '                dr = cmdselect.ExecuteReader()
+    '                If dr.Read = True Then
+    '                    'duplicate
+    '                    showduplicate(dr.GetString("userout"), dr.GetDateTime("dateout").ToString("yyy-MM-dd"))
+    '                    txtqr_fg.Clear()
+    '                    txtqr_fg.Focus()
+    '                Else
+    '                    saveqr()
+    '                    labelerror.Visible = False
+    '                    txtqr_fg.Clear()
+    '                    txtqr_fg.Enabled = False
+    '                    txtqr.Enabled = True
+    '                    txtqr.Clear()
+    '                    txtqr.Focus()
+
+    '                End If
+
+
+    '            End If
+
+
+
+
+    '        Catch ex As MySqlException
+    '            MessageBox.Show(ex.Message)
+
+    '        Finally
+    '            con.Close()
+    '        End Try
+    '    End If
+    'End Sub
     Private Sub saveqr()
         Try
             ' Define your MySQL connection string
@@ -207,7 +300,7 @@ Public Class dmtn_inner_tag
 
                 ' Retrieve data from the DataGridView row
 
-                Dim grid_innertag As String = row.Cells(0).Value.ToString()
+                Dim grid_dmtn As String = row.Cells(0).Value.ToString()
                 Dim grid_partno As String = row.Cells(1).Value.ToString()
                 Dim grid_qty As Integer = Convert.ToInt32(row.Cells(2).Value)
                 Dim grid_customerno As String = row.Cells(3).Value.ToString()
@@ -218,51 +311,37 @@ Public Class dmtn_inner_tag
                 Dim grid_line As String = row.Cells(8).Value.ToString()
                 Dim grid_serial As String = row.Cells(9).Value.ToString()
 
-                Dim fglabel As String = txtqr_fg.Text
+                Dim cml As String = txtqr_fg.Text
 
+                ' Create the SQL command to update the data
                 con.Close()
                 con.Open()
-                ' Create the SQL command to insert the data
-                Dim cmdinsert As New MySqlCommand("INSERT INTO denso_dmtn_innertag (innertag, partno, qty, customerno, color, proddate, shift, process, line, serial, fglabel, userin, datein) " &
-                                          "VALUES (@innertag, @partno, @qty, @customerno, @color, @proddate, @shift, @process, @line, @serial, @fglabel, @userin, @datein)", con)
-                With cmdinsert.Parameters
-                    .AddWithValue("@innertag", grid_innertag)
-                    .AddWithValue("@partno", grid_partno)
-                    .AddWithValue("@qty", grid_qty)
-                    .AddWithValue("@customerno", grid_customerno)
-                    .AddWithValue("@color", grid_color)
-                    .AddWithValue("@proddate", grid_proddate)
-                    .AddWithValue("@shift", grid_shift)
-                    .AddWithValue("@process", grid_process)
-                    .AddWithValue("@line", grid_line)
-                    .AddWithValue("@serial", grid_serial)
-                    .AddWithValue("@fglabel", fglabel)
-                    .AddWithValue("@userin", idno)
-                    .AddWithValue("@datein", datedb)
-                    cmdinsert.ExecuteNonQuery()
+                Dim cmdupdate As New MySqlCommand("UPDATE denso_dmtn SET cml=@cml, userout=@userout, dateout=@dateout WHERE dmtn=@dmtn", con)
+
+                ' Add parameters with values
+                With cmdupdate.Parameters
+                    .AddWithValue("@cml", cml)
+                    .AddWithValue("@userout", idno)
+                    .AddWithValue("@dateout", datedb)
+                    .AddWithValue("@dmtn", grid_dmtn)
                 End With
+
+                cmdupdate.ExecuteNonQuery()
             Next
             con.Close()
             con.Open()
 
-            Dim cmdinsertdmtn As New MySqlCommand("INSERT INTO denso_dmtn (dmtn, partno, qty, customerno, color, proddate, shift, process, line, serial,userin, datein) " &
-                                      "VALUES (@dmtn, @partno, @qty, @customerno, @color, @proddate, @shift, @process, @line, @serial, @userin, @datein)", con)
+            Dim cmdinsertdmtn As New MySqlCommand("INSERT INTO denso_dmtn_cml (cmlqr, qty, serial,userout,dateout) " &
+                                      "VALUES (@cmlqr,@qty, @serial, @userout, @dateout)", con)
             With cmdinsertdmtn.Parameters
-                .AddWithValue("@dmtn", txtqr_fg.Text)
-                .AddWithValue("@partno", partno)
-                .AddWithValue("@qty", qty)
-                .AddWithValue("@customerno", datagrid1.Rows(0).Cells(3).Value.ToString())
-                .AddWithValue("@color", color)
-                .AddWithValue("@proddate", prod)
-                .AddWithValue("@shift", shift)
-                .AddWithValue("@process", process)
-                .AddWithValue("@line", line)
+                .AddWithValue("@cmlqr", txtqr_fg.Text)
+                .AddWithValue("@qty", lbl_qty.Text)
                 .AddWithValue("@serial", series)
-                .AddWithValue("@userin", idno)
-                .AddWithValue("@datein", datedb)
+                .AddWithValue("@userout", idno)
+                .AddWithValue("@dateout", datedb)
             End With
             cmdinsertdmtn.ExecuteNonQuery()
-            reload("SELECT `dmtn`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial` FROM `denso_dmtn`", datagrid2)
+            reload("SELECT `cmlqr`, `qty`, `serial`,`userout`,`dateout` FROM `denso_dmtn_cml`", datagrid2)
             datagrid1.Rows.Clear()
         Catch ex As MySqlException
             MessageBox.Show(ex.Message)
@@ -310,7 +389,15 @@ Public Class dmtn_inner_tag
     End Sub
 
     Private Sub lbl_count_TextChanged(sender As Object, e As EventArgs) Handles lbl_count.TextChanged
-        If lbl_count.Text = "8" Then
+
+    End Sub
+
+    Private Sub lbl_qty_Click(sender As Object, e As EventArgs) Handles lbl_qty.Click
+
+    End Sub
+
+    Private Sub lbl_qty_TextChanged(sender As Object, e As EventArgs) Handles lbl_qty.TextChanged
+        If lbl_qty.Text = "1440" Then
             txtqr_fg.Enabled = True
             txtqr.Enabled = False
 
@@ -318,5 +405,13 @@ Public Class dmtn_inner_tag
             txtqr_fg.Enabled = False
             txtqr.Enabled = True
         End If
+    End Sub
+
+    Private Sub dmtn_cml_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub txtqr_Layout(sender As Object, e As LayoutEventArgs) Handles txtqr.Layout
+
     End Sub
 End Class
