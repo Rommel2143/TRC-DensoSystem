@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\ptif1-ds\SHARED\it\System\Denso System\</UpdateUrl>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -245,6 +245,12 @@
     <Compile Include="DMTN\dmtn_DataSet1.vb">
       <DependentUpon>dmtn_DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DMTN\dmtn_fgin.Designer.vb">
+      <DependentUpon>dmtn_fgin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DMTN\dmtn_fgin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DMTN\dmtn_inner_tag.Designer.vb">
       <DependentUpon>dmtn_inner_tag.vb</DependentUpon>
     </Compile>
@@ -400,10 +406,19 @@
     <Compile Include="YT\yt_matrix.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="YT\yt_out.Designer.vb">
+      <DependentUpon>yt_out.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YT\yt_out.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DMTN\dmtn_cml.resx">
       <DependentUpon>dmtn_cml.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMTN\dmtn_fgin.resx">
+      <DependentUpon>dmtn_fgin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DMTN\dmtn_inner_tag.resx">
       <DependentUpon>dmtn_inner_tag.vb</DependentUpon>
@@ -483,6 +498,9 @@
     <EmbeddedResource Include="YT\yt_matrix.resx">
       <DependentUpon>yt_matrix.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="YT\yt_out.resx">
+      <DependentUpon>yt_out.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="DMTN\dmtn_DataSet1.xsc">
@@ -533,6 +551,9 @@
   <ItemGroup>
     <Content Include="INVENTORY %282%29.ico" />
     <Content Include="INVENTORY %283%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TDE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

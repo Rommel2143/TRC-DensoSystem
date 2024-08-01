@@ -24,6 +24,25 @@ Public Class FG_monitoring
         End Try
     End Sub
 
+    Private Sub refreshtodb(cmbbox As Guna.UI2.WinForms.Guna2ComboBox, db As String)
+        Try
+            con.Close()
+            con.Open()
+            Dim cmdrefreshgrid As New MySqlCommand("SELECT `partno`, `customerno`, SUM(`qty`) FROM '" & db & "' WHERE qrtype='" & cmbbox.Text & "'", con)
+
+            Dim da As New MySqlDataAdapter(cmdrefreshgrid)
+            Dim dt As New DataTable
+            da.Fill(dt)
+            datagrid1.DataSource = dt
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+
+            con.Close()
+        End Try
+    End Sub
 
 
     Private Sub cmb_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_type.SelectedIndexChanged

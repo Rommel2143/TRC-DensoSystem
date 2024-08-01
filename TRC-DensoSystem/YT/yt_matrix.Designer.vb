@@ -38,6 +38,7 @@ Partial Class yt_matrix
         Me.txtdate = New System.Windows.Forms.Label()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2GroupBox3 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
         Me.lbl_count2 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -55,6 +56,7 @@ Partial Class yt_matrix
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.Guna2Separator2 = New Guna.UI2.WinForms.Guna2Separator()
         Me.datagrid_label = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -72,8 +74,6 @@ Partial Class yt_matrix
         Me.txtqr_label = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
-        Me.Guna2Separator2 = New Guna.UI2.WinForms.Guna2Separator()
         Me.labelerror.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel2.SuspendLayout()
@@ -173,6 +173,14 @@ Partial Class yt_matrix
         Me.Guna2GroupBox3.TabIndex = 214
         Me.Guna2GroupBox3.Text = "MATRIX"
         '
+        'Guna2Separator1
+        '
+        Me.Guna2Separator1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Separator1.Location = New System.Drawing.Point(23, 611)
+        Me.Guna2Separator1.Name = "Guna2Separator1"
+        Me.Guna2Separator1.Size = New System.Drawing.Size(582, 10)
+        Me.Guna2Separator1.TabIndex = 225
+        '
         'lbl_count2
         '
         Me.lbl_count2.AutoSize = True
@@ -256,6 +264,7 @@ Partial Class yt_matrix
         DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.datagrid_matrix.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
+        Me.datagrid_matrix.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(204, Byte), Integer))
         DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -270,7 +279,7 @@ Partial Class yt_matrix
         DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle11.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
@@ -391,6 +400,14 @@ Partial Class yt_matrix
         Me.Guna2GroupBox1.TabIndex = 217
         Me.Guna2GroupBox1.Text = "STICKER LABEL"
         '
+        'Guna2Separator2
+        '
+        Me.Guna2Separator2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Separator2.Location = New System.Drawing.Point(22, 133)
+        Me.Guna2Separator2.Name = "Guna2Separator2"
+        Me.Guna2Separator2.Size = New System.Drawing.Size(585, 10)
+        Me.Guna2Separator2.TabIndex = 226
+        '
         'datagrid_label
         '
         Me.datagrid_label.AllowUserToAddRows = False
@@ -402,6 +419,7 @@ Partial Class yt_matrix
         DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.datagrid_label.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
+        Me.datagrid_label.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(204, Byte), Integer))
         DataGridViewCellStyle14.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -416,7 +434,7 @@ Partial Class yt_matrix
         DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle15.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
@@ -600,22 +618,6 @@ Partial Class yt_matrix
         Me.Label3.TabIndex = 218
         Me.Label3.Text = "Currently being enhanced " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "for an even better experience."
         Me.Label3.Visible = False
-        '
-        'Guna2Separator1
-        '
-        Me.Guna2Separator1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Separator1.Location = New System.Drawing.Point(23, 611)
-        Me.Guna2Separator1.Name = "Guna2Separator1"
-        Me.Guna2Separator1.Size = New System.Drawing.Size(582, 10)
-        Me.Guna2Separator1.TabIndex = 225
-        '
-        'Guna2Separator2
-        '
-        Me.Guna2Separator2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Separator2.Location = New System.Drawing.Point(22, 133)
-        Me.Guna2Separator2.Name = "Guna2Separator2"
-        Me.Guna2Separator2.Size = New System.Drawing.Size(585, 10)
-        Me.Guna2Separator2.TabIndex = 226
         '
         'yt_matrix
         '

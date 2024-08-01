@@ -50,6 +50,8 @@ Partial Class sub_mainframe
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OUTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FGINToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -131,7 +133,7 @@ Partial Class sub_mainframe
         '
         'DMTNToolStripMenuItem
         '
-        Me.DMTNToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InnerTagToolStripMenuItem, Me.CMLToolStripMenuItem, Me.MIXEDPalletToolStripMenuItem, Me.MONITORINGToolStripMenuItem})
+        Me.DMTNToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InnerTagToolStripMenuItem, Me.CMLToolStripMenuItem, Me.MIXEDPalletToolStripMenuItem, Me.MONITORINGToolStripMenuItem, Me.FGINToolStripMenuItem})
         Me.DMTNToolStripMenuItem.Image = CType(resources.GetObject("DMTNToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DMTNToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DMTNToolStripMenuItem.Name = "DMTNToolStripMenuItem"
@@ -205,16 +207,20 @@ Partial Class sub_mainframe
         '
         'YTToolStripMenuItem
         '
-        Me.YTToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MatrixToolStripMenuItem})
+        Me.YTToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MatrixToolStripMenuItem, Me.OUTToolStripMenuItem})
+        Me.YTToolStripMenuItem.Image = CType(resources.GetObject("YTToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.YTToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.YTToolStripMenuItem.Name = "YTToolStripMenuItem"
         Me.YTToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.YTToolStripMenuItem.Text = "YT"
         '
         'MatrixToolStripMenuItem
         '
+        Me.MatrixToolStripMenuItem.Image = CType(resources.GetObject("MatrixToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.MatrixToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.MatrixToolStripMenuItem.Name = "MatrixToolStripMenuItem"
-        Me.MatrixToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.MatrixToolStripMenuItem.Text = "Matrix"
+        Me.MatrixToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.MatrixToolStripMenuItem.Text = "IN"
         '
         'MenuStrip1
         '
@@ -275,6 +281,22 @@ Partial Class sub_mainframe
         Me.ToolStripMenuItem5.Size = New System.Drawing.Size(216, 22)
         Me.ToolStripMenuItem5.Text = "Device info."
         '
+        'OUTToolStripMenuItem
+        '
+        Me.OUTToolStripMenuItem.Image = CType(resources.GetObject("OUTToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.OUTToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.OUTToolStripMenuItem.Name = "OUTToolStripMenuItem"
+        Me.OUTToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.OUTToolStripMenuItem.Text = "OUT"
+        '
+        'FGINToolStripMenuItem
+        '
+        Me.FGINToolStripMenuItem.Image = CType(resources.GetObject("FGINToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.FGINToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.FGINToolStripMenuItem.Name = "FGINToolStripMenuItem"
+        Me.FGINToolStripMenuItem.Size = New System.Drawing.Size(274, 38)
+        Me.FGINToolStripMenuItem.Text = "FG IN (for inventory only)"
+        '
         'sub_mainframe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -320,4 +342,6 @@ Partial Class sub_mainframe
     Friend WithEvents MIXEDPalletToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents YTToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MatrixToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OUTToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FGINToolStripMenuItem As ToolStripMenuItem
 End Class

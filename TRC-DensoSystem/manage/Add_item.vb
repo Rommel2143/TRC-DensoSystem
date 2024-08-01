@@ -15,9 +15,7 @@ Public Class Add_item
     Dim series As String
 
     Dim cmbselect As String
-    Private Sub Add_item_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
     Private Function processQRcode(type As String, txtqr As Guna.UI2.WinForms.Guna2TextBox) As Boolean
         Try
 
@@ -197,10 +195,11 @@ Public Class Add_item
                     txt_customerno.Text = customerno
                     txt_color.Text = color
                     txt_qrlenght.Text = qrlenght
+                    labelerror.Visible = False
                 End If
 
 
-
+                txtqr.Clear()
 
             Catch ex As MySqlException
                 MessageBox.Show(ex.Message)

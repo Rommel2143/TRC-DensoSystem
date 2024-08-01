@@ -1,8 +1,9 @@
 ﻿Imports Guna.UI2.WinForms
 Imports MySql.Data.MySqlClient
-Public Class yt_out
+Public Class dmtn_fgin
     Dim qrlenght As Integer
     Dim serialNumber As String = ""
+
     Dim partno As String
     Dim qty As String
     Dim customerno As String
@@ -12,6 +13,8 @@ Public Class yt_out
     Dim process As String
     Dim line As String
     Dim series As String
+
+
     Private Function processQRcode(type As String, txtqr As Guna.UI2.WinForms.Guna2TextBox) As Boolean
         Try
 
@@ -42,8 +45,6 @@ Public Class yt_out
                 Dim day As Integer = Integer.Parse(productionDateRaw.Substring(4, 2))
                 Dim productionDateDateTime As New DateTime(2000 + year, month, day)
                 prod = productionDateDateTime.ToString("yyyy-MM-dd")
-
-
                 Return True
 
             Else
@@ -56,20 +57,14 @@ Public Class yt_out
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
-
             Return False
         End Try
     End Function
-    Public Sub showerror(text As String)
 
-        Try
-            labelerror.Visible = True
-            texterror.Text = text
-            sounderror()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-    End Sub
+
+
+
+
     Private Sub getcoordinates(partdb As String, ByRef txtstring As String)
 
         Dim partno() As String = partdb.Split(",")
@@ -80,41 +75,48 @@ Public Class yt_out
         txtstring = serialNumber.Substring(partget1, partget2)
 
     End Sub
-    Private Sub txtqr_label_TextChanged(sender As Object, e As EventArgs) Handles txtqr_label.TextChanged
+    Public Sub showerror(text As String)
+
+        Try
+            labelerror.Visible = True
+            texterror.Text = text
+            sounderror()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txtqr_fg_TextChanged(sender As Object, e As EventArgs) Handles txtqr_fg.TextChanged
 
     End Sub
-    Private Sub txtqr_fg_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_label.KeyDown
+
+    Private Sub txtqr_fg_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_fg.KeyDown
         If e.KeyCode = Keys.Enter Then
             Try
+                con.Close()
+                con.Open()
+                Dim cmdselect As New MySqlCommand("SELECT dmtn, userin, datein FROM `denso_dmtn`
+                                                WHERE dmtn = '" & txtqr_fg.Text & "'", con)
+                dr = cmdselect.ExecuteReader()
+                If dr.Read = True Then
+                    'duplicate
+                    showduplicate(dr.GetString("userin"), dr.GetDateTime("datein").ToString("yyy-MM-dd"))
 
-
-                If processQRcode("YT", txtqr_label) Then
-                    con.Close()
-                    con.Open()
-                    Dim cmdselect As New MySqlCommand("SELECT ytqr, userout, dateout,status FROM `denso_yt`
-                                                WHERE ytqr = '" & txtqr_label.Text & "'", con)
-                    dr = cmdselect.ExecuteReader()
-                    If dr.Read = True Then
+                Else
+                    If processQRcode("DMTN", txtqr_fg) Then
                         'saveqr
-                        Select Case dr.GetInt32("status")
-                            Case 0
-                                updateqr()
-                            Case 1
-                                showduplicate(dr.GetString("userout"), dr.GetDateTime("dateout").ToString("yyy-MM-dd"))
-                        End Select
-                        reload("SELECT `ytqr`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial` FROM `denso_yt` 
-                                   WHERE dateout= '" & datedb & "'", datagrid_label)
+
+                        saveqr()
+                        labelerror.Visible = False
+                        txtqr_fg.Clear()
+                        txtqr_fg.Focus()
+
                     Else
-                        showerror("No Record Found!")
-
+                        showerror("QTY does'nt match the given Inner Tags!")
                     End If
-                    txtqr_label.Clear()
 
-                    txtqr_label.Focus()
-
+                    UpdateRowCountAndTotalQty(datagrid2, lbl_count, lbl_qty)
                 End If
-
-
 
 
             Catch ex As MySqlException
@@ -124,7 +126,22 @@ Public Class yt_out
             End Try
         End If
     End Sub
-    Private Sub updateqr()
+    Private Sub UpdateRowCountAndTotalQty(datagrid As Guna2DataGridView, labelRowCount As Label, labelTotalQty As Label)
+        ' Update row count
+        labelRowCount.Text = datagrid.Rows.Count.ToString()
+
+        ' Calculate total quantity
+        Dim totalQty As Integer = 0
+        For Each row As DataGridViewRow In datagrid.Rows
+            If row.Cells(2).Value IsNot Nothing Then
+                totalQty += Convert.ToInt32(row.Cells(5).Value)
+            End If
+        Next
+
+        ' Update total quantity label
+        labelTotalQty.Text = totalQty.ToString()
+    End Sub
+    Private Sub saveqr()
         Try
             ' Define your MySQL connection string
 
@@ -132,15 +149,24 @@ Public Class yt_out
             con.Close()
             con.Open()
 
-            Dim cmdupdatedmtn As New MySqlCommand("UPDATE denso_yt SET status=@status, userout= @userout, dateout=@dateout
-                                                    WHERE ytqr = '" & txtqr_label.Text & "'", con)
-            With cmdupdatedmtn.Parameters
-                .AddWithValue("@status", "1")
-                .AddWithValue("@userout", idno)
-                .AddWithValue("@dateout", datedb)
+            Dim cmdinsertdmtn As New MySqlCommand("INSERT INTO denso_dmtn (dmtn, partno, qty, customerno, color, proddate, shift, process, line, serial,userin, datein) " &
+                                      "VALUES (@dmtn, @partno, @qty, @customerno, @color, @proddate, @shift, @process, @line, @serial, @userin, @datein)", con)
+            With cmdinsertdmtn.Parameters
+                .AddWithValue("@dmtn", txtqr_fg.Text)
+                .AddWithValue("@partno", partno)
+                .AddWithValue("@qty", qty)
+                .AddWithValue("@customerno", customerno)
+                .AddWithValue("@color", color)
+                .AddWithValue("@proddate", prod)
+                .AddWithValue("@shift", shift)
+                .AddWithValue("@process", process)
+                .AddWithValue("@line", line)
+                .AddWithValue("@serial", series)
+                .AddWithValue("@userin", idno)
+                .AddWithValue("@datein", datedb)
             End With
-            cmdupdatedmtn.ExecuteNonQuery()
-
+            cmdinsertdmtn.ExecuteNonQuery()
+            reload("SELECT `dmtn`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial` FROM `denso_dmtn`", datagrid2)
 
         Catch ex As MySqlException
             MessageBox.Show(ex.Message)
@@ -149,6 +175,7 @@ Public Class yt_out
         End Try
 
     End Sub
+
     Private Sub showduplicate(user As String, date1 As String)
         Try
             labelerror.Visible = True

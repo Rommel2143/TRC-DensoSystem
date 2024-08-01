@@ -138,7 +138,6 @@ Public Class yt_matrix
         If e.KeyCode = Keys.Enter Then
             Try
 
-
                 If processQRcode("YT", txtqr_label) Then
                     con.Close()
                     con.Open()
@@ -153,12 +152,11 @@ Public Class yt_matrix
 
                     Else
                         displaygrid(datagrid_label)
-                        lbl_qty.Text = qty
+                        lbl_qty.Text = Val(qty)
                         txtqr_label.Enabled = False
-
+                        txtqr_matrix.Enabled = True
                     End If
                     txtqr_label.Clear()
-
                     txtqr_label.Focus()
 
                 End If
@@ -193,7 +191,7 @@ Public Class yt_matrix
 
 
         'display grid
-        Dim newrow As String() = New String() {serialNumber, partno, qty, customerno, color, prod, shift, process, line, series}
+        Dim newrow As String() = New String() {serialNumber, partno, Val(qty), customerno, color, prod, shift, process, line, series}
         datagrid.Rows.Add(newrow)
         labelerror.Visible = False
         ' UpdateRowCountAndTotalQty(datagrid, lbl_count, lbl_qty)
@@ -238,7 +236,18 @@ Public Class yt_matrix
 
                     UpdateRowCountAndTotalQty(datagrid_matrix, lbl_count2)
 
+
+                    If lbl_qty.Text = lbl_count2.Text Then
+                            'saveqr
+                            saveqr()
+                            lbl_count2.Text = 0
+                            lbl_qty.Text = 0
+                            txtqr_label.Enabled = True
+                            txtqr_matrix.Enabled = False
+
+
                     End If
+                End If
                     txtqr_matrix.Clear()
                     txtqr_matrix.Focus()
 
@@ -260,15 +269,7 @@ Public Class yt_matrix
     End Sub
 
     Private Sub lbl_count2_TextChanged(sender As Object, e As EventArgs) Handles lbl_count2.TextChanged
-        If lbl_qty.Text = lbl_count2.Text Then
-            'saveqr
-            saveqr()
-            lbl_count2.Text = 0
-            lbl_qty.Text = 0
-            txtqr_label.Enabled = True
-            txtqr_matrix.Enabled = False
 
-        End If
     End Sub
     Private Sub saveqr()
         Try
@@ -317,15 +318,15 @@ Public Class yt_matrix
                                       "VALUES (@ytqr, @partno, @qty, @customerno, @color, @proddate, @shift, @process, @line, @serial, @userin, @datein)", con)
             With cmdinsertdmtn.Parameters
                 .AddWithValue("@ytqr", datagrid_label.Rows(0).Cells(0).Value.ToString())
-                .AddWithValue("@partno", partno)
-                .AddWithValue("@qty", qty)
+                .AddWithValue("@partno", datagrid_label.Rows(0).Cells(1).Value.ToString())
+                .AddWithValue("@qty", datagrid_label.Rows(0).Cells(2).Value.ToString())
                 .AddWithValue("@customerno", datagrid_matrix.Rows(0).Cells(3).Value.ToString())
-                .AddWithValue("@color", color)
-                .AddWithValue("@proddate", prod)
-                .AddWithValue("@shift", shift)
-                .AddWithValue("@process", process)
-                .AddWithValue("@line", line)
-                .AddWithValue("@serial", series)
+                .AddWithValue("@color", datagrid_label.Rows(0).Cells(4).Value.ToString())
+                .AddWithValue("@proddate", datagrid_label.Rows(0).Cells(5).Value.ToString())
+                .AddWithValue("@shift", datagrid_label.Rows(0).Cells(6).Value.ToString())
+                .AddWithValue("@process", datagrid_label.Rows(0).Cells(7).Value.ToString())
+                .AddWithValue("@line", datagrid_label.Rows(0).Cells(8).Value.ToString())
+                .AddWithValue("@serial", datagrid_label.Rows(0).Cells(9).Value.ToString())
                 .AddWithValue("@userin", idno)
                 .AddWithValue("@datein", datedb)
             End With
@@ -338,6 +339,10 @@ Public Class yt_matrix
         Finally
             con.Close()
         End Try
+
+    End Sub
+
+    Private Sub Guna2GroupBox1_Click(sender As Object, e As EventArgs) Handles Guna2GroupBox1.Click
 
     End Sub
 End Class

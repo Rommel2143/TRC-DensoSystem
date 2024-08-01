@@ -120,4 +120,12 @@ Public Class sub_mainframe
     Private Sub YTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles YTToolStripMenuItem.Click
 
     End Sub
+
+    Private Sub FGINToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FGINToolStripMenuItem.Click
+        display_formscan(dmtn_fgin)
+    End Sub
+
+    Private Sub OUTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OUTToolStripMenuItem.Click
+        display_formscan(yt_out)
+    End Sub
 End Class
