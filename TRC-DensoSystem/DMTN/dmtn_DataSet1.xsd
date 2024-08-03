@@ -12,7 +12,7 @@
   <xs:element name="dmtn_DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dmtn_DataSet1" msprop:Generator_UserDSName="dmtn_DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="denso_dmtn" msprop:Generator_TableClassName="denso_dmtnDataTable" msprop:Generator_TableVarName="tabledenso_dmtn" msprop:Generator_RowChangedName="denso_dmtnRowChanged" msprop:Generator_TablePropName="denso_dmtn" msprop:Generator_RowDeletingName="denso_dmtnRowDeleting" msprop:Generator_RowChangingName="denso_dmtnRowChanging" msprop:Generator_RowEvHandlerName="denso_dmtnRowChangeEventHandler" msprop:Generator_RowDeletedName="denso_dmtnRowDeleted" msprop:Generator_RowClassName="denso_dmtnRow" msprop:Generator_UserTableName="denso_dmtn" msprop:Generator_RowEvArgName="denso_dmtnRowChangeEvent">
+        <xs:element name="denso_dmtn" msprop:Generator_TableClassName="denso_dmtnDataTable" msprop:Generator_TableVarName="tabledenso_dmtn" msprop:Generator_TablePropName="denso_dmtn" msprop:Generator_RowDeletingName="denso_dmtnRowDeleting" msprop:Generator_RowChangingName="denso_dmtnRowChanging" msprop:Generator_RowEvHandlerName="denso_dmtnRowChangeEventHandler" msprop:Generator_RowDeletedName="denso_dmtnRowDeleted" msprop:Generator_UserTableName="denso_dmtn" msprop:Generator_RowChangedName="denso_dmtnRowChanged" msprop:Generator_RowEvArgName="denso_dmtnRowChangeEvent" msprop:Generator_RowClassName="denso_dmtnRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -32,7 +32,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="denso_fg_scan" msprop:Generator_TableClassName="denso_fg_scanDataTable" msprop:Generator_TableVarName="tabledenso_fg_scan" msprop:Generator_RowChangedName="denso_fg_scanRowChanged" msprop:Generator_TablePropName="denso_fg_scan" msprop:Generator_RowDeletingName="denso_fg_scanRowDeleting" msprop:Generator_RowChangingName="denso_fg_scanRowChanging" msprop:Generator_RowEvHandlerName="denso_fg_scanRowChangeEventHandler" msprop:Generator_RowDeletedName="denso_fg_scanRowDeleted" msprop:Generator_RowClassName="denso_fg_scanRow" msprop:Generator_UserTableName="denso_fg_scan" msprop:Generator_RowEvArgName="denso_fg_scanRowChangeEvent">
+        <xs:element name="denso_fg_scan" msprop:Generator_TableClassName="denso_fg_scanDataTable" msprop:Generator_TableVarName="tabledenso_fg_scan" msprop:Generator_TablePropName="denso_fg_scan" msprop:Generator_RowDeletingName="denso_fg_scanRowDeleting" msprop:Generator_RowChangingName="denso_fg_scanRowChanging" msprop:Generator_RowEvHandlerName="denso_fg_scanRowChangeEventHandler" msprop:Generator_RowDeletedName="denso_fg_scanRowDeleted" msprop:Generator_UserTableName="denso_fg_scan" msprop:Generator_RowChangedName="denso_fg_scanRowChanged" msprop:Generator_RowEvArgName="denso_fg_scanRowChangeEvent" msprop:Generator_RowClassName="denso_fg_scanRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -58,6 +58,24 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="denso_dmtn_bypass" msprop:Generator_TableClassName="denso_dmtn_bypassDataTable" msprop:Generator_TableVarName="tabledenso_dmtn_bypass" msprop:Generator_TablePropName="denso_dmtn_bypass" msprop:Generator_RowDeletingName="denso_dmtn_bypassRowDeleting" msprop:Generator_RowChangingName="denso_dmtn_bypassRowChanging" msprop:Generator_RowEvHandlerName="denso_dmtn_bypassRowChangeEventHandler" msprop:Generator_RowDeletedName="denso_dmtn_bypassRowDeleted" msprop:Generator_UserTableName="denso_dmtn_bypass" msprop:Generator_RowChangedName="denso_dmtn_bypassRowChanged" msprop:Generator_RowEvArgName="denso_dmtn_bypassRowChangeEvent" msprop:Generator_RowClassName="denso_dmtn_bypassRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
+              <xs:element name="dmtn" msprop:Generator_ColumnVarNameInTable="columndmtn" msprop:Generator_ColumnPropNameInRow="dmtn" msprop:Generator_ColumnPropNameInTable="dmtnColumn" msprop:Generator_UserColumnName="dmtn" type="xs:string" minOccurs="0" />
+              <xs:element name="partno" msprop:Generator_ColumnVarNameInTable="columnpartno" msprop:Generator_ColumnPropNameInRow="partno" msprop:Generator_ColumnPropNameInTable="partnoColumn" msprop:Generator_UserColumnName="partno" type="xs:string" minOccurs="0" />
+              <xs:element name="customerno" msprop:Generator_ColumnVarNameInTable="columncustomerno" msprop:Generator_ColumnPropNameInRow="customerno" msprop:Generator_ColumnPropNameInTable="customernoColumn" msprop:Generator_UserColumnName="customerno" type="xs:string" minOccurs="0" />
+              <xs:element name="color" msprop:Generator_ColumnVarNameInTable="columncolor" msprop:Generator_ColumnPropNameInRow="color" msprop:Generator_ColumnPropNameInTable="colorColumn" msprop:Generator_UserColumnName="color" type="xs:string" minOccurs="0" />
+              <xs:element name="proddate" msprop:Generator_ColumnVarNameInTable="columnproddate" msprop:Generator_ColumnPropNameInRow="proddate" msprop:Generator_ColumnPropNameInTable="proddateColumn" msprop:Generator_UserColumnName="proddate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:int" minOccurs="0" />
+              <xs:element name="cml" msprop:Generator_ColumnVarNameInTable="columncml" msprop:Generator_ColumnPropNameInRow="cml" msprop:Generator_ColumnPropNameInTable="cmlColumn" msprop:Generator_UserColumnName="cml" type="xs:string" minOccurs="0" />
+              <xs:element name="userout" msprop:Generator_ColumnVarNameInTable="columnuserout" msprop:Generator_ColumnPropNameInRow="userout" msprop:Generator_ColumnPropNameInTable="useroutColumn" msprop:Generator_UserColumnName="userout" type="xs:string" minOccurs="0" />
+              <xs:element name="dateout" msprop:Generator_ColumnVarNameInTable="columndateout" msprop:Generator_ColumnPropNameInRow="dateout" msprop:Generator_ColumnPropNameInTable="dateoutColumn" msprop:Generator_UserColumnName="dateout" type="xs:string" minOccurs="0" />
+              <xs:element name="serial" msprop:Generator_ColumnVarNameInTable="columnserial" msprop:Generator_ColumnPropNameInRow="serial" msprop:Generator_ColumnPropNameInTable="serialColumn" msprop:Generator_UserColumnName="serial" type="xs:string" minOccurs="0" />
+              <xs:element name="cmlserial" msprop:Generator_ColumnVarNameInTable="columncmlserial" msprop:Generator_ColumnPropNameInRow="cmlserial" msprop:Generator_ColumnPropNameInTable="cmlserialColumn" msprop:Generator_UserColumnName="cmlserial" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -66,6 +84,10 @@
     </xs:unique>
     <xs:unique name="denso_fg_scan_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:denso_fg_scan" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="denso_dmtn_bypass_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:denso_dmtn_bypass" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>

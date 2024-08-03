@@ -55,15 +55,16 @@ Partial Class sub_mainframe
         Me.INTELLIIVToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.INToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OUTToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.INToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OUTToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.userstrip = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.INToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OUTToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FGINBYPASSReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -145,7 +146,7 @@ Partial Class sub_mainframe
         '
         'DMTNToolStripMenuItem
         '
-        Me.DMTNToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InnerTagToolStripMenuItem, Me.CMLToolStripMenuItem, Me.MIXEDPalletToolStripMenuItem, Me.MONITORINGToolStripMenuItem, Me.FGINToolStripMenuItem})
+        Me.DMTNToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InnerTagToolStripMenuItem, Me.CMLToolStripMenuItem, Me.MIXEDPalletToolStripMenuItem, Me.MONITORINGToolStripMenuItem, Me.FGINToolStripMenuItem, Me.FGINBYPASSReportToolStripMenuItem})
         Me.DMTNToolStripMenuItem.Image = CType(resources.GetObject("DMTNToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DMTNToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DMTNToolStripMenuItem.Name = "DMTNToolStripMenuItem"
@@ -239,7 +240,7 @@ Partial Class sub_mainframe
         Me.MatrixToolStripMenuItem.Image = CType(resources.GetObject("MatrixToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MatrixToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.MatrixToolStripMenuItem.Name = "MatrixToolStripMenuItem"
-        Me.MatrixToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.MatrixToolStripMenuItem.Size = New System.Drawing.Size(121, 38)
         Me.MatrixToolStripMenuItem.Text = "IN"
         '
         'OUTToolStripMenuItem
@@ -247,7 +248,7 @@ Partial Class sub_mainframe
         Me.OUTToolStripMenuItem.Image = CType(resources.GetObject("OUTToolStripMenuItem.Image"), System.Drawing.Image)
         Me.OUTToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.OUTToolStripMenuItem.Name = "OUTToolStripMenuItem"
-        Me.OUTToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.OUTToolStripMenuItem.Size = New System.Drawing.Size(121, 38)
         Me.OUTToolStripMenuItem.Text = "OUT"
         '
         'JECOToolStripMenuItem
@@ -325,6 +326,31 @@ Partial Class sub_mainframe
         Me.OUTToolStripMenuItem3.Size = New System.Drawing.Size(121, 38)
         Me.OUTToolStripMenuItem3.Text = "OUT"
         '
+        'TToolStripMenuItem
+        '
+        Me.TToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.INToolStripMenuItem3, Me.OUTToolStripMenuItem4})
+        Me.TToolStripMenuItem.Image = CType(resources.GetObject("TToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.TToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.TToolStripMenuItem.Name = "TToolStripMenuItem"
+        Me.TToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.TToolStripMenuItem.Text = "3T"
+        '
+        'INToolStripMenuItem3
+        '
+        Me.INToolStripMenuItem3.Image = CType(resources.GetObject("INToolStripMenuItem3.Image"), System.Drawing.Image)
+        Me.INToolStripMenuItem3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.INToolStripMenuItem3.Name = "INToolStripMenuItem3"
+        Me.INToolStripMenuItem3.Size = New System.Drawing.Size(121, 38)
+        Me.INToolStripMenuItem3.Text = "IN"
+        '
+        'OUTToolStripMenuItem4
+        '
+        Me.OUTToolStripMenuItem4.Image = CType(resources.GetObject("OUTToolStripMenuItem4.Image"), System.Drawing.Image)
+        Me.OUTToolStripMenuItem4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.OUTToolStripMenuItem4.Name = "OUTToolStripMenuItem4"
+        Me.OUTToolStripMenuItem4.Size = New System.Drawing.Size(121, 38)
+        Me.OUTToolStripMenuItem4.Text = "OUT"
+        '
         'MenuStrip1
         '
         Me.MenuStrip1.AutoSize = False
@@ -384,30 +410,13 @@ Partial Class sub_mainframe
         Me.ToolStripMenuItem5.Size = New System.Drawing.Size(216, 22)
         Me.ToolStripMenuItem5.Text = "Device info."
         '
-        'TToolStripMenuItem
+        'FGINBYPASSReportToolStripMenuItem
         '
-        Me.TToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.INToolStripMenuItem3, Me.OUTToolStripMenuItem4})
-        Me.TToolStripMenuItem.Image = CType(resources.GetObject("TToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.TToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.TToolStripMenuItem.Name = "TToolStripMenuItem"
-        Me.TToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
-        Me.TToolStripMenuItem.Text = "3T"
-        '
-        'INToolStripMenuItem3
-        '
-        Me.INToolStripMenuItem3.Image = CType(resources.GetObject("INToolStripMenuItem3.Image"), System.Drawing.Image)
-        Me.INToolStripMenuItem3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.INToolStripMenuItem3.Name = "INToolStripMenuItem3"
-        Me.INToolStripMenuItem3.Size = New System.Drawing.Size(196, 38)
-        Me.INToolStripMenuItem3.Text = "IN"
-        '
-        'OUTToolStripMenuItem4
-        '
-        Me.OUTToolStripMenuItem4.Image = CType(resources.GetObject("OUTToolStripMenuItem4.Image"), System.Drawing.Image)
-        Me.OUTToolStripMenuItem4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.OUTToolStripMenuItem4.Name = "OUTToolStripMenuItem4"
-        Me.OUTToolStripMenuItem4.Size = New System.Drawing.Size(196, 38)
-        Me.OUTToolStripMenuItem4.Text = "OUT"
+        Me.FGINBYPASSReportToolStripMenuItem.Image = CType(resources.GetObject("FGINBYPASSReportToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.FGINBYPASSReportToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.FGINBYPASSReportToolStripMenuItem.Name = "FGINBYPASSReportToolStripMenuItem"
+        Me.FGINBYPASSReportToolStripMenuItem.Size = New System.Drawing.Size(291, 38)
+        Me.FGINBYPASSReportToolStripMenuItem.Text = "FG IN Report (No Inner Tag)"
         '
         'sub_mainframe
         '
@@ -468,4 +477,5 @@ Partial Class sub_mainframe
     Friend WithEvents TToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents INToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents OUTToolStripMenuItem4 As ToolStripMenuItem
+    Friend WithEvents FGINBYPASSReportToolStripMenuItem As ToolStripMenuItem
 End Class

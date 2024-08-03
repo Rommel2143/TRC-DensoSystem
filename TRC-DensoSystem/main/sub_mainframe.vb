@@ -160,4 +160,8 @@ Public Class sub_mainframe
     Private Sub OUTToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles OUTToolStripMenuItem4.Click
         display_formscan(retainer_3t_out)
     End Sub
+
+    Private Sub FGINBYPASSReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FGINBYPASSReportToolStripMenuItem.Click
+        display_formscan(export_dmtn_bypass)
+    End Sub
 End Class

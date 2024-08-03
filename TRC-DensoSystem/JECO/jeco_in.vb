@@ -102,7 +102,8 @@ Public Class jeco_in
                         'save
                         saveqr()
                         reload("SELECT `jecoqr`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial` FROM `denso_jeco` 
-                                   WHERE datein= '" & datedb & "'", datagrid_label)
+                                   WHERE datein= '" & datedb & "' ORDER BY `id` DESC 
+LIMIT 30", datagrid_label)
                         labelerror.Visible = False
                     End If
                     txtqr_label.Clear()

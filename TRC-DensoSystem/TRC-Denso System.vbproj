@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\ptif1-ds\SHARED\it\System\Denso System\</UpdateUrl>
-    <ApplicationRevision>21</ApplicationRevision>
+    <ApplicationRevision>24</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -255,6 +255,12 @@
     <Compile Include="3T\retainer_3t_OUT.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DMTN\dmtn_bypass.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dmtn_bypass.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DMTN\dmtn_cml.Designer.vb">
       <DependentUpon>dmtn_cml.vb</DependentUpon>
     </Compile>
@@ -291,6 +297,12 @@
       <DependentUpon>export_dmtn.vb</DependentUpon>
     </Compile>
     <Compile Include="DMTN\export_dmtn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DMTN\export_dmtn_bypass.Designer.vb">
+      <DependentUpon>export_dmtn_bypass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DMTN\export_dmtn_bypass.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DMTN\report_dmtn.vb">
@@ -353,6 +365,12 @@
     <Compile Include="INTELLI4\intelli_out.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="JECO\jeco_crystalreport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jeco_crystalreport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="JECO\jeco_in.Designer.vb">
       <DependentUpon>jeco_in.vb</DependentUpon>
     </Compile>
@@ -364,6 +382,14 @@
     </Compile>
     <Compile Include="JECO\jeco_out.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main\Dataset1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dataset1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="main\Dataset1.vb">
+      <DependentUpon>Dataset1.xsd</DependentUpon>
     </Compile>
     <Compile Include="main\denso_components.Designer.vb">
       <DependentUpon>denso_components.vb</DependentUpon>
@@ -448,6 +474,12 @@
     <Compile Include="main\Register_PC.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="JECO\jeco_report.Designer.vb">
+      <DependentUpon>jeco_report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="JECO\jeco_report.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="YT\yt_matrix.Designer.vb">
       <DependentUpon>yt_matrix.vb</DependentUpon>
     </Compile>
@@ -458,6 +490,12 @@
       <DependentUpon>yt_out.vb</DependentUpon>
     </Compile>
     <Compile Include="YT\yt_out.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YT\yt_report.Designer.vb">
+      <DependentUpon>yt_report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YT\yt_report.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -474,6 +512,10 @@
     <EmbeddedResource Include="3T\retainer_3t_OUT.resx">
       <DependentUpon>retainer_3t_OUT.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DMTN\dmtn_bypass.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>dmtn_bypass.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DMTN\dmtn_cml.resx">
       <DependentUpon>dmtn_cml.vb</DependentUpon>
     </EmbeddedResource>
@@ -488,6 +530,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DMTN\export_dmtn.resx">
       <DependentUpon>export_dmtn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMTN\export_dmtn_bypass.resx">
+      <DependentUpon>export_dmtn_bypass.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DMTN\report_dmtn.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -521,6 +566,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="INTELLI4\intelli_out.resx">
       <DependentUpon>intelli_out.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JECO\jeco_crystalreport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>jeco_crystalreport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="JECO\jeco_in.resx">
       <DependentUpon>jeco_in.vb</DependentUpon>
@@ -567,11 +616,17 @@
     <EmbeddedResource Include="main\Register_PC.resx">
       <DependentUpon>Register_PC.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="JECO\jeco_report.resx">
+      <DependentUpon>jeco_report.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="YT\yt_matrix.resx">
       <DependentUpon>yt_matrix.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="YT\yt_out.resx">
       <DependentUpon>yt_out.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YT\yt_report.resx">
+      <DependentUpon>yt_report.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -585,6 +640,17 @@
     </None>
     <None Include="DMTN\dmtn_DataSet1.xss">
       <DependentUpon>dmtn_DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="main\Dataset1.xsc">
+      <DependentUpon>Dataset1.xsd</DependentUpon>
+    </None>
+    <None Include="main\Dataset1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dataset1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="main\Dataset1.xss">
+      <DependentUpon>Dataset1.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

@@ -52,10 +52,8 @@ Partial Class jeco_out
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btndelete = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtqr_verify = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.datagrid2 = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.datagrid2 = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.txtqr_fg = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
@@ -82,8 +80,7 @@ Partial Class jeco_out
         Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox3)
         Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox1)
         Me.Guna2Panel1.Controls.Add(Me.Guna2PictureBox1)
-        Me.Guna2Panel1.Enabled = False
-        Me.Guna2Panel1.Location = New System.Drawing.Point(14, 63)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(50, 63)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(1350, 714)
         Me.Guna2Panel1.TabIndex = 226
@@ -125,7 +122,7 @@ Partial Class jeco_out
         Me.lbl_qty.BackColor = System.Drawing.Color.Transparent
         Me.lbl_qty.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_qty.ForeColor = System.Drawing.Color.Gray
-        Me.lbl_qty.Location = New System.Drawing.Point(579, 524)
+        Me.lbl_qty.Location = New System.Drawing.Point(588, 639)
         Me.lbl_qty.Name = "lbl_qty"
         Me.lbl_qty.Size = New System.Drawing.Size(15, 17)
         Me.lbl_qty.TabIndex = 215
@@ -137,7 +134,7 @@ Partial Class jeco_out
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Gray
-        Me.Label3.Location = New System.Drawing.Point(497, 524)
+        Me.Label3.Location = New System.Drawing.Point(506, 639)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(76, 17)
         Me.Label3.TabIndex = 214
@@ -169,7 +166,7 @@ Partial Class jeco_out
         Me.lbl_count.BackColor = System.Drawing.Color.Transparent
         Me.lbl_count.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_count.ForeColor = System.Drawing.Color.Gray
-        Me.lbl_count.Location = New System.Drawing.Point(579, 502)
+        Me.lbl_count.Location = New System.Drawing.Point(588, 617)
         Me.lbl_count.Name = "lbl_count"
         Me.lbl_count.Size = New System.Drawing.Size(15, 17)
         Me.lbl_count.TabIndex = 213
@@ -200,7 +197,7 @@ Partial Class jeco_out
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
@@ -220,7 +217,7 @@ Partial Class jeco_out
         Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.datagrid1.RowHeadersVisible = False
         Me.datagrid1.RowTemplate.Height = 31
-        Me.datagrid1.Size = New System.Drawing.Size(574, 383)
+        Me.datagrid1.Size = New System.Drawing.Size(574, 488)
         Me.datagrid1.TabIndex = 208
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -312,7 +309,7 @@ Partial Class jeco_out
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Gray
-        Me.Label8.Location = New System.Drawing.Point(520, 502)
+        Me.Label8.Location = New System.Drawing.Point(529, 617)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(53, 17)
         Me.Label8.TabIndex = 212
@@ -336,10 +333,8 @@ Partial Class jeco_out
         '
         'Guna2GroupBox1
         '
-        Me.Guna2GroupBox1.Controls.Add(Me.Label4)
-        Me.Guna2GroupBox1.Controls.Add(Me.txtqr_verify)
-        Me.Guna2GroupBox1.Controls.Add(Me.datagrid2)
         Me.Guna2GroupBox1.Controls.Add(Me.Label1)
+        Me.Guna2GroupBox1.Controls.Add(Me.datagrid2)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button2)
         Me.Guna2GroupBox1.Controls.Add(Me.txtqr_fg)
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.HotTrack
@@ -347,42 +342,21 @@ Partial Class jeco_out
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(707, 17)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(629, 680)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(629, 604)
         Me.Guna2GroupBox1.TabIndex = 222
         Me.Guna2GroupBox1.Text = "CML"
         '
-        'Label4
+        'Label1
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Gray
-        Me.Label4.Location = New System.Drawing.Point(29, 54)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(66, 17)
-        Me.Label4.TabIndex = 220
-        Me.Label4.Text = "Scan QR :"
-        '
-        'txtqr_verify
-        '
-        Me.txtqr_verify.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtqr_verify.DefaultText = ""
-        Me.txtqr_verify.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtqr_verify.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtqr_verify.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtqr_verify.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtqr_verify.Enabled = False
-        Me.txtqr_verify.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtqr_verify.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtqr_verify.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtqr_verify.IconLeft = CType(resources.GetObject("txtqr_verify.IconLeft"), System.Drawing.Image)
-        Me.txtqr_verify.Location = New System.Drawing.Point(16, 74)
-        Me.txtqr_verify.Name = "txtqr_verify"
-        Me.txtqr_verify.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtqr_verify.PlaceholderText = "Scan Sticker Label..."
-        Me.txtqr_verify.SelectedText = ""
-        Me.txtqr_verify.Size = New System.Drawing.Size(489, 36)
-        Me.txtqr_verify.TabIndex = 219
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Gray
+        Me.Label1.Location = New System.Drawing.Point(24, 54)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(86, 17)
+        Me.Label1.TabIndex = 219
+        Me.Label1.Text = "Scan QR 2X :"
         '
         'datagrid2
         '
@@ -408,13 +382,13 @@ Partial Class jeco_out
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datagrid2.DefaultCellStyle = DataGridViewCellStyle7
         Me.datagrid2.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid2.Location = New System.Drawing.Point(27, 229)
+        Me.datagrid2.Location = New System.Drawing.Point(27, 141)
         Me.datagrid2.Name = "datagrid2"
         Me.datagrid2.ReadOnly = True
         Me.datagrid2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -428,7 +402,7 @@ Partial Class jeco_out
         Me.datagrid2.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.datagrid2.RowHeadersVisible = False
         Me.datagrid2.RowTemplate.Height = 31
-        Me.datagrid2.Size = New System.Drawing.Size(574, 383)
+        Me.datagrid2.Size = New System.Drawing.Size(574, 425)
         Me.datagrid2.TabIndex = 218
         Me.datagrid2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid2.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -451,18 +425,6 @@ Partial Class jeco_out
         Me.datagrid2.ThemeStyle.RowsStyle.Height = 31
         Me.datagrid2.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.datagrid2.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Gray
-        Me.Label1.Location = New System.Drawing.Point(29, 128)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 17)
-        Me.Label1.TabIndex = 217
-        Me.Label1.Text = "Scan QR :"
         '
         'Guna2Button2
         '
@@ -493,7 +455,7 @@ Partial Class jeco_out
         Me.txtqr_fg.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtqr_fg.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtqr_fg.IconLeft = CType(resources.GetObject("txtqr_fg.IconLeft"), System.Drawing.Image)
-        Me.txtqr_fg.Location = New System.Drawing.Point(16, 148)
+        Me.txtqr_fg.Location = New System.Drawing.Point(27, 74)
         Me.txtqr_fg.Name = "txtqr_fg"
         Me.txtqr_fg.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr_fg.PlaceholderText = "Scan Sticker Label..."
@@ -635,7 +597,6 @@ Partial Class jeco_out
     Friend WithEvents btndelete As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents datagrid2 As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents Label1 As Label
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txtqr_fg As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
@@ -645,6 +606,5 @@ Partial Class jeco_out
     Friend WithEvents texterror As Label
     Friend WithEvents labelerror As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Label4 As Label
-    Friend WithEvents txtqr_verify As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label1 As Label
 End Class

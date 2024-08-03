@@ -169,92 +169,57 @@ Public Class jeco_out
     Private Sub txtqr_TextChanged(sender As Object, e As EventArgs) Handles txtqr.TextChanged
 
     End Sub
-    Private Sub txtqr_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            Try
-
-                If processQRcode("JECO", txtqr) Then
-                    con.Close()
-                    con.Open()
-                    Dim cmdselect As New MySqlCommand("SELECT jecoqr, userin, datein,cml FROM `denso_jeco`
-                                                WHERE jecoqr = '" & txtqr.Text & "'", con)
-                    dr = cmdselect.ExecuteReader()
-                    If dr.Read = True Then
-
-
-                        If dr.GetString("cmlqr") = "" Then
-                            'save
-
-                            displaygrid(datagrid1)
-                        Else
-                            'duplicate
-                            showduplicate(dr.GetString("userin"), dr.GetDateTime("datein").ToString("yyy-MM-dd"))
-                        End If
-                    Else
-                        'invalid or not scanned
-                        showerror("QR not Recorded!")
-
-
-                    End If
-                    txtqr.Clear()
-                    txtqr.Focus()
-
-                End If
-
-            Catch ex As MySqlException
-                MessageBox.Show(ex.Message)
-            Finally
-                con.Close()
-            End Try
-        End If
-    End Sub
+   
     Private Sub Guna2TextBoxfg_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_fg.KeyDown
         If e.KeyCode = Keys.Enter Then
-            Try
-                If processQRcodecml("DMTN-CML", txtqr_fg) Then
-                    ' Add scanned QR code to the list
-                    scannedQRCodes.Add(txtqr_fg.Text)
 
-                    ' Check if three QR codes have been scanned
-                    If scannedQRCodes.Count = 3 Then
-                        ' Check if all three QR codes are the same
-                        If scannedQRCodes.Distinct().Count() = 1 Then
-                            con.Close()
-                            con.Open()
-                            Dim cmdselect As New MySqlCommand("SELECT cmlqr, userout, dateout FROM `denso_dmtn_cml`
+            Try
+
+                    If processQRcodecml("JECO-CML", txtqr_fg) Then
+                        ' Add scanned QR code to the list
+                        scannedQRCodes.Add(txtqr_fg.Text)
+
+                        ' Check if three QR codes have been scanned
+                        If scannedQRCodes.Count = 2 Then
+                            ' Check if all three QR codes are the same
+                            If scannedQRCodes.Distinct().Count() = 1 Then
+                                con.Close()
+                                con.Open()
+                            Dim cmdselect As New MySqlCommand("SELECT cmlqr, userout, dateout FROM `denso_jeco_cml`
                                                                 WHERE cmlqr = '" & txtqr_fg.Text & "'", con)
                             dr = cmdselect.ExecuteReader()
-                            If dr.Read = True Then
-                                'duplicate
-                                showduplicate(dr.GetString("userout"), dr.GetDateTime("dateout").ToString("yyy-MM-dd"))
+                                If dr.Read = True Then
+                                    'duplicate
+                                    showduplicate(dr.GetString("userout"), dr.GetDateTime("dateout").ToString("yyy-MM-dd"))
+                                    txtqr_fg.Clear()
+                                    txtqr_fg.Focus()
+                                Else
+                                    saveqr()
+                                    labelerror.Visible = False
+                                    txtqr_fg.Clear()
+                                    txtqr_fg.Enabled = False
+                                    txtqr.Enabled = True
+                                    txtqr.Clear()
+                                    txtqr.Focus()
+                                End If
+                            Else
+                                ' Show error if QR codes do not match
+                                showerror("QR codes do not match. Please scan the same QR code three times.")
+                                scannedQRCodes.Clear()
                                 txtqr_fg.Clear()
                                 txtqr_fg.Focus()
-                            Else
-                                saveqr()
-                                labelerror.Visible = False
-                                txtqr_fg.Clear()
-                                txtqr_fg.Enabled = False
-                                txtqr.Enabled = True
-                                txtqr.Clear()
-                                txtqr.Focus()
                             End If
                         Else
-                            ' Show error if QR codes do not match
-                            showerror("QR codes do not match. Please scan the same QR code three times.")
-                            scannedQRCodes.Clear()
                             txtqr_fg.Clear()
                             txtqr_fg.Focus()
                         End If
-                    Else
-                        txtqr_fg.Clear()
-                        txtqr_fg.Focus()
                     End If
-                End If
-            Catch ex As MySqlException
-                MessageBox.Show(ex.Message)
-            Finally
-                con.Close()
-            End Try
+                Catch ex As MySqlException
+                    MessageBox.Show(ex.Message)
+                Finally
+                    con.Close()
+                End Try
+
         End If
     End Sub
     'Private Sub Guna2TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_fg.KeyDown
@@ -307,7 +272,7 @@ Public Class jeco_out
 
                 ' Retrieve data from the DataGridView row
 
-                Dim grid_dmtn As String = row.Cells(0).Value.ToString()
+                Dim grid_jeco As String = row.Cells(0).Value.ToString()
                 Dim grid_partno As String = row.Cells(1).Value.ToString()
                 Dim grid_qty As Integer = Convert.ToInt32(row.Cells(2).Value)
                 Dim grid_customerno As String = row.Cells(3).Value.ToString()
@@ -323,14 +288,16 @@ Public Class jeco_out
                 ' Create the SQL command to update the data
                 con.Close()
                 con.Open()
-                Dim cmdupdate As New MySqlCommand("UPDATE denso_dmtn SET cml=@cml, userout=@userout, dateout=@dateout WHERE dmtn=@dmtn", con)
+                Dim cmdupdate As New MySqlCommand("UPDATE denso_jeco SET cmlqr=@cml, cmlserial=@cmlseries, userout=@userout, dateout=@dateout, status=@status WHERE jecoqr=@jecoqr", con)
 
                 ' Add parameters with values
                 With cmdupdate.Parameters
                     .AddWithValue("@cml", cml)
+                    .AddWithValue("@cmlseries", series)
                     .AddWithValue("@userout", idno)
                     .AddWithValue("@dateout", datedb)
-                    .AddWithValue("@dmtn", grid_dmtn)
+                    .AddWithValue("@jecoqr", grid_jeco)
+                    .AddWithValue("@status", "1")
                 End With
 
                 cmdupdate.ExecuteNonQuery()
@@ -338,7 +305,7 @@ Public Class jeco_out
             con.Close()
             con.Open()
 
-            Dim cmdinsertdmtn As New MySqlCommand("INSERT INTO denso_dmtn_cml (cmlqr, qty, serial,userout,dateout) " &
+            Dim cmdinsertdmtn As New MySqlCommand("INSERT INTO denso_jeco_cml (cmlqr, qty, serial,userout,dateout) " &
                                       "VALUES (@cmlqr,@qty, @serial, @userout, @dateout)", con)
             With cmdinsertdmtn.Parameters
                 .AddWithValue("@cmlqr", txtqr_fg.Text)
@@ -348,7 +315,7 @@ Public Class jeco_out
                 .AddWithValue("@dateout", datedb)
             End With
             cmdinsertdmtn.ExecuteNonQuery()
-            reload("SELECT `cmlqr`, `qty`, `serial`,`userout`,`dateout` FROM `denso_dmtn_cml`", datagrid2)
+            reload("SELECT `cmlqr`, `qty`, `serial`,`userout`,`dateout` FROM `denso_jeco_cml` ORDER BY id DESC LIMIT 10 ", datagrid2)
             datagrid1.Rows.Clear()
         Catch ex As MySqlException
             MessageBox.Show(ex.Message)
@@ -394,14 +361,6 @@ Public Class jeco_out
     End Sub
 
     Private Sub lbl_count_TextChanged(sender As Object, e As EventArgs) Handles lbl_count.TextChanged
-
-    End Sub
-
-    Private Sub lbl_qty_Click(sender As Object, e As EventArgs) Handles lbl_qty.Click
-
-    End Sub
-
-    Private Sub lbl_qty_TextChanged(sender As Object, e As EventArgs) Handles lbl_qty.TextChanged
         If lbl_count.Text = "63" Then
             txtqr_fg.Enabled = True
             txtqr.Enabled = False
@@ -412,18 +371,65 @@ Public Class jeco_out
         End If
     End Sub
 
+    Private Sub lbl_qty_Click(sender As Object, e As EventArgs) Handles lbl_qty.Click
+
+    End Sub
+
+    Private Sub lbl_qty_TextChanged(sender As Object, e As EventArgs) Handles lbl_qty.TextChanged
+
+    End Sub
+
     Private Sub dmtn_cml_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 
-    Private Sub Guna2TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtqr_verify.TextChanged
+    Private Sub Guna2TextBox1_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub Guna2TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_verify.KeyDown, txtqr_fg.KeyDown
+
+
+    Private Sub txtqr_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr.KeyDown
         If e.KeyCode = Keys.Enter Then
-            txtqr_fg.Clear()
-            txtqr_fg.Focus()
+            Try
+
+                con.Close()
+                con.Open()
+                Dim cmdselect As New MySqlCommand("SELECT jecoqr, userin, datein, status FROM `denso_jeco`
+                                                WHERE jecoqr = '" & txtqr.Text & "' ", con)
+                dr = cmdselect.ExecuteReader()
+                If dr.Read = True Then
+                    Select Case dr.GetInt32("status")
+                        Case 0
+
+                            If processQRcode("JECO ", txtqr) Then
+
+                                displaygrid(datagrid1)
+
+                            End If
+                        Case 1
+                            showduplicate(dr.GetString("userin"), dr.GetDateTime("datein").ToString("yyy-MM-dd"))
+                    End Select
+                    'duplicate
+
+
+                Else
+                    showerror("No Record found, must scan in First!")
+
+
+                End If
+                txtqr.Clear()
+                txtqr.Focus()
+            Catch ex As MySqlException
+                MessageBox.Show(ex.Message)
+            Finally
+                con.Close()
+            End Try
         End If
+    End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        outgoing_report.Show()
+        outgoing_report.BringToFront()
     End Sub
 End Class
