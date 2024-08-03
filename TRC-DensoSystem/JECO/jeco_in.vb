@@ -1,6 +1,6 @@
 ﻿Imports Guna.UI2.WinForms
 Imports MySql.Data.MySqlClient
-Public Class yt_out
+Public Class jeco_in
     Dim qrlenght As Integer
     Dim serialNumber As String = ""
     Dim partno As String
@@ -88,28 +88,24 @@ Public Class yt_out
             Try
 
 
-                If processQRcode("YT", txtqr_label) Then
+                If processQRcode("JECO", txtqr_label) Then
                     con.Close()
                     con.Open()
-                    Dim cmdselect As New MySqlCommand("SELECT ytqr, userout, dateout,status FROM `denso_yt`
-                                                WHERE ytqr = '" & txtqr_label.Text & "'", con)
+                    Dim cmdselect As New MySqlCommand("SELECT jecoqr, userin, datein,status FROM `denso_jeco`
+                                                WHERE jecoqr = '" & txtqr_label.Text & "'", con)
                     dr = cmdselect.ExecuteReader()
                     If dr.Read = True Then
-                        'saveqr
-                        Select Case dr.GetInt32("status")
-                            Case 0
-                                updateqr()
-                            Case 1
-                                showduplicate(dr.GetString("userout"), dr.GetDateTime("dateout").ToString("yyy-MM-dd"))
-                        End Select
-                        reload("SELECT `ytqr`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial` FROM `denso_yt` 
-                                   WHERE dateout= '" & datedb & "'", datagrid_label)
-                    Else
-                        showerror("No Record Found!")
+                        'duplicate
 
+                        showduplicate(dr.GetString("userin"), dr.GetDateTime("datein"))
+                    Else
+                        'save
+                        saveqr()
+                        reload("SELECT `jecoqr`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial` FROM `denso_jeco` 
+                                   WHERE datein= '" & datedb & "'", datagrid_label)
+                        labelerror.Visible = False
                     End If
                     txtqr_label.Clear()
-
                     txtqr_label.Focus()
 
                 End If
@@ -124,22 +120,39 @@ Public Class yt_out
             End Try
         End If
     End Sub
-    Private Sub updateqr()
+    Private Sub saveqr()
         Try
-            ' Define your MySQL connection string
-
 
             con.Close()
             con.Open()
 
-            Dim cmdupdatedmtn As New MySqlCommand("UPDATE denso_yt SET status=@status, userout= @userout, dateout=@dateout
-                                                    WHERE ytqr = '" & txtqr_label.Text & "'", con)
-            With cmdupdatedmtn.Parameters
-                .AddWithValue("@status", "1")
-                .AddWithValue("@userout", idno)
-                .AddWithValue("@dateout", datedb)
-            End With
-            cmdupdatedmtn.ExecuteNonQuery()
+            Dim insertjeco As New MySqlCommand("INSERT INTO `denso_jeco`(`jecoqr`,
+                                                                            `partno`,
+                                                                            `customerno`,
+                                                                            `color`,
+                                                                            `proddate`,
+                                                                            `qty`, 
+                                                                            `shift`, 
+                                                                            `process`, 
+                                                                            `line`, 
+                                                                            `serial`,
+                                                                            `userin`,
+                                                                            `datein`) 
+                                                                    VALUES ('" & txtqr_label.Text & "',
+                                                                            '" & partno & "',
+                                                                            '" & customerno & "',
+                                                                            '" & color & "',
+                                                                            '" & prod & "',
+                                                                            '" & Val(qty) & "',
+                                                                            '" & shift & "',
+                                                                            '" & process & "',
+                                                                            '" & line & "',
+                                                                            '" & series & "',
+                                                                            '" & idno & "',
+                                                                            '" & datedb & "')", con)
+
+
+            insertjeco.ExecuteNonQuery()
 
 
         Catch ex As MySqlException
@@ -159,7 +172,7 @@ Public Class yt_out
         End Try
     End Sub
 
-    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
+    Private Sub jeco_in_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

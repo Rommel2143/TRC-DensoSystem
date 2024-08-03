@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class dmtn_inner_tag
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class jeco_out
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,9 +20,9 @@ Partial Class dmtn_inner_tag
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(dmtn_inner_tag))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(jeco_out))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -31,13 +31,13 @@ Partial Class dmtn_inner_tag
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2GroupBox3 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lbl_qty = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.txtqr = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtdate = New System.Windows.Forms.Label()
-        Me.texterror = New System.Windows.Forms.Label()
-        Me.labelerror = New Guna.UI2.WinForms.Guna2Panel()
+        Me.lbl_count = New System.Windows.Forms.Label()
         Me.datagrid1 = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -49,30 +49,99 @@ Partial Class dmtn_inner_tag
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btndelete = New Guna.UI2.WinForms.Guna2Button()
-        Me.lbl_qty = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.lbl_count = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.btndelete = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtqr_verify = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.datagrid2 = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.txtqr_fg = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Guna2GroupBox3 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
-        Me.datagrid2 = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.labelerror.SuspendLayout()
-        CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtdate = New System.Windows.Forms.Label()
+        Me.texterror = New System.Windows.Forms.Label()
+        Me.labelerror = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel1.SuspendLayout()
         Me.Guna2GroupBox3.SuspendLayout()
+        CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2GroupBox1.SuspendLayout()
         CType(Me.datagrid2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Guna2Panel1.SuspendLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.labelerror.SuspendLayout()
+        Me.Guna2Panel2.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox3)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox1)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2PictureBox1)
+        Me.Guna2Panel1.Enabled = False
+        Me.Guna2Panel1.Location = New System.Drawing.Point(14, 63)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1350, 714)
+        Me.Guna2Panel1.TabIndex = 226
+        '
+        'Guna2GroupBox3
+        '
+        Me.Guna2GroupBox3.Controls.Add(Me.Label2)
+        Me.Guna2GroupBox3.Controls.Add(Me.lbl_qty)
+        Me.Guna2GroupBox3.Controls.Add(Me.Label3)
+        Me.Guna2GroupBox3.Controls.Add(Me.txtqr)
+        Me.Guna2GroupBox3.Controls.Add(Me.lbl_count)
+        Me.Guna2GroupBox3.Controls.Add(Me.datagrid1)
+        Me.Guna2GroupBox3.Controls.Add(Me.Label8)
+        Me.Guna2GroupBox3.Controls.Add(Me.btndelete)
+        Me.Guna2GroupBox3.CustomBorderColor = System.Drawing.SystemColors.HotTrack
+        Me.Guna2GroupBox3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.White
+        Me.Guna2GroupBox3.Location = New System.Drawing.Point(12, 17)
+        Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
+        Me.Guna2GroupBox3.Size = New System.Drawing.Size(629, 680)
+        Me.Guna2GroupBox3.TabIndex = 221
+        Me.Guna2GroupBox3.Text = "STICKER LABEL"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Gray
+        Me.Label2.Location = New System.Drawing.Point(26, 54)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(66, 17)
+        Me.Label2.TabIndex = 216
+        Me.Label2.Text = "Scan QR :"
+        '
+        'lbl_qty
+        '
+        Me.lbl_qty.AutoSize = True
+        Me.lbl_qty.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_qty.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_qty.ForeColor = System.Drawing.Color.Gray
+        Me.lbl_qty.Location = New System.Drawing.Point(579, 524)
+        Me.lbl_qty.Name = "lbl_qty"
+        Me.lbl_qty.Size = New System.Drawing.Size(15, 17)
+        Me.lbl_qty.TabIndex = 215
+        Me.lbl_qty.Text = "0"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Gray
+        Me.Label3.Location = New System.Drawing.Point(497, 524)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(76, 17)
+        Me.Label3.TabIndex = 214
+        Me.Label3.Text = "Total QTY :"
         '
         'txtqr
         '
@@ -89,81 +158,22 @@ Partial Class dmtn_inner_tag
         Me.txtqr.Location = New System.Drawing.Point(28, 74)
         Me.txtqr.Name = "txtqr"
         Me.txtqr.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtqr.PlaceholderText = "Scan InnerTag..."
+        Me.txtqr.PlaceholderText = "Scan DMTN..."
         Me.txtqr.SelectedText = ""
         Me.txtqr.Size = New System.Drawing.Size(481, 36)
         Me.txtqr.TabIndex = 1
         '
-        'Guna2Panel2
+        'lbl_count
         '
-        Me.Guna2Panel2.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Guna2Panel2.Controls.Add(Me.PictureBox1)
-        Me.Guna2Panel2.Controls.Add(Me.Label10)
-        Me.Guna2Panel2.Controls.Add(Me.txtdate)
-        Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.Size = New System.Drawing.Size(1384, 20)
-        Me.Guna2Panel2.TabIndex = 206
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(1236, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(21, 20)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 205
-        Me.PictureBox1.TabStop = False
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(0, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(148, 21)
-        Me.Label10.TabIndex = 204
-        Me.Label10.Text = "Inner Tag to DMTN"
-        '
-        'txtdate
-        '
-        Me.txtdate.AutoSize = True
-        Me.txtdate.Dock = System.Windows.Forms.DockStyle.Right
-        Me.txtdate.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtdate.ForeColor = System.Drawing.Color.White
-        Me.txtdate.Location = New System.Drawing.Point(1257, 0)
-        Me.txtdate.Name = "txtdate"
-        Me.txtdate.Size = New System.Drawing.Size(127, 20)
-        Me.txtdate.TabIndex = 1
-        Me.txtdate.Text = "MMMM-dd-yyyy"
-        Me.txtdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'texterror
-        '
-        Me.texterror.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.texterror.AutoSize = True
-        Me.texterror.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.texterror.ForeColor = System.Drawing.Color.White
-        Me.texterror.Location = New System.Drawing.Point(656, -2)
-        Me.texterror.Name = "texterror"
-        Me.texterror.Size = New System.Drawing.Size(74, 21)
-        Me.texterror.TabIndex = 203
-        Me.texterror.Text = "INVALID"
-        '
-        'labelerror
-        '
-        Me.labelerror.BackColor = System.Drawing.Color.Tomato
-        Me.labelerror.Controls.Add(Me.texterror)
-        Me.labelerror.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.labelerror.Location = New System.Drawing.Point(0, 792)
-        Me.labelerror.Name = "labelerror"
-        Me.labelerror.Size = New System.Drawing.Size(1384, 19)
-        Me.labelerror.TabIndex = 207
-        Me.labelerror.Visible = False
+        Me.lbl_count.AutoSize = True
+        Me.lbl_count.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_count.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_count.ForeColor = System.Drawing.Color.Gray
+        Me.lbl_count.Location = New System.Drawing.Point(579, 502)
+        Me.lbl_count.Name = "lbl_count"
+        Me.lbl_count.Size = New System.Drawing.Size(15, 17)
+        Me.lbl_count.TabIndex = 213
+        Me.lbl_count.Text = "0"
         '
         'datagrid1
         '
@@ -190,7 +200,7 @@ Partial Class dmtn_inner_tag
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
@@ -242,9 +252,11 @@ Partial Class dmtn_inner_tag
         '
         'Column1
         '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Column1.HeaderText = "Part No"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
+        Me.Column1.Width = 58
         '
         'Column2
         '
@@ -294,6 +306,18 @@ Partial Class dmtn_inner_tag
         Me.Column9.Name = "Column9"
         Me.Column9.ReadOnly = True
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Gray
+        Me.Label8.Location = New System.Drawing.Point(520, 502)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(53, 17)
+        Me.Label8.TabIndex = 212
+        Me.Label8.Text = "Count :"
+        '
         'btndelete
         '
         Me.btndelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -310,148 +334,10 @@ Partial Class dmtn_inner_tag
         Me.btndelete.TabIndex = 210
         Me.btndelete.Text = "Restart"
         '
-        'lbl_qty
-        '
-        Me.lbl_qty.AutoSize = True
-        Me.lbl_qty.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_qty.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_qty.ForeColor = System.Drawing.Color.Gray
-        Me.lbl_qty.Location = New System.Drawing.Point(579, 524)
-        Me.lbl_qty.Name = "lbl_qty"
-        Me.lbl_qty.Size = New System.Drawing.Size(15, 17)
-        Me.lbl_qty.TabIndex = 215
-        Me.lbl_qty.Text = "0"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Gray
-        Me.Label3.Location = New System.Drawing.Point(497, 524)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(76, 17)
-        Me.Label3.TabIndex = 214
-        Me.Label3.Text = "Total QTY :"
-        '
-        'lbl_count
-        '
-        Me.lbl_count.AutoSize = True
-        Me.lbl_count.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_count.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_count.ForeColor = System.Drawing.Color.Gray
-        Me.lbl_count.Location = New System.Drawing.Point(579, 502)
-        Me.lbl_count.Name = "lbl_count"
-        Me.lbl_count.Size = New System.Drawing.Size(15, 17)
-        Me.lbl_count.TabIndex = 213
-        Me.lbl_count.Text = "0"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Gray
-        Me.Label8.Location = New System.Drawing.Point(520, 502)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(53, 17)
-        Me.Label8.TabIndex = 212
-        Me.Label8.Text = "Count :"
-        '
-        'Guna2Button2
-        '
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.FillColor = System.Drawing.SystemColors.HotTrack
-        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Image = CType(resources.GetObject("Guna2Button2.Image"), System.Drawing.Image)
-        Me.Guna2Button2.Location = New System.Drawing.Point(522, 74)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(79, 36)
-        Me.Guna2Button2.TabIndex = 209
-        Me.Guna2Button2.Text = "Results"
-        '
-        'txtqr_fg
-        '
-        Me.txtqr_fg.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtqr_fg.DefaultText = ""
-        Me.txtqr_fg.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtqr_fg.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtqr_fg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtqr_fg.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtqr_fg.Enabled = False
-        Me.txtqr_fg.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtqr_fg.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtqr_fg.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtqr_fg.IconLeft = CType(resources.GetObject("txtqr_fg.IconLeft"), System.Drawing.Image)
-        Me.txtqr_fg.Location = New System.Drawing.Point(27, 74)
-        Me.txtqr_fg.Name = "txtqr_fg"
-        Me.txtqr_fg.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtqr_fg.PlaceholderText = "Scan Sticker Label..."
-        Me.txtqr_fg.SelectedText = ""
-        Me.txtqr_fg.Size = New System.Drawing.Size(489, 36)
-        Me.txtqr_fg.TabIndex = 1
-        '
-        'Guna2PictureBox1
-        '
-        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(563, 71)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(218, 431)
-        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Guna2PictureBox1.TabIndex = 213
-        Me.Guna2PictureBox1.TabStop = False
-        '
-        'Guna2GroupBox3
-        '
-        Me.Guna2GroupBox3.Controls.Add(Me.Label2)
-        Me.Guna2GroupBox3.Controls.Add(Me.lbl_qty)
-        Me.Guna2GroupBox3.Controls.Add(Me.Label3)
-        Me.Guna2GroupBox3.Controls.Add(Me.txtqr)
-        Me.Guna2GroupBox3.Controls.Add(Me.lbl_count)
-        Me.Guna2GroupBox3.Controls.Add(Me.datagrid1)
-        Me.Guna2GroupBox3.Controls.Add(Me.Label8)
-        Me.Guna2GroupBox3.Controls.Add(Me.btndelete)
-        Me.Guna2GroupBox3.CustomBorderColor = System.Drawing.SystemColors.HotTrack
-        Me.Guna2GroupBox3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox3.Location = New System.Drawing.Point(12, 17)
-        Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
-        Me.Guna2GroupBox3.Size = New System.Drawing.Size(629, 568)
-        Me.Guna2GroupBox3.TabIndex = 214
-        Me.Guna2GroupBox3.Text = "INNER TAG"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Gray
-        Me.Label2.Location = New System.Drawing.Point(26, 54)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(66, 17)
-        Me.Label2.TabIndex = 216
-        Me.Label2.Text = "Scan QR :"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Gray
-        Me.Label1.Location = New System.Drawing.Point(40, 54)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 17)
-        Me.Label1.TabIndex = 217
-        Me.Label1.Text = "Scan QR :"
-        '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.Label4)
+        Me.Guna2GroupBox1.Controls.Add(Me.txtqr_verify)
         Me.Guna2GroupBox1.Controls.Add(Me.datagrid2)
         Me.Guna2GroupBox1.Controls.Add(Me.Label1)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button2)
@@ -462,8 +348,41 @@ Partial Class dmtn_inner_tag
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(707, 17)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(629, 680)
-        Me.Guna2GroupBox1.TabIndex = 217
-        Me.Guna2GroupBox1.Text = "STICKER LABEL"
+        Me.Guna2GroupBox1.TabIndex = 222
+        Me.Guna2GroupBox1.Text = "CML"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Gray
+        Me.Label4.Location = New System.Drawing.Point(29, 54)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(66, 17)
+        Me.Label4.TabIndex = 220
+        Me.Label4.Text = "Scan QR :"
+        '
+        'txtqr_verify
+        '
+        Me.txtqr_verify.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtqr_verify.DefaultText = ""
+        Me.txtqr_verify.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtqr_verify.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtqr_verify.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtqr_verify.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtqr_verify.Enabled = False
+        Me.txtqr_verify.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtqr_verify.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtqr_verify.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtqr_verify.IconLeft = CType(resources.GetObject("txtqr_verify.IconLeft"), System.Drawing.Image)
+        Me.txtqr_verify.Location = New System.Drawing.Point(16, 74)
+        Me.txtqr_verify.Name = "txtqr_verify"
+        Me.txtqr_verify.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtqr_verify.PlaceholderText = "Scan Sticker Label..."
+        Me.txtqr_verify.SelectedText = ""
+        Me.txtqr_verify.Size = New System.Drawing.Size(489, 36)
+        Me.txtqr_verify.TabIndex = 219
         '
         'datagrid2
         '
@@ -495,7 +414,7 @@ Partial Class dmtn_inner_tag
         DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datagrid2.DefaultCellStyle = DataGridViewCellStyle7
         Me.datagrid2.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid2.Location = New System.Drawing.Point(27, 116)
+        Me.datagrid2.Location = New System.Drawing.Point(27, 229)
         Me.datagrid2.Name = "datagrid2"
         Me.datagrid2.ReadOnly = True
         Me.datagrid2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -509,7 +428,7 @@ Partial Class dmtn_inner_tag
         Me.datagrid2.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.datagrid2.RowHeadersVisible = False
         Me.datagrid2.RowTemplate.Height = 31
-        Me.datagrid2.Size = New System.Drawing.Size(574, 535)
+        Me.datagrid2.Size = New System.Drawing.Size(574, 383)
         Me.datagrid2.TabIndex = 218
         Me.datagrid2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid2.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -533,56 +452,175 @@ Partial Class dmtn_inner_tag
         Me.datagrid2.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.datagrid2.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'Guna2Panel1
+        'Label1
         '
-        Me.Guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox1)
-        Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox3)
-        Me.Guna2Panel1.Controls.Add(Me.Guna2PictureBox1)
-        Me.Guna2Panel1.Location = New System.Drawing.Point(11, 42)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1362, 726)
-        Me.Guna2Panel1.TabIndex = 218
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Gray
+        Me.Label1.Location = New System.Drawing.Point(29, 128)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(66, 17)
+        Me.Label1.TabIndex = 217
+        Me.Label1.Text = "Scan QR :"
         '
-        'dmtn_inner_tag
+        'Guna2Button2
+        '
+        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button2.FillColor = System.Drawing.SystemColors.HotTrack
+        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.Image = CType(resources.GetObject("Guna2Button2.Image"), System.Drawing.Image)
+        Me.Guna2Button2.Location = New System.Drawing.Point(522, 74)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.Size = New System.Drawing.Size(79, 36)
+        Me.Guna2Button2.TabIndex = 209
+        Me.Guna2Button2.Text = "Results"
+        '
+        'txtqr_fg
+        '
+        Me.txtqr_fg.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtqr_fg.DefaultText = ""
+        Me.txtqr_fg.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtqr_fg.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtqr_fg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtqr_fg.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtqr_fg.Enabled = False
+        Me.txtqr_fg.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtqr_fg.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtqr_fg.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtqr_fg.IconLeft = CType(resources.GetObject("txtqr_fg.IconLeft"), System.Drawing.Image)
+        Me.txtqr_fg.Location = New System.Drawing.Point(16, 148)
+        Me.txtqr_fg.Name = "txtqr_fg"
+        Me.txtqr_fg.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtqr_fg.PlaceholderText = "Scan Sticker Label..."
+        Me.txtqr_fg.SelectedText = ""
+        Me.txtqr_fg.Size = New System.Drawing.Size(489, 36)
+        Me.txtqr_fg.TabIndex = 1
+        '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(563, 71)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(218, 431)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox1.TabIndex = 220
+        Me.Guna2PictureBox1.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(1303, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(21, 20)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 205
+        Me.PictureBox1.TabStop = False
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(0, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(103, 21)
+        Me.Label10.TabIndex = 204
+        Me.Label10.Text = "JECO to CML"
+        '
+        'txtdate
+        '
+        Me.txtdate.AutoSize = True
+        Me.txtdate.Dock = System.Windows.Forms.DockStyle.Right
+        Me.txtdate.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtdate.ForeColor = System.Drawing.Color.White
+        Me.txtdate.Location = New System.Drawing.Point(1324, 0)
+        Me.txtdate.Name = "txtdate"
+        Me.txtdate.Size = New System.Drawing.Size(127, 20)
+        Me.txtdate.TabIndex = 1
+        Me.txtdate.Text = "MMMM-dd-yyyy"
+        Me.txtdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'texterror
+        '
+        Me.texterror.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.texterror.AutoSize = True
+        Me.texterror.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.texterror.ForeColor = System.Drawing.Color.White
+        Me.texterror.Location = New System.Drawing.Point(656, -2)
+        Me.texterror.Name = "texterror"
+        Me.texterror.Size = New System.Drawing.Size(74, 21)
+        Me.texterror.TabIndex = 203
+        Me.texterror.Text = "INVALID"
+        '
+        'labelerror
+        '
+        Me.labelerror.BackColor = System.Drawing.Color.Tomato
+        Me.labelerror.Controls.Add(Me.texterror)
+        Me.labelerror.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.labelerror.Location = New System.Drawing.Point(0, 845)
+        Me.labelerror.Name = "labelerror"
+        Me.labelerror.Size = New System.Drawing.Size(1451, 19)
+        Me.labelerror.TabIndex = 225
+        Me.labelerror.Visible = False
+        '
+        'Guna2Panel2
+        '
+        Me.Guna2Panel2.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Guna2Panel2.Controls.Add(Me.PictureBox1)
+        Me.Guna2Panel2.Controls.Add(Me.Label10)
+        Me.Guna2Panel2.Controls.Add(Me.txtdate)
+        Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel2.Name = "Guna2Panel2"
+        Me.Guna2Panel2.Size = New System.Drawing.Size(1451, 20)
+        Me.Guna2Panel2.TabIndex = 224
+        '
+        'jeco_out
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1384, 811)
+        Me.ClientSize = New System.Drawing.Size(1451, 864)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.labelerror)
         Me.Controls.Add(Me.Guna2Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "dmtn_inner_tag"
-        Me.Text = "Inner_Tag"
+        Me.Name = "jeco_out"
+        Me.Text = "jeco_out"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.Guna2Panel2.ResumeLayout(False)
-        Me.Guna2Panel2.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.labelerror.ResumeLayout(False)
-        Me.labelerror.PerformLayout()
-        CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2GroupBox3.ResumeLayout(False)
         Me.Guna2GroupBox3.PerformLayout()
+        CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2GroupBox1.ResumeLayout(False)
         Me.Guna2GroupBox1.PerformLayout()
         CType(Me.datagrid2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Guna2Panel1.ResumeLayout(False)
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.labelerror.ResumeLayout(False)
+        Me.labelerror.PerformLayout()
+        Me.Guna2Panel2.ResumeLayout(False)
+        Me.Guna2Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
+
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2GroupBox3 As Guna.UI2.WinForms.Guna2GroupBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents lbl_qty As Label
+    Friend WithEvents Label3 As Label
     Friend WithEvents txtqr As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label10 As Label
-    Friend WithEvents txtdate As Label
-    Friend WithEvents texterror As Label
-    Friend WithEvents labelerror As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents lbl_count As Label
     Friend WithEvents datagrid1 As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents btndelete As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents txtqr_fg As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
@@ -593,15 +631,20 @@ Partial Class dmtn_inner_tag
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
-    Friend WithEvents lbl_count As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents lbl_qty As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents Guna2GroupBox3 As Guna.UI2.WinForms.Guna2GroupBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents btndelete As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents datagrid2 As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents txtqr_fg As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents txtdate As Label
+    Friend WithEvents texterror As Label
+    Friend WithEvents labelerror As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtqr_verify As Guna.UI2.WinForms.Guna2TextBox
 End Class

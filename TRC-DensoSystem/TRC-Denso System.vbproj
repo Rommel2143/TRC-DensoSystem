@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\ptif1-ds\SHARED\it\System\Denso System\</UpdateUrl>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>21</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -231,6 +231,30 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="20CY\retainer_20cy_in.Designer.vb">
+      <DependentUpon>retainer_20cy_in.vb</DependentUpon>
+    </Compile>
+    <Compile Include="20CY\retainer_20cy_in.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="20CY\retainer_20cy_out.Designer.vb">
+      <DependentUpon>retainer_20cy_out.vb</DependentUpon>
+    </Compile>
+    <Compile Include="20CY\retainer_20cy_out.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3T\retainer_3T_IN.Designer.vb">
+      <DependentUpon>retainer_3T_IN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="3T\retainer_3T_IN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3T\retainer_3t_OUT.Designer.vb">
+      <DependentUpon>retainer_3t_OUT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="3T\retainer_3t_OUT.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DMTN\dmtn_cml.Designer.vb">
       <DependentUpon>dmtn_cml.vb</DependentUpon>
     </Compile>
@@ -317,6 +341,36 @@
     <Compile Include="INFG\REPORT_TDE.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="INTELLI4\intelli_in.Designer.vb">
+      <DependentUpon>intelli_in.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INTELLI4\intelli_in.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INTELLI4\intelli_out.Designer.vb">
+      <DependentUpon>intelli_out.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INTELLI4\intelli_out.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JECO\jeco_in.Designer.vb">
+      <DependentUpon>jeco_in.vb</DependentUpon>
+    </Compile>
+    <Compile Include="JECO\jeco_in.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JECO\jeco_out.Designer.vb">
+      <DependentUpon>jeco_out.vb</DependentUpon>
+    </Compile>
+    <Compile Include="JECO\jeco_out.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main\denso_components.Designer.vb">
+      <DependentUpon>denso_components.vb</DependentUpon>
+    </Compile>
+    <Compile Include="main\denso_components.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="main\Login.designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -346,12 +400,6 @@
       <DependentUpon>Add_item.vb</DependentUpon>
     </Compile>
     <Compile Include="manage\Add_item.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="manage\add_item2.Designer.vb">
-      <DependentUpon>add_item2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="manage\add_item2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="manage\QR_identifier.Designer.vb">
@@ -414,6 +462,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="20CY\retainer_20cy_in.resx">
+      <DependentUpon>retainer_20cy_in.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="20CY\retainer_20cy_out.resx">
+      <DependentUpon>retainer_20cy_out.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3T\retainer_3T_IN.resx">
+      <DependentUpon>retainer_3T_IN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3T\retainer_3t_OUT.resx">
+      <DependentUpon>retainer_3t_OUT.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DMTN\dmtn_cml.resx">
       <DependentUpon>dmtn_cml.vb</DependentUpon>
     </EmbeddedResource>
@@ -456,6 +516,21 @@
     <EmbeddedResource Include="INFG\REPORT_TDE.resx">
       <DependentUpon>REPORT_TDE.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="INTELLI4\intelli_in.resx">
+      <DependentUpon>intelli_in.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INTELLI4\intelli_out.resx">
+      <DependentUpon>intelli_out.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JECO\jeco_in.resx">
+      <DependentUpon>jeco_in.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JECO\jeco_out.resx">
+      <DependentUpon>jeco_out.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main\denso_components.resx">
+      <DependentUpon>denso_components.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="main\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
@@ -470,9 +545,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="manage\Add_item.resx">
       <DependentUpon>Add_item.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="manage\add_item2.resx">
-      <DependentUpon>add_item2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="manage\QR_identifier.resx">
       <DependentUpon>QR_identifier.vb</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿Imports Guna.UI2.WinForms
 Imports MySql.Data.MySqlClient
-Public Class yt_matrix
+Public Class retainer_3T_IN
 
 
     Dim qrlenght As Integer
@@ -138,11 +138,11 @@ Public Class yt_matrix
         If e.KeyCode = Keys.Enter Then
             Try
 
-                If processQRcode("YT", txtqr_label) Then
+                If processQRcode("3T", txtqr_label) Then
                     con.Close()
                     con.Open()
-                    Dim cmdselect As New MySqlCommand("SELECT ytqr, userin, datein FROM `denso_yt`
-                                                WHERE ytqr = '" & txtqr_label.Text & "'", con)
+                    Dim cmdselect As New MySqlCommand("SELECT 3tqr, userin, datein FROM `denso_3t`
+                                                WHERE 3tqr = '" & txtqr_label.Text & "'", con)
                     dr = cmdselect.ExecuteReader()
                     If dr.Read = True Then
 
@@ -230,7 +230,7 @@ Public Class yt_matrix
         If e.KeyCode = Keys.Enter Then
             Try
 
-                If processQRcode_matrix("YT-M", txtqr_matrix) Then
+                If processQRcode_matrix("3T-M", txtqr_matrix) Then
 
                     displaygrid_matrix(datagrid_matrix)
 
@@ -238,18 +238,18 @@ Public Class yt_matrix
 
 
                     If lbl_qty.Text = lbl_count2.Text Then
-                            'saveqr
-                            saveqr()
-                            lbl_count2.Text = 0
-                            lbl_qty.Text = 0
-                            txtqr_label.Enabled = True
-                            txtqr_matrix.Enabled = False
+                        'saveqr
+                        saveqr()
+                        lbl_count2.Text = 0
+                        lbl_qty.Text = 0
+                        txtqr_label.Enabled = True
+                        txtqr_matrix.Enabled = False
 
 
                     End If
                 End If
-                    txtqr_matrix.Clear()
-                    txtqr_matrix.Focus()
+                txtqr_matrix.Clear()
+                txtqr_matrix.Focus()
 
 
             Catch ex As MySqlException
@@ -298,13 +298,13 @@ Public Class yt_matrix
                 con.Close()
                 con.Open()
                 ' Create the SQL command to insert the data
-                Dim cmdinsert As New MySqlCommand("INSERT INTO denso_yt_matrix (matrixqr, partno, qty,ytqr, userin, datein) " &
-                                          "VALUES (@matrixqr, @partno, @qty,@ytqr, @userin, @datein)", con)
+                Dim cmdinsert As New MySqlCommand("INSERT INTO denso_3t_matrix (matrixqr, partno, qty,3tqr, userin, datein) " &
+                                          "VALUES (@matrixqr, @partno, @qty,@3tqr, @userin, @datein)", con)
                 With cmdinsert.Parameters
                     .AddWithValue("@matrixqr", grid_innertag)
                     .AddWithValue("@partno", grid_partno)
                     .AddWithValue("@qty", grid_qty)
-                    .AddWithValue("@ytqr", datagrid_label.Rows(0).Cells(0).Value.ToString())
+                    .AddWithValue("@3tqr", datagrid_label.Rows(0).Cells(0).Value.ToString())
                     .AddWithValue("@userin", idno)
                     .AddWithValue("@datein", datedb)
                     cmdinsert.ExecuteNonQuery()
@@ -314,10 +314,10 @@ Public Class yt_matrix
             con.Close()
             con.Open()
 
-            Dim cmdinsertdmtn As New MySqlCommand("INSERT INTO denso_yt (ytqr, partno, qty, customerno, color, proddate, shift, process, line, serial,userin, datein) " &
-                                      "VALUES (@ytqr, @partno, @qty, @customerno, @color, @proddate, @shift, @process, @line, @serial, @userin, @datein)", con)
+            Dim cmdinsertdmtn As New MySqlCommand("INSERT INTO denso_3t (3tqr, partno, qty, customerno, color, proddate, shift, process, line, serial,userin, datein) " &
+                                      "VALUES (@3tqr, @partno, @qty, @customerno, @color, @proddate, @shift, @process, @line, @serial, @userin, @datein)", con)
             With cmdinsertdmtn.Parameters
-                .AddWithValue("@ytqr", datagrid_label.Rows(0).Cells(0).Value.ToString())
+                .AddWithValue("@3tqr", datagrid_label.Rows(0).Cells(0).Value.ToString())
                 .AddWithValue("@partno", datagrid_label.Rows(0).Cells(1).Value.ToString())
                 .AddWithValue("@qty", datagrid_label.Rows(0).Cells(2).Value.ToString())
                 .AddWithValue("@customerno", datagrid_matrix.Rows(0).Cells(3).Value.ToString())

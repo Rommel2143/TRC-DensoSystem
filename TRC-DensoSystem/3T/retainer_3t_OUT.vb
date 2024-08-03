@@ -1,6 +1,6 @@
 ﻿Imports Guna.UI2.WinForms
 Imports MySql.Data.MySqlClient
-Public Class yt_out
+Public Class retainer_3t_out
     Dim qrlenght As Integer
     Dim serialNumber As String = ""
     Dim partno As String
@@ -88,11 +88,11 @@ Public Class yt_out
             Try
 
 
-                If processQRcode("YT", txtqr_label) Then
+                If processQRcode("3T", txtqr_label) Then
                     con.Close()
                     con.Open()
-                    Dim cmdselect As New MySqlCommand("SELECT ytqr, userout, dateout,status FROM `denso_yt`
-                                                WHERE ytqr = '" & txtqr_label.Text & "'", con)
+                    Dim cmdselect As New MySqlCommand("SELECT 3tqr, userout, dateout,status FROM `denso_3t`
+                                                WHERE 3tqr = '" & txtqr_label.Text & "'", con)
                     dr = cmdselect.ExecuteReader()
                     If dr.Read = True Then
                         'saveqr
@@ -102,7 +102,7 @@ Public Class yt_out
                             Case 1
                                 showduplicate(dr.GetString("userout"), dr.GetDateTime("dateout").ToString("yyy-MM-dd"))
                         End Select
-                        reload("SELECT `ytqr`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial` FROM `denso_yt` 
+                        reload("SELECT `3tqr`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial` FROM `denso_3t` 
                                    WHERE dateout= '" & datedb & "'", datagrid_label)
                     Else
                         showerror("No Record Found!")
@@ -132,8 +132,8 @@ Public Class yt_out
             con.Close()
             con.Open()
 
-            Dim cmdupdatedmtn As New MySqlCommand("UPDATE denso_yt SET status=@status, userout= @userout, dateout=@dateout
-                                                    WHERE ytqr = '" & txtqr_label.Text & "'", con)
+            Dim cmdupdatedmtn As New MySqlCommand("UPDATE denso_3t SET status=@status, userout= @userout, dateout=@dateout
+                                                    WHERE 3tqr = '" & txtqr_label.Text & "'", con)
             With cmdupdatedmtn.Parameters
                 .AddWithValue("@status", "1")
                 .AddWithValue("@userout", idno)

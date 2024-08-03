@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class yt_out
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class retainer_3t_out
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,13 @@ Partial Class yt_out
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(yt_out))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(retainer_3t_out))
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Guna2Separator2 = New Guna.UI2.WinForms.Guna2Separator()
         Me.datagrid_label = New Guna.UI2.WinForms.Guna2DataGridView()
@@ -98,7 +98,7 @@ Partial Class yt_out
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
@@ -203,10 +203,10 @@ Partial Class yt_out
         Me.labelerror.BackColor = System.Drawing.Color.Tomato
         Me.labelerror.Controls.Add(Me.texterror)
         Me.labelerror.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.labelerror.Location = New System.Drawing.Point(0, 822)
+        Me.labelerror.Location = New System.Drawing.Point(0, 806)
         Me.labelerror.Name = "labelerror"
-        Me.labelerror.Size = New System.Drawing.Size(1423, 19)
-        Me.labelerror.TabIndex = 223
+        Me.labelerror.Size = New System.Drawing.Size(1386, 19)
+        Me.labelerror.TabIndex = 226
         Me.labelerror.Visible = False
         '
         'texterror
@@ -225,16 +225,16 @@ Partial Class yt_out
         '
         Me.Guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox1)
-        Me.Guna2Panel1.Location = New System.Drawing.Point(30, 83)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(27, 83)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(1362, 674)
-        Me.Guna2Panel1.TabIndex = 224
+        Me.Guna2Panel1.TabIndex = 227
         '
         'PictureBox1
         '
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(1275, 0)
+        Me.PictureBox1.Location = New System.Drawing.Point(1238, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(21, 20)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -251,7 +251,7 @@ Partial Class yt_out
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(102, 21)
         Me.Label10.TabIndex = 204
-        Me.Label10.Text = "Scan YT OUT"
+        Me.Label10.Text = "Scan 3T OUT"
         '
         'txtdate
         '
@@ -259,7 +259,7 @@ Partial Class yt_out
         Me.txtdate.Dock = System.Windows.Forms.DockStyle.Right
         Me.txtdate.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtdate.ForeColor = System.Drawing.Color.White
-        Me.txtdate.Location = New System.Drawing.Point(1296, 0)
+        Me.txtdate.Location = New System.Drawing.Point(1259, 0)
         Me.txtdate.Name = "txtdate"
         Me.txtdate.Size = New System.Drawing.Size(127, 20)
         Me.txtdate.TabIndex = 1
@@ -275,20 +275,20 @@ Partial Class yt_out
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.Size = New System.Drawing.Size(1423, 20)
-        Me.Guna2Panel2.TabIndex = 222
+        Me.Guna2Panel2.Size = New System.Drawing.Size(1386, 20)
+        Me.Guna2Panel2.TabIndex = 225
         '
-        'yt_out
+        'retainer_3t_out
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1423, 841)
+        Me.ClientSize = New System.Drawing.Size(1386, 825)
         Me.Controls.Add(Me.labelerror)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.Guna2Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "yt_out"
-        Me.Text = "yt_out"
+        Me.Name = "retainer_3t_out"
+        Me.Text = "retainer_3t_OUT"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Guna2GroupBox1.ResumeLayout(False)
         Me.Guna2GroupBox1.PerformLayout()

@@ -128,4 +128,36 @@ Public Class sub_mainframe
     Private Sub OUTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OUTToolStripMenuItem.Click
         display_formscan(yt_out)
     End Sub
+
+    Private Sub INToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles INToolStripMenuItem.Click
+        display_formscan(jeco_in)
+    End Sub
+
+    Private Sub OUTToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles OUTToolStripMenuItem1.Click
+        display_formscan(jeco_out)
+    End Sub
+
+    Private Sub INToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles INToolStripMenuItem1.Click
+        display_formscan(_20cy_in)
+    End Sub
+
+    Private Sub OUTToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles OUTToolStripMenuItem2.Click
+        display_formscan(retainer_20cy_out)
+    End Sub
+
+    Private Sub INToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles INToolStripMenuItem2.Click
+        display_formscan(intelli_in)
+    End Sub
+
+    Private Sub OUTToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles OUTToolStripMenuItem3.Click
+        display_formscan(intelli_out)
+    End Sub
+
+    Private Sub INToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles INToolStripMenuItem3.Click
+        display_formscan(retainer_3T_IN)
+    End Sub
+
+    Private Sub OUTToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles OUTToolStripMenuItem4.Click
+        display_formscan(retainer_3t_out)
+    End Sub
 End Class

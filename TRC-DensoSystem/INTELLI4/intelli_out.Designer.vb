@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class yt_out
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class INTELLI_out
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,14 +20,16 @@ Partial Class yt_out
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(INTELLI_out))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(yt_out))
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtqr_verify = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Separator2 = New Guna.UI2.WinForms.Guna2Separator()
         Me.datagrid_label = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.lbl_qty = New System.Windows.Forms.Label()
@@ -51,6 +53,8 @@ Partial Class yt_out
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.Label2)
+        Me.Guna2GroupBox1.Controls.Add(Me.txtqr_verify)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Separator2)
         Me.Guna2GroupBox1.Controls.Add(Me.datagrid_label)
         Me.Guna2GroupBox1.Controls.Add(Me.lbl_qty)
@@ -65,6 +69,38 @@ Partial Class yt_out
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(1163, 548)
         Me.Guna2GroupBox1.TabIndex = 217
         Me.Guna2GroupBox1.Text = "STICKER LABEL"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Gray
+        Me.Label2.Location = New System.Drawing.Point(34, 52)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(77, 17)
+        Me.Label2.TabIndex = 230
+        Me.Label2.Text = "Scan QR 1 :"
+        '
+        'txtqr_verify
+        '
+        Me.txtqr_verify.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtqr_verify.DefaultText = ""
+        Me.txtqr_verify.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtqr_verify.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtqr_verify.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtqr_verify.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtqr_verify.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtqr_verify.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtqr_verify.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtqr_verify.IconLeft = CType(resources.GetObject("txtqr_verify.IconLeft"), System.Drawing.Image)
+        Me.txtqr_verify.Location = New System.Drawing.Point(21, 72)
+        Me.txtqr_verify.Name = "txtqr_verify"
+        Me.txtqr_verify.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtqr_verify.PlaceholderText = "Scan Sticker Label..."
+        Me.txtqr_verify.SelectedText = ""
+        Me.txtqr_verify.Size = New System.Drawing.Size(465, 36)
+        Me.txtqr_verify.TabIndex = 229
         '
         'Guna2Separator2
         '
@@ -98,7 +134,7 @@ Partial Class yt_out
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
@@ -148,7 +184,7 @@ Partial Class yt_out
         Me.lbl_qty.BackColor = System.Drawing.Color.Transparent
         Me.lbl_qty.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_qty.ForeColor = System.Drawing.Color.Gray
-        Me.lbl_qty.Location = New System.Drawing.Point(648, 81)
+        Me.lbl_qty.Location = New System.Drawing.Point(1123, 72)
         Me.lbl_qty.Name = "lbl_qty"
         Me.lbl_qty.Size = New System.Drawing.Size(19, 21)
         Me.lbl_qty.TabIndex = 220
@@ -160,7 +196,7 @@ Partial Class yt_out
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Gray
-        Me.Label4.Location = New System.Drawing.Point(607, 81)
+        Me.Label4.Location = New System.Drawing.Point(1082, 72)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(48, 21)
         Me.Label4.TabIndex = 219
@@ -172,11 +208,11 @@ Partial Class yt_out
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Gray
-        Me.Label1.Location = New System.Drawing.Point(40, 54)
+        Me.Label1.Location = New System.Drawing.Point(575, 52)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 17)
+        Me.Label1.Size = New System.Drawing.Size(77, 17)
         Me.Label1.TabIndex = 217
-        Me.Label1.Text = "Scan QR :"
+        Me.Label1.Text = "Scan QR 2 :"
         '
         'txtqr_label
         '
@@ -190,12 +226,12 @@ Partial Class yt_out
         Me.txtqr_label.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtqr_label.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtqr_label.IconLeft = CType(resources.GetObject("txtqr_label.IconLeft"), System.Drawing.Image)
-        Me.txtqr_label.Location = New System.Drawing.Point(27, 74)
+        Me.txtqr_label.Location = New System.Drawing.Point(564, 72)
         Me.txtqr_label.Name = "txtqr_label"
         Me.txtqr_label.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr_label.PlaceholderText = "Scan Sticker Label..."
         Me.txtqr_label.SelectedText = ""
-        Me.txtqr_label.Size = New System.Drawing.Size(574, 36)
+        Me.txtqr_label.Size = New System.Drawing.Size(497, 36)
         Me.txtqr_label.TabIndex = 1
         '
         'labelerror
@@ -203,10 +239,10 @@ Partial Class yt_out
         Me.labelerror.BackColor = System.Drawing.Color.Tomato
         Me.labelerror.Controls.Add(Me.texterror)
         Me.labelerror.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.labelerror.Location = New System.Drawing.Point(0, 822)
+        Me.labelerror.Location = New System.Drawing.Point(0, 805)
         Me.labelerror.Name = "labelerror"
-        Me.labelerror.Size = New System.Drawing.Size(1423, 19)
-        Me.labelerror.TabIndex = 223
+        Me.labelerror.Size = New System.Drawing.Size(1449, 19)
+        Me.labelerror.TabIndex = 232
         Me.labelerror.Visible = False
         '
         'texterror
@@ -228,13 +264,13 @@ Partial Class yt_out
         Me.Guna2Panel1.Location = New System.Drawing.Point(30, 83)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(1362, 674)
-        Me.Guna2Panel1.TabIndex = 224
+        Me.Guna2Panel1.TabIndex = 233
         '
         'PictureBox1
         '
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(1275, 0)
+        Me.PictureBox1.Location = New System.Drawing.Point(1301, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(21, 20)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -249,9 +285,9 @@ Partial Class yt_out
         Me.Label10.ForeColor = System.Drawing.Color.White
         Me.Label10.Location = New System.Drawing.Point(0, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(102, 21)
+        Me.Label10.Size = New System.Drawing.Size(158, 21)
         Me.Label10.TabIndex = 204
-        Me.Label10.Text = "Scan YT OUT"
+        Me.Label10.Text = "Scan INTELLI IV OUT"
         '
         'txtdate
         '
@@ -259,7 +295,7 @@ Partial Class yt_out
         Me.txtdate.Dock = System.Windows.Forms.DockStyle.Right
         Me.txtdate.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtdate.ForeColor = System.Drawing.Color.White
-        Me.txtdate.Location = New System.Drawing.Point(1296, 0)
+        Me.txtdate.Location = New System.Drawing.Point(1322, 0)
         Me.txtdate.Name = "txtdate"
         Me.txtdate.Size = New System.Drawing.Size(127, 20)
         Me.txtdate.TabIndex = 1
@@ -275,20 +311,20 @@ Partial Class yt_out
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.Size = New System.Drawing.Size(1423, 20)
-        Me.Guna2Panel2.TabIndex = 222
+        Me.Guna2Panel2.Size = New System.Drawing.Size(1449, 20)
+        Me.Guna2Panel2.TabIndex = 231
         '
-        'yt_out
+        'INTELLI_out
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1423, 841)
+        Me.ClientSize = New System.Drawing.Size(1449, 824)
         Me.Controls.Add(Me.labelerror)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.Guna2Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "yt_out"
-        Me.Text = "yt_out"
+        Me.Name = "INTELLI_out"
+        Me.Text = "intelli_out"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Guna2GroupBox1.ResumeLayout(False)
         Me.Guna2GroupBox1.PerformLayout()
@@ -317,4 +353,6 @@ Partial Class yt_out
     Friend WithEvents Label10 As Label
     Friend WithEvents txtdate As Label
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtqr_verify As Guna.UI2.WinForms.Guna2TextBox
 End Class

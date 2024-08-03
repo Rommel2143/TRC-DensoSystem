@@ -1,6 +1,6 @@
 ﻿Imports Guna.UI2.WinForms
 Imports MySql.Data.MySqlClient
-Public Class yt_out
+Public Class INTELLI_out
     Dim qrlenght As Integer
     Dim serialNumber As String = ""
     Dim partno As String
@@ -85,43 +85,47 @@ Public Class yt_out
     End Sub
     Private Sub txtqr_fg_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_label.KeyDown
         If e.KeyCode = Keys.Enter Then
-            Try
+            If txtqr_verify.Text = txtqr_label.Text Then
+                Try
 
 
-                If processQRcode("YT", txtqr_label) Then
-                    con.Close()
-                    con.Open()
-                    Dim cmdselect As New MySqlCommand("SELECT ytqr, userout, dateout,status FROM `denso_yt`
-                                                WHERE ytqr = '" & txtqr_label.Text & "'", con)
-                    dr = cmdselect.ExecuteReader()
-                    If dr.Read = True Then
-                        'saveqr
-                        Select Case dr.GetInt32("status")
-                            Case 0
-                                updateqr()
-                            Case 1
-                                showduplicate(dr.GetString("userout"), dr.GetDateTime("dateout").ToString("yyy-MM-dd"))
-                        End Select
-                        reload("SELECT `ytqr`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial` FROM `denso_yt` 
+                    If processQRcode("INT4", txtqr_label) Then
+                        con.Close()
+                        con.Open()
+                        Dim cmdselect As New MySqlCommand("SELECT intelliqr, userout, dateout,status FROM `denso_intelli4`
+                                                WHERE intelliqr = '" & txtqr_label.Text & "'", con)
+                        dr = cmdselect.ExecuteReader()
+                        If dr.Read = True Then
+                            'saveqr
+                            Select Case dr.GetInt32("status")
+                                Case 0
+                                    updateqr()
+                                Case 1
+                                    showduplicate(dr.GetString("userout"), dr.GetDateTime("dateout").ToString("yyy-MM-dd"))
+                            End Select
+                            reload("SELECT `intelliqr`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial` FROM `denso_intelli4` 
                                    WHERE dateout= '" & datedb & "'", datagrid_label)
-                    Else
-                        showerror("No Record Found!")
+                        Else
+                            showerror("No Record Found!")
+
+                        End If
+                        txtqr_verify.Clear()
+                        txtqr_verify.Focus()
 
                     End If
-                    txtqr_label.Clear()
-
-                    txtqr_label.Focus()
-
-                End If
 
 
 
 
-            Catch ex As MySqlException
-                MessageBox.Show(ex.Message)
-            Finally
-                con.Close()
-            End Try
+                Catch ex As MySqlException
+                    MessageBox.Show(ex.Message)
+                Finally
+                    con.Close()
+                End Try
+            Else
+                showerror("QR not the same!")
+            End If
+
         End If
     End Sub
     Private Sub updateqr()
@@ -132,8 +136,8 @@ Public Class yt_out
             con.Close()
             con.Open()
 
-            Dim cmdupdatedmtn As New MySqlCommand("UPDATE denso_yt SET status=@status, userout= @userout, dateout=@dateout
-                                                    WHERE ytqr = '" & txtqr_label.Text & "'", con)
+            Dim cmdupdatedmtn As New MySqlCommand("UPDATE denso_intelli4 SET status=@status, userout= @userout, dateout=@dateout
+                                                    WHERE intelliqr = '" & txtqr_label.Text & "'", con)
             With cmdupdatedmtn.Parameters
                 .AddWithValue("@status", "1")
                 .AddWithValue("@userout", idno)
@@ -161,5 +165,20 @@ Public Class yt_out
 
     Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
 
+    End Sub
+
+    Private Sub jeco_out_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub txtqr_verify_TextChanged(sender As Object, e As EventArgs) Handles txtqr_verify.TextChanged
+
+    End Sub
+
+    Private Sub txtqr_verify_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_verify.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            txtqr_label.Clear()
+            txtqr_label.Focus()
+        End If
     End Sub
 End Class

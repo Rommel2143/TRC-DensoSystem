@@ -73,7 +73,6 @@ Partial Class yt_matrix
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtqr_label = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.labelerror.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel2.SuspendLayout()
@@ -264,7 +263,6 @@ Partial Class yt_matrix
         DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.datagrid_matrix.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
-        Me.datagrid_matrix.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(204, Byte), Integer))
         DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -419,7 +417,6 @@ Partial Class yt_matrix
         DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.datagrid_label.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
-        Me.datagrid_label.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(204, Byte), Integer))
         DataGridViewCellStyle14.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -597,27 +594,12 @@ Partial Class yt_matrix
         'Guna2Panel1
         '
         Me.Guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Guna2Panel1.Controls.Add(Me.Label3)
         Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox1)
         Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox3)
         Me.Guna2Panel1.Location = New System.Drawing.Point(22, 44)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(1362, 726)
         Me.Guna2Panel1.TabIndex = 221
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.White
-        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Gray
-        Me.Label3.Location = New System.Drawing.Point(16, 573)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(471, 92)
-        Me.Label3.TabIndex = 218
-        Me.Label3.Text = "Currently being enhanced " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "for an even better experience."
-        Me.Label3.Visible = False
         '
         'yt_matrix
         '
@@ -643,7 +625,6 @@ Partial Class yt_matrix
         Me.Guna2GroupBox1.PerformLayout()
         CType(Me.datagrid_label, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel1.ResumeLayout(False)
-        Me.Guna2Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -687,7 +668,6 @@ Partial Class yt_matrix
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents lbl_count2 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Guna2Separator1 As Guna.UI2.WinForms.Guna2Separator
     Friend WithEvents Guna2Separator2 As Guna.UI2.WinForms.Guna2Separator
 End Class

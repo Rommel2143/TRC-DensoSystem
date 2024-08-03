@@ -206,7 +206,14 @@ Public Class QR_identifier
                 cmbselect = "YT"
             Case "YT-Matrix"
                 cmbselect = "YT-M"
-
+            Case "JECO"
+                cmbselect = "JECO"
+            Case "JECO-CML"
+                cmbselect = "JECO-CML"
+            Case "3T"
+                cmbselect = "3T"
+            Case "3T-Matrix"
+                cmbselect = "3T-M"
         End Select
     End Sub
 

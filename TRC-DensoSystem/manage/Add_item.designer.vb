@@ -25,7 +25,6 @@ Partial Class Add_item
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Add_item))
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.cmb_type = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.txtpassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
         Me.lbl_fgerror = New System.Windows.Forms.Label()
@@ -51,6 +50,7 @@ Partial Class Add_item
         Me.idno = New Guna.UI2.WinForms.Guna2TextBox()
         Me.labelerror = New Guna.UI2.WinForms.Guna2Panel()
         Me.texterror = New System.Windows.Forms.Label()
+        Me.cmb_type = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Guna2GroupBox3.SuspendLayout()
         Me.labelerror.SuspendLayout()
@@ -58,8 +58,8 @@ Partial Class Add_item
         '
         'Guna2GroupBox2
         '
-        Me.Guna2GroupBox2.Controls.Add(Me.Label3)
         Me.Guna2GroupBox2.Controls.Add(Me.cmb_type)
+        Me.Guna2GroupBox2.Controls.Add(Me.Label3)
         Me.Guna2GroupBox2.Controls.Add(Me.txtpassword)
         Me.Guna2GroupBox2.Controls.Add(Me.Guna2Separator1)
         Me.Guna2GroupBox2.Controls.Add(Me.lbl_fgerror)
@@ -95,22 +95,6 @@ Partial Class Add_item
         Me.Label3.Size = New System.Drawing.Size(55, 15)
         Me.Label3.TabIndex = 41
         Me.Label3.Text = "QR type :"
-        '
-        'cmb_type
-        '
-        Me.cmb_type.BackColor = System.Drawing.Color.Transparent
-        Me.cmb_type.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmb_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_type.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_type.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_type.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmb_type.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmb_type.ItemHeight = 30
-        Me.cmb_type.Items.AddRange(New Object() {"DMTN", "INTELLI IV", "TDE", "20CY", "VT", "YT", "2T"})
-        Me.cmb_type.Location = New System.Drawing.Point(104, 49)
-        Me.cmb_type.Name = "cmb_type"
-        Me.cmb_type.Size = New System.Drawing.Size(201, 36)
-        Me.cmb_type.TabIndex = 40
         '
         'txtpassword
         '
@@ -199,13 +183,13 @@ Partial Class Add_item
         '
         'txt_customerno
         '
+        Me.txt_customerno.BorderColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_customerno.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txt_customerno.DefaultText = ""
         Me.txt_customerno.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txt_customerno.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txt_customerno.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txt_customerno.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_customerno.Enabled = False
         Me.txt_customerno.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_customerno.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txt_customerno.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -213,7 +197,6 @@ Partial Class Add_item
         Me.txt_customerno.Name = "txt_customerno"
         Me.txt_customerno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_customerno.PlaceholderText = "Enter Customer No..."
-        Me.txt_customerno.ReadOnly = True
         Me.txt_customerno.SelectedText = ""
         Me.txt_customerno.Size = New System.Drawing.Size(139, 36)
         Me.txt_customerno.TabIndex = 17
@@ -277,9 +260,9 @@ Partial Class Add_item
         Me.Label5.ForeColor = System.Drawing.Color.Gray
         Me.Label5.Location = New System.Drawing.Point(42, 117)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(57, 15)
+        Me.Label5.Size = New System.Drawing.Size(159, 15)
         Me.Label5.TabIndex = 13
-        Me.Label5.Text = "Scan QR :"
+        Me.Label5.Text = "Scan QR (Sticker Label Only):"
         '
         'Label7
         '
@@ -491,6 +474,22 @@ Partial Class Add_item
         Me.texterror.TabIndex = 203
         Me.texterror.Text = "INVALID"
         '
+        'cmb_type
+        '
+        Me.cmb_type.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_type.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_type.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_type.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_type.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmb_type.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_type.ItemHeight = 30
+        Me.cmb_type.Items.AddRange(New Object() {"DMTN", "DMTN-Inner Tag", "DMTN-CML", "INTELLI IV", "TDE", "20CY", "VT", "YT", "YT-Matrix", "2T", "JECO", "JECO-CML", "3T", "3T-Matrix"})
+        Me.cmb_type.Location = New System.Drawing.Point(104, 49)
+        Me.cmb_type.Name = "cmb_type"
+        Me.cmb_type.Size = New System.Drawing.Size(201, 36)
+        Me.cmb_type.TabIndex = 42
+        '
         'Add_item
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -538,7 +537,7 @@ Partial Class Add_item
     Friend WithEvents Guna2Separator1 As Guna.UI2.WinForms.Guna2Separator
     Friend WithEvents txtpassword As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents cmb_type As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents labelerror As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents texterror As Label
+    Friend WithEvents cmb_type As Guna.UI2.WinForms.Guna2ComboBox
 End Class

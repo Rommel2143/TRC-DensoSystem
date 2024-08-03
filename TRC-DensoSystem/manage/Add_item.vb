@@ -110,7 +110,7 @@ Public Class Add_item
             Else
                 con.Close()
                 con.Open()
-                Dim cmdselect As New MySqlCommand("SELECT * FROM `denso_fg_masterlist` WHERE partno= '" & txt_partno.Text & "' and customerno = '" & txt_customerno.Text & "'", con)
+                Dim cmdselect As New MySqlCommand("SELECT * FROM `denso_fg_masterlist` WHERE partno= '" & txt_partno.Text & "' and customerno = '" & txt_customerno.Text & "' and color='" & color & "'", con)
                 dr = cmdselect.ExecuteReader()
                 If dr.Read = True Then
                     lbl_fgerror.Visible = True
@@ -129,6 +129,11 @@ Public Class Add_item
                                                             '" & txt_qrlenght.Text & "')", con)
                     cmdinsert.ExecuteNonQuery()
                     MessageBox.Show("USER Added successfully!")
+                    txt_customerno.Clear()
+                    txt_partname.Clear()
+                    txtpassword.Clear()
+                    btn_fg_save.Enabled = False
+                    txtqr.Focus()
                     con.Close()
                     lbl_duplicate.Visible = False
 
@@ -209,7 +214,9 @@ Public Class Add_item
         End If
     End Sub
 
-    Private Sub cmb_type_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cmb_type.SelectedIndexChanged
+
+
+    Private Sub cmb_type_SelectedIndexChanged_2(sender As Object, e As EventArgs) Handles cmb_type.SelectedIndexChanged
         Select Case cmb_type.Text
             Case "DMTN"
                 cmbselect = "DMTN"
@@ -231,7 +238,14 @@ Public Class Add_item
                 cmbselect = "YT"
             Case "YT-Matrix"
                 cmbselect = "YT-M"
-
+            Case "JECO"
+                cmbselect = "JECO"
+            Case "JECO-CML"
+                cmbselect = "JECO-CML"
+            Case "3T"
+                cmbselect = "3T"
+            Case "3T-Matrix"
+                cmbselect = "3T-M"
         End Select
     End Sub
 End Class
