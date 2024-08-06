@@ -136,12 +136,13 @@ Public Class INTELLI_out
             con.Close()
             con.Open()
 
-            Dim cmdupdatedmtn As New MySqlCommand("UPDATE denso_intelli4 SET status=@status, userout= @userout, dateout=@dateout
+            Dim cmdupdatedmtn As New MySqlCommand("UPDATE denso_intelli4 SET status=@status, userout= @userout, dateout=@dateout, batchcode =@batchcode
                                                     WHERE intelliqr = '" & txtqr_label.Text & "'", con)
             With cmdupdatedmtn.Parameters
                 .AddWithValue("@status", "1")
                 .AddWithValue("@userout", idno)
                 .AddWithValue("@dateout", datedb)
+                .AddWithValue("@batchcode", txt_batchcode)
             End With
             cmdupdatedmtn.ExecuteNonQuery()
 
@@ -179,6 +180,14 @@ Public Class INTELLI_out
         If e.KeyCode = Keys.Enter Then
             txtqr_label.Clear()
             txtqr_label.Focus()
+        End If
+    End Sub
+
+    Private Sub txt_batchcode_TextChanged(sender As Object, e As EventArgs) Handles txt_batchcode.TextChanged
+        If txt_batchcode.Text = "" Then
+            panel_scan.Visible = False
+        Else
+            panel_scan.Visible = True
         End If
     End Sub
 End Class

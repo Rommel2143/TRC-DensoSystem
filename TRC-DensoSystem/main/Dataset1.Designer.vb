@@ -27,7 +27,7 @@ Partial Public Class Dataset1
     
     Private tablejeco As jecoDataTable
     
-    Private tablejeco1 As jeco1DataTable
+    Private tableintelli4 As intelli4DataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -61,8 +61,8 @@ Partial Public Class Dataset1
             If (Not (ds.Tables("jeco")) Is Nothing) Then
                 MyBase.Tables.Add(New jecoDataTable(ds.Tables("jeco")))
             End If
-            If (Not (ds.Tables("jeco1")) Is Nothing) Then
-                MyBase.Tables.Add(New jeco1DataTable(ds.Tables("jeco1")))
+            If (Not (ds.Tables("intelli4")) Is Nothing) Then
+                MyBase.Tables.Add(New intelli4DataTable(ds.Tables("intelli4")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -95,9 +95,9 @@ Partial Public Class Dataset1
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property jeco1() As jeco1DataTable
+    Public ReadOnly Property intelli4() As intelli4DataTable
         Get
-            Return Me.tablejeco1
+            Return Me.tableintelli4
         End Get
     End Property
     
@@ -171,8 +171,8 @@ Partial Public Class Dataset1
             If (Not (ds.Tables("jeco")) Is Nothing) Then
                 MyBase.Tables.Add(New jecoDataTable(ds.Tables("jeco")))
             End If
-            If (Not (ds.Tables("jeco1")) Is Nothing) Then
-                MyBase.Tables.Add(New jeco1DataTable(ds.Tables("jeco1")))
+            If (Not (ds.Tables("intelli4")) Is Nothing) Then
+                MyBase.Tables.Add(New intelli4DataTable(ds.Tables("intelli4")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -212,10 +212,10 @@ Partial Public Class Dataset1
                 Me.tablejeco.InitVars
             End If
         End If
-        Me.tablejeco1 = CType(MyBase.Tables("jeco1"),jeco1DataTable)
+        Me.tableintelli4 = CType(MyBase.Tables("intelli4"),intelli4DataTable)
         If (initTable = true) Then
-            If (Not (Me.tablejeco1) Is Nothing) Then
-                Me.tablejeco1.InitVars
+            If (Not (Me.tableintelli4) Is Nothing) Then
+                Me.tableintelli4.InitVars
             End If
         End If
     End Sub
@@ -230,8 +230,8 @@ Partial Public Class Dataset1
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tablejeco = New jecoDataTable()
         MyBase.Tables.Add(Me.tablejeco)
-        Me.tablejeco1 = New jeco1DataTable()
-        MyBase.Tables.Add(Me.tablejeco1)
+        Me.tableintelli4 = New intelli4DataTable()
+        MyBase.Tables.Add(Me.tableintelli4)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -242,7 +242,7 @@ Partial Public Class Dataset1
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Private Function ShouldSerializejeco1() As Boolean
+    Private Function ShouldSerializeintelli4() As Boolean
         Return false
     End Function
     
@@ -308,7 +308,7 @@ Partial Public Class Dataset1
     Public Delegate Sub jecoRowChangeEventHandler(ByVal sender As Object, ByVal e As jecoRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Delegate Sub jeco1RowChangeEventHandler(ByVal sender As Object, ByVal e As jeco1RowChangeEvent)
+    Public Delegate Sub intelli4RowChangeEventHandler(ByVal sender As Object, ByVal e As intelli4RowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -719,12 +719,12 @@ Partial Public Class Dataset1
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class jeco1DataTable
-        Inherits Global.System.Data.TypedTableBase(Of jeco1Row)
+    Partial Public Class intelli4DataTable
+        Inherits Global.System.Data.TypedTableBase(Of intelli4Row)
         
         Private columnid As Global.System.Data.DataColumn
         
-        Private columnjecoqr As Global.System.Data.DataColumn
+        Private columnintelliqr As Global.System.Data.DataColumn
         
         Private columnpartno As Global.System.Data.DataColumn
         
@@ -738,19 +738,17 @@ Partial Public Class Dataset1
         
         Private columnserial As Global.System.Data.DataColumn
         
-        Private columncmlqr As Global.System.Data.DataColumn
+        Private columnbatchcode As Global.System.Data.DataColumn
         
         Private columnuserout As Global.System.Data.DataColumn
         
         Private columndateout As Global.System.Data.DataColumn
         
-        Private columncmlserial As Global.System.Data.DataColumn
-        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "jeco1"
+            Me.TableName = "intelli4"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -791,9 +789,9 @@ Partial Public Class Dataset1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property jecoqrColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property intelliqrColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnjecoqr
+                Return Me.columnintelliqr
             End Get
         End Property
         
@@ -847,9 +845,9 @@ Partial Public Class Dataset1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property cmlqrColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property batchcodeColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columncmlqr
+                Return Me.columnbatchcode
             End Get
         End Property
         
@@ -870,14 +868,6 @@ Partial Public Class Dataset1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property cmlserialColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columncmlserial
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -888,50 +878,50 @@ Partial Public Class Dataset1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As jeco1Row
+        Public Default ReadOnly Property Item(ByVal index As Integer) As intelli4Row
             Get
-                Return CType(Me.Rows(index),jeco1Row)
+                Return CType(Me.Rows(index),intelli4Row)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event jeco1RowChanging As jeco1RowChangeEventHandler
+        Public Event intelli4RowChanging As intelli4RowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event jeco1RowChanged As jeco1RowChangeEventHandler
+        Public Event intelli4RowChanged As intelli4RowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event jeco1RowDeleting As jeco1RowChangeEventHandler
+        Public Event intelli4RowDeleting As intelli4RowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event jeco1RowDeleted As jeco1RowChangeEventHandler
+        Public Event intelli4RowDeleted As intelli4RowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Sub Addjeco1Row(ByVal row As jeco1Row)
+        Public Overloads Sub Addintelli4Row(ByVal row As intelli4Row)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function Addjeco1Row(ByVal id As String, ByVal jecoqr As String, ByVal partno As String, ByVal customerno As String, ByVal color As String, ByVal proddate As Date, ByVal qty As Integer, ByVal serial As String, ByVal cmlqr As String, ByVal userout As String, ByVal dateout As Date, ByVal cmlserial As String) As jeco1Row
-            Dim rowjeco1Row As jeco1Row = CType(Me.NewRow,jeco1Row)
-            Dim columnValuesArray() As Object = New Object() {id, jecoqr, partno, customerno, color, proddate, qty, serial, cmlqr, userout, dateout, cmlserial}
-            rowjeco1Row.ItemArray = columnValuesArray
-            Me.Rows.Add(rowjeco1Row)
-            Return rowjeco1Row
+        Public Overloads Function Addintelli4Row(ByVal id As String, ByVal intelliqr As String, ByVal partno As String, ByVal customerno As String, ByVal color As String, ByVal proddate As Date, ByVal qty As Integer, ByVal serial As String, ByVal batchcode As String, ByVal userout As String, ByVal dateout As Date) As intelli4Row
+            Dim rowintelli4Row As intelli4Row = CType(Me.NewRow,intelli4Row)
+            Dim columnValuesArray() As Object = New Object() {id, intelliqr, partno, customerno, color, proddate, qty, serial, batchcode, userout, dateout}
+            rowintelli4Row.ItemArray = columnValuesArray
+            Me.Rows.Add(rowintelli4Row)
+            Return rowintelli4Row
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function FindByid(ByVal id As String) As jeco1Row
-            Return CType(Me.Rows.Find(New Object() {id}),jeco1Row)
+        Public Function FindByid(ByVal id As String) As intelli4Row
+            Return CType(Me.Rows.Find(New Object() {id}),intelli4Row)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As jeco1DataTable = CType(MyBase.Clone,jeco1DataTable)
+            Dim cln As intelli4DataTable = CType(MyBase.Clone,intelli4DataTable)
             cln.InitVars
             Return cln
         End Function
@@ -939,24 +929,23 @@ Partial Public Class Dataset1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New jeco1DataTable()
+            Return New intelli4DataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnid = MyBase.Columns("id")
-            Me.columnjecoqr = MyBase.Columns("jecoqr")
+            Me.columnintelliqr = MyBase.Columns("intelliqr")
             Me.columnpartno = MyBase.Columns("partno")
             Me.columncustomerno = MyBase.Columns("customerno")
             Me.columncolor = MyBase.Columns("color")
             Me.columnproddate = MyBase.Columns("proddate")
             Me.columnqty = MyBase.Columns("qty")
             Me.columnserial = MyBase.Columns("serial")
-            Me.columncmlqr = MyBase.Columns("cmlqr")
+            Me.columnbatchcode = MyBase.Columns("batchcode")
             Me.columnuserout = MyBase.Columns("userout")
             Me.columndateout = MyBase.Columns("dateout")
-            Me.columncmlserial = MyBase.Columns("cmlserial")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -964,8 +953,8 @@ Partial Public Class Dataset1
         Private Sub InitClass()
             Me.columnid = New Global.System.Data.DataColumn("id", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnid)
-            Me.columnjecoqr = New Global.System.Data.DataColumn("jecoqr", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnjecoqr)
+            Me.columnintelliqr = New Global.System.Data.DataColumn("intelliqr", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnintelliqr)
             Me.columnpartno = New Global.System.Data.DataColumn("partno", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnpartno)
             Me.columncustomerno = New Global.System.Data.DataColumn("customerno", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -978,14 +967,12 @@ Partial Public Class Dataset1
             MyBase.Columns.Add(Me.columnqty)
             Me.columnserial = New Global.System.Data.DataColumn("serial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnserial)
-            Me.columncmlqr = New Global.System.Data.DataColumn("cmlqr", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columncmlqr)
+            Me.columnbatchcode = New Global.System.Data.DataColumn("batchcode", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnbatchcode)
             Me.columnuserout = New Global.System.Data.DataColumn("userout", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnuserout)
             Me.columndateout = New Global.System.Data.DataColumn("dateout", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndateout)
-            Me.columncmlserial = New Global.System.Data.DataColumn("cmlserial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columncmlserial)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AllowDBNull = false
             Me.columnid.Unique = true
@@ -993,28 +980,28 @@ Partial Public Class Dataset1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function Newjeco1Row() As jeco1Row
-            Return CType(Me.NewRow,jeco1Row)
+        Public Function Newintelli4Row() As intelli4Row
+            Return CType(Me.NewRow,intelli4Row)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New jeco1Row(builder)
+            Return New intelli4Row(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(jeco1Row)
+            Return GetType(intelli4Row)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.jeco1RowChangedEvent) Is Nothing) Then
-                RaiseEvent jeco1RowChanged(Me, New jeco1RowChangeEvent(CType(e.Row,jeco1Row), e.Action))
+            If (Not (Me.intelli4RowChangedEvent) Is Nothing) Then
+                RaiseEvent intelli4RowChanged(Me, New intelli4RowChangeEvent(CType(e.Row,intelli4Row), e.Action))
             End If
         End Sub
         
@@ -1022,8 +1009,8 @@ Partial Public Class Dataset1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.jeco1RowChangingEvent) Is Nothing) Then
-                RaiseEvent jeco1RowChanging(Me, New jeco1RowChangeEvent(CType(e.Row,jeco1Row), e.Action))
+            If (Not (Me.intelli4RowChangingEvent) Is Nothing) Then
+                RaiseEvent intelli4RowChanging(Me, New intelli4RowChangeEvent(CType(e.Row,intelli4Row), e.Action))
             End If
         End Sub
         
@@ -1031,8 +1018,8 @@ Partial Public Class Dataset1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.jeco1RowDeletedEvent) Is Nothing) Then
-                RaiseEvent jeco1RowDeleted(Me, New jeco1RowChangeEvent(CType(e.Row,jeco1Row), e.Action))
+            If (Not (Me.intelli4RowDeletedEvent) Is Nothing) Then
+                RaiseEvent intelli4RowDeleted(Me, New intelli4RowChangeEvent(CType(e.Row,intelli4Row), e.Action))
             End If
         End Sub
         
@@ -1040,14 +1027,14 @@ Partial Public Class Dataset1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.jeco1RowDeletingEvent) Is Nothing) Then
-                RaiseEvent jeco1RowDeleting(Me, New jeco1RowChangeEvent(CType(e.Row,jeco1Row), e.Action))
+            If (Not (Me.intelli4RowDeletingEvent) Is Nothing) Then
+                RaiseEvent intelli4RowDeleting(Me, New intelli4RowChangeEvent(CType(e.Row,intelli4Row), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub Removejeco1Row(ByVal row As jeco1Row)
+        Public Sub Removeintelli4Row(ByVal row As intelli4Row)
             Me.Rows.Remove(row)
         End Sub
         
@@ -1074,7 +1061,7 @@ Partial Public Class Dataset1
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "jeco1DataTable"
+            attribute2.FixedValue = "intelli4DataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1445,41 +1432,41 @@ Partial Public Class Dataset1
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class jeco1Row
+    Partial Public Class intelli4Row
         Inherits Global.System.Data.DataRow
         
-        Private tablejeco1 As jeco1DataTable
+        Private tableintelli4 As intelli4DataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tablejeco1 = CType(Me.Table,jeco1DataTable)
+            Me.tableintelli4 = CType(Me.Table,intelli4DataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property id() As String
             Get
-                Return CType(Me(Me.tablejeco1.idColumn),String)
+                Return CType(Me(Me.tableintelli4.idColumn),String)
             End Get
             Set
-                Me(Me.tablejeco1.idColumn) = value
+                Me(Me.tableintelli4.idColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property jecoqr() As String
+        Public Property intelliqr() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablejeco1.jecoqrColumn),String)
+                    Return CType(Me(Me.tableintelli4.intelliqrColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'jecoqr' in table 'jeco1' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'intelliqr' in table 'intelli4' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablejeco1.jecoqrColumn) = value
+                Me(Me.tableintelli4.intelliqrColumn) = value
             End Set
         End Property
         
@@ -1488,13 +1475,13 @@ Partial Public Class Dataset1
         Public Property partno() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablejeco1.partnoColumn),String)
+                    Return CType(Me(Me.tableintelli4.partnoColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'partno' in table 'jeco1' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'partno' in table 'intelli4' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablejeco1.partnoColumn) = value
+                Me(Me.tableintelli4.partnoColumn) = value
             End Set
         End Property
         
@@ -1503,13 +1490,13 @@ Partial Public Class Dataset1
         Public Property customerno() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablejeco1.customernoColumn),String)
+                    Return CType(Me(Me.tableintelli4.customernoColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'customerno' in table 'jeco1' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'customerno' in table 'intelli4' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablejeco1.customernoColumn) = value
+                Me(Me.tableintelli4.customernoColumn) = value
             End Set
         End Property
         
@@ -1518,13 +1505,13 @@ Partial Public Class Dataset1
         Public Property color() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablejeco1.colorColumn),String)
+                    Return CType(Me(Me.tableintelli4.colorColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'color' in table 'jeco1' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'color' in table 'intelli4' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablejeco1.colorColumn) = value
+                Me(Me.tableintelli4.colorColumn) = value
             End Set
         End Property
         
@@ -1533,13 +1520,13 @@ Partial Public Class Dataset1
         Public Property proddate() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tablejeco1.proddateColumn),Date)
+                    Return CType(Me(Me.tableintelli4.proddateColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'proddate' in table 'jeco1' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'proddate' in table 'intelli4' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablejeco1.proddateColumn) = value
+                Me(Me.tableintelli4.proddateColumn) = value
             End Set
         End Property
         
@@ -1548,13 +1535,13 @@ Partial Public Class Dataset1
         Public Property qty() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablejeco1.qtyColumn),Integer)
+                    Return CType(Me(Me.tableintelli4.qtyColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'qty' in table 'jeco1' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'qty' in table 'intelli4' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablejeco1.qtyColumn) = value
+                Me(Me.tableintelli4.qtyColumn) = value
             End Set
         End Property
         
@@ -1563,28 +1550,28 @@ Partial Public Class Dataset1
         Public Property serial() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablejeco1.serialColumn),String)
+                    Return CType(Me(Me.tableintelli4.serialColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'serial' in table 'jeco1' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'serial' in table 'intelli4' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablejeco1.serialColumn) = value
+                Me(Me.tableintelli4.serialColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property cmlqr() As String
+        Public Property batchcode() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablejeco1.cmlqrColumn),String)
+                    Return CType(Me(Me.tableintelli4.batchcodeColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'cmlqr' in table 'jeco1' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'batchcode' in table 'intelli4' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablejeco1.cmlqrColumn) = value
+                Me(Me.tableintelli4.batchcodeColumn) = value
             End Set
         End Property
         
@@ -1593,13 +1580,13 @@ Partial Public Class Dataset1
         Public Property userout() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablejeco1.useroutColumn),String)
+                    Return CType(Me(Me.tableintelli4.useroutColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'userout' in table 'jeco1' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'userout' in table 'intelli4' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablejeco1.useroutColumn) = value
+                Me(Me.tableintelli4.useroutColumn) = value
             End Set
         End Property
         
@@ -1608,161 +1595,134 @@ Partial Public Class Dataset1
         Public Property dateout() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tablejeco1.dateoutColumn),Date)
+                    Return CType(Me(Me.tableintelli4.dateoutColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'dateout' in table 'jeco1' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'dateout' in table 'intelli4' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablejeco1.dateoutColumn) = value
+                Me(Me.tableintelli4.dateoutColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property cmlserial() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablejeco1.cmlserialColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'cmlserial' in table 'jeco1' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablejeco1.cmlserialColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsjecoqrNull() As Boolean
-            Return Me.IsNull(Me.tablejeco1.jecoqrColumn)
+        Public Function IsintelliqrNull() As Boolean
+            Return Me.IsNull(Me.tableintelli4.intelliqrColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetjecoqrNull()
-            Me(Me.tablejeco1.jecoqrColumn) = Global.System.Convert.DBNull
+        Public Sub SetintelliqrNull()
+            Me(Me.tableintelli4.intelliqrColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IspartnoNull() As Boolean
-            Return Me.IsNull(Me.tablejeco1.partnoColumn)
+            Return Me.IsNull(Me.tableintelli4.partnoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetpartnoNull()
-            Me(Me.tablejeco1.partnoColumn) = Global.System.Convert.DBNull
+            Me(Me.tableintelli4.partnoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IscustomernoNull() As Boolean
-            Return Me.IsNull(Me.tablejeco1.customernoColumn)
+            Return Me.IsNull(Me.tableintelli4.customernoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetcustomernoNull()
-            Me(Me.tablejeco1.customernoColumn) = Global.System.Convert.DBNull
+            Me(Me.tableintelli4.customernoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IscolorNull() As Boolean
-            Return Me.IsNull(Me.tablejeco1.colorColumn)
+            Return Me.IsNull(Me.tableintelli4.colorColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetcolorNull()
-            Me(Me.tablejeco1.colorColumn) = Global.System.Convert.DBNull
+            Me(Me.tableintelli4.colorColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsproddateNull() As Boolean
-            Return Me.IsNull(Me.tablejeco1.proddateColumn)
+            Return Me.IsNull(Me.tableintelli4.proddateColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetproddateNull()
-            Me(Me.tablejeco1.proddateColumn) = Global.System.Convert.DBNull
+            Me(Me.tableintelli4.proddateColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsqtyNull() As Boolean
-            Return Me.IsNull(Me.tablejeco1.qtyColumn)
+            Return Me.IsNull(Me.tableintelli4.qtyColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetqtyNull()
-            Me(Me.tablejeco1.qtyColumn) = Global.System.Convert.DBNull
+            Me(Me.tableintelli4.qtyColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsserialNull() As Boolean
-            Return Me.IsNull(Me.tablejeco1.serialColumn)
+            Return Me.IsNull(Me.tableintelli4.serialColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetserialNull()
-            Me(Me.tablejeco1.serialColumn) = Global.System.Convert.DBNull
+            Me(Me.tableintelli4.serialColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IscmlqrNull() As Boolean
-            Return Me.IsNull(Me.tablejeco1.cmlqrColumn)
+        Public Function IsbatchcodeNull() As Boolean
+            Return Me.IsNull(Me.tableintelli4.batchcodeColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetcmlqrNull()
-            Me(Me.tablejeco1.cmlqrColumn) = Global.System.Convert.DBNull
+        Public Sub SetbatchcodeNull()
+            Me(Me.tableintelli4.batchcodeColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsuseroutNull() As Boolean
-            Return Me.IsNull(Me.tablejeco1.useroutColumn)
+            Return Me.IsNull(Me.tableintelli4.useroutColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetuseroutNull()
-            Me(Me.tablejeco1.useroutColumn) = Global.System.Convert.DBNull
+            Me(Me.tableintelli4.useroutColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsdateoutNull() As Boolean
-            Return Me.IsNull(Me.tablejeco1.dateoutColumn)
+            Return Me.IsNull(Me.tableintelli4.dateoutColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetdateoutNull()
-            Me(Me.tablejeco1.dateoutColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IscmlserialNull() As Boolean
-            Return Me.IsNull(Me.tablejeco1.cmlserialColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetcmlserialNull()
-            Me(Me.tablejeco1.cmlserialColumn) = Global.System.Convert.DBNull
+            Me(Me.tableintelli4.dateoutColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1806,16 +1766,16 @@ Partial Public Class Dataset1
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Class jeco1RowChangeEvent
+    Public Class intelli4RowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As jeco1Row
+        Private eventRow As intelli4Row
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New(ByVal row As jeco1Row, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As intelli4Row, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -1823,7 +1783,7 @@ Partial Public Class Dataset1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Row() As jeco1Row
+        Public ReadOnly Property Row() As intelli4Row
             Get
                 Return Me.eventRow
             End Get

@@ -128,7 +128,9 @@ Public Class intelli_in
     End Sub
     Private Sub saveqr()
         Try
-
+            If customerno = "" Then
+                customerno = cmb_customerno.Text
+            End If
             con.Close()
             con.Open()
 
@@ -179,7 +181,18 @@ Public Class intelli_in
     End Sub
 
     Private Sub jeco_in_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Try
+            con.Close()
+            con.Open()
+            Dim cmdselect As New MySqlCommand("SELECT DISTINCT customerno FROM `denso_fg_masterlist` WHERE `qrtype`='INT4'", con)
+            dr = cmdselect.ExecuteReader
+            cmb_customerno.Items.Clear()
+            While (dr.Read())
+                cmb_customerno.Items.Add(dr.GetString("customerno"))
+            End While
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
     Private Sub txtqr_verify_TextChanged(sender As Object, e As EventArgs) Handles txtqr_verify.TextChanged

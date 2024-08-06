@@ -353,6 +353,12 @@
     <Compile Include="INFG\REPORT_TDE.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="INTELLI4\intelli4_report.Designer.vb">
+      <DependentUpon>intelli4_report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="INTELLI4\intelli4_report.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="INTELLI4\intelli_in.Designer.vb">
       <DependentUpon>intelli_in.vb</DependentUpon>
     </Compile>
@@ -560,6 +566,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="INFG\REPORT_TDE.resx">
       <DependentUpon>REPORT_TDE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INTELLI4\intelli4_report.resx">
+      <DependentUpon>intelli4_report.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="INTELLI4\intelli_in.resx">
       <DependentUpon>intelli_in.vb</DependentUpon>

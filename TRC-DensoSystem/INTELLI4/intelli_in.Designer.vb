@@ -29,6 +29,8 @@ Partial Class intelli_in
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.cmb_customerno = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtqr_verify = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Separator2 = New Guna.UI2.WinForms.Guna2Separator()
@@ -60,6 +62,8 @@ Partial Class intelli_in
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.cmb_customerno)
+        Me.Guna2GroupBox1.Controls.Add(Me.Label3)
         Me.Guna2GroupBox1.Controls.Add(Me.Label2)
         Me.Guna2GroupBox1.Controls.Add(Me.txtqr_verify)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Separator2)
@@ -69,11 +73,38 @@ Partial Class intelli_in
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.HotTrack
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(100, 63)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(106, 16)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(1163, 548)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(1163, 641)
         Me.Guna2GroupBox1.TabIndex = 217
         Me.Guna2GroupBox1.Text = "STICKER LABEL"
+        '
+        'cmb_customerno
+        '
+        Me.cmb_customerno.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_customerno.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_customerno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_customerno.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_customerno.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_customerno.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmb_customerno.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_customerno.ItemHeight = 30
+        Me.cmb_customerno.Location = New System.Drawing.Point(72, 58)
+        Me.cmb_customerno.Name = "cmb_customerno"
+        Me.cmb_customerno.Size = New System.Drawing.Size(272, 36)
+        Me.cmb_customerno.TabIndex = 230
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Gray
+        Me.Label3.Location = New System.Drawing.Point(23, 58)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(43, 17)
+        Me.Label3.TabIndex = 229
+        Me.Label3.Text = "User :"
         '
         'Label2
         '
@@ -81,7 +112,7 @@ Partial Class intelli_in
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Gray
-        Me.Label2.Location = New System.Drawing.Point(29, 52)
+        Me.Label2.Location = New System.Drawing.Point(34, 108)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(77, 17)
         Me.Label2.TabIndex = 228
@@ -99,7 +130,7 @@ Partial Class intelli_in
         Me.txtqr_verify.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtqr_verify.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtqr_verify.IconLeft = CType(resources.GetObject("txtqr_verify.IconLeft"), System.Drawing.Image)
-        Me.txtqr_verify.Location = New System.Drawing.Point(21, 72)
+        Me.txtqr_verify.Location = New System.Drawing.Point(26, 128)
         Me.txtqr_verify.Name = "txtqr_verify"
         Me.txtqr_verify.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr_verify.PlaceholderText = "Scan Sticker Label..."
@@ -110,7 +141,7 @@ Partial Class intelli_in
         'Guna2Separator2
         '
         Me.Guna2Separator2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Separator2.Location = New System.Drawing.Point(21, 133)
+        Me.Guna2Separator2.Location = New System.Drawing.Point(21, 183)
         Me.Guna2Separator2.Name = "Guna2Separator2"
         Me.Guna2Separator2.Size = New System.Drawing.Size(1121, 10)
         Me.Guna2Separator2.TabIndex = 226
@@ -145,7 +176,7 @@ Partial Class intelli_in
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datagrid_label.DefaultCellStyle = DataGridViewCellStyle3
         Me.datagrid_label.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid_label.Location = New System.Drawing.Point(32, 153)
+        Me.datagrid_label.Location = New System.Drawing.Point(32, 199)
         Me.datagrid_label.Name = "datagrid_label"
         Me.datagrid_label.ReadOnly = True
         Me.datagrid_label.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -159,7 +190,7 @@ Partial Class intelli_in
         Me.datagrid_label.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.datagrid_label.RowHeadersVisible = False
         Me.datagrid_label.RowTemplate.Height = 31
-        Me.datagrid_label.Size = New System.Drawing.Size(1098, 363)
+        Me.datagrid_label.Size = New System.Drawing.Size(1098, 415)
         Me.datagrid_label.TabIndex = 221
         Me.datagrid_label.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid_label.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -189,7 +220,7 @@ Partial Class intelli_in
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Gray
-        Me.Label1.Location = New System.Drawing.Point(569, 52)
+        Me.Label1.Location = New System.Drawing.Point(574, 108)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(77, 17)
         Me.Label1.TabIndex = 217
@@ -207,7 +238,7 @@ Partial Class intelli_in
         Me.txtqr_label.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtqr_label.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtqr_label.IconLeft = CType(resources.GetObject("txtqr_label.IconLeft"), System.Drawing.Image)
-        Me.txtqr_label.Location = New System.Drawing.Point(556, 72)
+        Me.txtqr_label.Location = New System.Drawing.Point(561, 128)
         Me.txtqr_label.Name = "txtqr_label"
         Me.txtqr_label.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr_label.PlaceholderText = "Scan Sticker Label..."
@@ -325,4 +356,6 @@ Partial Class intelli_in
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents txtqr_verify As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents cmb_customerno As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Label3 As Label
 End Class
