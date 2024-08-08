@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\ptif1-ds\SHARED\it\System\Denso System\</UpdateUrl>
-    <ApplicationRevision>24</ApplicationRevision>
+    <ApplicationRevision>26</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -243,6 +243,18 @@
     <Compile Include="20CY\retainer_20cy_out.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="20CY\retainer_20cy_report.Designer.vb">
+      <DependentUpon>retainer_20cy_report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="20CY\retainer_20cy_report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="20CY\retainer_20cy_rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>retainer_20cy_rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="3T\retainer_3T_IN.Designer.vb">
       <DependentUpon>retainer_3T_IN.vb</DependentUpon>
     </Compile>
@@ -253,6 +265,12 @@
       <DependentUpon>retainer_3t_OUT.vb</DependentUpon>
     </Compile>
     <Compile Include="3T\retainer_3t_OUT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3T\retainer_3t_report.Designer.vb">
+      <DependentUpon>retainer_3t_report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="3T\retainer_3t_report.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DMTN\dmtn_bypass.vb">
@@ -358,6 +376,12 @@
     </Compile>
     <Compile Include="INTELLI4\intelli4_report.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INTELLI4\intelli4_rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>intelli4_rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="INTELLI4\intelli_in.Designer.vb">
       <DependentUpon>intelli_in.vb</DependentUpon>
@@ -504,6 +528,12 @@
     <Compile Include="YT\yt_report.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="YT\yt_rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>yt_rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="20CY\retainer_20cy_in.resx">
@@ -512,11 +542,21 @@
     <EmbeddedResource Include="20CY\retainer_20cy_out.resx">
       <DependentUpon>retainer_20cy_out.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="20CY\retainer_20cy_report.resx">
+      <DependentUpon>retainer_20cy_report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="20CY\retainer_20cy_rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>retainer_20cy_rpt.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="3T\retainer_3T_IN.resx">
       <DependentUpon>retainer_3T_IN.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="3T\retainer_3t_OUT.resx">
       <DependentUpon>retainer_3t_OUT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3T\retainer_3t_report.resx">
+      <DependentUpon>retainer_3t_report.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DMTN\dmtn_bypass.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -569,6 +609,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="INTELLI4\intelli4_report.resx">
       <DependentUpon>intelli4_report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INTELLI4\intelli4_rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>intelli4_rpt.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="INTELLI4\intelli_in.resx">
       <DependentUpon>intelli_in.vb</DependentUpon>
@@ -636,6 +680,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="YT\yt_report.resx">
       <DependentUpon>yt_report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YT\yt_rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>yt_rpt.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

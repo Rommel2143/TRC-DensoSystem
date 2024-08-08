@@ -190,4 +190,9 @@ Public Class INTELLI_out
             panel_scan.Visible = True
         End If
     End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        intelli4_report.Show()
+        intelli4_report.BringToFront()
+    End Sub
 End Class

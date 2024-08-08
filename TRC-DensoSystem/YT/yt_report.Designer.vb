@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class yt_report
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class yt_report
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
@@ -41,8 +41,8 @@ Partial Class yt_report
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 131)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1031, 703)
-        Me.CrystalReportViewer1.TabIndex = 5
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1329, 703)
+        Me.CrystalReportViewer1.TabIndex = 9
         '
         'Guna2Panel1
         '
@@ -55,8 +55,8 @@ Partial Class yt_report
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1031, 131)
-        Me.Guna2Panel1.TabIndex = 6
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1329, 131)
+        Me.Guna2Panel1.TabIndex = 10
         '
         'cmbuser
         '
@@ -96,9 +96,9 @@ Partial Class yt_report
         Me.Label3.ForeColor = System.Drawing.Color.Gray
         Me.Label3.Location = New System.Drawing.Point(576, 24)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(43, 17)
+        Me.Label3.Size = New System.Drawing.Size(79, 17)
         Me.Label3.TabIndex = 220
-        Me.Label3.Text = "CML :"
+        Me.Label3.Text = "Batchcode :"
         '
         'Label1
         '
@@ -143,7 +143,7 @@ Partial Class yt_report
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1031, 834)
+        Me.ClientSize = New System.Drawing.Size(1329, 834)
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Name = "yt_report"

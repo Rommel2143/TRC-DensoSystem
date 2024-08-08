@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class intelli4_report
+Partial Class retainer_3t_report
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -41,8 +41,8 @@ Partial Class intelli4_report
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 131)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1362, 614)
-        Me.CrystalReportViewer1.TabIndex = 7
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1406, 688)
+        Me.CrystalReportViewer1.TabIndex = 9
         '
         'Guna2Panel1
         '
@@ -55,8 +55,8 @@ Partial Class intelli4_report
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1362, 131)
-        Me.Guna2Panel1.TabIndex = 8
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1406, 131)
+        Me.Guna2Panel1.TabIndex = 10
         '
         'cmbuser
         '
@@ -139,15 +139,15 @@ Partial Class intelli4_report
         Me.Label2.TabIndex = 217
         Me.Label2.Text = "Date :"
         '
-        'intelli4_report
+        'retainer_3t_report
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1362, 745)
+        Me.ClientSize = New System.Drawing.Size(1406, 819)
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Controls.Add(Me.Guna2Panel1)
-        Me.Name = "intelli4_report"
-        Me.Text = " "
+        Me.Name = "retainer_3t_report"
+        Me.Text = "retainer_3t_report"
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
         Me.ResumeLayout(False)

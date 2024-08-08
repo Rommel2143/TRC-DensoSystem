@@ -18,7 +18,7 @@ Public Class REPORT_TDE
     Sub viewdata()
         con.Close()
         con.Open()
-        Dim showreport As New MySqlCommand("Select `id`, `status`, `datein`, `shift`, `operator`, `type`, `qrcode`, `partno`, `customerno`, `model`, `color`, `quantity`, `lotnumber`, `proddate`, `dateout`, `serial`, `qrtde`, `cml`,`operatorout`,`shiftout` from denso_fg_scan where dateout='" & boxdate.Text & "' and `type`='TDE'", con)
+        Dim showreport As New MySqlCommand("Select `id`, `status`, `datein`, `shift`, `operator`, `type`, `qrcode`, `partno`, `customerno`, `model`, `color`, `quantity`, `lotnumber`, `proddate`, `dateout`, `serial`, `qrtde`, `cml`,`operatorout`,`shiftout` from denso_fg_scan where dateout='" & boxdate.Text & "' and `type`='TDE' and shiftout = '" & cmb_shift.Text & "'", con)
         Dim da As New MySqlDataAdapter(showreport)
         da.Fill(dt)
         con.Close()
@@ -26,6 +26,10 @@ Public Class REPORT_TDE
     End Sub
 
     Private Sub boxdate_SelectedIndexChanged(sender As Object, e As EventArgs) Handles boxdate.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub Guna2ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_shift.SelectedIndexChanged
         Dim myrpt As New OUT_TDE
         dt.Clear()
         viewdata()

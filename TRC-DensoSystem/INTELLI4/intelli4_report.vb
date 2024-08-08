@@ -17,11 +17,11 @@ Public Class intelli4_report
                                                 d.serial,
                                                 d.batchcode,
                                                 d.userout,
-                                                d.dateout,
+                                                d.dateout
                                              
                                             FROM 
-                                                denso_jeco d
-                                            JOIN denso_scanoperator ds ON d.userout = ds.IDno
+                                                denso_intelli4 d
+                                            JOIN denso_scanoperator ds ON ds.IDno = d.userout
                                             WHERE
                                                   d.batchcode = '" & cmb_cml.Text & "' and d.dateout ='" & dtpicker.Value.ToString("yyyy-MM-dd") & "' and ds.fullname = '" & cmbuser.Text & "'
                                             ORDER BY
@@ -36,7 +36,7 @@ Public Class intelli4_report
         Try
             con.Close()
             con.Open()
-            Dim cmdselect As New MySqlCommand("SELECT DISTINCT fullname FROM `denso_jeco`
+            Dim cmdselect As New MySqlCommand("SELECT DISTINCT fullname FROM `denso_intelli4`
                                                 INNER JOIN `denso_scanoperator` ON `userout` = `IDno`
                                                 WHERE `dateout`='" & dtpicker.Value.ToString("yyyy-MM-dd") & "'", con)
             dr = cmdselect.ExecuteReader
@@ -53,14 +53,14 @@ Public Class intelli4_report
         Try
             con.Close()
             con.Open()
-            Dim cmdselect As New MySqlCommand("Select distinct ts.`cmlserial` FROM `denso_jeco` ts
+            Dim cmdselect As New MySqlCommand("Select distinct ts.`batchcode` FROM `denso_intelli4` ts
                                               Left Join denso_scanoperator tsoout ON ts.userout = tsoout.IDno
                                                
                                                 WHERE `dateout`='" & dtpicker.Value.ToString("yyyy-MM-dd") & "' and `fullname`='" & cmbuser.Text & "'", con)
             dr = cmdselect.ExecuteReader
             cmb_cml.Items.Clear()
             While (dr.Read())
-                cmb_cml.Items.Add(dr.GetString("cmlserial"))
+                cmb_cml.Items.Add(dr.GetString("batchcode"))
             End While
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -68,10 +68,10 @@ Public Class intelli4_report
     End Sub
 
     Private Sub cmb_cml_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_cml.SelectedIndexChanged
-        Dim myrpt As New jeco_crystalreport
+        Dim myrpt As New intelli4_rpt
         dt.Clear()
         viewdata()
-        myrpt.Database.Tables("jeco").SetDataSource(dt)
+        myrpt.Database.Tables("intelli4").SetDataSource(dt)
         CrystalReportViewer1.ReportSource = Nothing
         CrystalReportViewer1.ReportSource = myrpt
     End Sub

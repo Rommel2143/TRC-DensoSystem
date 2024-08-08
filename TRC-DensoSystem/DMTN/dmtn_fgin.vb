@@ -93,6 +93,7 @@ Public Class dmtn_fgin
     Private Sub txtqr_fg_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_fg.KeyDown
         If e.KeyCode = Keys.Enter Then
             Try
+
                 con.Close()
                 con.Open()
                 Dim cmdselect As New MySqlCommand("SELECT dmtn, userin, datein FROM `denso_dmtn`
@@ -104,6 +105,9 @@ Public Class dmtn_fgin
 
                 Else
                     If processQRcode("DMTN", txtqr_fg) Then
+                        If customerno = "" Then
+                            customerno = cmb_customerno.Text
+                        End If
                         'saveqr
 
                         saveqr()
@@ -184,5 +188,28 @@ Public Class dmtn_fgin
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Private Sub dmtn_fgin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            con.Close()
+            con.Open()
+            Dim cmdselect As New MySqlCommand("SELECT DISTINCT customerno FROM `denso_fg_masterlist` WHERE `qrtype`='DMTN'", con)
+            dr = cmdselect.ExecuteReader
+            cmb_customerno.Items.Clear()
+            While (dr.Read())
+                cmb_customerno.Items.Add(dr.GetString("customerno"))
+            End While
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub cmb_customerno_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_customerno.SelectedIndexChanged
+        If cmb_customerno.Text = "" Then
+            panelscan.Visible = False
+        Else
+            panelscan.Visible = True
+        End If
     End Sub
 End Class

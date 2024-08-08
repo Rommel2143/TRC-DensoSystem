@@ -43,12 +43,16 @@ Partial Class dmtn_fgin
         Me.lbl_count = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.panelscan = New Guna.UI2.WinForms.Guna2Panel()
+        Me.cmb_customerno = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.datagrid2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.labelerror.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
+        Me.panelscan.SuspendLayout()
         Me.SuspendLayout()
         '
         'datagrid2
@@ -125,7 +129,7 @@ Partial Class dmtn_fgin
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Gray
-        Me.Label1.Location = New System.Drawing.Point(40, 54)
+        Me.Label1.Location = New System.Drawing.Point(13, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(66, 17)
         Me.Label1.TabIndex = 217
@@ -141,7 +145,7 @@ Partial Class dmtn_fgin
         Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button2.ForeColor = System.Drawing.Color.White
         Me.Guna2Button2.Image = CType(resources.GetObject("Guna2Button2.Image"), System.Drawing.Image)
-        Me.Guna2Button2.Location = New System.Drawing.Point(522, 74)
+        Me.Guna2Button2.Location = New System.Drawing.Point(1203, 0)
         Me.Guna2Button2.Name = "Guna2Button2"
         Me.Guna2Button2.Size = New System.Drawing.Size(79, 36)
         Me.Guna2Button2.TabIndex = 209
@@ -159,7 +163,7 @@ Partial Class dmtn_fgin
         Me.txtqr_fg.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtqr_fg.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtqr_fg.IconLeft = CType(resources.GetObject("txtqr_fg.IconLeft"), System.Drawing.Image)
-        Me.txtqr_fg.Location = New System.Drawing.Point(27, 74)
+        Me.txtqr_fg.Location = New System.Drawing.Point(16, 26)
         Me.txtqr_fg.Name = "txtqr_fg"
         Me.txtqr_fg.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr_fg.PlaceholderText = "Scan Sticker Label..."
@@ -240,14 +244,11 @@ Partial Class dmtn_fgin
         '
         'Guna2GroupBox1
         '
-        Me.Guna2GroupBox1.Controls.Add(Me.lbl_qty)
-        Me.Guna2GroupBox1.Controls.Add(Me.Label3)
-        Me.Guna2GroupBox1.Controls.Add(Me.lbl_count)
-        Me.Guna2GroupBox1.Controls.Add(Me.Label8)
+        Me.Guna2GroupBox1.Controls.Add(Me.cmb_customerno)
+        Me.Guna2GroupBox1.Controls.Add(Me.Label2)
+        Me.Guna2GroupBox1.Controls.Add(Me.panelscan)
         Me.Guna2GroupBox1.Controls.Add(Me.datagrid2)
-        Me.Guna2GroupBox1.Controls.Add(Me.Label1)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button2)
-        Me.Guna2GroupBox1.Controls.Add(Me.txtqr_fg)
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.HotTrack
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
@@ -263,7 +264,7 @@ Partial Class dmtn_fgin
         Me.lbl_qty.BackColor = System.Drawing.Color.Transparent
         Me.lbl_qty.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_qty.ForeColor = System.Drawing.Color.Gray
-        Me.lbl_qty.Location = New System.Drawing.Point(1194, 93)
+        Me.lbl_qty.Location = New System.Drawing.Point(616, 45)
         Me.lbl_qty.Name = "lbl_qty"
         Me.lbl_qty.Size = New System.Drawing.Size(15, 17)
         Me.lbl_qty.TabIndex = 222
@@ -275,7 +276,7 @@ Partial Class dmtn_fgin
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Gray
-        Me.Label3.Location = New System.Drawing.Point(1112, 93)
+        Me.Label3.Location = New System.Drawing.Point(534, 45)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(76, 17)
         Me.Label3.TabIndex = 221
@@ -287,7 +288,7 @@ Partial Class dmtn_fgin
         Me.lbl_count.BackColor = System.Drawing.Color.Transparent
         Me.lbl_count.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_count.ForeColor = System.Drawing.Color.Gray
-        Me.lbl_count.Location = New System.Drawing.Point(1194, 71)
+        Me.lbl_count.Location = New System.Drawing.Point(616, 23)
         Me.lbl_count.Name = "lbl_count"
         Me.lbl_count.Size = New System.Drawing.Size(15, 17)
         Me.lbl_count.TabIndex = 220
@@ -299,7 +300,7 @@ Partial Class dmtn_fgin
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Gray
-        Me.Label8.Location = New System.Drawing.Point(1135, 71)
+        Me.Label8.Location = New System.Drawing.Point(557, 23)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(53, 17)
         Me.Label8.TabIndex = 219
@@ -313,6 +314,48 @@ Partial Class dmtn_fgin
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(1362, 726)
         Me.Guna2Panel1.TabIndex = 221
+        '
+        'panelscan
+        '
+        Me.panelscan.BackColor = System.Drawing.Color.White
+        Me.panelscan.Controls.Add(Me.lbl_qty)
+        Me.panelscan.Controls.Add(Me.Label3)
+        Me.panelscan.Controls.Add(Me.lbl_count)
+        Me.panelscan.Controls.Add(Me.Label8)
+        Me.panelscan.Controls.Add(Me.Label1)
+        Me.panelscan.Controls.Add(Me.txtqr_fg)
+        Me.panelscan.Location = New System.Drawing.Point(334, 58)
+        Me.panelscan.Name = "panelscan"
+        Me.panelscan.Size = New System.Drawing.Size(656, 79)
+        Me.panelscan.TabIndex = 223
+        Me.panelscan.Visible = False
+        '
+        'cmb_customerno
+        '
+        Me.cmb_customerno.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_customerno.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_customerno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_customerno.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_customerno.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_customerno.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmb_customerno.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_customerno.ItemHeight = 30
+        Me.cmb_customerno.Location = New System.Drawing.Point(27, 84)
+        Me.cmb_customerno.Name = "cmb_customerno"
+        Me.cmb_customerno.Size = New System.Drawing.Size(272, 36)
+        Me.cmb_customerno.TabIndex = 232
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Gray
+        Me.Label2.Location = New System.Drawing.Point(24, 58)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(101, 17)
+        Me.Label2.TabIndex = 231
+        Me.Label2.Text = "Customer No. :"
         '
         'dmtn_fgin
         '
@@ -335,6 +378,8 @@ Partial Class dmtn_fgin
         Me.Guna2GroupBox1.ResumeLayout(False)
         Me.Guna2GroupBox1.PerformLayout()
         Me.Guna2Panel1.ResumeLayout(False)
+        Me.panelscan.ResumeLayout(False)
+        Me.panelscan.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -355,4 +400,7 @@ Partial Class dmtn_fgin
     Friend WithEvents Label3 As Label
     Friend WithEvents lbl_count As Label
     Friend WithEvents Label8 As Label
+    Friend WithEvents panelscan As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents cmb_customerno As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Label2 As Label
 End Class

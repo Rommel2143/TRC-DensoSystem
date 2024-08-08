@@ -1,14 +1,14 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class yt_report
+Public Class retainer_3t_report
     Private Sub export_dmtn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
     Sub viewdata()
         con.Close()
         con.Open()
-        Dim showreport As New MySqlCommand("SELECT 
+        Dim showreport As New MySqlCommand("SELECT  
                                                 d.id,
-                                                d.ytqr, 
+                                                d.intelliqr, 
                                                 d.partno,
                                                 d.customerno,
                                                 d.color,
@@ -20,7 +20,7 @@ Public Class yt_report
                                                 d.dateout
                                              
                                             FROM 
-                                                denso_yt d
+                                                denso_intelli4 d
                                             JOIN denso_scanoperator ds ON ds.IDno = d.userout
                                             WHERE
                                                   d.batchcode = '" & cmb_cml.Text & "' and d.dateout ='" & dtpicker.Value.ToString("yyyy-MM-dd") & "' and ds.fullname = '" & cmbuser.Text & "'
@@ -36,7 +36,7 @@ Public Class yt_report
         Try
             con.Close()
             con.Open()
-            Dim cmdselect As New MySqlCommand("SELECT DISTINCT fullname FROM `denso_yt`
+            Dim cmdselect As New MySqlCommand("SELECT DISTINCT fullname FROM `denso_intelli4`
                                                 INNER JOIN `denso_scanoperator` ON `userout` = `IDno`
                                                 WHERE `dateout`='" & dtpicker.Value.ToString("yyyy-MM-dd") & "'", con)
             dr = cmdselect.ExecuteReader
@@ -53,7 +53,7 @@ Public Class yt_report
         Try
             con.Close()
             con.Open()
-            Dim cmdselect As New MySqlCommand("Select distinct ts.`batchcode` FROM `denso_yt` ts
+            Dim cmdselect As New MySqlCommand("Select distinct ts.`batchcode` FROM `denso_intelli4` ts
                                               Left Join denso_scanoperator tsoout ON ts.userout = tsoout.IDno
                                                
                                                 WHERE `dateout`='" & dtpicker.Value.ToString("yyyy-MM-dd") & "' and `fullname`='" & cmbuser.Text & "'", con)
@@ -68,10 +68,10 @@ Public Class yt_report
     End Sub
 
     Private Sub cmb_cml_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_cml.SelectedIndexChanged
-        Dim myrpt As New yt_rpt
+        Dim myrpt As New intelli4_rpt
         dt.Clear()
         viewdata()
-        myrpt.Database.Tables("yt").SetDataSource(dt)
+        myrpt.Database.Tables("intelli4").SetDataSource(dt)
         CrystalReportViewer1.ReportSource = Nothing
         CrystalReportViewer1.ReportSource = myrpt
     End Sub
