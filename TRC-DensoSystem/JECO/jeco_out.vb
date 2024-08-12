@@ -198,10 +198,13 @@ Public Class jeco_out
                                     labelerror.Visible = False
                                     txtqr_fg.Clear()
                                     txtqr_fg.Enabled = False
-                                    txtqr.Enabled = True
-                                    txtqr.Clear()
-                                    txtqr.Focus()
-                                End If
+                                txtqr.Enabled = True
+                                lbl_count.Text = "0"
+                                lbl_qty.Text = "0"
+                                txtqr.Clear()
+                                txtqr.Focus()
+
+                            End If
                             Else
                                 ' Show error if QR codes do not match
                                 showerror("QR codes do not match. Please scan the same QR code three times.")

@@ -22,23 +22,23 @@ Partial Class expiring_stock
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(expiring_stock))
         Me.datagrid1 = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.export_excel = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox3 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Guna2Shapes3 = New Guna.UI2.WinForms.Guna2Shapes()
+        Me.Guna2Shapes2 = New Guna.UI2.WinForms.Guna2Shapes()
+        Me.Guna2Shapes1 = New Guna.UI2.WinForms.Guna2Shapes()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cmb_type = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Guna2Shapes1 = New Guna.UI2.WinForms.Guna2Shapes()
-        Me.Guna2Shapes2 = New Guna.UI2.WinForms.Guna2Shapes()
-        Me.Guna2Shapes3 = New Guna.UI2.WinForms.Guna2Shapes()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2GroupBox3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -49,44 +49,44 @@ Partial Class expiring_stock
         Me.datagrid1.AllowUserToAddRows = False
         Me.datagrid1.AllowUserToDeleteRows = False
         Me.datagrid1.AllowUserToResizeRows = False
-        DataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.datagrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datagrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.datagrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datagrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.datagrid1.ColumnHeadersHeight = 30
         Me.datagrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.datagrid1.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.datagrid1.DefaultCellStyle = DataGridViewCellStyle7
         Me.datagrid1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.datagrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.datagrid1.Location = New System.Drawing.Point(0, 98)
         Me.datagrid1.Name = "datagrid1"
         Me.datagrid1.ReadOnly = True
         Me.datagrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle16.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.datagrid1.RowHeadersVisible = False
         Me.datagrid1.RowTemplate.Height = 31
         Me.datagrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
@@ -162,6 +162,75 @@ Partial Class expiring_stock
         Me.Panel1.Size = New System.Drawing.Size(696, 58)
         Me.Panel1.TabIndex = 194
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.Color.DimGray
+        Me.Label4.Location = New System.Drawing.Point(579, 13)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(69, 21)
+        Me.Label4.TabIndex = 37
+        Me.Label4.Text = "EXPIRED"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.ForeColor = System.Drawing.Color.DimGray
+        Me.Label2.Location = New System.Drawing.Point(468, 13)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(50, 21)
+        Me.Label2.TabIndex = 36
+        Me.Label2.Text = "NEAR"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.DimGray
+        Me.Label1.Location = New System.Drawing.Point(352, 13)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(45, 21)
+        Me.Label1.TabIndex = 35
+        Me.Label1.Text = "NEW"
+        '
+        'Guna2Shapes3
+        '
+        Me.Guna2Shapes3.FillColor = System.Drawing.Color.IndianRed
+        Me.Guna2Shapes3.Location = New System.Drawing.Point(549, 13)
+        Me.Guna2Shapes3.Name = "Guna2Shapes3"
+        Me.Guna2Shapes3.PolygonSkip = 1
+        Me.Guna2Shapes3.Rotate = 0!
+        Me.Guna2Shapes3.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse
+        Me.Guna2Shapes3.Size = New System.Drawing.Size(24, 23)
+        Me.Guna2Shapes3.TabIndex = 34
+        Me.Guna2Shapes3.Text = "Guna2Shapes3"
+        Me.Guna2Shapes3.Zoom = 80
+        '
+        'Guna2Shapes2
+        '
+        Me.Guna2Shapes2.FillColor = System.Drawing.Color.Coral
+        Me.Guna2Shapes2.Location = New System.Drawing.Point(438, 13)
+        Me.Guna2Shapes2.Name = "Guna2Shapes2"
+        Me.Guna2Shapes2.PolygonSkip = 1
+        Me.Guna2Shapes2.Rotate = 0!
+        Me.Guna2Shapes2.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse
+        Me.Guna2Shapes2.Size = New System.Drawing.Size(24, 23)
+        Me.Guna2Shapes2.TabIndex = 33
+        Me.Guna2Shapes2.Text = "Guna2Shapes2"
+        Me.Guna2Shapes2.Zoom = 80
+        '
+        'Guna2Shapes1
+        '
+        Me.Guna2Shapes1.FillColor = System.Drawing.Color.White
+        Me.Guna2Shapes1.Location = New System.Drawing.Point(322, 13)
+        Me.Guna2Shapes1.Name = "Guna2Shapes1"
+        Me.Guna2Shapes1.PolygonSkip = 1
+        Me.Guna2Shapes1.Rotate = 0!
+        Me.Guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse
+        Me.Guna2Shapes1.Size = New System.Drawing.Size(24, 23)
+        Me.Guna2Shapes1.TabIndex = 32
+        Me.Guna2Shapes1.Text = "Guna2Shapes1"
+        Me.Guna2Shapes1.Zoom = 80
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -183,80 +252,11 @@ Partial Class expiring_stock
         Me.cmb_type.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cmb_type.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmb_type.ItemHeight = 30
-        Me.cmb_type.Items.AddRange(New Object() {"DMTN", "INTELLI IV", "TDE", "20CY"})
+        Me.cmb_type.Items.AddRange(New Object() {"DMTN", "INTELLI IV", "TDE", "20CY", "YT", "JECO", "3T"})
         Me.cmb_type.Location = New System.Drawing.Point(97, 7)
         Me.cmb_type.Name = "cmb_type"
         Me.cmb_type.Size = New System.Drawing.Size(201, 36)
         Me.cmb_type.TabIndex = 30
-        '
-        'Guna2Shapes1
-        '
-        Me.Guna2Shapes1.FillColor = System.Drawing.Color.White
-        Me.Guna2Shapes1.Location = New System.Drawing.Point(322, 13)
-        Me.Guna2Shapes1.Name = "Guna2Shapes1"
-        Me.Guna2Shapes1.PolygonSkip = 1
-        Me.Guna2Shapes1.Rotate = 0!
-        Me.Guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse
-        Me.Guna2Shapes1.Size = New System.Drawing.Size(24, 23)
-        Me.Guna2Shapes1.TabIndex = 32
-        Me.Guna2Shapes1.Text = "Guna2Shapes1"
-        Me.Guna2Shapes1.Zoom = 80
-        '
-        'Guna2Shapes2
-        '
-        Me.Guna2Shapes2.FillColor = System.Drawing.Color.Coral
-        Me.Guna2Shapes2.Location = New System.Drawing.Point(438, 13)
-        Me.Guna2Shapes2.Name = "Guna2Shapes2"
-        Me.Guna2Shapes2.PolygonSkip = 1
-        Me.Guna2Shapes2.Rotate = 0!
-        Me.Guna2Shapes2.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse
-        Me.Guna2Shapes2.Size = New System.Drawing.Size(24, 23)
-        Me.Guna2Shapes2.TabIndex = 33
-        Me.Guna2Shapes2.Text = "Guna2Shapes2"
-        Me.Guna2Shapes2.Zoom = 80
-        '
-        'Guna2Shapes3
-        '
-        Me.Guna2Shapes3.FillColor = System.Drawing.Color.IndianRed
-        Me.Guna2Shapes3.Location = New System.Drawing.Point(549, 13)
-        Me.Guna2Shapes3.Name = "Guna2Shapes3"
-        Me.Guna2Shapes3.PolygonSkip = 1
-        Me.Guna2Shapes3.Rotate = 0!
-        Me.Guna2Shapes3.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse
-        Me.Guna2Shapes3.Size = New System.Drawing.Size(24, 23)
-        Me.Guna2Shapes3.TabIndex = 34
-        Me.Guna2Shapes3.Text = "Guna2Shapes3"
-        Me.Guna2Shapes3.Zoom = 80
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.Color.DimGray
-        Me.Label1.Location = New System.Drawing.Point(352, 13)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(45, 21)
-        Me.Label1.TabIndex = 35
-        Me.Label1.Text = "NEW"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.Color.DimGray
-        Me.Label2.Location = New System.Drawing.Point(468, 13)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(50, 21)
-        Me.Label2.TabIndex = 36
-        Me.Label2.Text = "NEAR"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.ForeColor = System.Drawing.Color.DimGray
-        Me.Label4.Location = New System.Drawing.Point(579, 13)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(69, 21)
-        Me.Label4.TabIndex = 37
-        Me.Label4.Text = "EXPIRED"
         '
         'expiring_stock
         '

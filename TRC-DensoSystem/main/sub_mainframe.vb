@@ -18,17 +18,17 @@ Public Class sub_mainframe
     End Sub
 
 
-    Private Sub PARTSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PARTSToolStripMenuItem.Click
-        display_formscan(INFG)
-    End Sub
-
-
-    Private Sub FGToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FGToolStripMenuItem.Click
+    Private Sub PARTSToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub TDEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TDEToolStripMenuItem.Click
-        display_formscan(OUTFG_TDE)
+
+    Private Sub FGToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub TDEToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub InnerTagToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InnerTagToolStripMenuItem.Click
@@ -44,7 +44,7 @@ Public Class sub_mainframe
     End Sub
 
 
-    Private Sub OTHERToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OTHERToolStripMenuItem.Click
+    Private Sub OTHERToolStripMenuItem_Click(sender As Object, e As EventArgs)
         display_formscan(OUTFG_OTHER)
     End Sub
     Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
@@ -84,11 +84,11 @@ Public Class sub_mainframe
 
 
 
-    Private Sub REPORTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles REPORTToolStripMenuItem.Click
-        display_formscan(REPORT_TDE)
+    Private Sub REPORTToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
-    Private Sub REPORTOTHERToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles REPORTOTHERToolStripMenuItem.Click
+    Private Sub REPORTOTHERToolStripMenuItem_Click(sender As Object, e As EventArgs)
         display_formscan(REPORT_OTHER)
 
     End Sub
@@ -163,5 +163,17 @@ Public Class sub_mainframe
 
     Private Sub FGINBYPASSReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FGINBYPASSReportToolStripMenuItem.Click
         display_formscan(export_dmtn_bypass)
+    End Sub
+
+    Private Sub INToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles INToolStripMenuItem4.Click
+        display_formscan(INFG)
+    End Sub
+
+    Private Sub OUTToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles OUTToolStripMenuItem5.Click
+        display_formscan(OUTFG_TDE)
+    End Sub
+
+    Private Sub ReportToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ReportToolStripMenuItem1.Click
+        display_formscan(REPORT_TDE)
     End Sub
 End Class

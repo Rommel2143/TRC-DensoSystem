@@ -8,7 +8,7 @@ Public Class retainer_3t_report
         con.Open()
         Dim showreport As New MySqlCommand("SELECT  
                                                 d.id,
-                                                d.intelliqr, 
+                                                d.3tqr, 
                                                 d.partno,
                                                 d.customerno,
                                                 d.color,
@@ -20,7 +20,7 @@ Public Class retainer_3t_report
                                                 d.dateout
                                              
                                             FROM 
-                                                denso_intelli4 d
+                                                denso_3t d
                                             JOIN denso_scanoperator ds ON ds.IDno = d.userout
                                             WHERE
                                                   d.batchcode = '" & cmb_cml.Text & "' and d.dateout ='" & dtpicker.Value.ToString("yyyy-MM-dd") & "' and ds.fullname = '" & cmbuser.Text & "'
@@ -36,7 +36,7 @@ Public Class retainer_3t_report
         Try
             con.Close()
             con.Open()
-            Dim cmdselect As New MySqlCommand("SELECT DISTINCT fullname FROM `denso_intelli4`
+            Dim cmdselect As New MySqlCommand("SELECT DISTINCT fullname FROM `denso_3t`
                                                 INNER JOIN `denso_scanoperator` ON `userout` = `IDno`
                                                 WHERE `dateout`='" & dtpicker.Value.ToString("yyyy-MM-dd") & "'", con)
             dr = cmdselect.ExecuteReader
@@ -53,7 +53,7 @@ Public Class retainer_3t_report
         Try
             con.Close()
             con.Open()
-            Dim cmdselect As New MySqlCommand("Select distinct ts.`batchcode` FROM `denso_intelli4` ts
+            Dim cmdselect As New MySqlCommand("Select distinct ts.`batchcode` FROM `denso_3t` ts
                                               Left Join denso_scanoperator tsoout ON ts.userout = tsoout.IDno
                                                
                                                 WHERE `dateout`='" & dtpicker.Value.ToString("yyyy-MM-dd") & "' and `fullname`='" & cmbuser.Text & "'", con)
@@ -68,10 +68,10 @@ Public Class retainer_3t_report
     End Sub
 
     Private Sub cmb_cml_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_cml.SelectedIndexChanged
-        Dim myrpt As New intelli4_rpt
+        Dim myrpt As New retainer_3t_rpt
         dt.Clear()
         viewdata()
-        myrpt.Database.Tables("intelli4").SetDataSource(dt)
+        myrpt.Database.Tables("3t").SetDataSource(dt)
         CrystalReportViewer1.ReportSource = Nothing
         CrystalReportViewer1.ReportSource = myrpt
     End Sub

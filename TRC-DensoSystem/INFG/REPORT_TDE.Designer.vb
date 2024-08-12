@@ -27,6 +27,8 @@ Partial Class REPORT_TDE
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmb_shift = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.cmb_batch = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.SuspendLayout()
         '
         'Label5
@@ -53,7 +55,7 @@ Partial Class REPORT_TDE
         Me.boxdate.ItemHeight = 20
         Me.boxdate.Location = New System.Drawing.Point(268, 12)
         Me.boxdate.Name = "boxdate"
-        Me.boxdate.Size = New System.Drawing.Size(209, 26)
+        Me.boxdate.Size = New System.Drawing.Size(150, 26)
         Me.boxdate.TabIndex = 177
         '
         'CrystalReportViewer1
@@ -72,7 +74,7 @@ Partial Class REPORT_TDE
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(487, 18)
+        Me.Label1.Location = New System.Drawing.Point(643, 18)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(37, 13)
         Me.Label1.TabIndex = 181
@@ -91,16 +93,45 @@ Partial Class REPORT_TDE
         Me.cmb_shift.IntegralHeight = False
         Me.cmb_shift.ItemHeight = 20
         Me.cmb_shift.Items.AddRange(New Object() {"NIGHT SHIFT", "DAY SHIFT"})
-        Me.cmb_shift.Location = New System.Drawing.Point(530, 12)
+        Me.cmb_shift.Location = New System.Drawing.Point(686, 12)
         Me.cmb_shift.Name = "cmb_shift"
-        Me.cmb_shift.Size = New System.Drawing.Size(209, 26)
+        Me.cmb_shift.Size = New System.Drawing.Size(150, 26)
         Me.cmb_shift.TabIndex = 180
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(435, 18)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(41, 13)
+        Me.Label2.TabIndex = 183
+        Me.Label2.Text = "Batch :"
+        '
+        'cmb_batch
+        '
+        Me.cmb_batch.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_batch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_batch.DropDownHeight = 200
+        Me.cmb_batch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_batch.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_batch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_batch.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmb_batch.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_batch.IntegralHeight = False
+        Me.cmb_batch.ItemHeight = 20
+        Me.cmb_batch.Location = New System.Drawing.Point(478, 12)
+        Me.cmb_batch.Name = "cmb_batch"
+        Me.cmb_batch.Size = New System.Drawing.Size(150, 26)
+        Me.cmb_batch.TabIndex = 182
         '
         'REPORT_TDE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1050, 778)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.cmb_batch)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cmb_shift)
         Me.Controls.Add(Me.Label5)
@@ -121,4 +152,6 @@ Partial Class REPORT_TDE
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents Label1 As Label
     Friend WithEvents cmb_shift As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents cmb_batch As Guna.UI2.WinForms.Guna2ComboBox
 End Class

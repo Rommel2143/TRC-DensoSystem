@@ -9,8 +9,9 @@ Public Class OUTFG_TDE
 
     End Sub
     Private Sub boxshift_SelectedIndexChanged(sender As Object, e As EventArgs) Handles boxshift.SelectedIndexChanged
-        tdeqr.Enabled = True
-        tdeqr.Focus()
+        txtbatch.Enabled = True
+        txtbatch.Focus()
+
 
     End Sub
 
@@ -110,6 +111,7 @@ Public Class OUTFG_TDE
         tdeserial.Text = Nothing
         tdecustomer.Text = Nothing
         txtqty.Text = Nothing
+
     End Sub
     Public Sub reloadgrid()
         Try
@@ -157,7 +159,7 @@ Public Class OUTFG_TDE
                         updates("Update `denso_fg_masterlist` set `qty` ='" & a - datagrid2.Rows(x).Cells(6).Value.ToString() & "' where `partno`= '" & datagrid2.Rows(x).Cells(3).Value.ToString() & "' and `customerno`= '" & datagrid2.Rows(x).Cells(4).Value.ToString() & "' and `qrtype`='TDE'")
                     End If
                     con.Close()
-                    updates("Update `denso_fg_scan` set `status` ='" & txthide3.Text & "' , `dateout` = '" & datedb & "', `cml`='" & txtcml1.Text & "', `shiftout`='" & boxshift.Text & "', `operatorout`='" & txtoperator.Text & "' where `qrtde`= '" & datagrid2.Rows(x).Cells(1).Value.ToString() & "'")
+                    updates("Update `denso_fg_scan` set `status` ='" & txthide3.Text & "' , `dateout` = '" & datedb & "', `cml`='" & txtcml1.Text & "', `shiftout`='" & boxshift.Text & "', `operatorout`='" & txtoperator.Text & "', `batch`='" & txtbatch.Text & "' where `qrtde`= '" & datagrid2.Rows(x).Cells(1).Value.ToString() & "'")
                     x = x + 1
 
 
@@ -165,10 +167,25 @@ Public Class OUTFG_TDE
                 reloadgrid1()
                 delete("Delete FROM `denso_temp`")
                 reloadgrid()
+                txtbatch.Text = Nothing
+                txtbatch.Focus()
                 con.Close()
             Else
                 labelerror3.Visible = True
             End If
         End If
+    End Sub
+
+    Private Sub txtbatch_TextChanged(sender As Object, e As EventArgs) Handles txtbatch.TextChanged
+        tdeqr.Enabled = True
+
+    End Sub
+
+    Private Sub txtcml3_TextChanged(sender As Object, e As EventArgs) Handles txtcml3.TextChanged
+
+    End Sub
+
+    Private Sub txtqr_TextChanged(sender As Object, e As EventArgs) Handles txtqr.TextChanged
+
     End Sub
 End Class

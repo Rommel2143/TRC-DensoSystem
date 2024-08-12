@@ -9,15 +9,15 @@ Public Class INFG
     End Sub
     Private Sub boxshift_SelectedIndexChanged(sender As Object, e As EventArgs) Handles boxshift.SelectedIndexChanged
         boxtype.Enabled = True
-        con.Close()
-        con.Open()
-        Dim cmd As New MySqlCommand("Select distinct `qrtype` FROM `denso_fg_masterlist`", con)
-        dr = cmd.ExecuteReader
-        boxtype.Items.Clear()
-        While (dr.Read())
-            boxtype.Items.Add(dr.GetString("qrtype"))
-        End While
-        con.Close()
+        'con.Close()
+        'con.Open()
+        'Dim cmd As New MySqlCommand("Select distinct `qrtype` FROM `denso_fg_masterlist`", con)
+        'dr = cmd.ExecuteReader
+        'boxtype.Items.Clear()
+        'While (dr.Read())
+        '    boxtype.Items.Add(dr.GetString("qrtype"))
+        'End While
+        'con.Close()
     End Sub
 
     Private Sub boxtype_SelectedIndexChanged(sender As Object, e As EventArgs) Handles boxtype.SelectedIndexChanged
@@ -99,12 +99,22 @@ Public Class INFG
                 txtlot.Text = qrcode.Substring(qrcode.Length - 11)
                 saveupdate()
             ElseIf boxtype.Text = "TDE" Then
-                txtcustomer.Text = qrcode.Substring(0, 13)
-                txtcolor1.Text = qrcode.Substring(0, 27)
-                txtcode.Text = qrcode.Substring(15, 10)
-                txtqty.Text = qrcode.Substring(25, 2)
-                txtlot.Text = qrcode.Substring(qrcode.Length - 12)
-                saveupdate()
+                If qrcode.Length = 44 Then
+                    txtcustomer.Text = qrcode.Substring(0, 13)
+                    txtcolor1.Text = qrcode.Substring(0, 27)
+                    txtcode.Text = qrcode.Substring(15, 10)
+                    txtqty.Text = qrcode.Substring(25, 2)
+                    txtlot.Text = qrcode.Substring(qrcode.Length - 13)
+                    saveupdate()
+                Else
+                    txtcustomer.Text = qrcode.Substring(0, 13)
+                    txtcolor1.Text = qrcode.Substring(0, 27)
+                    txtcode.Text = qrcode.Substring(15, 10)
+                    txtqty.Text = qrcode.Substring(25, 2)
+                    txtlot.Text = qrcode.Substring(qrcode.Length - 12)
+                    saveupdate()
+                End If
+
             Else
                 labelerror1.Visible = True 'INVALID QR
             End If

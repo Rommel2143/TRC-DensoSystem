@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class intelli4_report
     Private Sub export_dmtn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        dtpicker.Value = Date.Now
     End Sub
     Sub viewdata()
         con.Close()

@@ -144,7 +144,7 @@ Public Class _20cy_in
                                                                             `datein`) 
                                                                     VALUES ('" & txtqr_label.Text & "',
                                                                             '" & partno & "',
-                                                                            '" & customerno & "',
+                                                                            '" & cmb_customerno.Text & "',
                                                                             '" & color & "',
                                                                             '" & prod & "',
                                                                             '" & Val(qty) & "',
@@ -184,6 +184,33 @@ Public Class _20cy_in
         If e.KeyCode = Keys.Enter Then
             txtqr_label.Clear()
             txtqr_label.Focus()
+        End If
+    End Sub
+
+    Private Sub Guna2GroupBox1_Click(sender As Object, e As EventArgs) Handles Guna2GroupBox1.Click
+
+    End Sub
+
+    Private Sub _20cy_in_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
+            con.Close()
+            con.Open()
+            Dim cmdselect As New MySqlCommand("SELECT DISTINCT customerno FROM `denso_fg_masterlist` WHERE `qrtype`='20CY'", con)
+            dr = cmdselect.ExecuteReader
+            cmb_customerno.Items.Clear()
+            While (dr.Read())
+                cmb_customerno.Items.Add(dr.GetString("customerno"))
+            End While
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub cmb_customerno_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_customerno.SelectedIndexChanged
+        If cmb_customerno.SelectedIndex = -1 Then
+            panelscan.Enabled = False
+        Else
+            panelscan.Enabled = True
         End If
     End Sub
 End Class

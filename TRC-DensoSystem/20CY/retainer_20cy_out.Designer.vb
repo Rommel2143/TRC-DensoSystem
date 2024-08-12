@@ -22,20 +22,24 @@ Partial Class retainer_20cy_out
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(retainer_20cy_out))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(retainer_20cy_out))
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.txt_batchcode = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.panel_scan = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtqr_verify = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2Separator2 = New Guna.UI2.WinForms.Guna2Separator()
-        Me.datagrid_label = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.lbl_qty = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.lbl_qty = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtqr_label = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2Separator2 = New Guna.UI2.WinForms.Guna2Separator()
+        Me.datagrid_label = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.labelerror = New Guna.UI2.WinForms.Guna2Panel()
         Me.texterror = New System.Windows.Forms.Label()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
@@ -43,17 +47,13 @@ Partial Class retainer_20cy_out
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtdate = New System.Windows.Forms.Label()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.panel_scan = New Guna.UI2.WinForms.Guna2Panel()
-        Me.txt_batchcode = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox1.SuspendLayout()
+        Me.panel_scan.SuspendLayout()
         CType(Me.datagrid_label, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.labelerror.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel2.SuspendLayout()
-        Me.panel_scan.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2GroupBox1
@@ -72,6 +72,67 @@ Partial Class retainer_20cy_out
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(1163, 643)
         Me.Guna2GroupBox1.TabIndex = 217
         Me.Guna2GroupBox1.Text = "STICKER LABEL"
+        '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button2.FillColor = System.Drawing.SystemColors.HotTrack
+        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.Image = CType(resources.GetObject("Guna2Button2.Image"), System.Drawing.Image)
+        Me.Guna2Button2.Location = New System.Drawing.Point(1056, 0)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.Size = New System.Drawing.Size(104, 36)
+        Me.Guna2Button2.TabIndex = 237
+        Me.Guna2Button2.Text = "Print Report"
+        '
+        'txt_batchcode
+        '
+        Me.txt_batchcode.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_batchcode.DefaultText = ""
+        Me.txt_batchcode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_batchcode.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_batchcode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_batchcode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_batchcode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_batchcode.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_batchcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_batchcode.Location = New System.Drawing.Point(24, 69)
+        Me.txt_batchcode.Name = "txt_batchcode"
+        Me.txt_batchcode.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_batchcode.PlaceholderText = "..."
+        Me.txt_batchcode.SelectedText = ""
+        Me.txt_batchcode.Size = New System.Drawing.Size(117, 36)
+        Me.txt_batchcode.TabIndex = 236
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Gray
+        Me.Label3.Location = New System.Drawing.Point(26, 49)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(115, 17)
+        Me.Label3.TabIndex = 235
+        Me.Label3.Text = "Enter Batchcode :"
+        '
+        'panel_scan
+        '
+        Me.panel_scan.BackColor = System.Drawing.Color.White
+        Me.panel_scan.Controls.Add(Me.Label2)
+        Me.panel_scan.Controls.Add(Me.txtqr_verify)
+        Me.panel_scan.Controls.Add(Me.Label4)
+        Me.panel_scan.Controls.Add(Me.lbl_qty)
+        Me.panel_scan.Controls.Add(Me.Label1)
+        Me.panel_scan.Controls.Add(Me.txtqr_label)
+        Me.panel_scan.Location = New System.Drawing.Point(20, 119)
+        Me.panel_scan.Name = "panel_scan"
+        Me.panel_scan.Size = New System.Drawing.Size(1112, 70)
+        Me.panel_scan.TabIndex = 233
         '
         'Label2
         '
@@ -104,6 +165,62 @@ Partial Class retainer_20cy_out
         Me.txtqr_verify.SelectedText = ""
         Me.txtqr_verify.Size = New System.Drawing.Size(465, 36)
         Me.txtqr_verify.TabIndex = 231
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Gray
+        Me.Label4.Location = New System.Drawing.Point(1038, 26)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(48, 21)
+        Me.Label4.TabIndex = 219
+        Me.Label4.Text = "QTY :"
+        '
+        'lbl_qty
+        '
+        Me.lbl_qty.AutoSize = True
+        Me.lbl_qty.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_qty.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_qty.ForeColor = System.Drawing.Color.Gray
+        Me.lbl_qty.Location = New System.Drawing.Point(1084, 26)
+        Me.lbl_qty.Name = "lbl_qty"
+        Me.lbl_qty.Size = New System.Drawing.Size(19, 21)
+        Me.lbl_qty.TabIndex = 220
+        Me.lbl_qty.Text = "0"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Gray
+        Me.Label1.Location = New System.Drawing.Point(537, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(73, 17)
+        Me.Label1.TabIndex = 217
+        Me.Label1.Text = "Scan QR 2:"
+        '
+        'txtqr_label
+        '
+        Me.txtqr_label.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtqr_label.DefaultText = ""
+        Me.txtqr_label.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtqr_label.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtqr_label.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtqr_label.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtqr_label.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtqr_label.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtqr_label.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtqr_label.IconLeft = CType(resources.GetObject("txtqr_label.IconLeft"), System.Drawing.Image)
+        Me.txtqr_label.Location = New System.Drawing.Point(524, 20)
+        Me.txtqr_label.Name = "txtqr_label"
+        Me.txtqr_label.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtqr_label.PlaceholderText = "Scan Sticker Label..."
+        Me.txtqr_label.SelectedText = ""
+        Me.txtqr_label.Size = New System.Drawing.Size(508, 36)
+        Me.txtqr_label.TabIndex = 1
         '
         'Guna2Separator2
         '
@@ -180,62 +297,6 @@ Partial Class retainer_20cy_out
         Me.datagrid_label.ThemeStyle.RowsStyle.Height = 31
         Me.datagrid_label.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.datagrid_label.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'lbl_qty
-        '
-        Me.lbl_qty.AutoSize = True
-        Me.lbl_qty.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_qty.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_qty.ForeColor = System.Drawing.Color.Gray
-        Me.lbl_qty.Location = New System.Drawing.Point(1084, 26)
-        Me.lbl_qty.Name = "lbl_qty"
-        Me.lbl_qty.Size = New System.Drawing.Size(19, 21)
-        Me.lbl_qty.TabIndex = 220
-        Me.lbl_qty.Text = "0"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Gray
-        Me.Label4.Location = New System.Drawing.Point(1038, 26)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(48, 21)
-        Me.Label4.TabIndex = 219
-        Me.Label4.Text = "QTY :"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Gray
-        Me.Label1.Location = New System.Drawing.Point(537, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(73, 17)
-        Me.Label1.TabIndex = 217
-        Me.Label1.Text = "Scan QR 2:"
-        '
-        'txtqr_label
-        '
-        Me.txtqr_label.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtqr_label.DefaultText = ""
-        Me.txtqr_label.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtqr_label.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtqr_label.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtqr_label.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtqr_label.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtqr_label.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtqr_label.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtqr_label.IconLeft = CType(resources.GetObject("txtqr_label.IconLeft"), System.Drawing.Image)
-        Me.txtqr_label.Location = New System.Drawing.Point(524, 20)
-        Me.txtqr_label.Name = "txtqr_label"
-        Me.txtqr_label.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtqr_label.PlaceholderText = "Scan Sticker Label..."
-        Me.txtqr_label.SelectedText = ""
-        Me.txtqr_label.Size = New System.Drawing.Size(508, 36)
-        Me.txtqr_label.TabIndex = 1
         '
         'labelerror
         '
@@ -317,67 +378,6 @@ Partial Class retainer_20cy_out
         Me.Guna2Panel2.Size = New System.Drawing.Size(1453, 20)
         Me.Guna2Panel2.TabIndex = 228
         '
-        'panel_scan
-        '
-        Me.panel_scan.BackColor = System.Drawing.Color.White
-        Me.panel_scan.Controls.Add(Me.Label2)
-        Me.panel_scan.Controls.Add(Me.txtqr_verify)
-        Me.panel_scan.Controls.Add(Me.Label4)
-        Me.panel_scan.Controls.Add(Me.lbl_qty)
-        Me.panel_scan.Controls.Add(Me.Label1)
-        Me.panel_scan.Controls.Add(Me.txtqr_label)
-        Me.panel_scan.Location = New System.Drawing.Point(20, 119)
-        Me.panel_scan.Name = "panel_scan"
-        Me.panel_scan.Size = New System.Drawing.Size(1112, 70)
-        Me.panel_scan.TabIndex = 233
-        '
-        'txt_batchcode
-        '
-        Me.txt_batchcode.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_batchcode.DefaultText = ""
-        Me.txt_batchcode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_batchcode.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_batchcode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_batchcode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_batchcode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_batchcode.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txt_batchcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_batchcode.Location = New System.Drawing.Point(24, 69)
-        Me.txt_batchcode.Name = "txt_batchcode"
-        Me.txt_batchcode.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_batchcode.PlaceholderText = "..."
-        Me.txt_batchcode.SelectedText = ""
-        Me.txt_batchcode.Size = New System.Drawing.Size(117, 36)
-        Me.txt_batchcode.TabIndex = 236
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Gray
-        Me.Label3.Location = New System.Drawing.Point(26, 49)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(115, 17)
-        Me.Label3.TabIndex = 235
-        Me.Label3.Text = "Enter Batchcode :"
-        '
-        'Guna2Button2
-        '
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.FillColor = System.Drawing.SystemColors.HotTrack
-        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Image = CType(resources.GetObject("Guna2Button2.Image"), System.Drawing.Image)
-        Me.Guna2Button2.Location = New System.Drawing.Point(1056, 0)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(104, 36)
-        Me.Guna2Button2.TabIndex = 237
-        Me.Guna2Button2.Text = "Print Report"
-        '
         'retainer_20cy_out
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -392,6 +392,8 @@ Partial Class retainer_20cy_out
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Guna2GroupBox1.ResumeLayout(False)
         Me.Guna2GroupBox1.PerformLayout()
+        Me.panel_scan.ResumeLayout(False)
+        Me.panel_scan.PerformLayout()
         CType(Me.datagrid_label, System.ComponentModel.ISupportInitialize).EndInit()
         Me.labelerror.ResumeLayout(False)
         Me.labelerror.PerformLayout()
@@ -399,8 +401,6 @@ Partial Class retainer_20cy_out
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel2.ResumeLayout(False)
         Me.Guna2Panel2.PerformLayout()
-        Me.panel_scan.ResumeLayout(False)
-        Me.panel_scan.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

@@ -4,11 +4,11 @@ Public Class FG_monitoring
     Private Sub stock_monitoring_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
-    Private Sub refreshgrid(cmbbox As Guna.UI2.WinForms.Guna2ComboBox)
+    Private Sub refreshgrid(table As String)
         Try
             con.Close()
             con.Open()
-            Dim cmdrefreshgrid As New MySqlCommand("SELECT `partno`, `customerno`, `partname`,`qty` FROM `denso_fg_masterlist` WHERE qrtype='" & cmbbox.Text & "'", con)
+            Dim cmdrefreshgrid As New MySqlCommand("SELECT `partno`, `customerno`, `color`,sum(`qty`) as TOTAL FROM " & table & " GROUP BY `partno`, `customerno`, `color`", con)
 
             Dim da As New MySqlDataAdapter(cmdrefreshgrid)
             Dim dt As New DataTable
@@ -46,7 +46,33 @@ Public Class FG_monitoring
 
 
     Private Sub cmb_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_type.SelectedIndexChanged
-        refreshgrid(cmb_type)
+
+        Select Case cmb_type.Text
+            Case "DMTN"
+                refreshgrid("denso_dmtn")
+            Case "20CY"
+                refreshgrid("denso_20cy")
+            Case "TDE"
+                con.Close()
+                con.Open()
+                Dim cmdrefreshgrid As New MySqlCommand("SELECT `partno`, `customerno`, `partname`,`qty` FROM `denso_fg_masterlist` WHERE qrtype='TDE'", con)
+
+                Dim da As New MySqlDataAdapter(cmdrefreshgrid)
+                Dim dt As New DataTable
+                da.Fill(dt)
+                datagrid1.DataSource = dt
+            Case "INTELLI IV"
+                refreshgrid("denso_intelli4")
+            Case "YT"
+                refreshgrid("denso_yt")
+            Case "JECO"
+                refreshgrid("denso_jeco")
+            Case "3T"
+                refreshgrid("denso_3t")
+        End Select
+
+
+
     End Sub
 
     Private Sub export_excel_Click(sender As Object, e As EventArgs) Handles export_excel.Click

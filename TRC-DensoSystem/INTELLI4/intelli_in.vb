@@ -205,4 +205,12 @@ Public Class intelli_in
             txtqr_label.Focus()
         End If
     End Sub
+
+    Private Sub cmb_customerno_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_customerno.SelectedIndexChanged
+        If cmb_customerno.SelectedIndex = -1 Then
+            panelscan.Enabled = False
+        Else
+            panelscan.Enabled = True
+        End If
+    End Sub
 End Class

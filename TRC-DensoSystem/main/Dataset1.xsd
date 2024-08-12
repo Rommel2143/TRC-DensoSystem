@@ -78,6 +78,26 @@
               <xs:element name="batchcode" msprop:Generator_ColumnVarNameInTable="columnbatchcode" msprop:Generator_ColumnPropNameInRow="batchcode" msprop:Generator_ColumnPropNameInTable="batchcodeColumn" msprop:Generator_UserColumnName="batchcode" type="xs:string" minOccurs="0" />
               <xs:element name="userout" msprop:Generator_ColumnVarNameInTable="columnuserout" msprop:Generator_ColumnPropNameInRow="userout" msprop:Generator_ColumnPropNameInTable="useroutColumn" msprop:Generator_UserColumnName="userout" type="xs:string" minOccurs="0" />
               <xs:element name="dateout" msprop:Generator_ColumnVarNameInTable="columndateout" msprop:Generator_ColumnPropNameInRow="dateout" msprop:Generator_ColumnPropNameInTable="dateoutColumn" msprop:Generator_UserColumnName="dateout" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="process" msprop:Generator_ColumnVarNameInTable="columnprocess" msprop:Generator_ColumnPropNameInRow="process" msprop:Generator_ColumnPropNameInTable="processColumn" msprop:Generator_UserColumnName="process" type="xs:string" minOccurs="0" />
+              <xs:element name="line" msprop:Generator_ColumnVarNameInTable="columnline" msprop:Generator_ColumnPropNameInRow="line" msprop:Generator_ColumnPropNameInTable="lineColumn" msprop:Generator_UserColumnName="line" type="xs:string" minOccurs="0" />
+              <xs:element name="shift" msprop:Generator_ColumnVarNameInTable="columnshift" msprop:Generator_ColumnPropNameInRow="shift" msprop:Generator_ColumnPropNameInTable="shiftColumn" msprop:Generator_UserColumnName="shift" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="_x0033_t" msprop:Generator_TableClassName="_3tDataTable" msprop:Generator_TableVarName="table3t" msprop:Generator_RowChangedName="_3tRowChanged" msprop:Generator_TablePropName="_3t" msprop:Generator_RowDeletingName="_3tRowDeleting" msprop:Generator_RowChangingName="_3tRowChanging" msprop:Generator_RowEvHandlerName="_3tRowChangeEventHandler" msprop:Generator_RowDeletedName="_3tRowDeleted" msprop:Generator_RowClassName="_3tRow" msprop:Generator_UserTableName="3t" msprop:Generator_RowEvArgName="_3tRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
+              <xs:element name="_x0033_tqr" msdata:Caption="intelliqr" msprop:Generator_ColumnVarNameInTable="column3tqr" msprop:Generator_ColumnPropNameInRow="_3tqr" msprop:Generator_ColumnPropNameInTable="_3tqrColumn" msprop:Generator_UserColumnName="3tqr" type="xs:string" minOccurs="0" />
+              <xs:element name="partno" msprop:Generator_ColumnVarNameInTable="columnpartno" msprop:Generator_ColumnPropNameInRow="partno" msprop:Generator_ColumnPropNameInTable="partnoColumn" msprop:Generator_UserColumnName="partno" type="xs:string" minOccurs="0" />
+              <xs:element name="customerno" msprop:Generator_ColumnVarNameInTable="columncustomerno" msprop:Generator_ColumnPropNameInRow="customerno" msprop:Generator_ColumnPropNameInTable="customernoColumn" msprop:Generator_UserColumnName="customerno" type="xs:string" minOccurs="0" />
+              <xs:element name="color" msprop:Generator_ColumnVarNameInTable="columncolor" msprop:Generator_ColumnPropNameInRow="color" msprop:Generator_ColumnPropNameInTable="colorColumn" msprop:Generator_UserColumnName="color" type="xs:string" minOccurs="0" />
+              <xs:element name="proddate" msprop:Generator_ColumnVarNameInTable="columnproddate" msprop:Generator_ColumnPropNameInRow="proddate" msprop:Generator_ColumnPropNameInTable="proddateColumn" msprop:Generator_UserColumnName="proddate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:int" minOccurs="0" />
+              <xs:element name="serial" msprop:Generator_ColumnVarNameInTable="columnserial" msprop:Generator_ColumnPropNameInRow="serial" msprop:Generator_ColumnPropNameInTable="serialColumn" msprop:Generator_UserColumnName="serial" type="xs:string" minOccurs="0" />
+              <xs:element name="batchcode" msprop:Generator_ColumnVarNameInTable="columnbatchcode" msprop:Generator_ColumnPropNameInRow="batchcode" msprop:Generator_ColumnPropNameInTable="batchcodeColumn" msprop:Generator_UserColumnName="batchcode" type="xs:string" minOccurs="0" />
+              <xs:element name="userout" msprop:Generator_ColumnVarNameInTable="columnuserout" msprop:Generator_ColumnPropNameInRow="userout" msprop:Generator_ColumnPropNameInTable="useroutColumn" msprop:Generator_UserColumnName="userout" type="xs:string" minOccurs="0" />
+              <xs:element name="dateout" msprop:Generator_ColumnVarNameInTable="columndateout" msprop:Generator_ColumnPropNameInRow="dateout" msprop:Generator_ColumnPropNameInTable="dateoutColumn" msprop:Generator_UserColumnName="dateout" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -97,6 +117,10 @@
     </xs:unique>
     <xs:unique name="_x0032_0cy_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:_x0032_0cy" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="_x0033_t_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:_x0033_t" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>

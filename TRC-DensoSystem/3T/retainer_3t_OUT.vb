@@ -132,12 +132,13 @@ Public Class retainer_3t_out
             con.Close()
             con.Open()
 
-            Dim cmdupdatedmtn As New MySqlCommand("UPDATE denso_3t SET status=@status, userout= @userout, dateout=@dateout
+            Dim cmdupdatedmtn As New MySqlCommand("UPDATE denso_3t SET status=@status, userout= @userout, dateout=@dateout, batchcode = @batchcode
                                                     WHERE 3tqr = '" & txtqr_label.Text & "'", con)
             With cmdupdatedmtn.Parameters
                 .AddWithValue("@status", "1")
                 .AddWithValue("@userout", idno)
                 .AddWithValue("@dateout", datedb)
+                .AddWithValue("@batchcode", txt_batchcode.Text)
             End With
             cmdupdatedmtn.ExecuteNonQuery()
 
@@ -161,5 +162,18 @@ Public Class retainer_3t_out
 
     Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
 
+    End Sub
+
+    Private Sub txt_batchcode_TextChanged(sender As Object, e As EventArgs) Handles txt_batchcode.TextChanged
+        If txt_batchcode.Text = "" Then
+            panelscan.Visible = False
+        Else
+            panelscan.Visible = True
+        End If
+    End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        retainer_3t_report.Show()
+        retainer_3t_report.BringToFront()
     End Sub
 End Class

@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class retainer_20cy_report
     Private Sub export_dmtn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        dtpicker.Value = Date.Now
     End Sub
     Sub viewdata()
         con.Close()
@@ -17,8 +17,10 @@ Public Class retainer_20cy_report
                                                 d.serial,
                                                 d.batchcode,
                                                 d.userout,
-                                                d.dateout
-                                             
+                                                d.dateout,
+                                                d.process,
+                                                d.line,
+                                                d.shift
                                             FROM 
                                                 denso_20cy d
                                             JOIN denso_scanoperator ds ON ds.IDno = d.userout

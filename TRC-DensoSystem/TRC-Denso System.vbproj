@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\ptif1-ds\SHARED\it\System\Denso System\</UpdateUrl>
-    <ApplicationRevision>26</ApplicationRevision>
+    <ApplicationRevision>31</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -272,6 +272,12 @@
     </Compile>
     <Compile Include="3T\retainer_3t_report.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="3T\retainer_3t_rpt.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>retainer_3t_rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DMTN\dmtn_bypass.vb">
       <AutoGen>True</AutoGen>
@@ -557,6 +563,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="3T\retainer_3t_report.resx">
       <DependentUpon>retainer_3t_report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="3T\retainer_3t_rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>retainer_3t_rpt.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DMTN\dmtn_bypass.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

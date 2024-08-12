@@ -4,7 +4,7 @@ Public Class REPORT_TDE
 
         con.Close()
         con.Open()
-        Dim cmd As New MySqlCommand("Select distinct `dateout` FROM `denso_fg_scan` WHERE `status`='OUT' ", con)
+        Dim cmd As New MySqlCommand("Select distinct `dateout` FROM `denso_fg_scan` WHERE `status`='OUT' and `type`='TDE'", con)
         dr = cmd.ExecuteReader
         boxdate.Items.Clear()
         While (dr.Read())
@@ -18,7 +18,7 @@ Public Class REPORT_TDE
     Sub viewdata()
         con.Close()
         con.Open()
-        Dim showreport As New MySqlCommand("Select `id`, `status`, `datein`, `shift`, `operator`, `type`, `qrcode`, `partno`, `customerno`, `model`, `color`, `quantity`, `lotnumber`, `proddate`, `dateout`, `serial`, `qrtde`, `cml`,`operatorout`,`shiftout` from denso_fg_scan where dateout='" & boxdate.Text & "' and `type`='TDE' and shiftout = '" & cmb_shift.Text & "'", con)
+        Dim showreport As New MySqlCommand("Select `id`, `status`, `datein`, `shift`, `operator`, `type`, `qrcode`, `partno`, `customerno`, `model`, `color`, `quantity`, `lotnumber`, `proddate`, `dateout`, `serial`, `qrtde`, `cml`,`operatorout`,`shiftout` from denso_fg_scan where dateout='" & boxdate.Text & "' and `type`='TDE' and shiftout = '" & cmb_shift.Text & "'and batch = '" & cmb_batch.Text & "'", con)
         Dim da As New MySqlDataAdapter(showreport)
         da.Fill(dt)
         con.Close()
@@ -26,7 +26,15 @@ Public Class REPORT_TDE
     End Sub
 
     Private Sub boxdate_SelectedIndexChanged(sender As Object, e As EventArgs) Handles boxdate.SelectedIndexChanged
-
+        con.Close()
+        con.Open()
+        Dim cmd As New MySqlCommand("Select distinct `batch` FROM `denso_fg_scan` WHERE `status`='OUT' and `type`='TDE'", con)
+        dr = cmd.ExecuteReader
+        cmb_batch.Items.Clear()
+        While (dr.Read())
+            cmb_batch.Items.Add(dr.GetString("batch"))
+        End While
+        con.Close()
     End Sub
 
     Private Sub Guna2ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_shift.SelectedIndexChanged

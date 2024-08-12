@@ -9,13 +9,19 @@ Public Class expiring_stock
 
         Select Case cmb_type.Text
             Case "DMTN"
-                reload("SELECT `id`,`serial`, `partno`, `customerno`,`proddate` FROM `denso_dmtn`", datagrid1)
-            Case "TDE"
-                reload("SELECT `id`,`lotnumber`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_fg_scan` WHERE type = 'TDE'", datagrid1)
+                reload("SELECT `id`,`serial`, `partno`, `customerno`,`proddate` FROM `denso_dmtn` ORDER BY proddate", datagrid1)
             Case "20CY"
-                reload("SELECT `id`,`lotnumber`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_fg_scan` WHERE type = '20CY'", datagrid1)
+                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_20cy` ORDER BY proddate", datagrid1)
+            Case "TDE"
+                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_fg_scan` WHERE type = 'TDE' ORDER BY proddate", datagrid1)
             Case "INTELLI IV"
-                reload("SELECT `id`,`lotnumber`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_fg_scan` WHERE type = 'INTELLI IV'", datagrid1)
+                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_intelli4` ORDER BY proddate", datagrid1)
+            Case "YT"
+                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_yt` ORDER BY proddate", datagrid1)
+            Case "JECO"
+                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_jeco` ORDER BY proddate", datagrid1)
+            Case "3T"
+                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_3t` ORDER BY proddate", datagrid1)
         End Select
 
     End Sub
