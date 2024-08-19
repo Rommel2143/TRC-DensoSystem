@@ -29,8 +29,9 @@ Public Class dmtn_inner_tag
                                                 WHERE qrlenght= '" & qrlenght & "' and qrtype  = '" & type & "'", con)
             dr = cmdselect.ExecuteReader()
             If dr.Read = True Then
-
-                getcoordinates(dr.GetString("partno"), partno)
+                Dim partnoraw As String
+                getcoordinates(dr.GetString("partno"), partnoraw)
+                partno = partnoraw.Replace("-", "")
                 getcoordinates(dr.GetString("qty"), qty)
                 getcoordinates(dr.GetString("customer"), customerno)
                 getcoordinates(dr.GetString("color"), color)
@@ -167,7 +168,7 @@ Public Class dmtn_inner_tag
                         'saveqr
                         Dim partno_inner As String = datagrid1.Rows(0).Cells(1).Value.ToString()
 
-                        If partno_inner.Replace("-", "") = partno Then
+                        If partno_inner = partno Then
                             If lbl_qty.Text = qty Then
                                 saveqr()
                                 labelerror.Visible = False
@@ -297,17 +298,6 @@ Public Class dmtn_inner_tag
         datagrid1.Rows.Clear()
     End Sub
 
-    Private Sub txtqr_fg_TextChanged(sender As Object, e As EventArgs) Handles txtqr_fg.TextChanged
-
-    End Sub
-
-    Private Sub txtqr_TextChanged(sender As Object, e As EventArgs) Handles txtqr.TextChanged
-
-    End Sub
-
-    Private Sub lbl_count_Click(sender As Object, e As EventArgs) Handles lbl_count.Click
-
-    End Sub
 
     Private Sub lbl_count_TextChanged(sender As Object, e As EventArgs) Handles lbl_count.TextChanged
         If lbl_count.Text = "8" Then

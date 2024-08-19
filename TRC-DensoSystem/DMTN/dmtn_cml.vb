@@ -190,11 +190,11 @@ Public Class dmtn_cml
                             showduplicate(dr.GetString("userin"), dr.GetDateTime("datein").ToString("yyy-MM-dd"))
                         End If
                     Else
-                            'invalid or not scanned
-                            showerror("QR not Recorded!")
+                        'invalid or not scanned
+                        showerror("No Record Found! Scan IN first")
 
 
-                        End If
+                    End If
                         txtqr.Clear()
                         txtqr.Focus()
 
