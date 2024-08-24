@@ -66,10 +66,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>412CA5D61D43D36E5E56F68C28CA7089E376C72E</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>04AB6C887DFAA082E7D6B8F7A4C6FB5E72BBDB5C</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>TRC-Denso System_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>TRC-Denso System_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -730,6 +730,7 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="TRC-Denso System_1_TemporaryKey.pfx" />
     <None Include="TRC-Denso System_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
