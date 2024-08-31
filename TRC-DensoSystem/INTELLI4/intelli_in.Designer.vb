@@ -262,8 +262,8 @@ Partial Class intelli_in
         '
         Me.labelerror.BackColor = System.Drawing.Color.Tomato
         Me.labelerror.Controls.Add(Me.texterror)
-        Me.labelerror.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.labelerror.Location = New System.Drawing.Point(0, 816)
+        Me.labelerror.Dock = System.Windows.Forms.DockStyle.Top
+        Me.labelerror.Location = New System.Drawing.Point(0, 20)
         Me.labelerror.Name = "labelerror"
         Me.labelerror.Size = New System.Drawing.Size(1454, 19)
         Me.labelerror.TabIndex = 229

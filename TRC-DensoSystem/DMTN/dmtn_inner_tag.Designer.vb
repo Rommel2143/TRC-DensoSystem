@@ -158,8 +158,8 @@ Partial Class dmtn_inner_tag
         '
         Me.labelerror.BackColor = System.Drawing.Color.Tomato
         Me.labelerror.Controls.Add(Me.texterror)
-        Me.labelerror.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.labelerror.Location = New System.Drawing.Point(0, 792)
+        Me.labelerror.Dock = System.Windows.Forms.DockStyle.Top
+        Me.labelerror.Location = New System.Drawing.Point(0, 20)
         Me.labelerror.Name = "labelerror"
         Me.labelerror.Size = New System.Drawing.Size(1384, 19)
         Me.labelerror.TabIndex = 207
@@ -549,8 +549,8 @@ Partial Class dmtn_inner_tag
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1384, 811)
-        Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.labelerror)
+        Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.Guna2Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "dmtn_inner_tag"

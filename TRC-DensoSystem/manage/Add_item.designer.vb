@@ -24,6 +24,7 @@ Partial Class Add_item
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Add_item))
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.cmb_type = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtpassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
@@ -50,7 +51,6 @@ Partial Class Add_item
         Me.idno = New Guna.UI2.WinForms.Guna2TextBox()
         Me.labelerror = New Guna.UI2.WinForms.Guna2Panel()
         Me.texterror = New System.Windows.Forms.Label()
-        Me.cmb_type = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Guna2GroupBox3.SuspendLayout()
         Me.labelerror.SuspendLayout()
@@ -84,6 +84,22 @@ Partial Class Add_item
         Me.Guna2GroupBox2.Size = New System.Drawing.Size(505, 416)
         Me.Guna2GroupBox2.TabIndex = 14
         Me.Guna2GroupBox2.Text = "ADD FG"
+        '
+        'cmb_type
+        '
+        Me.cmb_type.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_type.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_type.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_type.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_type.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmb_type.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_type.ItemHeight = 30
+        Me.cmb_type.Items.AddRange(New Object() {"DMTN", "INTELLI IV", "TDE", "20CY", "VT", "YT", "2T", "JECO", "3T"})
+        Me.cmb_type.Location = New System.Drawing.Point(104, 49)
+        Me.cmb_type.Name = "cmb_type"
+        Me.cmb_type.Size = New System.Drawing.Size(201, 36)
+        Me.cmb_type.TabIndex = 42
         '
         'Label3
         '
@@ -473,22 +489,6 @@ Partial Class Add_item
         Me.texterror.Size = New System.Drawing.Size(74, 21)
         Me.texterror.TabIndex = 203
         Me.texterror.Text = "INVALID"
-        '
-        'cmb_type
-        '
-        Me.cmb_type.BackColor = System.Drawing.Color.Transparent
-        Me.cmb_type.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmb_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_type.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_type.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_type.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cmb_type.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmb_type.ItemHeight = 30
-        Me.cmb_type.Items.AddRange(New Object() {"DMTN", "DMTN-Inner Tag", "DMTN-CML", "INTELLI IV", "TDE", "20CY", "VT", "YT", "YT-Matrix", "2T", "JECO", "JECO-CML", "3T", "3T-Matrix"})
-        Me.cmb_type.Location = New System.Drawing.Point(104, 49)
-        Me.cmb_type.Name = "cmb_type"
-        Me.cmb_type.Size = New System.Drawing.Size(201, 36)
-        Me.cmb_type.TabIndex = 42
         '
         'Add_item
         '

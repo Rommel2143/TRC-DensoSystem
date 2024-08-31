@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class export_dmtn_bypass
     Private Sub export_dmtn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        dtpicker.Value = Date.Now
     End Sub
     Sub viewdata()
         con.Close()
@@ -78,5 +78,13 @@ Public Class export_dmtn_bypass
         myrpt.Database.Tables("denso_dmtn_bypass").SetDataSource(dt)
         CrystalReportViewer1.ReportSource = Nothing
         CrystalReportViewer1.ReportSource = myrpt
+    End Sub
+
+    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
     End Sub
 End Class

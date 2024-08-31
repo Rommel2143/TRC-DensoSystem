@@ -176,4 +176,22 @@ Public Class sub_mainframe
     Private Sub ReportToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ReportToolStripMenuItem1.Click
         display_formscan(REPORT_TDE)
     End Sub
+
+    Private Sub PrintCMLReportsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrintCMLReportsToolStripMenuItem.Click
+        display_formscan(export_dmtn)
+    End Sub
+
+    Private Sub UpdateSystemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateSystemToolStripMenuItem.Click
+        Try
+            Dim setupPath As String = "\\ptif1-ds\SHARED\it\System\Denso System\setup.exe"
+            If System.IO.File.Exists(setupPath) Then
+                Process.Start(setupPath)
+                Application.Exit()
+            Else
+                MessageBox.Show("Update file not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("An error occurred while trying to update: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class

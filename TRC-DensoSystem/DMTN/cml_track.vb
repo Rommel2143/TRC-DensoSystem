@@ -28,7 +28,7 @@
         reload("SELECT `innertag`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial`,`userin`, `datein` FROM `denso_dmtn_innertag` WHERE fglabel = '" & datagrid1.SelectedCells(0).Value.ToString() & "'", datagrid2)
     End Sub
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) 
         export_dmtn.Show()
         export_dmtn.BringToFront()
     End Sub

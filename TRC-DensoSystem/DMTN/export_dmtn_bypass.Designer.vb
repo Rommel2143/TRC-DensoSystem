@@ -24,12 +24,12 @@ Partial Class export_dmtn_bypass
     Private Sub InitializeComponent()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.dtpicker = New Guna.UI2.WinForms.Guna2DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.cmbuser = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.cmb_cml = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.dtpicker = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -57,57 +57,6 @@ Partial Class export_dmtn_bypass
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(1198, 131)
         Me.Guna2Panel1.TabIndex = 2
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Gray
-        Me.Label2.Location = New System.Drawing.Point(67, 24)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(45, 17)
-        Me.Label2.TabIndex = 217
-        Me.Label2.Text = "Date :"
-        '
-        'dtpicker
-        '
-        Me.dtpicker.Checked = True
-        Me.dtpicker.FillColor = System.Drawing.SystemColors.HotTrack
-        Me.dtpicker.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.dtpicker.ForeColor = System.Drawing.Color.White
-        Me.dtpicker.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.dtpicker.Location = New System.Drawing.Point(70, 44)
-        Me.dtpicker.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.dtpicker.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.dtpicker.Name = "dtpicker"
-        Me.dtpicker.Size = New System.Drawing.Size(200, 36)
-        Me.dtpicker.TabIndex = 218
-        Me.dtpicker.Value = New Date(2024, 8, 3, 14, 18, 59, 924)
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Gray
-        Me.Label1.Location = New System.Drawing.Point(309, 24)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(43, 17)
-        Me.Label1.TabIndex = 219
-        Me.Label1.Text = "User :"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Gray
-        Me.Label3.Location = New System.Drawing.Point(576, 24)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(43, 17)
-        Me.Label3.TabIndex = 220
-        Me.Label3.Text = "CML :"
         '
         'cmbuser
         '
@@ -138,6 +87,57 @@ Partial Class export_dmtn_bypass
         Me.cmb_cml.Name = "cmb_cml"
         Me.cmb_cml.Size = New System.Drawing.Size(223, 36)
         Me.cmb_cml.TabIndex = 222
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Gray
+        Me.Label3.Location = New System.Drawing.Point(576, 24)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(43, 17)
+        Me.Label3.TabIndex = 220
+        Me.Label3.Text = "CML :"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Gray
+        Me.Label1.Location = New System.Drawing.Point(309, 24)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(43, 17)
+        Me.Label1.TabIndex = 219
+        Me.Label1.Text = "User :"
+        '
+        'dtpicker
+        '
+        Me.dtpicker.Checked = True
+        Me.dtpicker.FillColor = System.Drawing.SystemColors.HotTrack
+        Me.dtpicker.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.dtpicker.ForeColor = System.Drawing.Color.White
+        Me.dtpicker.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.dtpicker.Location = New System.Drawing.Point(70, 44)
+        Me.dtpicker.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.dtpicker.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.dtpicker.Name = "dtpicker"
+        Me.dtpicker.Size = New System.Drawing.Size(200, 36)
+        Me.dtpicker.TabIndex = 218
+        Me.dtpicker.Value = New Date(2024, 8, 3, 14, 18, 59, 924)
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Gray
+        Me.Label2.Location = New System.Drawing.Point(67, 24)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(45, 17)
+        Me.Label2.TabIndex = 217
+        Me.Label2.Text = "Date :"
         '
         'export_dmtn_bypass
         '
