@@ -76,17 +76,18 @@ Partial Class jeco_out
         '
         'Guna2Panel1
         '
-        Me.Guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox3)
         Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox1)
         Me.Guna2Panel1.Controls.Add(Me.Guna2PictureBox1)
-        Me.Guna2Panel1.Location = New System.Drawing.Point(50, 63)
+        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 39)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1350, 714)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1451, 825)
         Me.Guna2Panel1.TabIndex = 226
         '
         'Guna2GroupBox3
         '
+        Me.Guna2GroupBox3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Guna2GroupBox3.Controls.Add(Me.Label2)
         Me.Guna2GroupBox3.Controls.Add(Me.lbl_qty)
         Me.Guna2GroupBox3.Controls.Add(Me.Label3)
@@ -98,7 +99,7 @@ Partial Class jeco_out
         Me.Guna2GroupBox3.CustomBorderColor = System.Drawing.SystemColors.HotTrack
         Me.Guna2GroupBox3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox3.Location = New System.Drawing.Point(12, 17)
+        Me.Guna2GroupBox3.Location = New System.Drawing.Point(63, 72)
         Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
         Me.Guna2GroupBox3.Size = New System.Drawing.Size(629, 680)
         Me.Guna2GroupBox3.TabIndex = 221
@@ -333,6 +334,7 @@ Partial Class jeco_out
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Guna2GroupBox1.Controls.Add(Me.Label1)
         Me.Guna2GroupBox1.Controls.Add(Me.datagrid2)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Button2)
@@ -340,7 +342,7 @@ Partial Class jeco_out
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.HotTrack
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(707, 17)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(758, 72)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(629, 604)
         Me.Guna2GroupBox1.TabIndex = 222
@@ -465,10 +467,11 @@ Partial Class jeco_out
         '
         'Guna2PictureBox1
         '
+        Me.Guna2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
         Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(563, 71)
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(614, 126)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
         Me.Guna2PictureBox1.Size = New System.Drawing.Size(218, 431)
         Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

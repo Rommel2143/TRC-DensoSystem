@@ -18,7 +18,10 @@ Public Class outgoing_report
                                                 d.cmlqr,
                                                 d.userout,
                                                 d.dateout,
-                                                 d.cmlserial
+                                                 d.cmlserial,
+                                                   d.shift,
+                                                    d.process,
+                                                        d.line
                                             FROM 
                                                 denso_jeco d
                                     

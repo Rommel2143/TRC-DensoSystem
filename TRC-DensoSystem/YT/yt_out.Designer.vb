@@ -56,6 +56,7 @@ Partial Class yt_out
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Guna2GroupBox1.Controls.Add(Me.panel_scan)
         Me.Guna2GroupBox1.Controls.Add(Me.txt_batchcode)
         Me.Guna2GroupBox1.Controls.Add(Me.Label3)
@@ -65,7 +66,7 @@ Partial Class yt_out
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.HotTrack
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(100, 63)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(130, 136)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(1163, 548)
         Me.Guna2GroupBox1.TabIndex = 217
@@ -287,11 +288,11 @@ Partial Class yt_out
         '
         'Guna2Panel1
         '
-        Me.Guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox1)
-        Me.Guna2Panel1.Location = New System.Drawing.Point(30, 83)
+        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 20)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1362, 674)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1423, 821)
         Me.Guna2Panel1.TabIndex = 224
         '
         'PictureBox1

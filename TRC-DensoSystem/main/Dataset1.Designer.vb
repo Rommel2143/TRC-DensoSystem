@@ -447,6 +447,12 @@ Partial Public Class Dataset1
         
         Private columncmlserial As Global.System.Data.DataColumn
         
+        Private columnshift As Global.System.Data.DataColumn
+        
+        Private columnprocess As Global.System.Data.DataColumn
+        
+        Private columnline As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -579,6 +585,30 @@ Partial Public Class Dataset1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property shiftColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnshift
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property processColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnprocess
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property lineColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnline
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -615,9 +645,9 @@ Partial Public Class Dataset1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddjecoRow(ByVal id As String, ByVal jecoqr As String, ByVal partno As String, ByVal customerno As String, ByVal color As String, ByVal proddate As Date, ByVal qty As Integer, ByVal serial As String, ByVal cmlqr As String, ByVal userout As String, ByVal dateout As Date, ByVal cmlserial As String) As jecoRow
+        Public Overloads Function AddjecoRow(ByVal id As String, ByVal jecoqr As String, ByVal partno As String, ByVal customerno As String, ByVal color As String, ByVal proddate As Date, ByVal qty As Integer, ByVal serial As String, ByVal cmlqr As String, ByVal userout As String, ByVal dateout As Date, ByVal cmlserial As String, ByVal shift As String, ByVal process As String, ByVal line As String) As jecoRow
             Dim rowjecoRow As jecoRow = CType(Me.NewRow,jecoRow)
-            Dim columnValuesArray() As Object = New Object() {id, jecoqr, partno, customerno, color, proddate, qty, serial, cmlqr, userout, dateout, cmlserial}
+            Dim columnValuesArray() As Object = New Object() {id, jecoqr, partno, customerno, color, proddate, qty, serial, cmlqr, userout, dateout, cmlserial, shift, process, line}
             rowjecoRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowjecoRow)
             Return rowjecoRow
@@ -658,6 +688,9 @@ Partial Public Class Dataset1
             Me.columnuserout = MyBase.Columns("userout")
             Me.columndateout = MyBase.Columns("dateout")
             Me.columncmlserial = MyBase.Columns("cmlserial")
+            Me.columnshift = MyBase.Columns("shift")
+            Me.columnprocess = MyBase.Columns("process")
+            Me.columnline = MyBase.Columns("line")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -687,6 +720,12 @@ Partial Public Class Dataset1
             MyBase.Columns.Add(Me.columndateout)
             Me.columncmlserial = New Global.System.Data.DataColumn("cmlserial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncmlserial)
+            Me.columnshift = New Global.System.Data.DataColumn("shift", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnshift)
+            Me.columnprocess = New Global.System.Data.DataColumn("process", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnprocess)
+            Me.columnline = New Global.System.Data.DataColumn("line", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnline)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AllowDBNull = false
             Me.columnid.Unique = true
@@ -2624,6 +2663,51 @@ Partial Public Class Dataset1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property shift() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablejeco.shiftColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'shift' in table 'jeco' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablejeco.shiftColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property process() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablejeco.processColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'process' in table 'jeco' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablejeco.processColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property line() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablejeco.lineColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'line' in table 'jeco' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablejeco.lineColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsjecoqrNull() As Boolean
             Return Me.IsNull(Me.tablejeco.jecoqrColumn)
         End Function
@@ -2752,6 +2836,42 @@ Partial Public Class Dataset1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetcmlserialNull()
             Me(Me.tablejeco.cmlserialColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsshiftNull() As Boolean
+            Return Me.IsNull(Me.tablejeco.shiftColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetshiftNull()
+            Me(Me.tablejeco.shiftColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsprocessNull() As Boolean
+            Return Me.IsNull(Me.tablejeco.processColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetprocessNull()
+            Me(Me.tablejeco.processColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IslineNull() As Boolean
+            Return Me.IsNull(Me.tablejeco.lineColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetlineNull()
+            Me(Me.tablejeco.lineColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

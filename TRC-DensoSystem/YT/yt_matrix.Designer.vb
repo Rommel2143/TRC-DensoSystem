@@ -156,6 +156,7 @@ Partial Class yt_matrix
         '
         'Guna2GroupBox3
         '
+        Me.Guna2GroupBox3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Guna2GroupBox3.Controls.Add(Me.Guna2Separator1)
         Me.Guna2GroupBox3.Controls.Add(Me.lbl_count2)
         Me.Guna2GroupBox3.Controls.Add(Me.Label7)
@@ -166,7 +167,7 @@ Partial Class yt_matrix
         Me.Guna2GroupBox3.CustomBorderColor = System.Drawing.SystemColors.HotTrack
         Me.Guna2GroupBox3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox3.Location = New System.Drawing.Point(706, 22)
+        Me.Guna2GroupBox3.Location = New System.Drawing.Point(734, 67)
         Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
         Me.Guna2GroupBox3.Size = New System.Drawing.Size(629, 680)
         Me.Guna2GroupBox3.TabIndex = 214
@@ -383,6 +384,7 @@ Partial Class yt_matrix
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Separator2)
         Me.Guna2GroupBox1.Controls.Add(Me.datagrid_label)
         Me.Guna2GroupBox1.Controls.Add(Me.lbl_qty)
@@ -392,7 +394,7 @@ Partial Class yt_matrix
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.HotTrack
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(16, 22)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(44, 67)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(629, 548)
         Me.Guna2GroupBox1.TabIndex = 217
@@ -593,12 +595,12 @@ Partial Class yt_matrix
         '
         'Guna2Panel1
         '
-        Me.Guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox1)
         Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox3)
-        Me.Guna2Panel1.Location = New System.Drawing.Point(22, 44)
+        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1362, 726)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1407, 814)
         Me.Guna2Panel1.TabIndex = 221
         '
         'yt_matrix

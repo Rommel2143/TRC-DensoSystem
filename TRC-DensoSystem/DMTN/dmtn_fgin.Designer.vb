@@ -252,7 +252,7 @@ Partial Class dmtn_fgin
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.HotTrack
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(40, 20)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(81, 74)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(1282, 680)
         Me.Guna2GroupBox1.TabIndex = 217
@@ -350,11 +350,11 @@ Partial Class dmtn_fgin
         '
         'Guna2Panel1
         '
-        Me.Guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox1)
-        Me.Guna2Panel1.Location = New System.Drawing.Point(41, 42)
+        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1362, 726)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1445, 828)
         Me.Guna2Panel1.TabIndex = 221
         '
         'dmtn_fgin

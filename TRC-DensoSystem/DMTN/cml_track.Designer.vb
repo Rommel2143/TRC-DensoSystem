@@ -40,12 +40,14 @@ Partial Class cml_track
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtdate = New System.Windows.Forms.Label()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2GroupBox3.SuspendLayout()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2GroupBox1.SuspendLayout()
         CType(Me.datagrid2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2GroupBox3
@@ -56,7 +58,7 @@ Partial Class cml_track
         Me.Guna2GroupBox3.CustomBorderColor = System.Drawing.SystemColors.HotTrack
         Me.Guna2GroupBox3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox3.Location = New System.Drawing.Point(103, 64)
+        Me.Guna2GroupBox3.Location = New System.Drawing.Point(103, 54)
         Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
         Me.Guna2GroupBox3.Size = New System.Drawing.Size(1162, 414)
         Me.Guna2GroupBox3.TabIndex = 19
@@ -158,7 +160,7 @@ Partial Class cml_track
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.HotTrack
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(103, 484)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(103, 474)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.Size = New System.Drawing.Size(1162, 288)
         Me.Guna2GroupBox1.TabIndex = 195
@@ -281,14 +283,23 @@ Partial Class cml_track
         Me.txtdate.Text = "MMMM-dd-yyyy"
         Me.txtdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox1)
+        Me.Guna2Panel1.Controls.Add(Me.Guna2GroupBox3)
+        Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Panel1.Location = New System.Drawing.Point(0, 20)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1368, 816)
+        Me.Guna2Panel1.TabIndex = 220
+        '
         'cml_track
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1368, 836)
+        Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.Guna2Panel2)
-        Me.Controls.Add(Me.Guna2GroupBox1)
-        Me.Controls.Add(Me.Guna2GroupBox3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "cml_track"
         Me.Text = "cml_track"
@@ -300,6 +311,7 @@ Partial Class cml_track
         Me.Guna2Panel2.ResumeLayout(False)
         Me.Guna2Panel2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Guna2Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -313,4 +325,5 @@ Partial Class cml_track
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label10 As Label
     Friend WithEvents txtdate As Label
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
 End Class
