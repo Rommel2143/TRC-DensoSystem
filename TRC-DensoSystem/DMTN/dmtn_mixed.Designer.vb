@@ -32,6 +32,7 @@ Partial Class dmtn_mixed
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2GroupBox3 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lbl_qty = New System.Windows.Forms.Label()
@@ -63,8 +64,8 @@ Partial Class dmtn_mixed
         Me.texterror = New System.Windows.Forms.Label()
         Me.labelerror = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel1.SuspendLayout()
+        Me.Guna2Panel3.SuspendLayout()
         Me.Guna2GroupBox3.SuspendLayout()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2GroupBox1.SuspendLayout()
@@ -73,7 +74,6 @@ Partial Class dmtn_mixed
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.labelerror.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
-        Me.Guna2Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2Panel1
@@ -84,6 +84,17 @@ Partial Class dmtn_mixed
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(1418, 792)
         Me.Guna2Panel1.TabIndex = 226
+        '
+        'Guna2Panel3
+        '
+        Me.Guna2Panel3.Controls.Add(Me.Guna2GroupBox3)
+        Me.Guna2Panel3.Controls.Add(Me.Guna2GroupBox1)
+        Me.Guna2Panel3.Controls.Add(Me.Guna2PictureBox1)
+        Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel3.Name = "Guna2Panel3"
+        Me.Guna2Panel3.Size = New System.Drawing.Size(1418, 792)
+        Me.Guna2Panel3.TabIndex = 223
         '
         'Guna2GroupBox3
         '
@@ -546,17 +557,6 @@ Partial Class dmtn_mixed
         Me.Guna2Panel2.Size = New System.Drawing.Size(1418, 20)
         Me.Guna2Panel2.TabIndex = 224
         '
-        'Guna2Panel3
-        '
-        Me.Guna2Panel3.Controls.Add(Me.Guna2GroupBox3)
-        Me.Guna2Panel3.Controls.Add(Me.Guna2GroupBox1)
-        Me.Guna2Panel3.Controls.Add(Me.Guna2PictureBox1)
-        Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel3.Name = "Guna2Panel3"
-        Me.Guna2Panel3.Size = New System.Drawing.Size(1418, 792)
-        Me.Guna2Panel3.TabIndex = 223
-        '
         'dmtn_mixed
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -570,6 +570,7 @@ Partial Class dmtn_mixed
         Me.Text = "dmtn_mixed"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Guna2Panel1.ResumeLayout(False)
+        Me.Guna2Panel3.ResumeLayout(False)
         Me.Guna2GroupBox3.ResumeLayout(False)
         Me.Guna2GroupBox3.PerformLayout()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -582,7 +583,6 @@ Partial Class dmtn_mixed
         Me.labelerror.PerformLayout()
         Me.Guna2Panel2.ResumeLayout(False)
         Me.Guna2Panel2.PerformLayout()
-        Me.Guna2Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

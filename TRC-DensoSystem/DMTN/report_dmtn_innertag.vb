@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class report_dmtn
+Public Class report_dmtn_innertag
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class report_dmtn
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "report_dmtn.rpt"
+            Return "report_dmtn_innertag.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class report_dmtn
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "TRC_Denso_System.report_dmtn.rpt"
+            Return "TRC_Denso_System.report_dmtn_innertag.rpt"
         End Get
         Set
             'Do nothing
@@ -110,7 +110,7 @@ Public Class report_dmtn
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class Cachedreport_dmtn
+Public Class Cachedreport_dmtn_innertag
     Inherits Component
     Implements ICachedReport
     
@@ -152,7 +152,7 @@ Public Class Cachedreport_dmtn
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As report_dmtn = New report_dmtn()
+        Dim rpt As report_dmtn_innertag = New report_dmtn_innertag()
         rpt.Site = Me.Site
         Return rpt
     End Function

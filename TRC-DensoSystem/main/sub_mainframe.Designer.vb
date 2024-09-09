@@ -37,6 +37,7 @@ Partial Class sub_mainframe
         Me.MONITORINGToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FGINToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FGINBYPASSReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PrintCMLReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MasterlistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CYToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.INToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -63,7 +64,6 @@ Partial Class sub_mainframe
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PrintCMLReportsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UpdateSystemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -109,7 +109,7 @@ Partial Class sub_mainframe
         Me.StockMonitoringToolStripMenuItem.Image = CType(resources.GetObject("StockMonitoringToolStripMenuItem.Image"), System.Drawing.Image)
         Me.StockMonitoringToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.StockMonitoringToolStripMenuItem.Name = "StockMonitoringToolStripMenuItem"
-        Me.StockMonitoringToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.StockMonitoringToolStripMenuItem.Size = New System.Drawing.Size(195, 38)
         Me.StockMonitoringToolStripMenuItem.Text = "FG Stock"
         '
         'QRCheckerToolStripMenuItem
@@ -125,7 +125,7 @@ Partial Class sub_mainframe
         Me.ExpiringStockToolStripMenuItem1.Image = CType(resources.GetObject("ExpiringStockToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.ExpiringStockToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ExpiringStockToolStripMenuItem1.Name = "ExpiringStockToolStripMenuItem1"
-        Me.ExpiringStockToolStripMenuItem1.Size = New System.Drawing.Size(196, 38)
+        Me.ExpiringStockToolStripMenuItem1.Size = New System.Drawing.Size(195, 38)
         Me.ExpiringStockToolStripMenuItem1.Text = "Expiring Stock"
         '
         'CMLToolStripMenuItem
@@ -185,6 +185,15 @@ Partial Class sub_mainframe
         Me.FGINBYPASSReportToolStripMenuItem.Name = "FGINBYPASSReportToolStripMenuItem"
         Me.FGINBYPASSReportToolStripMenuItem.Size = New System.Drawing.Size(291, 38)
         Me.FGINBYPASSReportToolStripMenuItem.Text = "FG IN Report (No Inner Tag)"
+        Me.FGINBYPASSReportToolStripMenuItem.Visible = False
+        '
+        'PrintCMLReportsToolStripMenuItem
+        '
+        Me.PrintCMLReportsToolStripMenuItem.Image = CType(resources.GetObject("PrintCMLReportsToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.PrintCMLReportsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.PrintCMLReportsToolStripMenuItem.Name = "PrintCMLReportsToolStripMenuItem"
+        Me.PrintCMLReportsToolStripMenuItem.Size = New System.Drawing.Size(291, 38)
+        Me.PrintCMLReportsToolStripMenuItem.Text = "Print CML Reports"
         '
         'MasterlistToolStripMenuItem
         '
@@ -410,14 +419,6 @@ Partial Class sub_mainframe
         Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
         Me.ToolStripMenuItem5.Size = New System.Drawing.Size(216, 22)
         Me.ToolStripMenuItem5.Text = "Device info."
-        '
-        'PrintCMLReportsToolStripMenuItem
-        '
-        Me.PrintCMLReportsToolStripMenuItem.Image = CType(resources.GetObject("PrintCMLReportsToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.PrintCMLReportsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.PrintCMLReportsToolStripMenuItem.Name = "PrintCMLReportsToolStripMenuItem"
-        Me.PrintCMLReportsToolStripMenuItem.Size = New System.Drawing.Size(291, 38)
-        Me.PrintCMLReportsToolStripMenuItem.Text = "Print CML Reports"
         '
         'UpdateSystemToolStripMenuItem
         '

@@ -1,9 +1,10 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class export_dmtn
+    Dim radio As Integer = 0
     Private Sub export_dmtn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtpicker.Value = Date.Now
     End Sub
-    Sub viewdata()
+    Sub viewdata_with()
         con.Close()
         con.Open()
         Dim showreport As New MySqlCommand("SELECT 
@@ -44,22 +45,64 @@ Public Class export_dmtn
 
     Private Sub cmb_cml_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_cml.SelectedIndexChanged
         Try
-            con.Close()
-            con.Open()
-            Dim cmdselect As New MySqlCommand("SELECT `cmlqr`,`serial` FROM `denso_dmtn_cml` WHERE serial='" & cmb_cml.Text & "'", con)
-            dr = cmdselect.ExecuteReader
-            If dr.Read Then
-                report_cmlqr = dr.GetString("cmlqr")
-            End If
-            Dim myrpt As New report_dmtn
-            dt.Clear()
-            viewdata()
-            myrpt.Database.Tables("denso_dmtn").SetDataSource(dt)
-            CrystalReportViewer1.ReportSource = Nothing
-            CrystalReportViewer1.ReportSource = myrpt
+            Select Case radio
+                Case 1
+
+                    con.Close()
+                    con.Open()
+                    Dim cmdselect As New MySqlCommand("SELECT `cmlqr`,`serial` FROM `denso_dmtn_cml` WHERE serial='" & cmb_cml.Text & "'", con)
+                    dr = cmdselect.ExecuteReader
+                    If dr.Read Then
+                        report_cmlqr = dr.GetString("cmlqr")
+                    End If
+                    Dim myrpt As New report_dmtn_innertag
+                    dt.Clear()
+                    viewdata_with()
+                    myrpt.Database.Tables("denso_dmtn").SetDataSource(dt)
+                    CrystalReportViewer1.ReportSource = Nothing
+                    CrystalReportViewer1.ReportSource = myrpt
+                Case 0
+                    Dim myrpt As New dmtn_bypass
+                    dt.Clear()
+                    viewdata_without()
+                    myrpt.Database.Tables("denso_dmtn_bypass").SetDataSource(dt)
+                    CrystalReportViewer1.ReportSource = Nothing
+                    CrystalReportViewer1.ReportSource = myrpt
+            End Select
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+    Sub viewdata_without()
+        con.Close()
+        con.Open()
+        Dim showreport As New MySqlCommand("SELECT 
+                                                d.id,
+                                                d.dmtn, 
+                                                d.partno,
+                                                d.customerno,
+                                                d.color,
+                                                 d.proddate,
+                                                d.qty,
+                                                d.cml,
+                                                d.userout,
+                                                d.dateout,
+                                                d.serial,
+                                                ddc.serial AS cmlserial,
+                                                d.shift,
+                                                d.process,
+                                                d.line
+                                            FROM 
+                                                denso_dmtn d
+                                            JOIN denso_dmtn_cml ddc ON d.cml=ddc.cmlqr
+                                            WHERE
+                                                    ddc.serial = '" & cmb_cml.Text & "'
+                                            ORDER BY
+                                                    d.serial", con)
+        Dim da As New MySqlDataAdapter(showreport)
+        da.Fill(dt)
+        con.Close()
+
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
@@ -84,5 +127,15 @@ Public Class export_dmtn
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Private Sub Guna2RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles Guna2RadioButton2.CheckedChanged
+        radio = 1
+
+    End Sub
+
+    Private Sub Guna2RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles Guna2RadioButton1.CheckedChanged
+        radio = 0
+
     End Sub
 End Class

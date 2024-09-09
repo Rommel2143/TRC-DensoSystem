@@ -565,7 +565,7 @@ Partial Public Class dmtn_DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function Adddenso_dmtnRow(ByVal id As String, ByVal dmtn As String, ByVal partno As String, ByVal customerno As String, ByVal proddate As Date, ByVal qty As Integer, ByVal d_serial As String, ByVal cml As String, ByVal c_serial As String, ByVal userout As String, ByVal dateout As String, ByVal innertag_serial As String, ByVal innertag_proddate As Date, ByVal innertag_qty As Integer) As denso_dmtnRow
+        Public Overloads Function Adddenso_dmtnRow(ByVal id As String, ByVal dmtn As String, ByVal partno As String, ByVal customerno As String, ByVal proddate As Date, ByVal qty As Integer, ByVal d_serial As String, ByVal cml As String, ByVal c_serial As String, ByVal userout As String, ByVal dateout As Date, ByVal innertag_serial As String, ByVal innertag_proddate As Date, ByVal innertag_qty As Integer) As denso_dmtnRow
             Dim rowdenso_dmtnRow As denso_dmtnRow = CType(Me.NewRow,denso_dmtnRow)
             Dim columnValuesArray() As Object = New Object() {id, dmtn, partno, customerno, proddate, qty, d_serial, cml, c_serial, userout, dateout, innertag_serial, innertag_proddate, innertag_qty}
             rowdenso_dmtnRow.ItemArray = columnValuesArray
@@ -635,7 +635,7 @@ Partial Public Class dmtn_DataSet1
             MyBase.Columns.Add(Me.columnc_serial)
             Me.columnuserout = New Global.System.Data.DataColumn("userout", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnuserout)
-            Me.columndateout = New Global.System.Data.DataColumn("dateout", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columndateout = New Global.System.Data.DataColumn("dateout", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndateout)
             Me.columninnertag_serial = New Global.System.Data.DataColumn("innertag_serial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columninnertag_serial)
@@ -1338,6 +1338,12 @@ Partial Public Class dmtn_DataSet1
         
         Private columncmlserial As Global.System.Data.DataColumn
         
+        Private columnshift As Global.System.Data.DataColumn
+        
+        Private columnprocess As Global.System.Data.DataColumn
+        
+        Private columnline As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -1470,6 +1476,30 @@ Partial Public Class dmtn_DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property shiftColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnshift
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property processColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnprocess
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property lineColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnline
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1506,9 +1536,9 @@ Partial Public Class dmtn_DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function Adddenso_dmtn_bypassRow(ByVal id As String, ByVal dmtn As String, ByVal partno As String, ByVal customerno As String, ByVal color As String, ByVal proddate As Date, ByVal qty As Integer, ByVal cml As String, ByVal userout As String, ByVal dateout As String, ByVal serial As String, ByVal cmlserial As String) As denso_dmtn_bypassRow
+        Public Overloads Function Adddenso_dmtn_bypassRow(ByVal id As String, ByVal dmtn As String, ByVal partno As String, ByVal customerno As String, ByVal color As String, ByVal proddate As Date, ByVal qty As Integer, ByVal cml As String, ByVal userout As String, ByVal dateout As Date, ByVal serial As String, ByVal cmlserial As String, ByVal shift As String, ByVal process As String, ByVal line As String) As denso_dmtn_bypassRow
             Dim rowdenso_dmtn_bypassRow As denso_dmtn_bypassRow = CType(Me.NewRow,denso_dmtn_bypassRow)
-            Dim columnValuesArray() As Object = New Object() {id, dmtn, partno, customerno, color, proddate, qty, cml, userout, dateout, serial, cmlserial}
+            Dim columnValuesArray() As Object = New Object() {id, dmtn, partno, customerno, color, proddate, qty, cml, userout, dateout, serial, cmlserial, shift, process, line}
             rowdenso_dmtn_bypassRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowdenso_dmtn_bypassRow)
             Return rowdenso_dmtn_bypassRow
@@ -1549,6 +1579,9 @@ Partial Public Class dmtn_DataSet1
             Me.columndateout = MyBase.Columns("dateout")
             Me.columnserial = MyBase.Columns("serial")
             Me.columncmlserial = MyBase.Columns("cmlserial")
+            Me.columnshift = MyBase.Columns("shift")
+            Me.columnprocess = MyBase.Columns("process")
+            Me.columnline = MyBase.Columns("line")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1572,12 +1605,18 @@ Partial Public Class dmtn_DataSet1
             MyBase.Columns.Add(Me.columncml)
             Me.columnuserout = New Global.System.Data.DataColumn("userout", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnuserout)
-            Me.columndateout = New Global.System.Data.DataColumn("dateout", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columndateout = New Global.System.Data.DataColumn("dateout", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndateout)
             Me.columnserial = New Global.System.Data.DataColumn("serial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnserial)
             Me.columncmlserial = New Global.System.Data.DataColumn("cmlserial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncmlserial)
+            Me.columnshift = New Global.System.Data.DataColumn("shift", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnshift)
+            Me.columnprocess = New Global.System.Data.DataColumn("process", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnprocess)
+            Me.columnline = New Global.System.Data.DataColumn("line", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnline)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AllowDBNull = false
             Me.columnid.Unique = true
@@ -1873,10 +1912,10 @@ Partial Public Class dmtn_DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property dateout() As String
+        Public Property dateout() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tabledenso_dmtn.dateoutColumn),String)
+                    Return CType(Me(Me.tabledenso_dmtn.dateoutColumn),Date)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'dateout' in table 'denso_dmtn' is DBNull.", e)
                 End Try
@@ -2776,10 +2815,10 @@ Partial Public Class dmtn_DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property dateout() As String
+        Public Property dateout() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tabledenso_dmtn_bypass.dateoutColumn),String)
+                    Return CType(Me(Me.tabledenso_dmtn_bypass.dateoutColumn),Date)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'dateout' in table 'denso_dmtn_bypass' is DBNull.", e)
                 End Try
@@ -2816,6 +2855,51 @@ Partial Public Class dmtn_DataSet1
             End Get
             Set
                 Me(Me.tabledenso_dmtn_bypass.cmlserialColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property shift() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledenso_dmtn_bypass.shiftColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'shift' in table 'denso_dmtn_bypass' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledenso_dmtn_bypass.shiftColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property process() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledenso_dmtn_bypass.processColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'process' in table 'denso_dmtn_bypass' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledenso_dmtn_bypass.processColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property line() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabledenso_dmtn_bypass.lineColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'line' in table 'denso_dmtn_bypass' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabledenso_dmtn_bypass.lineColumn) = value
             End Set
         End Property
         
@@ -2949,6 +3033,42 @@ Partial Public Class dmtn_DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetcmlserialNull()
             Me(Me.tabledenso_dmtn_bypass.cmlserialColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsshiftNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_dmtn_bypass.shiftColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetshiftNull()
+            Me(Me.tabledenso_dmtn_bypass.shiftColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsprocessNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_dmtn_bypass.processColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetprocessNull()
+            Me(Me.tabledenso_dmtn_bypass.processColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IslineNull() As Boolean
+            Return Me.IsNull(Me.tabledenso_dmtn_bypass.lineColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetlineNull()
+            Me(Me.tabledenso_dmtn_bypass.lineColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

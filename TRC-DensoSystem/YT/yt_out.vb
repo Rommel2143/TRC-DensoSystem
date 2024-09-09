@@ -138,7 +138,7 @@ Public Class yt_out
                 .AddWithValue("@status", "1")
                 .AddWithValue("@userout", idno)
                 .AddWithValue("@dateout", datedb)
-                .AddWithValue("@batchcode", txt_batchcode)
+                .AddWithValue("@batchcode", txt_batchcode.Text)
             End With
             cmdupdatedmtn.ExecuteNonQuery()
 

@@ -25,8 +25,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>\\ptif1-ds\SHARED\it\System\Denso System\</UpdateUrl>
-    <ApplicationRevision>40</ApplicationRevision>
+    <UpdateUrl>\\ptif1-ds\SystemServer\Denso System\</UpdateUrl>
+    <ApplicationRevision>46</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -329,10 +329,10 @@
     <Compile Include="DMTN\export_dmtn_bypass.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DMTN\report_dmtn.vb">
+    <Compile Include="DMTN\report_dmtn_innertag.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>report_dmtn.rpt</DependentUpon>
+      <DependentUpon>report_dmtn_innertag.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="INFG\INFG.designer.vb">
@@ -590,9 +590,9 @@
     <EmbeddedResource Include="DMTN\export_dmtn_bypass.resx">
       <DependentUpon>export_dmtn_bypass.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DMTN\report_dmtn.rpt">
+    <EmbeddedResource Include="DMTN\report_dmtn_innertag.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>report_dmtn.vb</LastGenOutput>
+      <LastGenOutput>report_dmtn_innertag.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="INFG\INFG.resx">
       <DependentUpon>INFG.vb</DependentUpon>

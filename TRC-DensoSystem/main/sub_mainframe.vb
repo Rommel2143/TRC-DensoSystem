@@ -183,7 +183,7 @@ Public Class sub_mainframe
 
     Private Sub UpdateSystemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateSystemToolStripMenuItem.Click
         Try
-            Dim setupPath As String = "\\ptif1-ds\SHARED\it\System\Denso System\setup.exe"
+            Dim setupPath As String = "\\ptif1-ds\SystemServer\Denso System\setup.exe"
             If System.IO.File.Exists(setupPath) Then
                 Process.Start(setupPath)
                 Application.Exit()

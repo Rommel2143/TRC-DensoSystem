@@ -29,7 +29,7 @@ Public Class dmtn_inner_tag
                                                 WHERE qrlenght= '" & qrlenght & "' and qrtype  = '" & type & "'", con)
             dr = cmdselect.ExecuteReader()
             If dr.Read = True Then
-                Dim partnoraw As String
+                Dim partnoraw As String = ""
                 getcoordinates(dr.GetString("partno"), partnoraw)
                 partno = partnoraw.Replace("-", "")
                 getcoordinates(dr.GetString("qty"), qty)

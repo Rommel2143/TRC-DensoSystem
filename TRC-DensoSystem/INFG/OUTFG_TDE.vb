@@ -192,4 +192,28 @@ Public Class OUTFG_TDE
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
 
     End Sub
+
+    Private Sub cmbsearch_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
+
+
+    End Sub
+
+    Private Sub btndelete_Click(sender As Object, e As EventArgs) Handles btndelete.Click
+        If MsgBox("Are you sure to Reset?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+
+
+            con.Close()
+            updates("DELETE FROM `denso_temp` ")
+
+            reloadgrid()
+
+
+
+        End If
+
+    End Sub
 End Class

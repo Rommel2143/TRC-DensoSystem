@@ -8,7 +8,7 @@ Public Class FG_monitoring
         Try
             con.Close()
             con.Open()
-            Dim cmdrefreshgrid As New MySqlCommand("SELECT `partno`, `customerno`, `color`,sum(`qty`) as TOTAL FROM " & table & " GROUP BY `partno`, `customerno`, `color`", con)
+            Dim cmdrefreshgrid As New MySqlCommand("SELECT `partno`, `customerno`, `color`,sum(`qty`) as TOTAL FROM " & table & "  WHERE dateout is NULL GROUP BY `partno`, `customerno`, `color`", con)
 
             Dim da As New MySqlDataAdapter(cmdrefreshgrid)
             Dim dt As New DataTable
@@ -55,7 +55,7 @@ Public Class FG_monitoring
             Case "TDE"
                 con.Close()
                 con.Open()
-                Dim cmdrefreshgrid As New MySqlCommand("SELECT `partno`, `customerno`, `partname`,`qty` FROM `denso_fg_masterlist` WHERE qrtype='TDE'", con)
+                Dim cmdrefreshgrid As New MySqlCommand("SELECT `partno`, `customerno`, `partname`,`qty` FROM `denso_fg_masterlist` WHERE qrtype='TDE' and qty != '0' ", con)
 
                 Dim da As New MySqlDataAdapter(cmdrefreshgrid)
                 Dim dt As New DataTable
