@@ -106,7 +106,14 @@ Public Class INFG
                     txtqty.Text = qrcode.Substring(25, 2)
                     txtlot.Text = qrcode.Substring(qrcode.Length - 13)
                     saveupdate()
-                Else
+                ElseIf qrcode.Length = 42 And qrcode.Contains("--") Then
+                    txtcustomer.Text = qrcode.Substring(0, 13)
+                        txtcolor1.Text = qrcode.Substring(0, 27)
+                        txtcode.Text = qrcode.Substring(15, 10)
+                        txtqty.Text = qrcode.Substring(25, 2)
+                        txtlot.Text = qrcode.Substring(qrcode.Length - 13)
+                        saveupdate()
+                    Else
                     txtcustomer.Text = qrcode.Substring(0, 13)
                     txtcolor1.Text = qrcode.Substring(0, 27)
                     txtcode.Text = qrcode.Substring(15, 10)

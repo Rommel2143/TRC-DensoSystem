@@ -177,7 +177,13 @@ Public Class OUTFG_TDE
     End Sub
 
     Private Sub txtbatch_TextChanged(sender As Object, e As EventArgs) Handles txtbatch.TextChanged
-        tdeqr.Enabled = True
+        If txtbatch.Text = "" Then
+
+            tdeqr.Enabled = False
+        Else
+            tdeqr.Enabled = True
+        End If
+
 
     End Sub
 
