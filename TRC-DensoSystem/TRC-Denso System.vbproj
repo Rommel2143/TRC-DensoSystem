@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\ptif1-ds\SystemServer\Denso System\</UpdateUrl>
-    <ApplicationRevision>48</ApplicationRevision>
+    <ApplicationRevision>50</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -317,6 +317,12 @@
     <Compile Include="DMTN\dmtn_mixed.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DMTN\dmtn_qrchecker.Designer.vb">
+      <DependentUpon>dmtn_qrchecker.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DMTN\dmtn_qrchecker.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DMTN\export_dmtn.Designer.vb">
       <DependentUpon>export_dmtn.vb</DependentUpon>
     </Compile>
@@ -419,43 +425,43 @@
     <Compile Include="JECO\jeco_out.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main\Dataset1.Designer.vb">
+    <Compile Include="1.main\Dataset1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Dataset1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="main\Dataset1.vb">
+    <Compile Include="1.main\Dataset1.vb">
       <DependentUpon>Dataset1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="main\denso_components.Designer.vb">
+    <Compile Include="1.main\denso_components.Designer.vb">
       <DependentUpon>denso_components.vb</DependentUpon>
     </Compile>
-    <Compile Include="main\denso_components.vb">
+    <Compile Include="1.main\denso_components.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main\Login.designer.vb">
+    <Compile Include="1.main\Login.designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
-    <Compile Include="main\Login.vb">
+    <Compile Include="1.main\Login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main\Module1.vb" />
-    <Compile Include="main\Mainframe.designer.vb">
+    <Compile Include="1.main\Module1.vb" />
+    <Compile Include="1.main\Mainframe.designer.vb">
       <DependentUpon>Mainframe.vb</DependentUpon>
     </Compile>
-    <Compile Include="main\Mainframe.vb">
+    <Compile Include="1.main\Mainframe.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main\sub_mainframe.Designer.vb">
+    <Compile Include="1.main\sub_mainframe.Designer.vb">
       <DependentUpon>sub_mainframe.vb</DependentUpon>
     </Compile>
-    <Compile Include="main\sub_mainframe.vb">
+    <Compile Include="1.main\sub_mainframe.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main\suggest_improvent.designer.vb">
+    <Compile Include="1.main\suggest_improvent.designer.vb">
       <DependentUpon>suggest_improvent.vb</DependentUpon>
     </Compile>
-    <Compile Include="main\suggest_improvent.vb">
+    <Compile Include="1.main\suggest_improvent.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="manage\Add_item.designer.vb">
@@ -504,10 +510,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="main\Register_PC.designer.vb">
+    <Compile Include="1.main\Register_PC.designer.vb">
       <DependentUpon>Register_PC.vb</DependentUpon>
     </Compile>
-    <Compile Include="main\Register_PC.vb">
+    <Compile Include="1.main\Register_PC.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="JECO\jeco_report.Designer.vb">
@@ -584,6 +590,9 @@
     <EmbeddedResource Include="DMTN\dmtn_mixed.resx">
       <DependentUpon>dmtn_mixed.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DMTN\dmtn_qrchecker.resx">
+      <DependentUpon>dmtn_qrchecker.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DMTN\export_dmtn.resx">
       <DependentUpon>export_dmtn.vb</DependentUpon>
     </EmbeddedResource>
@@ -640,19 +649,19 @@
     <EmbeddedResource Include="JECO\jeco_out.resx">
       <DependentUpon>jeco_out.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="main\denso_components.resx">
+    <EmbeddedResource Include="1.main\denso_components.resx">
       <DependentUpon>denso_components.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="main\Login.resx">
+    <EmbeddedResource Include="1.main\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="main\Mainframe.resx">
+    <EmbeddedResource Include="1.main\Mainframe.resx">
       <DependentUpon>Mainframe.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="main\sub_mainframe.resx">
+    <EmbeddedResource Include="1.main\sub_mainframe.resx">
       <DependentUpon>sub_mainframe.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="main\suggest_improvent.resx">
+    <EmbeddedResource Include="1.main\suggest_improvent.resx">
       <DependentUpon>suggest_improvent.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="manage\Add_item.resx">
@@ -676,7 +685,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="main\Register_PC.resx">
+    <EmbeddedResource Include="1.main\Register_PC.resx">
       <DependentUpon>Register_PC.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JECO\jeco_report.resx">
@@ -708,15 +717,15 @@
     <None Include="DMTN\dmtn_DataSet1.xss">
       <DependentUpon>dmtn_DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="main\Dataset1.xsc">
+    <None Include="1.main\Dataset1.xsc">
       <DependentUpon>Dataset1.xsd</DependentUpon>
     </None>
-    <None Include="main\Dataset1.xsd">
+    <None Include="1.main\Dataset1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Dataset1.Designer.vb</LastGenOutput>
     </None>
-    <None Include="main\Dataset1.xss">
+    <None Include="1.main\Dataset1.xss">
       <DependentUpon>Dataset1.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">

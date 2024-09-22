@@ -797,23 +797,13 @@
   </data>
   <data name="MONITORINGToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANJSURBVFhH5Zdr
-        SFNRHMBv0be+97GCIIKgPhQZoQShEvkY6kwlZ5C5tAm9NrFSRDCiL0tLkAo1UVSCMstH+UYkNV26zRzl
-        K9xoa+Vma08f+3fP3e512z1r944eQgd+jLNzzv//O2f/u50Rm6bl5k7szjuvOsSX04mNmXxJTWqM9KYl
-        CEn2u10S8aSCBMIhJqo0LOKi5ba05IajhCRH2Y4C3SrVwMOqed7UVQ/yprigmZJIiK00EGRym+yyGux2
-        J7hcLt4sLlh5o/1khTPCcog9XgZIAIoL32ODcwGXQDdrgCmNGlQzC9hxRH5ONXUKLIG1mhpYq6tj+maT
-        A4wGO4tls4MlYJwaBVdvAUCbEEoGcmDLmAwiRmTwVNnmNw8RVMAtEFDQfb3OxlqMQO/7CpgULwDaU6nk
-        tABBCiC2vpXBXcUjv/VBBVxLSx68fYfDCVYrG6fTM46C6TXTZNI0JnmgAGLbmBT6poc5CPAEBbMOlfsl
-        xwkgRKMloQVaXi5Ba8fGCXCpgdWuPE4Ce0auhRa4ekML0iIt0+dSA2uvslkCc50Z0N0l8qOvN5dZH1TA
-        YnFS0H0uNeDsu84SwIHmhRTgCwpmUjzHJgzEpGgNLdDz2gC93Qamz6UGtPNm8vmXYpPSuHpk5Lzl0AJl
-        JRrqd4Huc/0e0M1+Bmd/ETa5s7+YHNf7rQ8qsLyMdmdn+lxqYIMfYFQPg2X4AdgG71CvRvVIwBwPv7UG
-        woGzwKp5CNaN9bD+tRlW7F9Y4yjYbc0AxClrQahqgDezOlYyHJwF3PoKgMVCilWLijWOgu2fkDNfNtUf
-        FKxkOLh/BI7vsGJdIHevx46jYFPz36B95iMMzmlZiYLhK+C5kNj+0YUkXzzZhk7hb17JbkqbqN0nxt43
-        EJfE4zslYuUYkggHFCgc4qPl1vSUpgjv3dhzO8ZduwNJiL1niY+pAJrIw1cYoo5I3bhreCBCQdMxb1r+
-        jbQ3++7kwF4hw8F9aW7vtD/X/g+B/AuTYrIwn+A4m9G5kpXeATTkPxw/BCcrtTiECY/rveFDN1JgHFfx
-        OHxP41eQcjZv+NBNKlJuxz0BiHNZI5EZKS2ZNKdOyKtokuNqL+KqHiFKerbDG34zNYL4CTE0JF06zIvL
-        AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAOwAAADsAXkocb0AAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAABA0lEQVRYR+2XQQrCMBBFexDvYXsAvYEHEHFZLL1ID9JzuJRaEER017ULu6yL2CEJTOuYmBSbCP3w
+        Nul38sAmaLDeN0xFMDDUTIxPAs+qJe8j5liHmtnS7vUuMHizb8MlfBZYZHW6zOpcBXRE3bivFeAfejA1
+        tXXfLwEqeKBYUgb3w6ToINexgDZeCszjchbtipVknh5C8WgcAdgUD46SgnwHcAeQ66MJfOafBPDFIpYC
+        +M5hU0mYHK0voimdxPdT3md7u5Sb87VSAR3bPgYEmEvcC1Dhby4/PvjoAdSxMu1rMwmMKuD8B4mXAqZ3
+        u2lfK/DreCvg+q8ZjZhjHWomxrFAw14LgCpGkTiPowAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="FGINToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

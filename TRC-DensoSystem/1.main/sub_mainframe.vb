@@ -54,7 +54,7 @@ Public Class sub_mainframe
 
 
     Private Sub MONITORINGToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MONITORINGToolStripMenuItem.Click
-        display_formscan(cml_track)
+        display_formscan(dmtn_qrchecker)
 
     End Sub
 

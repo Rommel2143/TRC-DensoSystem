@@ -109,7 +109,7 @@ Partial Class sub_mainframe
         Me.StockMonitoringToolStripMenuItem.Image = CType(resources.GetObject("StockMonitoringToolStripMenuItem.Image"), System.Drawing.Image)
         Me.StockMonitoringToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.StockMonitoringToolStripMenuItem.Name = "StockMonitoringToolStripMenuItem"
-        Me.StockMonitoringToolStripMenuItem.Size = New System.Drawing.Size(195, 38)
+        Me.StockMonitoringToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.StockMonitoringToolStripMenuItem.Text = "FG Stock"
         '
         'QRCheckerToolStripMenuItem
@@ -125,7 +125,7 @@ Partial Class sub_mainframe
         Me.ExpiringStockToolStripMenuItem1.Image = CType(resources.GetObject("ExpiringStockToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.ExpiringStockToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ExpiringStockToolStripMenuItem1.Name = "ExpiringStockToolStripMenuItem1"
-        Me.ExpiringStockToolStripMenuItem1.Size = New System.Drawing.Size(195, 38)
+        Me.ExpiringStockToolStripMenuItem1.Size = New System.Drawing.Size(196, 38)
         Me.ExpiringStockToolStripMenuItem1.Text = "Expiring Stock"
         '
         'CMLToolStripMenuItem
@@ -167,7 +167,7 @@ Partial Class sub_mainframe
         Me.MONITORINGToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.MONITORINGToolStripMenuItem.Name = "MONITORINGToolStripMenuItem"
         Me.MONITORINGToolStripMenuItem.Size = New System.Drawing.Size(291, 38)
-        Me.MONITORINGToolStripMenuItem.Text = "Monitoring"
+        Me.MONITORINGToolStripMenuItem.Text = "Check QR"
         '
         'FGINToolStripMenuItem
         '
