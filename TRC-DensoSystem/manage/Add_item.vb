@@ -247,7 +247,84 @@ Public Class Add_item
             Case "3T-Matrix"
                 cmbselect = "3T-M"
             Case "DENSO PARTS"
-                cmbselect = "DP"
+                cmbselect = "PARTS"
         End Select
+    End Sub
+
+    Private Sub Guna2TextBox5_TextChanged(sender As Object, e As EventArgs) Handles txtqr_parts.TextChanged
+
+    End Sub
+
+    Private Sub Guna2TextBox5_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_parts.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Try
+
+
+                If processQRcode("PARTS", txtqr_parts) Then
+                    txt_parts_partno.Text = partno
+                    txt_part_customerno.Text = customerno
+                    txt_part_color.Text = color
+
+                    labelerror.Visible = False
+                End If
+
+
+                txtqr_parts.Clear()
+
+            Catch ex As MySqlException
+                MessageBox.Show(ex.Message)
+            Finally
+                con.Close()
+            End Try
+        End If
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btn_part_save.Click
+        Try
+            If txt_parts_partname.Text = "" Then
+                lbl_fgerror.Visible = True
+                lbl_fgerror.Text = "Please Input Partname!"
+            Else
+                con.Close()
+                con.Open()
+                Dim cmdselect As New MySqlCommand("SELECT * FROM `denso_parts_masterlist` WHERE partno= '" & txt_partno.Text & "' and customerno = '" & txt_customerno.Text & "' and color='" & color & "'", con)
+                dr = cmdselect.ExecuteReader()
+                If dr.Read = True Then
+                    lbl_fgerror.Visible = True
+                    lbl_fgerror.Text = "FG Already Exists!"
+                Else
+                    con.Close()
+                    con.Open()
+                    Dim cmdinsert As New MySqlCommand("INSERT INTO `denso_parts_masterlist`
+                                                            (`partno`, `customerno`, `partname`, `color`) 
+                                                    VALUES ('" & txt_parts_partno.Text & "',
+                                                            '" & txt_part_customerno.Text & "',
+                                                            '" & txt_parts_partname.Text & "',
+                                                            '" & txt_part_color.Text & "')", con)
+                    cmdinsert.ExecuteNonQuery()
+                    MessageBox.Show("Part Added successfully!")
+                    txt_part_customerno.Clear()
+                    txt_parts_partname.Clear()
+                    txtpassword.Clear()
+                    btn_fg_save.Enabled = False
+                    txtqr.Focus()
+                    con.Close()
+                    lbl_duplicate.Visible = False
+
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            con.Close()
+        End Try
+    End Sub
+
+    Private Sub txt_part_password_TextChanged(sender As Object, e As EventArgs) Handles txt_part_password.TextChanged
+        If txt_part_password.Text = "123" Then
+            btn_part_save.Enabled = True
+        Else
+            btn_part_save.Enabled = False
+        End If
     End Sub
 End Class

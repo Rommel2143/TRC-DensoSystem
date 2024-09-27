@@ -22,11 +22,11 @@ Partial Class QR_identifier
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(QR_identifier))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(QR_identifier))
         Me.Label10 = New System.Windows.Forms.Label()
         Me.qr_lenght = New Guna.UI2.WinForms.Guna2TextBox()
         Me.panel_toogle = New Guna.UI2.WinForms.Guna2Panel()
@@ -90,7 +90,6 @@ Partial Class QR_identifier
         Me.datagrid1 = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.panel_toogle.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
@@ -140,7 +139,6 @@ Partial Class QR_identifier
         Me.panel_toogle.AutoScroll = True
         Me.panel_toogle.AutoScrollMargin = New System.Drawing.Size(0, 40)
         Me.panel_toogle.BackColor = System.Drawing.Color.Transparent
-        Me.panel_toogle.Controls.Add(Me.Guna2Button1)
         Me.panel_toogle.Controls.Add(Me.Guna2Panel2)
         Me.panel_toogle.Controls.Add(Me.Guna2Panel1)
         Me.panel_toogle.Controls.Add(Me.btn_fg_save)
@@ -216,7 +214,6 @@ Partial Class QR_identifier
         Me.Guna2ImageButton2.Location = New System.Drawing.Point(555, 18)
         Me.Guna2ImageButton2.Name = "Guna2ImageButton2"
         Me.Guna2ImageButton2.PressedState.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
-        Me.Guna2ImageButton2.PressedState.ImageSize = New System.Drawing.Size(10, 10)
         Me.Guna2ImageButton2.Size = New System.Drawing.Size(36, 36)
         Me.Guna2ImageButton2.TabIndex = 73
         Me.Guna2ImageButton2.UseTransparentBackground = True
@@ -288,7 +285,6 @@ Partial Class QR_identifier
         Me.Guna2ImageButton3.Location = New System.Drawing.Point(555, 18)
         Me.Guna2ImageButton3.Name = "Guna2ImageButton3"
         Me.Guna2ImageButton3.PressedState.Image = CType(resources.GetObject("resource.Image5"), System.Drawing.Image)
-        Me.Guna2ImageButton3.PressedState.ImageSize = New System.Drawing.Size(10, 10)
         Me.Guna2ImageButton3.Size = New System.Drawing.Size(36, 36)
         Me.Guna2ImageButton3.TabIndex = 75
         Me.Guna2ImageButton3.UseTransparentBackground = True
@@ -345,7 +341,7 @@ Partial Class QR_identifier
         Me.btn_fg_save.ForeColor = System.Drawing.Color.White
         Me.btn_fg_save.Image = CType(resources.GetObject("btn_fg_save.Image"), System.Drawing.Image)
         Me.btn_fg_save.ImageSize = New System.Drawing.Size(30, 30)
-        Me.btn_fg_save.Location = New System.Drawing.Point(230, 592)
+        Me.btn_fg_save.Location = New System.Drawing.Point(264, 593)
         Me.btn_fg_save.Name = "btn_fg_save"
         Me.btn_fg_save.Size = New System.Drawing.Size(126, 45)
         Me.btn_fg_save.TabIndex = 68
@@ -358,7 +354,7 @@ Partial Class QR_identifier
         Me.Guna2CustomRadioButton9.CheckedState.BorderThickness = 0
         Me.Guna2CustomRadioButton9.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2CustomRadioButton9.CheckedState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2CustomRadioButton9.Location = New System.Drawing.Point(28, 317)
+        Me.Guna2CustomRadioButton9.Location = New System.Drawing.Point(70, 313)
         Me.Guna2CustomRadioButton9.Name = "Guna2CustomRadioButton9"
         Me.Guna2CustomRadioButton9.Size = New System.Drawing.Size(15, 15)
         Me.Guna2CustomRadioButton9.TabIndex = 67
@@ -380,7 +376,7 @@ Partial Class QR_identifier
         Me.val_qty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_qty.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.val_qty.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.val_qty.Location = New System.Drawing.Point(199, 306)
+        Me.val_qty.Location = New System.Drawing.Point(241, 302)
         Me.val_qty.Name = "val_qty"
         Me.val_qty.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_qty.PlaceholderText = "..."
@@ -394,7 +390,7 @@ Partial Class QR_identifier
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.ForeColor = System.Drawing.Color.Gray
-        Me.Label9.Location = New System.Drawing.Point(49, 290)
+        Me.Label9.Location = New System.Drawing.Point(91, 286)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(29, 13)
         Me.Label9.TabIndex = 65
@@ -412,7 +408,7 @@ Partial Class QR_identifier
         Me.txt_qty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_qty.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txt_qty.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_qty.Location = New System.Drawing.Point(49, 306)
+        Me.txt_qty.Location = New System.Drawing.Point(91, 302)
         Me.txt_qty.Name = "txt_qty"
         Me.txt_qty.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_qty.PlaceholderText = "..."
@@ -428,7 +424,7 @@ Partial Class QR_identifier
         Me.Guna2CustomRadioButton8.CheckedState.BorderThickness = 0
         Me.Guna2CustomRadioButton8.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2CustomRadioButton8.CheckedState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2CustomRadioButton8.Location = New System.Drawing.Point(327, 386)
+        Me.Guna2CustomRadioButton8.Location = New System.Drawing.Point(369, 382)
         Me.Guna2CustomRadioButton8.Name = "Guna2CustomRadioButton8"
         Me.Guna2CustomRadioButton8.Size = New System.Drawing.Size(15, 15)
         Me.Guna2CustomRadioButton8.TabIndex = 63
@@ -445,7 +441,7 @@ Partial Class QR_identifier
         Me.Guna2CustomRadioButton7.CheckedState.BorderThickness = 0
         Me.Guna2CustomRadioButton7.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2CustomRadioButton7.CheckedState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2CustomRadioButton7.Location = New System.Drawing.Point(327, 455)
+        Me.Guna2CustomRadioButton7.Location = New System.Drawing.Point(369, 451)
         Me.Guna2CustomRadioButton7.Name = "Guna2CustomRadioButton7"
         Me.Guna2CustomRadioButton7.Size = New System.Drawing.Size(15, 15)
         Me.Guna2CustomRadioButton7.TabIndex = 62
@@ -462,7 +458,7 @@ Partial Class QR_identifier
         Me.Guna2CustomRadioButton6.CheckedState.BorderThickness = 0
         Me.Guna2CustomRadioButton6.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2CustomRadioButton6.CheckedState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2CustomRadioButton6.Location = New System.Drawing.Point(327, 317)
+        Me.Guna2CustomRadioButton6.Location = New System.Drawing.Point(369, 313)
         Me.Guna2CustomRadioButton6.Name = "Guna2CustomRadioButton6"
         Me.Guna2CustomRadioButton6.Size = New System.Drawing.Size(15, 15)
         Me.Guna2CustomRadioButton6.TabIndex = 61
@@ -479,7 +475,7 @@ Partial Class QR_identifier
         Me.Guna2CustomRadioButton5.CheckedState.BorderThickness = 0
         Me.Guna2CustomRadioButton5.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2CustomRadioButton5.CheckedState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2CustomRadioButton5.Location = New System.Drawing.Point(327, 249)
+        Me.Guna2CustomRadioButton5.Location = New System.Drawing.Point(369, 245)
         Me.Guna2CustomRadioButton5.Name = "Guna2CustomRadioButton5"
         Me.Guna2CustomRadioButton5.Size = New System.Drawing.Size(15, 15)
         Me.Guna2CustomRadioButton5.TabIndex = 60
@@ -496,7 +492,7 @@ Partial Class QR_identifier
         Me.Guna2CustomRadioButton4.CheckedState.BorderThickness = 0
         Me.Guna2CustomRadioButton4.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2CustomRadioButton4.CheckedState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2CustomRadioButton4.Location = New System.Drawing.Point(28, 531)
+        Me.Guna2CustomRadioButton4.Location = New System.Drawing.Point(70, 527)
         Me.Guna2CustomRadioButton4.Name = "Guna2CustomRadioButton4"
         Me.Guna2CustomRadioButton4.Size = New System.Drawing.Size(15, 15)
         Me.Guna2CustomRadioButton4.TabIndex = 59
@@ -513,7 +509,7 @@ Partial Class QR_identifier
         Me.Guna2CustomRadioButton3.CheckedState.BorderThickness = 0
         Me.Guna2CustomRadioButton3.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2CustomRadioButton3.CheckedState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2CustomRadioButton3.Location = New System.Drawing.Point(28, 455)
+        Me.Guna2CustomRadioButton3.Location = New System.Drawing.Point(70, 451)
         Me.Guna2CustomRadioButton3.Name = "Guna2CustomRadioButton3"
         Me.Guna2CustomRadioButton3.Size = New System.Drawing.Size(15, 15)
         Me.Guna2CustomRadioButton3.TabIndex = 58
@@ -530,7 +526,7 @@ Partial Class QR_identifier
         Me.Guna2CustomRadioButton2.CheckedState.BorderThickness = 0
         Me.Guna2CustomRadioButton2.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2CustomRadioButton2.CheckedState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2CustomRadioButton2.Location = New System.Drawing.Point(28, 386)
+        Me.Guna2CustomRadioButton2.Location = New System.Drawing.Point(70, 382)
         Me.Guna2CustomRadioButton2.Name = "Guna2CustomRadioButton2"
         Me.Guna2CustomRadioButton2.Size = New System.Drawing.Size(15, 15)
         Me.Guna2CustomRadioButton2.TabIndex = 57
@@ -548,7 +544,7 @@ Partial Class QR_identifier
         Me.Guna2CustomRadioButton1.CheckedState.BorderThickness = 0
         Me.Guna2CustomRadioButton1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2CustomRadioButton1.CheckedState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2CustomRadioButton1.Location = New System.Drawing.Point(28, 249)
+        Me.Guna2CustomRadioButton1.Location = New System.Drawing.Point(70, 245)
         Me.Guna2CustomRadioButton1.Name = "Guna2CustomRadioButton1"
         Me.Guna2CustomRadioButton1.Size = New System.Drawing.Size(15, 15)
         Me.Guna2CustomRadioButton1.TabIndex = 56
@@ -570,7 +566,7 @@ Partial Class QR_identifier
         Me.val_prod.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_prod.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.val_prod.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.val_prod.Location = New System.Drawing.Point(199, 519)
+        Me.val_prod.Location = New System.Drawing.Point(241, 515)
         Me.val_prod.Name = "val_prod"
         Me.val_prod.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_prod.PlaceholderText = "..."
@@ -584,7 +580,7 @@ Partial Class QR_identifier
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.ForeColor = System.Drawing.Color.Gray
-        Me.Label4.Location = New System.Drawing.Point(49, 503)
+        Me.Label4.Location = New System.Drawing.Point(91, 499)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(90, 13)
         Me.Label4.TabIndex = 31
@@ -602,7 +598,7 @@ Partial Class QR_identifier
         Me.txt_prod.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_prod.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txt_prod.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_prod.Location = New System.Drawing.Point(49, 519)
+        Me.txt_prod.Location = New System.Drawing.Point(91, 515)
         Me.txt_prod.Name = "txt_prod"
         Me.txt_prod.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_prod.PlaceholderText = "..."
@@ -623,7 +619,7 @@ Partial Class QR_identifier
         Me.val_series.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_series.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.val_series.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.val_series.Location = New System.Drawing.Point(498, 446)
+        Me.val_series.Location = New System.Drawing.Point(540, 442)
         Me.val_series.Name = "val_series"
         Me.val_series.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_series.PlaceholderText = "..."
@@ -637,7 +633,7 @@ Partial Class QR_identifier
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.ForeColor = System.Drawing.Color.Gray
-        Me.Label8.Location = New System.Drawing.Point(348, 430)
+        Me.Label8.Location = New System.Drawing.Point(390, 426)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(39, 13)
         Me.Label8.TabIndex = 51
@@ -655,7 +651,7 @@ Partial Class QR_identifier
         Me.txt_series.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_series.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txt_series.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_series.Location = New System.Drawing.Point(348, 446)
+        Me.txt_series.Location = New System.Drawing.Point(390, 442)
         Me.txt_series.Name = "txt_series"
         Me.txt_series.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_series.PlaceholderText = "..."
@@ -676,7 +672,7 @@ Partial Class QR_identifier
         Me.val_line.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_line.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.val_line.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.val_line.Location = New System.Drawing.Point(498, 376)
+        Me.val_line.Location = New System.Drawing.Point(540, 372)
         Me.val_line.Name = "val_line"
         Me.val_line.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_line.PlaceholderText = "..."
@@ -690,7 +686,7 @@ Partial Class QR_identifier
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.ForeColor = System.Drawing.Color.Gray
-        Me.Label7.Location = New System.Drawing.Point(348, 360)
+        Me.Label7.Location = New System.Drawing.Point(390, 356)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(30, 13)
         Me.Label7.TabIndex = 46
@@ -708,7 +704,7 @@ Partial Class QR_identifier
         Me.txt_line.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_line.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txt_line.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_line.Location = New System.Drawing.Point(348, 376)
+        Me.txt_line.Location = New System.Drawing.Point(390, 372)
         Me.txt_line.Name = "txt_line"
         Me.txt_line.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_line.PlaceholderText = "..."
@@ -729,7 +725,7 @@ Partial Class QR_identifier
         Me.val_machine.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_machine.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.val_machine.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.val_machine.Location = New System.Drawing.Point(498, 308)
+        Me.val_machine.Location = New System.Drawing.Point(540, 304)
         Me.val_machine.Name = "val_machine"
         Me.val_machine.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_machine.PlaceholderText = "..."
@@ -743,7 +739,7 @@ Partial Class QR_identifier
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.ForeColor = System.Drawing.Color.Gray
-        Me.Label6.Location = New System.Drawing.Point(348, 292)
+        Me.Label6.Location = New System.Drawing.Point(390, 288)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(54, 13)
         Me.Label6.TabIndex = 41
@@ -761,7 +757,7 @@ Partial Class QR_identifier
         Me.txt_machine.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_machine.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txt_machine.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_machine.Location = New System.Drawing.Point(348, 308)
+        Me.txt_machine.Location = New System.Drawing.Point(390, 304)
         Me.txt_machine.Name = "txt_machine"
         Me.txt_machine.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_machine.PlaceholderText = "..."
@@ -782,7 +778,7 @@ Partial Class QR_identifier
         Me.val_shift.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_shift.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.val_shift.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.val_shift.Location = New System.Drawing.Point(498, 240)
+        Me.val_shift.Location = New System.Drawing.Point(540, 236)
         Me.val_shift.Name = "val_shift"
         Me.val_shift.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_shift.PlaceholderText = "..."
@@ -796,7 +792,7 @@ Partial Class QR_identifier
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.ForeColor = System.Drawing.Color.Gray
-        Me.Label5.Location = New System.Drawing.Point(348, 224)
+        Me.Label5.Location = New System.Drawing.Point(390, 220)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(34, 13)
         Me.Label5.TabIndex = 36
@@ -814,7 +810,7 @@ Partial Class QR_identifier
         Me.txt_shift.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_shift.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txt_shift.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_shift.Location = New System.Drawing.Point(348, 240)
+        Me.txt_shift.Location = New System.Drawing.Point(390, 236)
         Me.txt_shift.Name = "txt_shift"
         Me.txt_shift.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_shift.PlaceholderText = "..."
@@ -828,7 +824,7 @@ Partial Class QR_identifier
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.ForeColor = System.Drawing.Color.Gray
-        Me.Label3.Location = New System.Drawing.Point(348, 503)
+        Me.Label3.Location = New System.Drawing.Point(390, 499)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(52, 13)
         Me.Label3.TabIndex = 29
@@ -845,7 +841,7 @@ Partial Class QR_identifier
         Me.cmb_type.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmb_type.ItemHeight = 30
         Me.cmb_type.Items.AddRange(New Object() {"DMTN", "DMTN-Inner Tag", "DMTN-CML", "INTELLI IV", "TDE", "20CY", "VT", "YT", "YT-Matrix", "2T", "JECO", "JECO-CML", "3T", "3T-Matrix", "PARTS"})
-        Me.cmb_type.Location = New System.Drawing.Point(348, 519)
+        Me.cmb_type.Location = New System.Drawing.Point(390, 515)
         Me.cmb_type.Name = "cmb_type"
         Me.cmb_type.Size = New System.Drawing.Size(200, 36)
         Me.cmb_type.TabIndex = 28
@@ -862,7 +858,7 @@ Partial Class QR_identifier
         Me.val_color.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_color.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.val_color.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.val_color.Location = New System.Drawing.Point(199, 446)
+        Me.val_color.Location = New System.Drawing.Point(241, 442)
         Me.val_color.Name = "val_color"
         Me.val_color.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_color.PlaceholderText = "..."
@@ -876,7 +872,7 @@ Partial Class QR_identifier
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.ForeColor = System.Drawing.Color.Gray
-        Me.Label2.Location = New System.Drawing.Point(49, 430)
+        Me.Label2.Location = New System.Drawing.Point(91, 426)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(64, 13)
         Me.Label2.TabIndex = 24
@@ -894,7 +890,7 @@ Partial Class QR_identifier
         Me.txt_color.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_color.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txt_color.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_color.Location = New System.Drawing.Point(49, 446)
+        Me.txt_color.Location = New System.Drawing.Point(91, 442)
         Me.txt_color.Name = "txt_color"
         Me.txt_color.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_color.PlaceholderText = "..."
@@ -915,7 +911,7 @@ Partial Class QR_identifier
         Me.val_customer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_customer.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.val_customer.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.val_customer.Location = New System.Drawing.Point(199, 375)
+        Me.val_customer.Location = New System.Drawing.Point(241, 371)
         Me.val_customer.Name = "val_customer"
         Me.val_customer.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_customer.PlaceholderText = "..."
@@ -929,7 +925,7 @@ Partial Class QR_identifier
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.ForeColor = System.Drawing.Color.Gray
-        Me.Label1.Location = New System.Drawing.Point(49, 359)
+        Me.Label1.Location = New System.Drawing.Point(91, 355)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(72, 13)
         Me.Label1.TabIndex = 19
@@ -947,7 +943,7 @@ Partial Class QR_identifier
         Me.txt_customerno.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_customerno.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txt_customerno.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_customerno.Location = New System.Drawing.Point(49, 375)
+        Me.txt_customerno.Location = New System.Drawing.Point(91, 371)
         Me.txt_customerno.Name = "txt_customerno"
         Me.txt_customerno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_customerno.PlaceholderText = "..."
@@ -968,7 +964,7 @@ Partial Class QR_identifier
         Me.val_partno.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_partno.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.val_partno.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.val_partno.Location = New System.Drawing.Point(199, 240)
+        Me.val_partno.Location = New System.Drawing.Point(241, 236)
         Me.val_partno.Name = "val_partno"
         Me.val_partno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_partno.PlaceholderText = "..."
@@ -982,7 +978,7 @@ Partial Class QR_identifier
         Me.Label19.AutoSize = True
         Me.Label19.BackColor = System.Drawing.Color.Transparent
         Me.Label19.ForeColor = System.Drawing.Color.Gray
-        Me.Label19.Location = New System.Drawing.Point(49, 224)
+        Me.Label19.Location = New System.Drawing.Point(91, 220)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(44, 13)
         Me.Label19.TabIndex = 7
@@ -1000,7 +996,7 @@ Partial Class QR_identifier
         Me.txt_partno.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_partno.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txt_partno.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_partno.Location = New System.Drawing.Point(49, 240)
+        Me.txt_partno.Location = New System.Drawing.Point(91, 236)
         Me.txt_partno.Name = "txt_partno"
         Me.txt_partno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_partno.PlaceholderText = "..."
@@ -1230,23 +1226,6 @@ Partial Class QR_identifier
         Me.Label13.TabIndex = 204
         Me.Label13.Text = "QR Type Identifier"
         '
-        'Guna2Button1
-        '
-        Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Image = CType(resources.GetObject("Guna2Button1.Image"), System.Drawing.Image)
-        Me.Guna2Button1.ImageSize = New System.Drawing.Size(30, 30)
-        Me.Guna2Button1.Location = New System.Drawing.Point(681, 267)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(41, 45)
-        Me.Guna2Button1.TabIndex = 78
-        '
         'QR_identifier
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1340,5 +1319,4 @@ Partial Class QR_identifier
     Friend WithEvents datagrid1 As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Label13 As Label
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
 End Class

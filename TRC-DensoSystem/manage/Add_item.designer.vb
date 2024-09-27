@@ -51,9 +51,24 @@ Partial Class Add_item
         Me.idno = New Guna.UI2.WinForms.Guna2TextBox()
         Me.labelerror = New Guna.UI2.WinForms.Guna2Panel()
         Me.texterror = New System.Windows.Forms.Label()
+        Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
+        Me.txt_part_password = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2Separator2 = New Guna.UI2.WinForms.Guna2Separator()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txt_part_color = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txt_part_customerno = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtqr_parts = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.txt_parts_partname = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.btn_part_save = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.txt_parts_partno = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Guna2GroupBox3.SuspendLayout()
         Me.labelerror.SuspendLayout()
+        Me.Guna2GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2GroupBox2
@@ -79,7 +94,7 @@ Partial Class Add_item
         Me.Guna2GroupBox2.CustomBorderColor = System.Drawing.SystemColors.MenuHighlight
         Me.Guna2GroupBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox2.Location = New System.Drawing.Point(547, 27)
+        Me.Guna2GroupBox2.Location = New System.Drawing.Point(23, 296)
         Me.Guna2GroupBox2.Name = "Guna2GroupBox2"
         Me.Guna2GroupBox2.Size = New System.Drawing.Size(505, 416)
         Me.Guna2GroupBox2.TabIndex = 14
@@ -95,7 +110,7 @@ Partial Class Add_item
         Me.cmb_type.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cmb_type.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmb_type.ItemHeight = 30
-        Me.cmb_type.Items.AddRange(New Object() {"DMTN", "INTELLI IV", "TDE", "20CY", "VT", "YT", "2T", "JECO", "3T", "DENSO PARTS"})
+        Me.cmb_type.Items.AddRange(New Object() {"DMTN", "INTELLI IV", "TDE", "20CY", "VT", "YT", "2T", "JECO", "3T"})
         Me.cmb_type.Location = New System.Drawing.Point(104, 49)
         Me.cmb_type.Name = "cmb_type"
         Me.cmb_type.Size = New System.Drawing.Size(201, 36)
@@ -490,12 +505,243 @@ Partial Class Add_item
         Me.texterror.TabIndex = 203
         Me.texterror.Text = "INVALID"
         '
+        'Guna2GroupBox1
+        '
+        Me.Guna2GroupBox1.Controls.Add(Me.txt_part_password)
+        Me.Guna2GroupBox1.Controls.Add(Me.Guna2Separator2)
+        Me.Guna2GroupBox1.Controls.Add(Me.Label2)
+        Me.Guna2GroupBox1.Controls.Add(Me.txt_part_color)
+        Me.Guna2GroupBox1.Controls.Add(Me.Label4)
+        Me.Guna2GroupBox1.Controls.Add(Me.Label13)
+        Me.Guna2GroupBox1.Controls.Add(Me.txt_part_customerno)
+        Me.Guna2GroupBox1.Controls.Add(Me.txtqr_parts)
+        Me.Guna2GroupBox1.Controls.Add(Me.Label16)
+        Me.Guna2GroupBox1.Controls.Add(Me.txt_parts_partname)
+        Me.Guna2GroupBox1.Controls.Add(Me.btn_part_save)
+        Me.Guna2GroupBox1.Controls.Add(Me.Label17)
+        Me.Guna2GroupBox1.Controls.Add(Me.txt_parts_partno)
+        Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.MenuHighlight
+        Me.Guna2GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(543, 27)
+        Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(505, 416)
+        Me.Guna2GroupBox1.TabIndex = 43
+        Me.Guna2GroupBox1.Text = "PARTS"
+        '
+        'txt_part_password
+        '
+        Me.txt_part_password.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_part_password.DefaultText = ""
+        Me.txt_part_password.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_part_password.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_part_password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_part_password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_part_password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_part_password.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_part_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_part_password.IconLeft = CType(resources.GetObject("txt_part_password.IconLeft"), System.Drawing.Image)
+        Me.txt_part_password.IconLeftSize = New System.Drawing.Size(30, 30)
+        Me.txt_part_password.Location = New System.Drawing.Point(88, 295)
+        Me.txt_part_password.Name = "txt_part_password"
+        Me.txt_part_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txt_part_password.PlaceholderText = ""
+        Me.txt_part_password.SelectedText = ""
+        Me.txt_part_password.Size = New System.Drawing.Size(212, 38)
+        Me.txt_part_password.TabIndex = 39
+        Me.txt_part_password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Guna2Separator2
+        '
+        Me.Guna2Separator2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Separator2.Location = New System.Drawing.Point(28, 103)
+        Me.Guna2Separator2.Name = "Guna2Separator2"
+        Me.Guna2Separator2.Size = New System.Drawing.Size(449, 10)
+        Me.Guna2Separator2.TabIndex = 38
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.White
+        Me.Label2.ForeColor = System.Drawing.Color.Tomato
+        Me.Label2.Location = New System.Drawing.Point(312, 278)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(108, 15)
+        Me.Label2.TabIndex = 31
+        Me.Label2.Text = "User Already Exists!"
+        Me.Label2.Visible = False
+        '
+        'txt_part_color
+        '
+        Me.txt_part_color.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_part_color.DefaultText = ""
+        Me.txt_part_color.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_part_color.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_part_color.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_part_color.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_part_color.Enabled = False
+        Me.txt_part_color.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_part_color.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_part_color.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_part_color.Location = New System.Drawing.Point(190, 216)
+        Me.txt_part_color.Name = "txt_part_color"
+        Me.txt_part_color.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_part_color.PlaceholderText = "Enter Colorcode..."
+        Me.txt_part_color.ReadOnly = True
+        Me.txt_part_color.SelectedText = ""
+        Me.txt_part_color.Size = New System.Drawing.Size(139, 36)
+        Me.txt_part_color.TabIndex = 21
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.White
+        Me.Label4.ForeColor = System.Drawing.Color.Gray
+        Me.Label4.Location = New System.Drawing.Point(187, 200)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(65, 15)
+        Me.Label4.TabIndex = 20
+        Me.Label4.Text = "Colorcode:"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.White
+        Me.Label13.ForeColor = System.Drawing.Color.Gray
+        Me.Label13.Location = New System.Drawing.Point(42, 200)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(87, 15)
+        Me.Label13.TabIndex = 18
+        Me.Label13.Text = "Costumer No. :"
+        '
+        'txt_part_customerno
+        '
+        Me.txt_part_customerno.BorderColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_part_customerno.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_part_customerno.DefaultText = ""
+        Me.txt_part_customerno.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_part_customerno.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_part_customerno.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_part_customerno.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_part_customerno.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_part_customerno.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_part_customerno.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_part_customerno.Location = New System.Drawing.Point(44, 216)
+        Me.txt_part_customerno.Name = "txt_part_customerno"
+        Me.txt_part_customerno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_part_customerno.PlaceholderText = "Enter Customer No..."
+        Me.txt_part_customerno.SelectedText = ""
+        Me.txt_part_customerno.Size = New System.Drawing.Size(139, 36)
+        Me.txt_part_customerno.TabIndex = 17
+        '
+        'txtqr_parts
+        '
+        Me.txtqr_parts.BorderColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtqr_parts.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtqr_parts.DefaultText = ""
+        Me.txtqr_parts.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtqr_parts.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtqr_parts.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtqr_parts.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtqr_parts.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtqr_parts.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtqr_parts.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtqr_parts.Location = New System.Drawing.Point(43, 59)
+        Me.txtqr_parts.Name = "txtqr_parts"
+        Me.txtqr_parts.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtqr_parts.PlaceholderText = "Scan QR..."
+        Me.txtqr_parts.SelectedText = ""
+        Me.txtqr_parts.Size = New System.Drawing.Size(404, 36)
+        Me.txtqr_parts.TabIndex = 14
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.Color.White
+        Me.Label16.ForeColor = System.Drawing.Color.Gray
+        Me.Label16.Location = New System.Drawing.Point(186, 131)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(64, 15)
+        Me.Label16.TabIndex = 9
+        Me.Label16.Text = "Partname :"
+        '
+        'txt_parts_partname
+        '
+        Me.txt_parts_partname.BorderColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_parts_partname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_parts_partname.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_parts_partname.DefaultText = ""
+        Me.txt_parts_partname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_parts_partname.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_parts_partname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_parts_partname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_parts_partname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_parts_partname.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_parts_partname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_parts_partname.Location = New System.Drawing.Point(188, 147)
+        Me.txt_parts_partname.Name = "txt_parts_partname"
+        Me.txt_parts_partname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_parts_partname.PlaceholderText = "Enter Partname..."
+        Me.txt_parts_partname.SelectedText = ""
+        Me.txt_parts_partname.Size = New System.Drawing.Size(259, 36)
+        Me.txt_parts_partname.TabIndex = 8
+        '
+        'btn_part_save
+        '
+        Me.btn_part_save.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_part_save.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_part_save.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_part_save.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_part_save.Enabled = False
+        Me.btn_part_save.FillColor = System.Drawing.Color.DodgerBlue
+        Me.btn_part_save.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btn_part_save.ForeColor = System.Drawing.Color.White
+        Me.btn_part_save.Image = CType(resources.GetObject("btn_part_save.Image"), System.Drawing.Image)
+        Me.btn_part_save.Location = New System.Drawing.Point(306, 296)
+        Me.btn_part_save.Name = "btn_part_save"
+        Me.btn_part_save.Size = New System.Drawing.Size(126, 37)
+        Me.btn_part_save.TabIndex = 6
+        Me.btn_part_save.Text = "ADD FG"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.BackColor = System.Drawing.Color.White
+        Me.Label17.ForeColor = System.Drawing.Color.Gray
+        Me.Label17.Location = New System.Drawing.Point(41, 131)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(48, 15)
+        Me.Label17.TabIndex = 7
+        Me.Label17.Text = "Partno :"
+        '
+        'txt_parts_partno
+        '
+        Me.txt_parts_partno.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_parts_partno.DefaultText = ""
+        Me.txt_parts_partno.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_parts_partno.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_parts_partno.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_parts_partno.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_parts_partno.Enabled = False
+        Me.txt_parts_partno.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_parts_partno.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_parts_partno.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_parts_partno.Location = New System.Drawing.Point(43, 147)
+        Me.txt_parts_partno.Name = "txt_parts_partno"
+        Me.txt_parts_partno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_parts_partno.PlaceholderText = "Enter Partno..."
+        Me.txt_parts_partno.ReadOnly = True
+        Me.txt_parts_partno.SelectedText = ""
+        Me.txt_parts_partno.Size = New System.Drawing.Size(139, 36)
+        Me.txt_parts_partno.TabIndex = 5
+        '
         'Add_item
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1227, 803)
+        Me.Controls.Add(Me.Guna2GroupBox1)
         Me.Controls.Add(Me.labelerror)
         Me.Controls.Add(Me.Guna2GroupBox3)
         Me.Controls.Add(Me.Guna2GroupBox2)
@@ -509,6 +755,8 @@ Partial Class Add_item
         Me.Guna2GroupBox3.PerformLayout()
         Me.labelerror.ResumeLayout(False)
         Me.labelerror.PerformLayout()
+        Me.Guna2GroupBox1.ResumeLayout(False)
+        Me.Guna2GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -540,4 +788,18 @@ Partial Class Add_item
     Friend WithEvents labelerror As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents texterror As Label
     Friend WithEvents cmb_type As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Guna2GroupBox1 As Guna.UI2.WinForms.Guna2GroupBox
+    Friend WithEvents txt_part_password As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Guna2Separator2 As Guna.UI2.WinForms.Guna2Separator
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txt_part_color As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents txt_part_customerno As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtqr_parts As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents txt_parts_partname As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents btn_part_save As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Label17 As Label
+    Friend WithEvents txt_parts_partno As Guna.UI2.WinForms.Guna2TextBox
 End Class

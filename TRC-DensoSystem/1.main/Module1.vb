@@ -22,7 +22,7 @@ Module Module1
     Public PCmac As String = GetMacAddress()
     Public PClocation As String
 
-    Public date1 As String = Date.Now.ToString("MMMM-dd-yyyy")
+    Public date1 As String = Date.Now.ToString("MMMM dd, yyyy")
     Public datedb As String = Date.Now.ToString("yyyy-MM-dd")
     Public shift1 As String
 
@@ -161,4 +161,14 @@ Module Module1
 
         End Try
     End Sub
+
+    Public Sub insertrecord(query As String)
+        con.Close()
+        con.Open()
+        Dim cmdinsert As New MySqlCommand(query, con)
+        cmdinsert.ExecuteNonQuery()
+    End Sub
+
+
+
 End Module

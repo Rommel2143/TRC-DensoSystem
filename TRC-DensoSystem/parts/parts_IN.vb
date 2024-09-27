@@ -5,7 +5,7 @@ Public Class parts_IN
     Dim serialNumber As String = ""
 
     Dim partno As String
-    Dim qty As String
+    Dim qty As Integer
     Dim customerno As String
     Dim color As String
     Dim prod As String
@@ -14,12 +14,18 @@ Public Class parts_IN
     Dim line As String
     Dim series As String
     Private Sub part_IN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        txtdate.Text = date1
     End Sub
-    Public Sub display_error(text As String)
+    Public Sub display_error(text As String, play As Integer)
         error_panel.Show()
         lbl_error.Text = text
 
+        Select Case play
+            Case 0
+                sounderror()
+            Case 1
+                soundduplicate()
+        End Select
     End Sub
 
     Private Sub batchcode_TextChanged(sender As Object, e As EventArgs) Handles batchcode.TextChanged
@@ -43,15 +49,13 @@ Public Class parts_IN
                                                 WHERE qrlenght= '" & qrlenght & "' and qrtype  = '" & type & "'", con)
             dr = cmdselect.ExecuteReader()
             If dr.Read = True Then
-                Dim partnoraw As String = ""
-                getcoordinates(dr.GetString("partno"), partnoraw)
-                partno = partnoraw.Replace("-", "")
+                getcoordinates(dr.GetString("partno"), partno)
                 getcoordinates(dr.GetString("qty"), qty)
                 getcoordinates(dr.GetString("customer"), customerno)
-                getcoordinates(dr.GetString("color"), Color)
+                getcoordinates(dr.GetString("color"), color)
                 getcoordinates(dr.GetString("proddate"), productionDateRaw)
                 getcoordinates(dr.GetString("shift"), shift)
-                getcoordinates(dr.GetString("process"), Process)
+                getcoordinates(dr.GetString("process"), process)
                 getcoordinates(dr.GetString("line"), line)
                 getcoordinates(dr.GetString("series"), series)
 
@@ -91,6 +95,80 @@ Public Class parts_IN
     End Sub
 
     Private Sub txtqr_TextChanged(sender As Object, e As EventArgs) Handles txtqr.TextChanged
+
+    End Sub
+
+    Private Sub txtqr_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Try
+
+
+                If processQRcode("PARTS", txtqr) Then
+                    con.Close()
+                    con.Open()
+                    Dim selectmasterlist As New MySqlCommand("SELECT * FROM `denso_parts_masterlist`
+                                                WHERE partno='" & partno & "' and customerno ='" & customerno & "'  and color = '" & color & "'", con)
+                    dr = selectmasterlist.ExecuteReader()
+                    If dr.Read = True Then
+
+                        con.Close()
+                        con.Open()
+                        Dim cmdselect As New MySqlCommand("SELECT qrcode, userin, datein,status FROM `denso_parts`
+                                                WHERE qrcode = '" & txtqr.Text & "'", con)
+                        dr = cmdselect.ExecuteReader()
+                        If dr.Read = True Then
+                            Select Case dr.GetInt32("status")
+                                Case 0
+                                    'status out
+                                    display_error("Status : OUT " & dr.GetDateTime("datein").ToString("MMMM-dd-yyyy"), 0)
+                                Case 1
+                                    'duplicate
+                                    display_error("Status : Duplicate " & dr.GetDateTime("datein").ToString("MMMM-dd-yyyy"), 1)
+
+                            End Select
+
+                        Else
+                            'save
+                            insertrecord("INSERT INTO `denso_parts`(`qrcode`, `partno`, `qty`, `color`, `proddate`, `batchin`, `userin`, `datein`, `batchout`, `userout`, `dateout`, `status`,`lotnumber`)
+                                                        VALUES ('" & txtqr.Text & "','" & partno & "','" & qty & "','" & color & "','" & prod & "','" & batchcode.Text & "','" & idno & "','" & datedb & "','','',NULL,1,'" & series & "')")
+                            displaygrid()
+                            displaygrid2()
+                            error_panel.Visible = False
+
+                        End If
+
+                    Else
+                        display_error("No Partcode Exists, Call Leader to Register!", 0)
+                    End If
+
+                End If
+
+                txtqr.Clear()
+                txtqr.Focus()
+
+            Catch ex As MySqlException
+                display_error("Error on scanning : " & ex.Message, 0)
+            Finally
+                con.Close()
+            End Try
+        End If
+    End Sub
+
+    Private Sub displaygrid()
+        reload("SELECT dp.qrcode AS QR, dp.partno AS Partcode,pm.partname, dp.qty AS QTY, dp.color AS Color,dp.lotnumber AS Lotno, DATE_FORMAT(dp.proddate, '%b-%d-%Y') AS Production_date FROM `denso_parts` dp 
+                JOIN denso_parts_masterlist pm ON pm.partno = dp.partno
+                WHERE batchin='" & batchcode.Text & "' AND userin='" & idno & "' AND datein='" & datedb & "' ORDER BY dp.id DESC", datagrid1)
+
+    End Sub
+    Private Sub displaygrid2()
+        reload("SELECT dp.partno AS Partcode, SUM(dp.qty) AS Total_QTY FROM denso_parts dp
+           
+            WHERE batchin='" & batchcode.Text & "' AND userin='" & idno & "' AND datein='" & datedb & "' 
+            GROUP BY dp.partno", datagrid2)
+    End Sub
+
+
+    Private Sub datagrid2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid2.CellContentClick
 
     End Sub
 End Class
