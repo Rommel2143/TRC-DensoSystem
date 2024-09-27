@@ -74,7 +74,7 @@ Public Class QR_identifier
     End Sub
     Public Sub reloadgrid()
         Try
-            reload("SELECT * FROM `denso_qrtype`", datagrid1)
+            reload("SELECT * FROM `denso_qrtype` ORDER BY id DESC", datagrid1)
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -127,20 +127,24 @@ Public Class QR_identifier
     Private Sub btn_fg_save_Click(sender As Object, e As EventArgs) Handles btn_fg_save.Click
 
         Try
-            con.Close()
-            con.Open()
-            Dim cmdselect As New MySqlCommand("SELECT `qrtype`, `qrlenght` FROM `denso_qrtype`
-                                                WHERE qrlenght= '" & qrlenght & "' and qrtype  = '" & cmbselect & "'", con)
-            dr = cmdselect.ExecuteReader()
-            If dr.Read = True Then
-                'DUPLICATE
-                showduplicate()
-                txt_qr.Clear()
-                txt_qr.Focus()
+            If cmb_type.SelectedIndex = -1 Then
+                error_panel.Visible = True
+                lbl_error.Text = "Please Select Type!"
             Else
                 con.Close()
                 con.Open()
-                Dim cmdinsert As New MySqlCommand("INSERT INTO `denso_qrtype`( `qrtype`,
+                Dim cmdselect As New MySqlCommand("SELECT `qrtype`, `qrlenght` FROM `denso_qrtype`
+                                                WHERE qrlenght= '" & qrlenght & "' and qrtype  = '" & cmbselect & "'", con)
+                dr = cmdselect.ExecuteReader()
+                If dr.Read = True Then
+                    'DUPLICATE
+                    showduplicate()
+                    txt_qr.Clear()
+                    txt_qr.Focus()
+                Else
+                    con.Close()
+                    con.Open()
+                    Dim cmdinsert As New MySqlCommand("INSERT INTO `denso_qrtype`( `qrtype`,
                                                                             `qrlenght`,
                                                                             `partno`,
                                                                             `qty`, 
@@ -163,14 +167,15 @@ Public Class QR_identifier
                                                                             '" & val_line.Text & "',
                                                                             '" & val_series.Text & "'
                                                                             )", con)
-                cmdinsert.ExecuteNonQuery()
-                MessageBox.Show("USER Added successfully!")
-                con.Close()
+                    cmdinsert.ExecuteNonQuery()
+                    MessageBox.Show("USER Added successfully!")
+                    con.Close()
 
-                reloadgrid()
-                labelerror.Visible = False
-                txt_qr.Clear()
-                txt_qr.Focus()
+                    reloadgrid()
+                    error_panel.Visible = False
+                    txt_qr.Clear()
+                    txt_qr.Focus()
+                End If
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -214,6 +219,8 @@ Public Class QR_identifier
                 cmbselect = "3T"
             Case "3T-Matrix"
                 cmbselect = "3T-M"
+            Case "PARTS"
+                cmbselect = "PARTS"
         End Select
     End Sub
 
@@ -253,14 +260,18 @@ Public Class QR_identifier
     End Sub
     Private Sub showduplicate()
         Try
-            labelerror.Visible = True
-            texterror.Text = "QR type Already Registered!"
+            error_panel.Visible = True
+            lbl_error.Text = "QR type Already Registered!"
             soundduplicate()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
     End Sub
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
+    End Sub
+
+    Private Sub Guna2GroupBox1_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

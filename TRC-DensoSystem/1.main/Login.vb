@@ -1,43 +1,68 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Login
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-            txtpcname.Text = PCname
-            txtpcmac.Text = PCmac
+        Dim maxRetries As Integer = 3 ' Set maximum number of retry attempts
+        Dim currentRetry As Integer = 0 ' Track current retry count
+        Dim connected As Boolean = False
 
-            con.Close()
-            con.Open()
-            Dim cmdselect As New MySqlCommand("SELECT * FROM computer_location WHERE `PCname`='" & PCname & "' and `PCmac`='" & PCmac & "'", con)
-            dr = cmdselect.ExecuteReader
-            If dr.Read = True Then
-                txtbarcode.Enabled = True
-                txtbarcode.Focus()
-                PClocation = dr.GetString("location")
-                txtpclocation.Text = PClocation
-            Else
-                Dim result As DialogResult = MessageBox.Show("Machine not Verified!", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error)
+        While currentRetry < maxRetries AndAlso Not connected
+            Try
+                lbl_pcinfo.Text = PCname
 
-
-                If result = DialogResult.OK Then
-                    display_form(Register_PC)
-
-                ElseIf result = DialogResult.Cancel Then
-                    con.Close()
-                    Application.Exit()
+                ' Attempt to connect to the database
+                If con.State = ConnectionState.Closed Then
+                    con.Open()
+                    error_panel.Visible = False
                 End If
 
+                Dim cmdselect As New MySqlCommand("SELECT * FROM computer_location WHERE PCname = @PCname AND PCmac = @PCmac", con)
+                cmdselect.Parameters.AddWithValue("@PCname", PCname)
+                cmdselect.Parameters.AddWithValue("@PCmac", PCmac)
 
+                dr = cmdselect.ExecuteReader()
 
-            End If
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
+                If dr.Read() Then
+                    txtbarcode.Enabled = True
+                    txtbarcode.Focus()
+                    PClocation = dr.GetString("location")
+                    txtpclocation.Text = PClocation
+                    connected = True ' Mark as connected if successful
+                Else
+                    Dim result As DialogResult = MessageBox.Show("Machine not Verified!", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error)
 
-        Finally
-            con.Close()
-            txtbarcode.Clear()
+                    If result = DialogResult.OK Then
 
-        End Try
+                        display_form(Register_PC)
+                        Exit Sub
+                    ElseIf result = DialogResult.Cancel Then
+                        con.Close()
+                        Application.Exit()
+                    End If
+                End If
+            Catch ex As MySqlException
+                currentRetry += 1
+                MessageBox.Show("Connection failed. Retrying... (" & currentRetry & " of " & maxRetries & ")", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                System.Threading.Thread.Sleep(2000) ' Wait 2 seconds before retrying
+
+                ' Optional: Gradually increase the wait time (exponential backoff)
+                ' System.Threading.Thread.Sleep(2000 * currentRetry)
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+                Exit While ' Exit loop for non-MySQL exceptions
+            Finally
+                If dr IsNot Nothing Then dr.Close()
+                con.Close()
+                txtbarcode.Clear()
+            End Try
+        End While
+
+        ' If still not connected after all retries, show an error and exit the app
+        If Not connected Then
+            MessageBox.Show("Unable to connect to the server after " & maxRetries & " attempts.", "Critical Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Application.Exit()
+        End If
     End Sub
+
 
     Private Sub txtbarcode_TextChanged(sender As Object, e As EventArgs) Handles txtbarcode.TextChanged
 
@@ -62,12 +87,23 @@ Public Class Login
                         Using dr As MySqlDataReader = cmd.ExecuteReader()
                             If dr.Read() Then
                                 fname = dr("fullname").ToString()
-                                idno = dr("IDno").ToString()
+                            idno = dr("IDno").ToString()
+                            user_level = dr.GetInt32("status")
+
+                            Select Case user_level
+                                Case 0
+                                    sub_mainframe.tool_manage.Visible = False
+
+                                Case 1
+                                    sub_mainframe.tool_manage.Visible = True
+                            End Select
+
 
                             display_form(sub_mainframe)
-                            sub_mainframe.userstrip.Text = fname
-                            labelerror.Visible = False
-                            Else
+                            sub_mainframe.userstrip.Text = "Hello, " & fname
+                            error_panel.Visible = False
+
+                        Else
                                 noid()
                             End If
                         End Using
@@ -85,7 +121,7 @@ Public Class Login
 
     Private Sub noid()
         Try
-            labelerror.Visible = True
+            error_panel.Visible = True
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -93,4 +129,7 @@ Public Class Login
 
     End Sub
 
+    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
+
+    End Sub
 End Class

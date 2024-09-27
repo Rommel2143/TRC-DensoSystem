@@ -246,6 +246,8 @@ Public Class Add_item
                 cmbselect = "3T"
             Case "3T-Matrix"
                 cmbselect = "3T-M"
+            Case "DENSO PARTS"
+                cmbselect = "DP"
         End Select
     End Sub
 End Class

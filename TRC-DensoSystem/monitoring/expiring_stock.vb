@@ -37,9 +37,9 @@ Public Class expiring_stock
                 Dim fourMonthsAgo As Date = Date.Today.AddMonths(-4)
 
                 If proddate <= sixMonthsAgo Then
-                    row.DefaultCellStyle.BackColor = Color.IndianRed ' Color for 6 months old
+                    row.DefaultCellStyle.BackColor = Color.Red ' Color for 6 months old
                 ElseIf proddate <= fourMonthsAgo Then
-                    row.DefaultCellStyle.BackColor = Color.Coral ' Color for 4 months old
+                    row.DefaultCellStyle.BackColor = Color.IndianRed ' Color for 4 months old
                 Else
                     row.DefaultCellStyle.BackColor = Color.White ' Or reset to default color
                 End If
@@ -101,7 +101,7 @@ Public Class expiring_stock
         End Try
     End Sub
 
-    Private Sub Guna2Shapes3_Click(sender As Object, e As EventArgs) Handles Guna2Shapes3.Click
+    Private Sub Guna2Shapes3_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

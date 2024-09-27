@@ -101,12 +101,12 @@ Public Class sub_mainframe
 
 
 
-    Private Sub StockMonitoringToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StockMonitoringToolStripMenuItem.Click
-        display_formscan(FG_monitoring)
+    Private Sub StockMonitoringToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
     End Sub
 
-    Private Sub ExpiringStockToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ExpiringStockToolStripMenuItem1.Click
-        display_formscan(expiring_stock)
+    Private Sub ExpiringStockToolStripMenuItem1_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub MIXEDPalletToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MIXEDPalletToolStripMenuItem.Click
@@ -150,7 +150,7 @@ Public Class sub_mainframe
     End Sub
 
     Private Sub OUTToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles OUTToolStripMenuItem3.Click
-        display_formscan(intelli_out)
+        display_formscan(INTELLI_out)
     End Sub
 
     Private Sub INToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles INToolStripMenuItem3.Click
@@ -193,5 +193,17 @@ Public Class sub_mainframe
         Catch ex As Exception
             MessageBox.Show("An error occurred while trying to update: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub StockMonitoringToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles StockMonitoringToolStripMenuItem.Click
+        display_formscan(FG_monitoring)
+    End Sub
+
+    Private Sub ExpiringStockToolStripMenuItem1_Click_1(sender As Object, e As EventArgs) Handles ExpiringStockToolStripMenuItem1.Click
+        display_formscan(expiring_stock)
+    End Sub
+
+    Private Sub RecievingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RecievingToolStripMenuItem.Click
+        display_formscan(parts_IN)
     End Sub
 End Class

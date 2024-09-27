@@ -31,13 +31,10 @@ Partial Class expiring_stock
         Me.export_excel = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2GroupBox3 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Guna2GradientPanel1 = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Guna2Shapes3 = New Guna.UI2.WinForms.Guna2Shapes()
-        Me.Guna2Shapes2 = New Guna.UI2.WinForms.Guna2Shapes()
-        Me.Guna2Shapes1 = New Guna.UI2.WinForms.Guna2Shapes()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.cmb_type = New Guna.UI2.WinForms.Guna2ComboBox()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2GroupBox3.SuspendLayout()
@@ -75,7 +72,7 @@ Partial Class expiring_stock
         Me.datagrid1.DefaultCellStyle = DataGridViewCellStyle7
         Me.datagrid1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.datagrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid1.Location = New System.Drawing.Point(0, 98)
+        Me.datagrid1.Location = New System.Drawing.Point(0, 142)
         Me.datagrid1.Name = "datagrid1"
         Me.datagrid1.ReadOnly = True
         Me.datagrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -90,7 +87,7 @@ Partial Class expiring_stock
         Me.datagrid1.RowHeadersVisible = False
         Me.datagrid1.RowTemplate.Height = 31
         Me.datagrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.datagrid1.Size = New System.Drawing.Size(696, 612)
+        Me.datagrid1.Size = New System.Drawing.Size(696, 568)
         Me.datagrid1.TabIndex = 193
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -139,7 +136,7 @@ Partial Class expiring_stock
         Me.Guna2GroupBox3.CustomBorderColor = System.Drawing.SystemColors.HotTrack
         Me.Guna2GroupBox3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox3.Location = New System.Drawing.Point(113, 69)
+        Me.Guna2GroupBox3.Location = New System.Drawing.Point(328, 88)
         Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
         Me.Guna2GroupBox3.Size = New System.Drawing.Size(696, 710)
         Me.Guna2GroupBox3.TabIndex = 19
@@ -148,99 +145,62 @@ Partial Class expiring_stock
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.Guna2GradientPanel1)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.Guna2Shapes3)
-        Me.Panel1.Controls.Add(Me.Guna2Shapes2)
-        Me.Panel1.Controls.Add(Me.Guna2Shapes1)
-        Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.cmb_type)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 40)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(696, 58)
+        Me.Panel1.Size = New System.Drawing.Size(696, 102)
         Me.Panel1.TabIndex = 194
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.ForeColor = System.Drawing.Color.DimGray
-        Me.Label4.Location = New System.Drawing.Point(579, 13)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(69, 21)
-        Me.Label4.TabIndex = 37
-        Me.Label4.Text = "EXPIRED"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.Color.DimGray
-        Me.Label2.Location = New System.Drawing.Point(468, 13)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(50, 21)
-        Me.Label2.TabIndex = 36
-        Me.Label2.Text = "NEAR"
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.DimGray
-        Me.Label1.Location = New System.Drawing.Point(352, 13)
+        Me.Label1.Location = New System.Drawing.Point(3, 72)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(45, 21)
+        Me.Label1.Size = New System.Drawing.Size(34, 17)
         Me.Label1.TabIndex = 35
-        Me.Label1.Text = "NEW"
+        Me.Label1.Text = "New"
         '
-        'Guna2Shapes3
+        'Guna2GradientPanel1
         '
-        Me.Guna2Shapes3.FillColor = System.Drawing.Color.IndianRed
-        Me.Guna2Shapes3.Location = New System.Drawing.Point(549, 13)
-        Me.Guna2Shapes3.Name = "Guna2Shapes3"
-        Me.Guna2Shapes3.PolygonSkip = 1
-        Me.Guna2Shapes3.Rotate = 0!
-        Me.Guna2Shapes3.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse
-        Me.Guna2Shapes3.Size = New System.Drawing.Size(24, 23)
-        Me.Guna2Shapes3.TabIndex = 34
-        Me.Guna2Shapes3.Text = "Guna2Shapes3"
-        Me.Guna2Shapes3.Zoom = 80
+        Me.Guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Guna2GradientPanel1.FillColor2 = System.Drawing.Color.Red
+        Me.Guna2GradientPanel1.Location = New System.Drawing.Point(0, 92)
+        Me.Guna2GradientPanel1.Name = "Guna2GradientPanel1"
+        Me.Guna2GradientPanel1.Size = New System.Drawing.Size(696, 10)
+        Me.Guna2GradientPanel1.TabIndex = 38
         '
-        'Guna2Shapes2
+        'Label4
         '
-        Me.Guna2Shapes2.FillColor = System.Drawing.Color.Coral
-        Me.Guna2Shapes2.Location = New System.Drawing.Point(438, 13)
-        Me.Guna2Shapes2.Name = "Guna2Shapes2"
-        Me.Guna2Shapes2.PolygonSkip = 1
-        Me.Guna2Shapes2.Rotate = 0!
-        Me.Guna2Shapes2.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse
-        Me.Guna2Shapes2.Size = New System.Drawing.Size(24, 23)
-        Me.Guna2Shapes2.TabIndex = 33
-        Me.Guna2Shapes2.Text = "Guna2Shapes2"
-        Me.Guna2Shapes2.Zoom = 80
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.DimGray
+        Me.Label4.Location = New System.Drawing.Point(639, 72)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(52, 17)
+        Me.Label4.TabIndex = 37
+        Me.Label4.Text = "Expired"
         '
-        'Guna2Shapes1
+        'Label2
         '
-        Me.Guna2Shapes1.FillColor = System.Drawing.Color.White
-        Me.Guna2Shapes1.Location = New System.Drawing.Point(322, 13)
-        Me.Guna2Shapes1.Name = "Guna2Shapes1"
-        Me.Guna2Shapes1.PolygonSkip = 1
-        Me.Guna2Shapes1.Rotate = 0!
-        Me.Guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse
-        Me.Guna2Shapes1.Size = New System.Drawing.Size(24, 23)
-        Me.Guna2Shapes1.TabIndex = 32
-        Me.Guna2Shapes1.Text = "Guna2Shapes1"
-        Me.Guna2Shapes1.Zoom = 80
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.White
-        Me.Label3.ForeColor = System.Drawing.Color.Gray
-        Me.Label3.Location = New System.Drawing.Point(18, 7)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(73, 21)
-        Me.Label3.TabIndex = 31
-        Me.Label3.Text = "QR type :"
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.DimGray
+        Me.Label2.Location = New System.Drawing.Point(335, 72)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(29, 17)
+        Me.Label2.TabIndex = 36
+        Me.Label2.Text = "Old"
         '
         'cmb_type
         '
@@ -253,7 +213,7 @@ Partial Class expiring_stock
         Me.cmb_type.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmb_type.ItemHeight = 30
         Me.cmb_type.Items.AddRange(New Object() {"DMTN", "INTELLI IV", "TDE", "20CY", "YT", "JECO", "3T"})
-        Me.cmb_type.Location = New System.Drawing.Point(97, 7)
+        Me.cmb_type.Location = New System.Drawing.Point(22, 12)
         Me.cmb_type.Name = "cmb_type"
         Me.cmb_type.Size = New System.Drawing.Size(201, 36)
         Me.cmb_type.TabIndex = 30
@@ -262,7 +222,7 @@ Partial Class expiring_stock
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(944, 886)
+        Me.ClientSize = New System.Drawing.Size(1352, 886)
         Me.Controls.Add(Me.Guna2GroupBox3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "expiring_stock"
@@ -280,12 +240,9 @@ Partial Class expiring_stock
     Friend WithEvents export_excel As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2GroupBox3 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label3 As Label
     Friend WithEvents cmb_type As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Guna2Shapes3 As Guna.UI2.WinForms.Guna2Shapes
-    Friend WithEvents Guna2Shapes2 As Guna.UI2.WinForms.Guna2Shapes
-    Friend WithEvents Guna2Shapes1 As Guna.UI2.WinForms.Guna2Shapes
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents Guna2GradientPanel1 As Guna.UI2.WinForms.Guna2GradientPanel
 End Class

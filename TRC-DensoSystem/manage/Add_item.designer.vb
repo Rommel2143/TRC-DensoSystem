@@ -95,7 +95,7 @@ Partial Class Add_item
         Me.cmb_type.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cmb_type.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmb_type.ItemHeight = 30
-        Me.cmb_type.Items.AddRange(New Object() {"DMTN", "INTELLI IV", "TDE", "20CY", "VT", "YT", "2T", "JECO", "3T"})
+        Me.cmb_type.Items.AddRange(New Object() {"DMTN", "INTELLI IV", "TDE", "20CY", "VT", "YT", "2T", "JECO", "3T", "DENSO PARTS"})
         Me.cmb_type.Location = New System.Drawing.Point(104, 49)
         Me.cmb_type.Name = "cmb_type"
         Me.cmb_type.Size = New System.Drawing.Size(201, 36)

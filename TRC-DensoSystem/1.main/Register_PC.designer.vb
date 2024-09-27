@@ -35,7 +35,9 @@ Partial Class Register_PC
         Me.txtpcname = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Panel1.SuspendLayout()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2Panel1
@@ -43,6 +45,7 @@ Partial Class Register_PC
         Me.Guna2Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Guna2Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel1.BorderRadius = 10
+        Me.Guna2Panel1.Controls.Add(Me.Guna2PictureBox2)
         Me.Guna2Panel1.Controls.Add(Me.Label4)
         Me.Guna2Panel1.Controls.Add(Me.Label5)
         Me.Guna2Panel1.Controls.Add(Me.Label3)
@@ -67,7 +70,7 @@ Partial Class Register_PC
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(282, 147)
+        Me.Label4.Location = New System.Drawing.Point(340, 148)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(104, 20)
         Me.Label4.TabIndex = 206
@@ -77,7 +80,7 @@ Partial Class Register_PC
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(265, 127)
+        Me.Label5.Location = New System.Drawing.Point(323, 128)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(121, 20)
         Me.Label5.TabIndex = 205
@@ -175,7 +178,7 @@ Partial Class Register_PC
         '
         Me.txtpcmac.AutoSize = True
         Me.txtpcmac.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtpcmac.Location = New System.Drawing.Point(392, 147)
+        Me.txtpcmac.Location = New System.Drawing.Point(450, 148)
         Me.txtpcmac.Name = "txtpcmac"
         Me.txtpcmac.Size = New System.Drawing.Size(27, 20)
         Me.txtpcmac.TabIndex = 4
@@ -185,7 +188,7 @@ Partial Class Register_PC
         '
         Me.txtpcname.AutoSize = True
         Me.txtpcname.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtpcname.Location = New System.Drawing.Point(392, 127)
+        Me.txtpcname.Location = New System.Drawing.Point(450, 128)
         Me.txtpcname.Name = "txtpcname"
         Me.txtpcname.Size = New System.Drawing.Size(27, 20)
         Me.txtpcname.TabIndex = 3
@@ -213,6 +216,17 @@ Partial Class Register_PC
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Philippines TRC Inc."
         '
+        'Guna2PictureBox2
+        '
+        Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox2.ImageRotate = 0!
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(246, 108)
+        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(71, 63)
+        Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox2.TabIndex = 207
+        Me.Guna2PictureBox2.TabStop = False
+        '
         'Register_PC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -225,6 +239,7 @@ Partial Class Register_PC
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -241,4 +256,5 @@ Partial Class Register_PC
     Friend WithEvents Label3 As Label
     Friend WithEvents cmblocation As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
 End Class
