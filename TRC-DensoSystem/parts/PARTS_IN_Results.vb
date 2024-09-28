@@ -25,27 +25,27 @@ Public Class Parts_IN_Results
             With datagrid1
                 itempartcode = .SelectedCells(0).Value.ToString()
             End With
-
             con.Close()
             con.Open()
-            Dim cmdrefreshgrid As New MySqlCommand("SELECT ts.`qrcode`,ts.`partcode`,ts.`lotnumber`, ts.`remarks`, ts.`qty`
-                                                    FROM `f2_parts_scan` ts
-                                                    LEFT JOIN f2_scanoperator_is so ON ts.userin = so.IDno
-                                                    WHERE       `datein`='" & dtpicker.Value.ToString("yyyy-MM-dd") & "' 
-                                                    and `partcode`='" & itempartcode & "'
-                                                            
-                                                            and `Fullname`='" & cmbuser.Text & "'  
-                                                            and `batch`='" & cmbbatchin.Text & "' ", con)
+            Dim cmdrefreshgrid As New MySqlCommand("SELECT dp.qrcode, dp.partno, pm.partname, dp.lotnumber, dp.qty
+                                                FROM denso_parts dp
+                                                JOIN denso_scanoperator ds ON dp.userin = ds.IDno
+                                                JOIN denso_parts_masterlist pm ON dp.partno = pm.partno
+                                                WHERE dp.datein = '" & dtpicker.Value.ToString("yyyy-MM-dd") & "' 
+                                                AND ds.Fullname = '" & cmbuser.Text & "' 
+                                                AND dp.partno = '" & itempartcode & "' 
+                                                AND dp.batchin = '" & cmbbatchin.Text & "'", con)
 
             Dim da As New MySqlDataAdapter(cmdrefreshgrid)
             Dim dt As New DataTable
             da.Fill(dt)
             datagrid2.DataSource = dt
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-
     End Sub
+
 
     Private Sub cmbbatchout_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cmbbatchin.SelectedIndexChanged
         Try
@@ -53,13 +53,13 @@ Public Class Parts_IN_Results
 
             con.Close()
             con.Open()
-            Dim cmdrefreshgrid As New MySqlCommand("SELECT ts.`qrcode`,ts.`partcode`,ts.`lotnumber`, ts.`remarks`, ts.`qty`
-                                                    FROM `f2_parts_scan` ts
-                                                    LEFT JOIN f2_scanoperator_is so ON ts.userin = so.IDno
-                                                    WHERE       `datein`='" & dtpicker.Value.ToString("yyyy-MM-dd") & "' 
-                                                           
+            Dim cmdrefreshgrid As New MySqlCommand("SELECT dp.qrcode, dp.partno,pm.partname, dp.lotnumber, dp.qty
+                                                    FROM denso_parts dp
+                                                    JOIN denso_scanoperator ds ON dp.userin = ds.IDno
+                                                    JOIN denso_parts_masterlist pm ON dp.partno= pm.partno
+                                                    WHERE datein='" & dtpicker.Value.ToString("yyyy-MM-dd") & "' 
                                                             and `Fullname`='" & cmbuser.Text & "'  
-                                                            and `batch`='" & cmbbatchin.Text & "' ", con)
+                                                            and `batchin`='" & cmbbatchin.Text & "' ", con)
 
             Dim da As New MySqlDataAdapter(cmdrefreshgrid)
             Dim dt As New DataTable
@@ -69,14 +69,14 @@ Public Class Parts_IN_Results
 
             con.Close()
             con.Open()
-            Dim cmdrefreshgrid2 As New MySqlCommand("SELECT ts.`partcode` AS Partcode, SUM(`qty`) AS TOTAL 
-                                                  FROM `f2_parts_scan` ts
-                                                    LEFT JOIN f2_scanoperator_is so ON ts.userin = so.IDno
-                                                    WHERE       `datein`='" & dtpicker.Value.ToString("yyyy-MM-dd") & "' 
-                                                           
+            Dim cmdrefreshgrid2 As New MySqlCommand("SELECT  dp.partno,pm.partname,SUM(dp.qty) AS Total
+                                                    FROM denso_parts dp
+                                                     JOIN denso_scanoperator ds ON dp.userin = ds.IDno
+                                                    JOIN denso_parts_masterlist pm ON dp.partno= pm.partno
+                                                    WHERE datein='" & dtpicker.Value.ToString("yyyy-MM-dd") & "' 
                                                             and `Fullname`='" & cmbuser.Text & "'  
-                                                            and `batch`='" & cmbbatchin.Text & "'          
-                                                  GROUP BY partcode", con)
+                                                            and `batchin`='" & cmbbatchin.Text & "'     
+                                                  GROUP BY partno", con)
 
             Dim da2 As New MySqlDataAdapter(cmdrefreshgrid2)
             Dim dt2 As New DataTable
@@ -94,9 +94,9 @@ Public Class Parts_IN_Results
         Try
             con.Close()
             con.Open()
-            Dim cmdselect As New MySqlCommand("Select distinct `fullname` FROM `f2_parts_scan`
-                                                INNER JOIN `f2_scanoperator_is` ON `userin` = `IDno`
-                                                WHERE `datein`='" & dtpicker.Value.ToString("yyyy-MM-dd") & "'", con)
+            Dim cmdselect As New MySqlCommand("Select distinct ds.fullname FROM denso_parts dp
+                                                INNER JOIN denso_scanoperator ds ON userin = IDno
+                                                WHERE datein='" & dtpicker.Value.ToString("yyyy-MM-dd") & "' ORDER BY ds.fullname ASC", con)
             dr = cmdselect.ExecuteReader
             cmbuser.Items.Clear()
             While (dr.Read())
@@ -111,14 +111,13 @@ Public Class Parts_IN_Results
         Try
             con.Close()
             con.Open()
-            Dim cmdselect As New MySqlCommand("Select distinct ts.`batch` FROM `f2_parts_scan` ts
-                                              Left Join f2_scanoperator_is tsoout ON ts.userin = tsoout.IDno
-                                               
+            Dim cmdselect As New MySqlCommand("Select distinct dp.batchin FROM denso_parts dp
+                                                JOIN denso_scanoperator ds ON ds.IDno = dp.userin
                                                 WHERE `datein`='" & dtpicker.Value.ToString("yyyy-MM-dd") & "' and `fullname`='" & cmbuser.Text & "'", con)
             dr = cmdselect.ExecuteReader
             cmbbatchin.Items.Clear()
             While (dr.Read())
-                cmbbatchin.Items.Add(dr.GetString("batch"))
+                cmbbatchin.Items.Add(dr.GetString("batchin"))
             End While
         Catch ex As Exception
             MessageBox.Show(ex.Message)

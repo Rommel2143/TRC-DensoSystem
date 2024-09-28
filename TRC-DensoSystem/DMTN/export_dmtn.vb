@@ -43,32 +43,45 @@ Public Class export_dmtn
 
     End Sub
 
-    Private Sub cmb_cml_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_cml.SelectedIndexChanged
-        Try
-            Select Case radio
-                Case 1
+    Private Sub Guna2RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles rad_w.CheckedChanged
+        radio = 1
 
-                    con.Close()
-                    con.Open()
-                    Dim cmdselect As New MySqlCommand("SELECT `cmlqr`,`serial` FROM `denso_dmtn_cml` WHERE serial='" & cmb_cml.Text & "'", con)
-                    dr = cmdselect.ExecuteReader
-                    If dr.Read Then
-                        report_cmlqr = dr.GetString("cmlqr")
-                    End If
-                    Dim myrpt As New report_dmtn_innertag
-                    dt.Clear()
-                    viewdata_with()
-                    myrpt.Database.Tables("denso_dmtn").SetDataSource(dt)
-                    CrystalReportViewer1.ReportSource = Nothing
-                    CrystalReportViewer1.ReportSource = myrpt
-                Case 0
-                    Dim myrpt As New dmtn_bypass
-                    dt.Clear()
-                    viewdata_without()
-                    myrpt.Database.Tables("denso_dmtn_bypass").SetDataSource(dt)
-                    CrystalReportViewer1.ReportSource = Nothing
-                    CrystalReportViewer1.ReportSource = myrpt
-            End Select
+    End Sub
+
+    Private Sub Guna2RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles rad_wo.CheckedChanged
+        radio = 0
+
+    End Sub
+    Private Sub cmb_cml_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_cml.SelectedIndexChanged, rad_w.CheckedChanged, rad_wo.CheckedChanged
+        Try
+            If cmb_cml.Text = "" Then
+
+            Else
+                Select Case radio
+                    Case 1
+
+                        con.Close()
+                        con.Open()
+                        Dim cmdselect As New MySqlCommand("SELECT `cmlqr`,`serial` FROM `denso_dmtn_cml` WHERE serial='" & cmb_cml.Text & "'", con)
+                        dr = cmdselect.ExecuteReader
+                        If dr.Read Then
+                            report_cmlqr = dr.GetString("cmlqr")
+                        End If
+                        Dim myrpt As New report_dmtn_innertag
+                        dt.Clear()
+                        viewdata_with()
+                        myrpt.Database.Tables("denso_dmtn").SetDataSource(dt)
+                        CrystalReportViewer1.ReportSource = Nothing
+                        CrystalReportViewer1.ReportSource = myrpt
+                    Case 0
+                        Dim myrpt As New dmtn_bypass
+                        dt.Clear()
+                        viewdata_without()
+                        myrpt.Database.Tables("denso_dmtn_bypass").SetDataSource(dt)
+                        CrystalReportViewer1.ReportSource = Nothing
+                        CrystalReportViewer1.ReportSource = myrpt
+                End Select
+            End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -129,13 +142,4 @@ Public Class export_dmtn
         End Try
     End Sub
 
-    Private Sub Guna2RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles Guna2RadioButton2.CheckedChanged
-        radio = 1
-
-    End Sub
-
-    Private Sub Guna2RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles Guna2RadioButton1.CheckedChanged
-        radio = 0
-
-    End Sub
 End Class

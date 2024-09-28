@@ -138,7 +138,7 @@ Public Class sub_mainframe
     End Sub
 
     Private Sub INToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles INToolStripMenuItem1.Click
-        display_formscan(_20cy_in)
+        display_formscan(New _20cy_in)
     End Sub
 
     Private Sub OUTToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles OUTToolStripMenuItem2.Click
@@ -146,7 +146,7 @@ Public Class sub_mainframe
     End Sub
 
     Private Sub INToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles INToolStripMenuItem2.Click
-        display_formscan(intelli_in)
+        display_formscan(New intelli_in)
     End Sub
 
     Private Sub OUTToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles OUTToolStripMenuItem3.Click
@@ -178,7 +178,7 @@ Public Class sub_mainframe
     End Sub
 
     Private Sub PrintCMLReportsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrintCMLReportsToolStripMenuItem.Click
-        display_formscan(export_dmtn)
+        display_formscan(New export_dmtn)
     End Sub
 
     Private Sub UpdateSystemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateSystemToolStripMenuItem.Click

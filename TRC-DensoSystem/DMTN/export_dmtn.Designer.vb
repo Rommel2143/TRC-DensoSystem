@@ -24,13 +24,13 @@ Partial Class export_dmtn
     Private Sub InitializeComponent()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Guna2RadioButton2 = New Guna.UI2.WinForms.Guna2RadioButton()
-        Me.Guna2RadioButton1 = New Guna.UI2.WinForms.Guna2RadioButton()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.rad_w = New Guna.UI2.WinForms.Guna2RadioButton()
+        Me.rad_wo = New Guna.UI2.WinForms.Guna2RadioButton()
         Me.dtpicker = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cmb_cml = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Panel1.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -41,9 +41,9 @@ Partial Class export_dmtn
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 146)
+        Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 127)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1050, 632)
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1050, 651)
         Me.CrystalReportViewer1.TabIndex = 0
         '
         'Panel1
@@ -56,49 +56,64 @@ Partial Class export_dmtn
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1050, 146)
+        Me.Panel1.Size = New System.Drawing.Size(1050, 127)
         Me.Panel1.TabIndex = 1
         '
-        'Guna2RadioButton2
+        'Guna2Panel1
         '
-        Me.Guna2RadioButton2.AutoSize = True
-        Me.Guna2RadioButton2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2RadioButton2.CheckedState.BorderThickness = 0
-        Me.Guna2RadioButton2.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2RadioButton2.CheckedState.InnerColor = System.Drawing.Color.White
-        Me.Guna2RadioButton2.CheckedState.InnerOffset = -4
-        Me.Guna2RadioButton2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2RadioButton2.Location = New System.Drawing.Point(126, 4)
-        Me.Guna2RadioButton2.Name = "Guna2RadioButton2"
-        Me.Guna2RadioButton2.Size = New System.Drawing.Size(109, 21)
-        Me.Guna2RadioButton2.TabIndex = 228
-        Me.Guna2RadioButton2.Text = "with InnerTag"
-        Me.Guna2RadioButton2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.Guna2RadioButton2.UncheckedState.BorderThickness = 2
-        Me.Guna2RadioButton2.UncheckedState.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2RadioButton2.UncheckedState.InnerColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel1.BorderColor = System.Drawing.Color.DimGray
+        Me.Guna2Panel1.BorderRadius = 5
+        Me.Guna2Panel1.Controls.Add(Me.rad_w)
+        Me.Guna2Panel1.Controls.Add(Me.rad_wo)
+        Me.Guna2Panel1.FillColor = System.Drawing.Color.White
+        Me.Guna2Panel1.Location = New System.Drawing.Point(717, 56)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.Silver
+        Me.Guna2Panel1.ShadowDecoration.Enabled = True
+        Me.Guna2Panel1.Size = New System.Drawing.Size(286, 39)
+        Me.Guna2Panel1.TabIndex = 229
         '
-        'Guna2RadioButton1
+        'rad_w
         '
-        Me.Guna2RadioButton1.AutoSize = True
-        Me.Guna2RadioButton1.Checked = True
-        Me.Guna2RadioButton1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2RadioButton1.CheckedState.BorderThickness = 0
-        Me.Guna2RadioButton1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2RadioButton1.CheckedState.InnerColor = System.Drawing.Color.White
-        Me.Guna2RadioButton1.CheckedState.InnerOffset = -4
-        Me.Guna2RadioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Guna2RadioButton1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Guna2RadioButton1.Location = New System.Drawing.Point(10, 4)
-        Me.Guna2RadioButton1.Name = "Guna2RadioButton1"
-        Me.Guna2RadioButton1.Size = New System.Drawing.Size(105, 21)
-        Me.Guna2RadioButton1.TabIndex = 227
-        Me.Guna2RadioButton1.TabStop = True
-        Me.Guna2RadioButton1.Text = "w/o InnerTag"
-        Me.Guna2RadioButton1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.Guna2RadioButton1.UncheckedState.BorderThickness = 2
-        Me.Guna2RadioButton1.UncheckedState.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2RadioButton1.UncheckedState.InnerColor = System.Drawing.Color.Transparent
+        Me.rad_w.AutoSize = True
+        Me.rad_w.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.rad_w.CheckedState.BorderThickness = 0
+        Me.rad_w.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.rad_w.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.rad_w.CheckedState.InnerOffset = -4
+        Me.rad_w.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rad_w.Location = New System.Drawing.Point(162, 9)
+        Me.rad_w.Name = "rad_w"
+        Me.rad_w.Size = New System.Drawing.Size(109, 21)
+        Me.rad_w.TabIndex = 228
+        Me.rad_w.Text = "with InnerTag"
+        Me.rad_w.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.rad_w.UncheckedState.BorderThickness = 2
+        Me.rad_w.UncheckedState.FillColor = System.Drawing.Color.Transparent
+        Me.rad_w.UncheckedState.InnerColor = System.Drawing.Color.Transparent
+        '
+        'rad_wo
+        '
+        Me.rad_wo.AutoSize = True
+        Me.rad_wo.Checked = True
+        Me.rad_wo.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.rad_wo.CheckedState.BorderThickness = 0
+        Me.rad_wo.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.rad_wo.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.rad_wo.CheckedState.InnerOffset = -4
+        Me.rad_wo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.rad_wo.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.rad_wo.Location = New System.Drawing.Point(10, 9)
+        Me.rad_wo.Name = "rad_wo"
+        Me.rad_wo.Size = New System.Drawing.Size(105, 21)
+        Me.rad_wo.TabIndex = 227
+        Me.rad_wo.TabStop = True
+        Me.rad_wo.Text = "w/o InnerTag"
+        Me.rad_wo.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.rad_wo.UncheckedState.BorderThickness = 2
+        Me.rad_wo.UncheckedState.FillColor = System.Drawing.Color.Transparent
+        Me.rad_wo.UncheckedState.InnerColor = System.Drawing.Color.Transparent
         '
         'dtpicker
         '
@@ -107,7 +122,7 @@ Partial Class export_dmtn
         Me.dtpicker.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.dtpicker.ForeColor = System.Drawing.Color.White
         Me.dtpicker.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.dtpicker.Location = New System.Drawing.Point(87, 89)
+        Me.dtpicker.Location = New System.Drawing.Point(52, 59)
         Me.dtpicker.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.dtpicker.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.dtpicker.Name = "dtpicker"
@@ -121,7 +136,7 @@ Partial Class export_dmtn
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Gray
-        Me.Label2.Location = New System.Drawing.Point(84, 69)
+        Me.Label2.Location = New System.Drawing.Point(49, 39)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(45, 17)
         Me.Label2.TabIndex = 225
@@ -137,7 +152,7 @@ Partial Class export_dmtn
         Me.cmb_cml.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cmb_cml.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmb_cml.ItemHeight = 30
-        Me.cmb_cml.Location = New System.Drawing.Point(361, 89)
+        Me.cmb_cml.Location = New System.Drawing.Point(326, 59)
         Me.cmb_cml.Name = "cmb_cml"
         Me.cmb_cml.Size = New System.Drawing.Size(372, 36)
         Me.cmb_cml.TabIndex = 224
@@ -148,22 +163,11 @@ Partial Class export_dmtn
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Gray
-        Me.Label3.Location = New System.Drawing.Point(358, 69)
+        Me.Label3.Location = New System.Drawing.Point(323, 39)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(43, 17)
         Me.Label3.TabIndex = 223
         Me.Label3.Text = "CML :"
-        '
-        'Guna2Panel1
-        '
-        Me.Guna2Panel1.BorderColor = System.Drawing.Color.DimGray
-        Me.Guna2Panel1.BorderThickness = 1
-        Me.Guna2Panel1.Controls.Add(Me.Guna2RadioButton2)
-        Me.Guna2Panel1.Controls.Add(Me.Guna2RadioButton1)
-        Me.Guna2Panel1.Location = New System.Drawing.Point(70, 27)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(242, 30)
-        Me.Guna2Panel1.TabIndex = 229
         '
         'export_dmtn
         '
@@ -190,7 +194,7 @@ Partial Class export_dmtn
     Friend WithEvents Label3 As Label
     Friend WithEvents dtpicker As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents Label2 As Label
-    Friend WithEvents Guna2RadioButton2 As Guna.UI2.WinForms.Guna2RadioButton
-    Friend WithEvents Guna2RadioButton1 As Guna.UI2.WinForms.Guna2RadioButton
+    Friend WithEvents rad_w As Guna.UI2.WinForms.Guna2RadioButton
+    Friend WithEvents rad_wo As Guna.UI2.WinForms.Guna2RadioButton
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
 End Class

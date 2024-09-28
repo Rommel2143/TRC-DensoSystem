@@ -171,4 +171,10 @@ Public Class parts_IN
     Private Sub datagrid2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid2.CellContentClick
 
     End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        Dim results As New Parts_IN_Results
+        results.ShowDialog()
+        results.BringToFront()
+    End Sub
 End Class

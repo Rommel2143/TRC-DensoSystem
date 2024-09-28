@@ -74,9 +74,11 @@ Module Module1
         dr = cmd.ExecuteReader
     End Sub
     Public Sub display_form(form As Form)
+
         With form
             .Refresh()
             .TopLevel = False
+            Mainframe.Panel1.Controls.Clear()
             Mainframe.Panel1.Controls.Add(form)
             .BringToFront()
             .Show()
