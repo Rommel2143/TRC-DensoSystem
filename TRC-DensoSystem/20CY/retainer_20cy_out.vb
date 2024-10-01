@@ -170,7 +170,7 @@ Public Class retainer_20cy_out
     End Sub
 
     Private Sub jeco_out_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        txtdate.Text = date1
     End Sub
 
     Private Sub txtqr_verify_TextChanged(sender As Object, e As EventArgs) Handles txtqr_verify.TextChanged

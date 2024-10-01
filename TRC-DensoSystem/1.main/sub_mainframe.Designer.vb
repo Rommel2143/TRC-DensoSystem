@@ -25,9 +25,11 @@ Partial Class sub_mainframe
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(sub_mainframe))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PARTSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PARTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecievingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OutgoingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MasterlistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StockMonitoringToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CYToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.INToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OUTToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
@@ -55,8 +57,6 @@ Partial Class sub_mainframe
         Me.TToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.INToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OUTToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StockMonitoringToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExpiringStockToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.tool_manage = New System.Windows.Forms.ToolStripMenuItem()
         Me.QRIdentifierToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddItemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -85,13 +85,23 @@ Partial Class sub_mainframe
         '
         'PARTSToolStripMenuItem
         '
-        Me.PARTSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RecievingToolStripMenuItem, Me.OutgoingToolStripMenuItem})
+        Me.PARTSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PARTToolStripMenuItem, Me.RecievingToolStripMenuItem, Me.OutgoingToolStripMenuItem})
         Me.PARTSToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.PARTSToolStripMenuItem.Image = CType(resources.GetObject("PARTSToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PARTSToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.PARTSToolStripMenuItem.Name = "PARTSToolStripMenuItem"
         Me.PARTSToolStripMenuItem.Size = New System.Drawing.Size(90, 37)
         Me.PARTSToolStripMenuItem.Text = "PARTS"
+        '
+        'PARTToolStripMenuItem
+        '
+        Me.PARTToolStripMenuItem.BackColor = System.Drawing.Color.PapayaWhip
+        Me.PARTToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.PARTToolStripMenuItem.Image = CType(resources.GetObject("PARTToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.PARTToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.PARTToolStripMenuItem.Name = "PARTToolStripMenuItem"
+        Me.PARTToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.PARTToolStripMenuItem.Text = "PARTS STOCK"
         '
         'RecievingToolStripMenuItem
         '
@@ -110,12 +120,12 @@ Partial Class sub_mainframe
         Me.OutgoingToolStripMenuItem.Image = CType(resources.GetObject("OutgoingToolStripMenuItem.Image"), System.Drawing.Image)
         Me.OutgoingToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.OutgoingToolStripMenuItem.Name = "OutgoingToolStripMenuItem"
-        Me.OutgoingToolStripMenuItem.Size = New System.Drawing.Size(159, 38)
+        Me.OutgoingToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.OutgoingToolStripMenuItem.Text = "Outgoing"
         '
         'MasterlistToolStripMenuItem
         '
-        Me.MasterlistToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CYToolStripMenuItem, Me.YTToolStripMenuItem, Me.DMTNToolStripMenuItem, Me.JECOToolStripMenuItem, Me.INTELLIIVToolStripMenuItem, Me.TDEToolStripMenuItem1, Me.TToolStripMenuItem, Me.StockMonitoringToolStripMenuItem, Me.ExpiringStockToolStripMenuItem1})
+        Me.MasterlistToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StockMonitoringToolStripMenuItem, Me.CYToolStripMenuItem, Me.YTToolStripMenuItem, Me.DMTNToolStripMenuItem, Me.JECOToolStripMenuItem, Me.INTELLIIVToolStripMenuItem, Me.TDEToolStripMenuItem1, Me.TToolStripMenuItem})
         Me.MasterlistToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MasterlistToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
         Me.MasterlistToolStripMenuItem.Image = CType(resources.GetObject("MasterlistToolStripMenuItem.Image"), System.Drawing.Image)
@@ -123,6 +133,17 @@ Partial Class sub_mainframe
         Me.MasterlistToolStripMenuItem.Name = "MasterlistToolStripMenuItem"
         Me.MasterlistToolStripMenuItem.Size = New System.Drawing.Size(62, 37)
         Me.MasterlistToolStripMenuItem.Text = "FG"
+        '
+        'StockMonitoringToolStripMenuItem
+        '
+        Me.StockMonitoringToolStripMenuItem.BackColor = System.Drawing.Color.PapayaWhip
+        Me.StockMonitoringToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.StockMonitoringToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.StockMonitoringToolStripMenuItem.Image = CType(resources.GetObject("StockMonitoringToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.StockMonitoringToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.StockMonitoringToolStripMenuItem.Name = "StockMonitoringToolStripMenuItem"
+        Me.StockMonitoringToolStripMenuItem.Size = New System.Drawing.Size(160, 38)
+        Me.StockMonitoringToolStripMenuItem.Text = "FG Stock"
         '
         'CYToolStripMenuItem
         '
@@ -132,7 +153,7 @@ Partial Class sub_mainframe
         Me.CYToolStripMenuItem.Image = CType(resources.GetObject("CYToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CYToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CYToolStripMenuItem.Name = "CYToolStripMenuItem"
-        Me.CYToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.CYToolStripMenuItem.Size = New System.Drawing.Size(160, 38)
         Me.CYToolStripMenuItem.Text = "20CY"
         '
         'INToolStripMenuItem1
@@ -159,7 +180,7 @@ Partial Class sub_mainframe
         Me.YTToolStripMenuItem.Image = CType(resources.GetObject("YTToolStripMenuItem.Image"), System.Drawing.Image)
         Me.YTToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.YTToolStripMenuItem.Name = "YTToolStripMenuItem"
-        Me.YTToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.YTToolStripMenuItem.Size = New System.Drawing.Size(160, 38)
         Me.YTToolStripMenuItem.Text = "YT"
         '
         'MatrixToolStripMenuItem
@@ -186,7 +207,7 @@ Partial Class sub_mainframe
         Me.DMTNToolStripMenuItem.Image = CType(resources.GetObject("DMTNToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DMTNToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DMTNToolStripMenuItem.Name = "DMTNToolStripMenuItem"
-        Me.DMTNToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.DMTNToolStripMenuItem.Size = New System.Drawing.Size(160, 38)
         Me.DMTNToolStripMenuItem.Text = "DMTN"
         '
         'InnerTagToolStripMenuItem
@@ -255,7 +276,7 @@ Partial Class sub_mainframe
         Me.JECOToolStripMenuItem.Image = CType(resources.GetObject("JECOToolStripMenuItem.Image"), System.Drawing.Image)
         Me.JECOToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.JECOToolStripMenuItem.Name = "JECOToolStripMenuItem"
-        Me.JECOToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.JECOToolStripMenuItem.Size = New System.Drawing.Size(160, 38)
         Me.JECOToolStripMenuItem.Text = "JECO"
         '
         'INToolStripMenuItem
@@ -282,7 +303,7 @@ Partial Class sub_mainframe
         Me.INTELLIIVToolStripMenuItem.Image = CType(resources.GetObject("INTELLIIVToolStripMenuItem.Image"), System.Drawing.Image)
         Me.INTELLIIVToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.INTELLIIVToolStripMenuItem.Name = "INTELLIIVToolStripMenuItem"
-        Me.INTELLIIVToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.INTELLIIVToolStripMenuItem.Size = New System.Drawing.Size(160, 38)
         Me.INTELLIIVToolStripMenuItem.Text = "INTELLI IV"
         '
         'INToolStripMenuItem2
@@ -309,7 +330,7 @@ Partial Class sub_mainframe
         Me.TDEToolStripMenuItem1.Image = CType(resources.GetObject("TDEToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.TDEToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TDEToolStripMenuItem1.Name = "TDEToolStripMenuItem1"
-        Me.TDEToolStripMenuItem1.Size = New System.Drawing.Size(196, 38)
+        Me.TDEToolStripMenuItem1.Size = New System.Drawing.Size(160, 38)
         Me.TDEToolStripMenuItem1.Text = "TDE"
         '
         'INToolStripMenuItem4
@@ -344,7 +365,7 @@ Partial Class sub_mainframe
         Me.TToolStripMenuItem.Image = CType(resources.GetObject("TToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.TToolStripMenuItem.Name = "TToolStripMenuItem"
-        Me.TToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.TToolStripMenuItem.Size = New System.Drawing.Size(160, 38)
         Me.TToolStripMenuItem.Text = "3T"
         '
         'INToolStripMenuItem3
@@ -362,26 +383,6 @@ Partial Class sub_mainframe
         Me.OUTToolStripMenuItem4.Name = "OUTToolStripMenuItem4"
         Me.OUTToolStripMenuItem4.Size = New System.Drawing.Size(123, 38)
         Me.OUTToolStripMenuItem4.Text = "OUT"
-        '
-        'StockMonitoringToolStripMenuItem
-        '
-        Me.StockMonitoringToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StockMonitoringToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.StockMonitoringToolStripMenuItem.Image = CType(resources.GetObject("StockMonitoringToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.StockMonitoringToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.StockMonitoringToolStripMenuItem.Name = "StockMonitoringToolStripMenuItem"
-        Me.StockMonitoringToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
-        Me.StockMonitoringToolStripMenuItem.Text = "FG Stock"
-        '
-        'ExpiringStockToolStripMenuItem1
-        '
-        Me.ExpiringStockToolStripMenuItem1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ExpiringStockToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.ExpiringStockToolStripMenuItem1.Image = CType(resources.GetObject("ExpiringStockToolStripMenuItem1.Image"), System.Drawing.Image)
-        Me.ExpiringStockToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ExpiringStockToolStripMenuItem1.Name = "ExpiringStockToolStripMenuItem1"
-        Me.ExpiringStockToolStripMenuItem1.Size = New System.Drawing.Size(196, 38)
-        Me.ExpiringStockToolStripMenuItem1.Text = "Expiring Stock"
         '
         'tool_manage
         '
@@ -540,7 +541,6 @@ Partial Class sub_mainframe
     Friend WithEvents INToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents OUTToolStripMenuItem4 As ToolStripMenuItem
     Friend WithEvents StockMonitoringToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ExpiringStockToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents tool_manage As ToolStripMenuItem
     Friend WithEvents QRIdentifierToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AddItemToolStripMenuItem As ToolStripMenuItem
@@ -553,4 +553,5 @@ Partial Class sub_mainframe
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents RecievingToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OutgoingToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PARTToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -320,7 +320,7 @@ Partial Class intelli_in
         '
         'Guna2Panel2
         '
-        Me.Guna2Panel2.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Guna2Panel2.BackColor = System.Drawing.Color.DarkSlateBlue
         Me.Guna2Panel2.Controls.Add(Me.PictureBox1)
         Me.Guna2Panel2.Controls.Add(Me.Label10)
         Me.Guna2Panel2.Controls.Add(Me.txtdate)

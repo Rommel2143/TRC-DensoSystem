@@ -197,13 +197,19 @@ Public Class sub_mainframe
 
     Private Sub StockMonitoringToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles StockMonitoringToolStripMenuItem.Click
         display_formscan(FG_monitoring)
+
     End Sub
 
-    Private Sub ExpiringStockToolStripMenuItem1_Click_1(sender As Object, e As EventArgs) Handles ExpiringStockToolStripMenuItem1.Click
-        display_formscan(expiring_stock)
-    End Sub
 
     Private Sub RecievingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RecievingToolStripMenuItem.Click
         display_formscan(parts_IN)
+    End Sub
+
+    Private Sub OutgoingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OutgoingToolStripMenuItem.Click
+        display_formscan(parts_OUT)
+    End Sub
+
+    Private Sub PARTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PARTToolStripMenuItem.Click
+        display_formscan(New parts_stock)
     End Sub
 End Class

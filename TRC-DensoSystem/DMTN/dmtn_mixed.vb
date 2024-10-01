@@ -414,4 +414,8 @@ Public Class dmtn_mixed
     Private Sub txtqr_Layout(sender As Object, e As LayoutEventArgs) Handles txtqr.Layout
 
     End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+
+    End Sub
 End Class

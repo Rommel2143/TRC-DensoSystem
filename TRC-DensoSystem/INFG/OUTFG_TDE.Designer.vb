@@ -23,6 +23,7 @@ Partial Class OUTFG_TDE
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OUTFG_TDE))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -32,7 +33,6 @@ Partial Class OUTFG_TDE
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OUTFG_TDE))
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.labelerror2 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -60,6 +60,7 @@ Partial Class OUTFG_TDE
         Me.txtcml1 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.btndelete = New Guna.UI2.WinForms.Guna2Button()
         Me.labelerror3 = New System.Windows.Forms.Label()
         Me.labelerror1 = New System.Windows.Forms.Label()
         Me.txtqty = New Guna.UI2.WinForms.Guna2TextBox()
@@ -77,7 +78,6 @@ Partial Class OUTFG_TDE
         Me.datagrid1 = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.datagrid2 = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.datagrid3 = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.btndelete = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel1.SuspendLayout()
         Me.panelset.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
@@ -263,7 +263,7 @@ Partial Class OUTFG_TDE
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.Highlight
+        Me.Panel1.BackColor = System.Drawing.Color.DarkSlateBlue
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.txthide3)
         Me.Panel1.Controls.Add(Me.txthide)
@@ -541,6 +541,22 @@ Partial Class OUTFG_TDE
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(1225, 57)
         Me.Guna2Panel1.TabIndex = 181
+        '
+        'btndelete
+        '
+        Me.btndelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btndelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btndelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btndelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btndelete.FillColor = System.Drawing.SystemColors.Highlight
+        Me.btndelete.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btndelete.ForeColor = System.Drawing.Color.White
+        Me.btndelete.Image = CType(resources.GetObject("btndelete.Image"), System.Drawing.Image)
+        Me.btndelete.Location = New System.Drawing.Point(16, 11)
+        Me.btndelete.Name = "btndelete"
+        Me.btndelete.Size = New System.Drawing.Size(118, 36)
+        Me.btndelete.TabIndex = 211
+        Me.btndelete.Text = "Reset Scanning"
         '
         'labelerror3
         '
@@ -907,22 +923,6 @@ Partial Class OUTFG_TDE
         Me.datagrid3.ThemeStyle.RowsStyle.Height = 22
         Me.datagrid3.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.datagrid3.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'btndelete
-        '
-        Me.btndelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btndelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btndelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btndelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btndelete.FillColor = System.Drawing.SystemColors.Highlight
-        Me.btndelete.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.btndelete.ForeColor = System.Drawing.Color.White
-        Me.btndelete.Image = CType(resources.GetObject("btndelete.Image"), System.Drawing.Image)
-        Me.btndelete.Location = New System.Drawing.Point(16, 11)
-        Me.btndelete.Name = "btndelete"
-        Me.btndelete.Size = New System.Drawing.Size(118, 36)
-        Me.btndelete.TabIndex = 211
-        Me.btndelete.Text = "Reset Scanning"
         '
         'OUTFG_TDE
         '

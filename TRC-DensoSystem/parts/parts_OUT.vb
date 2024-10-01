@@ -1,6 +1,7 @@
-﻿Imports MySql.Data.MySqlClient
-Imports Guna.UI2.WinForms
-Public Class parts_IN
+﻿
+Imports MySql.Data.MySqlClient
+    Imports Guna.UI2.WinForms
+Public Class parts_OUT
     Dim qrlenght As Integer
     Dim serialNumber As String = ""
 
@@ -119,22 +120,32 @@ Public Class parts_IN
                         If dr.Read = True Then
                             Select Case dr.GetInt32("status")
                                 Case 0
-                                    'status out
-                                    display_error("Status : OUT " & dr.GetDateTime("datein").ToString("MMMM-dd-yyyy"), 0)
-                                Case 1
                                     'duplicate
                                     display_error("Status : Duplicate " & dr.GetDateTime("datein").ToString("MMMM-dd-yyyy"), 1)
+                                Case 1
+                                    'update
+                                    con.Close()
+                                    con.Open()
+                                    Dim cmdupdate As New MySqlCommand("UPDATE denso_parts SET batchout=@batchout, userout=@userout, dateout=@dateout, status=@status WHERE qrcode=@qrcode", con)
 
+                                    ' Add parameters with values
+                                    With cmdupdate.Parameters
+                                        .AddWithValue("@batchout", batchcode.Text)
+                                        .AddWithValue("@userout", idno)
+                                        .AddWithValue("@dateout", datedb)
+                                        .AddWithValue("@status", 0)
+                                        .AddWithValue("@qrcode", txtqr.Text)
+                                    End With
+
+                                    cmdupdate.ExecuteNonQuery()
+                                    displaygrid()
+                                    displaygrid2()
+                                    error_panel.Visible = False
                             End Select
 
                         Else
-                            'save
-                            insertrecord("INSERT INTO `denso_parts`(`qrcode`, `partno`, `qty`, `color`, `proddate`, `batchin`, `userin`, `datein`, `batchout`, `userout`, `dateout`, `status`,`lotnumber`)
-                                                        VALUES ('" & txtqr.Text & "','" & partno & "','" & qty & "','" & color & "','" & prod & "','" & batchcode.Text & "','" & idno & "','" & datedb & "','','',NULL,1,'" & series & "')")
-                            displaygrid()
-                            displaygrid2()
-                            error_panel.Visible = False
-
+                            'norecord
+                            display_error("No record. Please scan in first", 0)
                         End If
 
                     Else
@@ -157,13 +168,13 @@ Public Class parts_IN
     Private Sub displaygrid()
         reload("SELECT dp.qrcode AS QR, dp.partno AS Partcode,pm.partname, dp.qty AS QTY, dp.color AS Color,dp.lotnumber AS Lotno, DATE_FORMAT(dp.proddate, '%b-%d-%Y') AS Production_date FROM `denso_parts` dp 
                 JOIN denso_parts_masterlist pm ON pm.partno = dp.partno
-                WHERE batchin='" & batchcode.Text & "' AND userin='" & idno & "' AND datein='" & datedb & "' ORDER BY dp.id DESC", datagrid1)
+                WHERE batchout='" & batchcode.Text & "' AND userout='" & idno & "' AND dateout='" & datedb & "' ORDER BY dp.id DESC", datagrid1)
 
     End Sub
     Private Sub displaygrid2()
         reload("SELECT dp.partno AS Partcode, SUM(dp.qty) AS Total_QTY FROM denso_parts dp
            
-            WHERE batchin='" & batchcode.Text & "' AND userin='" & idno & "' AND datein='" & datedb & "' 
+            WHERE batchout='" & batchcode.Text & "' AND userout='" & idno & "' AND dateout='" & datedb & "' 
             GROUP BY dp.partno", datagrid2)
     End Sub
 
@@ -173,12 +184,8 @@ Public Class parts_IN
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
-        Dim results As New Parts_IN_Results
+        Dim results As New parts_OUT_Results
         results.ShowDialog()
         results.BringToFront()
-    End Sub
-
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-
     End Sub
 End Class

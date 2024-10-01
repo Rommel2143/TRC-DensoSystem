@@ -98,7 +98,7 @@ Partial Class dmtn_inner_tag
         '
         'Guna2Panel2
         '
-        Me.Guna2Panel2.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Guna2Panel2.BackColor = System.Drawing.Color.DarkSlateBlue
         Me.Guna2Panel2.Controls.Add(Me.PictureBox1)
         Me.Guna2Panel2.Controls.Add(Me.Label10)
         Me.Guna2Panel2.Controls.Add(Me.txtdate)
@@ -212,7 +212,7 @@ Partial Class dmtn_inner_tag
         Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.datagrid1.RowHeadersVisible = False
         Me.datagrid1.RowTemplate.Height = 31
-        Me.datagrid1.Size = New System.Drawing.Size(574, 383)
+        Me.datagrid1.Size = New System.Drawing.Size(574, 455)
         Me.datagrid1.TabIndex = 208
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -316,11 +316,11 @@ Partial Class dmtn_inner_tag
         '
         Me.lbl_qty.AutoSize = True
         Me.lbl_qty.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_qty.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_qty.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_qty.ForeColor = System.Drawing.Color.Gray
-        Me.lbl_qty.Location = New System.Drawing.Point(579, 524)
+        Me.lbl_qty.Location = New System.Drawing.Point(513, 611)
         Me.lbl_qty.Name = "lbl_qty"
-        Me.lbl_qty.Size = New System.Drawing.Size(15, 17)
+        Me.lbl_qty.Size = New System.Drawing.Size(23, 25)
         Me.lbl_qty.TabIndex = 215
         Me.lbl_qty.Text = "0"
         '
@@ -328,11 +328,11 @@ Partial Class dmtn_inner_tag
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Gray
-        Me.Label3.Location = New System.Drawing.Point(497, 524)
+        Me.Label3.Location = New System.Drawing.Point(405, 611)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(76, 17)
+        Me.Label3.Size = New System.Drawing.Size(102, 25)
         Me.Label3.TabIndex = 214
         Me.Label3.Text = "Total QTY :"
         '
@@ -340,11 +340,11 @@ Partial Class dmtn_inner_tag
         '
         Me.lbl_count.AutoSize = True
         Me.lbl_count.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_count.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_count.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_count.ForeColor = System.Drawing.Color.Gray
-        Me.lbl_count.Location = New System.Drawing.Point(579, 502)
+        Me.lbl_count.Location = New System.Drawing.Point(515, 574)
         Me.lbl_count.Name = "lbl_count"
-        Me.lbl_count.Size = New System.Drawing.Size(15, 17)
+        Me.lbl_count.Size = New System.Drawing.Size(32, 37)
         Me.lbl_count.TabIndex = 213
         Me.lbl_count.Text = "0"
         '
@@ -352,11 +352,11 @@ Partial Class dmtn_inner_tag
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Gray
-        Me.Label8.Location = New System.Drawing.Point(520, 502)
+        Me.Label8.Location = New System.Drawing.Point(403, 574)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(53, 17)
+        Me.Label8.Size = New System.Drawing.Size(106, 37)
         Me.Label8.TabIndex = 212
         Me.Label8.Text = "Count :"
         '
@@ -424,7 +424,7 @@ Partial Class dmtn_inner_tag
         Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox3.Location = New System.Drawing.Point(30, 55)
         Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
-        Me.Guna2GroupBox3.Size = New System.Drawing.Size(629, 568)
+        Me.Guna2GroupBox3.Size = New System.Drawing.Size(629, 680)
         Me.Guna2GroupBox3.TabIndex = 214
         Me.Guna2GroupBox3.Text = "INNER TAG"
         '

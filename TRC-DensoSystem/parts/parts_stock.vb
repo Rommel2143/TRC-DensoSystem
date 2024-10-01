@@ -1,14 +1,18 @@
-﻿Imports MySql.Data.MySqlClient
-Imports ClosedXML.Excel
-Public Class FG_monitoring
+﻿
+Imports MySql.Data.MySqlClient
+    Imports ClosedXML.Excel
+Public Class parts_stock
     Private Sub stock_monitoring_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        refreshgrid()
+        reload("SELECT `id`,lotnumber,`partno`,`proddate` FROM denso_parts  WHERE status=1 ORDER BY proddate", datagrid1_exp)
     End Sub
-    Private Sub refreshgrid(table As String)
+    Private Sub refreshgrid()
         Try
             con.Close()
             con.Open()
-            Dim cmdrefreshgrid As New MySqlCommand("SELECT `partno`, `customerno`, `color`,sum(`qty`) as TOTAL FROM " & table & "  WHERE dateout is NULL GROUP BY `partno`, `customerno`, `color`", con)
+            Dim cmdrefreshgrid As New MySqlCommand("SELECT dp.partno,pm.partname,sum(qty) as TOTAL FROM denso_parts dp
+                                                    JOIN denso_parts_masterlist pm ON pm.partno=dp.partno
+                                                    WHERE status= 1 GROUP BY partno", con)
 
             Dim da As New MySqlDataAdapter(cmdrefreshgrid)
             Dim dt As New DataTable
@@ -24,56 +28,6 @@ Public Class FG_monitoring
         End Try
     End Sub
 
-    Private Sub refreshtodb(cmbbox As Guna.UI2.WinForms.Guna2ComboBox, db As String)
-        Try
-            con.Close()
-            con.Open()
-            Dim cmdrefreshgrid As New MySqlCommand("SELECT `partno`, `customerno`, SUM(`qty`) FROM '" & db & "' WHERE qrtype='" & cmbbox.Text & "'", con)
-
-            Dim da As New MySqlDataAdapter(cmdrefreshgrid)
-            Dim dt As New DataTable
-            da.Fill(dt)
-            datagrid1.DataSource = dt
-
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        Finally
-
-            con.Close()
-        End Try
-    End Sub
-
-
-    Private Sub cmb_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_type.SelectedIndexChanged
-
-        Select Case cmb_type.Text
-            Case "DMTN"
-                refreshgrid("denso_dmtn")
-            Case "20CY"
-                refreshgrid("denso_20cy")
-            Case "TDE"
-                con.Close()
-                con.Open()
-                Dim cmdrefreshgrid As New MySqlCommand("SELECT `partno`, `customerno`, `partname`,`qty` FROM `denso_fg_masterlist` WHERE qrtype='TDE' and qty != '0' ", con)
-
-                Dim da As New MySqlDataAdapter(cmdrefreshgrid)
-                Dim dt As New DataTable
-                da.Fill(dt)
-                datagrid1.DataSource = dt
-            Case "INTELLI IV"
-                refreshgrid("denso_intelli4")
-            Case "YT"
-                refreshgrid("denso_yt")
-            Case "JECO"
-                refreshgrid("denso_jeco")
-            Case "3T"
-                refreshgrid("denso_3t")
-        End Select
-
-
-
-    End Sub
 
     Private Sub export_excel_Click(sender As Object, e As EventArgs) Handles export_excel.Click
         Try
@@ -117,25 +71,7 @@ Public Class FG_monitoring
         End Try
     End Sub
 
-    Private Sub cmb_type_exp_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_type_exp.SelectedIndexChanged
-        Select Case cmb_type_exp.Text
-            Case "DMTN"
-                reload("SELECT `id`,`serial`, `partno`, `customerno`,`proddate` FROM `denso_dmtn` WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
-            Case "20CY"
-                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_20cy`  WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
-            Case "TDE"
-                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_fg_scan` WHERE type = 'TDE' and dateout is NULL ORDER BY proddate", datagrid1_exp)
-            Case "INTELLI IV"
-                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_intelli4`  WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
-            Case "YT"
-                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_yt`  WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
-            Case "JECO"
-                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_jeco`  WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
-            Case "3T"
-                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_3t`  WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
-        End Select
 
-    End Sub
     Private Sub datagrid1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles datagrid1_exp.CellFormatting
         ' Ensure we are formatting the entire row, not individual cells
         If e.RowIndex >= 0 AndAlso datagrid1_exp.Columns(e.ColumnIndex).Name = "proddate" Then
