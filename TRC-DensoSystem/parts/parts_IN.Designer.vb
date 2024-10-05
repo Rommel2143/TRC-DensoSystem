@@ -107,7 +107,7 @@ Partial Class parts_IN
         Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.datagrid1.RowHeadersVisible = False
         Me.datagrid1.RowTemplate.Height = 31
-        Me.datagrid1.Size = New System.Drawing.Size(1384, 509)
+        Me.datagrid1.Size = New System.Drawing.Size(1044, 489)
         Me.datagrid1.TabIndex = 5
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -140,14 +140,14 @@ Partial Class parts_IN
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.Size = New System.Drawing.Size(1384, 20)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(1044, 20)
         Me.Guna2Panel2.TabIndex = 205
         '
         'PictureBox1
         '
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(1244, 0)
+        Me.PictureBox1.Location = New System.Drawing.Point(904, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(21, 20)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -172,7 +172,7 @@ Partial Class parts_IN
         Me.txtdate.Dock = System.Windows.Forms.DockStyle.Right
         Me.txtdate.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtdate.ForeColor = System.Drawing.Color.White
-        Me.txtdate.Location = New System.Drawing.Point(1265, 0)
+        Me.txtdate.Location = New System.Drawing.Point(925, 0)
         Me.txtdate.Name = "txtdate"
         Me.txtdate.Size = New System.Drawing.Size(119, 20)
         Me.txtdate.TabIndex = 1
@@ -189,7 +189,7 @@ Partial Class parts_IN
         Me.Guna2GroupBox1.CustomBorderThickness = New System.Windows.Forms.Padding(0, 20, 0, 0)
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(1072, 52)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(732, 52)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.ShadowDecoration.BorderRadius = 15
         Me.Guna2GroupBox1.ShadowDecoration.Color = System.Drawing.Color.DimGray
@@ -309,7 +309,7 @@ Partial Class parts_IN
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1384, 232)
+        Me.Panel2.Size = New System.Drawing.Size(1044, 232)
         Me.Panel2.TabIndex = 3
         '
         'error_panel
@@ -323,7 +323,7 @@ Partial Class parts_IN
         Me.error_panel.Location = New System.Drawing.Point(0, 20)
         Me.error_panel.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.error_panel.Name = "error_panel"
-        Me.error_panel.Size = New System.Drawing.Size(1384, 27)
+        Me.error_panel.Size = New System.Drawing.Size(1044, 27)
         Me.error_panel.TabIndex = 207
         Me.error_panel.Visible = False
         '
@@ -333,7 +333,7 @@ Partial Class parts_IN
         Me.btn_close.BackColor = System.Drawing.Color.Transparent
         Me.btn_close.Image = CType(resources.GetObject("btn_close.Image"), System.Drawing.Image)
         Me.btn_close.ImageRotate = 0!
-        Me.btn_close.Location = New System.Drawing.Point(1360, 5)
+        Me.btn_close.Location = New System.Drawing.Point(1020, 5)
         Me.btn_close.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btn_close.Name = "btn_close"
         Me.btn_close.Size = New System.Drawing.Size(15, 15)
@@ -370,7 +370,7 @@ Partial Class parts_IN
         '
         Me.Guna2VSeparator1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Guna2VSeparator1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2VSeparator1.Location = New System.Drawing.Point(1275, 15)
+        Me.Guna2VSeparator1.Location = New System.Drawing.Point(935, 15)
         Me.Guna2VSeparator1.Name = "Guna2VSeparator1"
         Me.Guna2VSeparator1.Size = New System.Drawing.Size(9, 37)
         Me.Guna2VSeparator1.TabIndex = 202
@@ -389,7 +389,7 @@ Partial Class parts_IN
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
         Me.Guna2Button1.Image = CType(resources.GetObject("Guna2Button1.Image"), System.Drawing.Image)
         Me.Guna2Button1.ImageSize = New System.Drawing.Size(30, 30)
-        Me.Guna2Button1.Location = New System.Drawing.Point(1290, 15)
+        Me.Guna2Button1.Location = New System.Drawing.Point(950, 15)
         Me.Guna2Button1.Name = "Guna2Button1"
         Me.Guna2Button1.ShadowDecoration.Color = System.Drawing.Color.Silver
         Me.Guna2Button1.ShadowDecoration.Enabled = True
@@ -431,14 +431,14 @@ Partial Class parts_IN
         Me.Guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
         Me.Guna2GradientPanel1.Location = New System.Drawing.Point(0, 232)
         Me.Guna2GradientPanel1.Name = "Guna2GradientPanel1"
-        Me.Guna2GradientPanel1.Size = New System.Drawing.Size(1384, 67)
+        Me.Guna2GradientPanel1.Size = New System.Drawing.Size(1044, 67)
         Me.Guna2GradientPanel1.TabIndex = 6
         '
         'parts_IN
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1384, 808)
+        Me.ClientSize = New System.Drawing.Size(1044, 788)
         Me.Controls.Add(Me.datagrid1)
         Me.Controls.Add(Me.Guna2GradientPanel1)
         Me.Controls.Add(Me.Panel2)

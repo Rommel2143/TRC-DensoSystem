@@ -4,7 +4,7 @@ Module Module1
 
     Public Function connection() As MySqlConnection
         'Return New MySqlConnection("server=PTI-027s;user id=Denso;password=denso123@;database=trcsystem")
-        Return New MySqlConnection("server=localhost;user id=trcsystem;password=Magnaye2143@#;database=trcsystem")
+        Return New MySqlConnection("server=localhost;user id=momel;password=Magnaye2143@#;database=trcsystem")
     End Function
     Public con As MySqlConnection = connection()
     Public result As String

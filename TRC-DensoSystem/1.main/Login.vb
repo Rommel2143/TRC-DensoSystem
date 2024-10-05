@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Login
+    Dim pass As String
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim maxRetries As Integer = 3 ' Set maximum number of retry attempts
         Dim currentRetry As Integer = 0 ' Track current retry count
@@ -80,40 +81,42 @@ Public Class Login
 
                 Dim query As String = "SELECT * FROM denso_scanoperator WHERE IDno = @idwithoutA OR IDno = @idwithA OR IDno = @idwithoutasmall"
                 Using cmd As New MySqlCommand(query, con)
-                        cmd.Parameters.AddWithValue("@idwithA", idwithA)
-                        cmd.Parameters.AddWithValue("@idwithoutA", idwithoutA)
-                        cmd.Parameters.AddWithValue("@idwithoutasmall", idwithoutasmall)
+                    cmd.Parameters.AddWithValue("@idwithA", idwithA)
+                    cmd.Parameters.AddWithValue("@idwithoutA", idwithoutA)
+                    cmd.Parameters.AddWithValue("@idwithoutasmall", idwithoutasmall)
 
-                        Using dr As MySqlDataReader = cmd.ExecuteReader()
-                            If dr.Read() Then
-                                fname = dr("fullname").ToString()
+                    Using dr As MySqlDataReader = cmd.ExecuteReader()
+                        If dr.Read() Then
+                            fname = dr("fullname").ToString()
                             idno = dr("IDno").ToString()
                             user_level = dr.GetInt32("status")
-
+                            pass = dr.GetString("password")
                             Select Case user_level
                                 Case 0
                                     sub_mainframe.tool_manage.Visible = False
+                                    sub_mainframe.tool_overview.Visible = False
 
+                                    display_form(sub_mainframe)
+                                    sub_mainframe.userstrip.Text = "Hello, " & fname
+                                    error_panel.Visible = False
+                                    txtbarcode.Clear()
+                                    Me.Close()
                                 Case 1
-                                    sub_mainframe.tool_manage.Visible = True
+                                    panel_pass.Visible = True
+                                    txtbarcode.Enabled = False
                             End Select
 
-
-                            display_form(sub_mainframe)
-                            sub_mainframe.userstrip.Text = "Hello, " & fname
-                            error_panel.Visible = False
-
                         Else
-                                noid()
-                            End If
-                        End Using
+                            noid()
+                        End If
                     End Using
+                End Using
 
 
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             Finally
-                txtbarcode.Clear()
+                con.Close()
             End Try
         End If
     End Sub
@@ -129,7 +132,33 @@ Public Class Login
 
     End Sub
 
-    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
+    Private Sub txt_password_KeyDown(sender As Object, e As KeyEventArgs) Handles txt_password.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            If txt_password.Text = pass Then
+                sub_mainframe.tool_manage.Visible = True
+                sub_mainframe.tool_overview.Visible = True
+                display_form(sub_mainframe)
+                sub_mainframe.userstrip.Text = "Hello, " & fname
+                error_panel.Visible = False
+                txtbarcode.Clear()
+                Me.Close()
+            Else
+                noid()
+            End If
+
+
+        End If
+
 
     End Sub
+
+    Private Sub txt_password_TextChanged(sender As Object, e As EventArgs) Handles txt_password.TextChanged
+
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        display_form(New Login)
+        Me.Close()
+    End Sub
+
 End Class

@@ -159,7 +159,7 @@ Public Class Add_item
             Else
                 con.Close()
                 con.Open()
-                Dim cmdinsert As New MySqlCommand(" INSERT INTO `denso_scanoperator`(`IDno`, `Fullname`, `status`) VALUES ('" & idno.Text & "','" & fname.Text & "','user')", con)
+                Dim cmdinsert As New MySqlCommand(" INSERT INTO `denso_scanoperator`(`IDno`, `Fullname`, `status`) VALUES ('" & idno.Text & "','" & fname.Text & "',0)", con)
                 cmdinsert.ExecuteNonQuery()
                 MessageBox.Show("USER Added successfully!")
                 con.Close()

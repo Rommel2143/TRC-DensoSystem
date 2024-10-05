@@ -63,7 +63,9 @@ Public Class sub_mainframe
     End Sub
 
     Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
-        display_form(Login)
+        display_form(New Login)
+        Me.Close()
+
         Login.txtbarcode.Clear()
     End Sub
 
@@ -211,5 +213,9 @@ Public Class sub_mainframe
 
     Private Sub PARTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PARTToolStripMenuItem.Click
         display_formscan(New parts_stock)
+    End Sub
+
+    Private Sub tool_overview_Click(sender As Object, e As EventArgs) Handles tool_overview.Click
+        display_formscan(dashboard)
     End Sub
 End Class

@@ -100,6 +100,9 @@
     <Reference Include="Google.Protobuf, Version=3.26.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>packages\Google.Protobuf.3.26.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.Charts.WinForms, Version=1.0.9.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.Charts.WinForms.1.0.9\lib\net472\Guna.Charts.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
@@ -171,14 +174,12 @@
     <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
       <Private>True</Private>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
-      <Private>True</Private>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -193,7 +194,6 @@
     </Reference>
     <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
-      <Private>True</Private>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -234,6 +234,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2.dashboard\dashboard.Designer.vb">
+      <DependentUpon>dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="2.dashboard\dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2.dashboard\edit_tolerance.Designer.vb">
+      <DependentUpon>edit_tolerance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="2.dashboard\edit_tolerance.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="20CY\retainer_20cy_in.Designer.vb">
       <DependentUpon>retainer_20cy_in.vb</DependentUpon>
     </Compile>
@@ -485,10 +497,10 @@
     <Compile Include="DMTN\cml_track.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="monitoring\FG_monitoring.Designer.vb">
+    <Compile Include="3.monitoring\FG_monitoring.Designer.vb">
       <DependentUpon>FG_monitoring.vb</DependentUpon>
     </Compile>
-    <Compile Include="monitoring\FG_monitoring.vb">
+    <Compile Include="3.monitoring\FG_monitoring.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -575,6 +587,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="2.dashboard\dashboard.resx">
+      <DependentUpon>dashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2.dashboard\edit_tolerance.resx">
+      <DependentUpon>edit_tolerance.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="20CY\retainer_20cy_in.resx">
       <DependentUpon>retainer_20cy_in.vb</DependentUpon>
     </EmbeddedResource>
@@ -700,7 +718,7 @@
     <EmbeddedResource Include="DMTN\cml_track.resx">
       <DependentUpon>cml_track.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="monitoring\FG_monitoring.resx">
+    <EmbeddedResource Include="3.monitoring\FG_monitoring.resx">
       <DependentUpon>FG_monitoring.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -804,6 +822,7 @@
   <ItemGroup>
     <Content Include="INVENTORY %282%29.ico" />
     <Content Include="INVENTORY %283%29.ico" />
+    <None Include="Resources\edit %282%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TDE\" />

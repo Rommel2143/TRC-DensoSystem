@@ -67,6 +67,7 @@ Partial Class sub_mainframe
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.tool_overview = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -80,7 +81,7 @@ Partial Class sub_mainframe
         Me.Panel1.Location = New System.Drawing.Point(0, 41)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1342, 775)
+        Me.Panel1.Size = New System.Drawing.Size(1044, 747)
         Me.Panel1.TabIndex = 12
         '
         'PARTSToolStripMenuItem
@@ -100,7 +101,7 @@ Partial Class sub_mainframe
         Me.PARTToolStripMenuItem.Image = CType(resources.GetObject("PARTToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PARTToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.PARTToolStripMenuItem.Name = "PARTToolStripMenuItem"
-        Me.PARTToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.PARTToolStripMenuItem.Size = New System.Drawing.Size(191, 38)
         Me.PARTToolStripMenuItem.Text = "PARTS STOCK"
         '
         'RecievingToolStripMenuItem
@@ -110,7 +111,7 @@ Partial Class sub_mainframe
         Me.RecievingToolStripMenuItem.Image = CType(resources.GetObject("RecievingToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RecievingToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.RecievingToolStripMenuItem.Name = "RecievingToolStripMenuItem"
-        Me.RecievingToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.RecievingToolStripMenuItem.Size = New System.Drawing.Size(191, 38)
         Me.RecievingToolStripMenuItem.Text = "Recieving"
         '
         'OutgoingToolStripMenuItem
@@ -120,7 +121,7 @@ Partial Class sub_mainframe
         Me.OutgoingToolStripMenuItem.Image = CType(resources.GetObject("OutgoingToolStripMenuItem.Image"), System.Drawing.Image)
         Me.OutgoingToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.OutgoingToolStripMenuItem.Name = "OutgoingToolStripMenuItem"
-        Me.OutgoingToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.OutgoingToolStripMenuItem.Size = New System.Drawing.Size(191, 38)
         Me.OutgoingToolStripMenuItem.Text = "Outgoing"
         '
         'MasterlistToolStripMenuItem
@@ -485,18 +486,27 @@ Partial Class sub_mainframe
         Me.MenuStrip1.AutoSize = False
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ControlLight
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PARTSToolStripMenuItem, Me.MasterlistToolStripMenuItem, Me.tool_manage, Me.userstrip})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PARTSToolStripMenuItem, Me.MasterlistToolStripMenuItem, Me.tool_manage, Me.userstrip, Me.tool_overview})
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1342, 41)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1044, 41)
         Me.MenuStrip1.TabIndex = 13
+        '
+        'tool_overview
+        '
+        Me.tool_overview.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.tool_overview.Image = CType(resources.GetObject("tool_overview.Image"), System.Drawing.Image)
+        Me.tool_overview.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.tool_overview.Name = "tool_overview"
+        Me.tool_overview.Size = New System.Drawing.Size(120, 37)
+        Me.tool_overview.Text = "Overview"
         '
         'sub_mainframe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1342, 816)
+        Me.ClientSize = New System.Drawing.Size(1044, 788)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -554,4 +564,5 @@ Partial Class sub_mainframe
     Friend WithEvents RecievingToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OutgoingToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PARTToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents tool_overview As ToolStripMenuItem
 End Class
