@@ -41,7 +41,7 @@
                 datagrid_innertag.DataSource = Nothing
             Else
 
-                reload("SELECT `innertag`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial`, `userin`, `datein` FROM `denso_dmtn_innertag` WHERE innertag='" & txtqr_innertag.Text & "'", datagrid_innertag)
+                reload("SELECT `innertag`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial`,`fglabel`,`userin`, `datein` FROM `denso_dmtn_innertag` WHERE innertag='" & txtqr_innertag.Text & "'", datagrid_innertag)
 
             End If
         End If

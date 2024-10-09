@@ -4,10 +4,26 @@ Imports MySql.Data.MySqlClient
 Imports System.Drawing ' Ensure this is imported for Color
 Imports Guna.Charts.WinForms
 Imports Guna.UI2.WinForms
+Imports ClosedXML.Excel
 Public Class dashboard
+
     Private Sub memo_analytics_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        reload_all()
-        LoadMemberProfiles()
+        Try
+
+            reload_all()
+            LoadMemberProfiles()
+
+            con.Close()
+            con.Open()
+            Dim cmdselect As New MySqlCommand("SELECT DISTINCT(partno) FROM denso_dmtn ORDER BY partno DESC", con)
+            dr = cmdselect.ExecuteReader
+            cmb_partno.Items.Clear()
+            While (dr.Read())
+                cmb_partno.Items.Add(dr.GetString("partno"))
+            End While
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
 
@@ -104,9 +120,9 @@ Public Class dashboard
                 memberLabel.ForeColor = Color.FromArgb(50, 50, 50)
                 memberLabel.AutoSize = True
                 memberLabel.Text = $"{reader("partname")}" & Environment.NewLine &
-                               $"  {reader("partno")}" & Environment.NewLine &
-                               $"" & Environment.NewLine &
-                               $" Min: {reader("min")}             Max: {reader("min")}"
+                   $"  {reader("partno")}" & Environment.NewLine &
+                   $"" & Environment.NewLine &
+                   $" Min: {reader("min")}             Max: {reader("max")}"
 
                 memberLabel.Location = New Point(10, 15)
 
@@ -211,9 +227,9 @@ Public Class dashboard
                     memberLabel.ForeColor = Color.FromArgb(50, 50, 50)
                     memberLabel.AutoSize = True
                     memberLabel.Text = $"{reader("partname")}" & Environment.NewLine &
-                                   $"  {reader("partno")}" & Environment.NewLine &
-                                   $"" & Environment.NewLine &
-                                   $" Min: {reader("min")}             Max: {reader("min")}"
+                   $"  {reader("partno")}" & Environment.NewLine &
+                   $"" & Environment.NewLine &
+                   $" Min: {reader("min")}             Max: {reader("max")}"
 
                     memberLabel.Location = New Point(10, 15)
 
@@ -268,5 +284,51 @@ Public Class dashboard
                 con.Close()
             End Try
         End If
+    End Sub
+
+    Private Sub TabPage3_Click(sender As Object, e As EventArgs) Handles TabPage3.Click
+
+    End Sub
+
+    Private Sub export_excel_Click(sender As Object, e As EventArgs) Handles export_excel.Click
+
+        dt = New DataTable()
+            con.Close()
+            con.Open()
+
+        Dim query As String = "SELECT * FROM denso_dmtn WHERE partno = @partno AND datein BETWEEN @datefrom AND @dateto ORDER BY datein DESC"
+        Dim cmd As New MySqlCommand(query, con)
+
+            ' Add parameters to prevent SQL injection
+            cmd.Parameters.AddWithValue("@partno", cmb_partno.Text)
+            cmd.Parameters.AddWithValue("@datefrom", dt_from.Value.ToString("yyyy-MM-dd"))
+            cmd.Parameters.AddWithValue("@dateto", dt_to.Value.ToString("yyyy-MM-dd"))
+
+            da.SelectCommand = cmd
+            da.Fill(dt)
+
+
+        Try
+            If dt.Rows.Count > 0 Then
+                ' Save the data to an Excel file
+                Using sfd As New SaveFileDialog()
+                    sfd.Filter = "Excel Workbook|*.xlsx"
+                    sfd.Title = "Save an Excel File"
+                    sfd.ShowDialog()
+
+                    If sfd.FileName <> "" Then
+                        Using wb As New XLWorkbook()
+                            wb.Worksheets.Add(dt, "Sheet1") ' Use the existing DataTable (dt)
+                            wb.SaveAs(sfd.FileName)
+                        End Using
+                        MessageBox.Show("Data successfully exported to Excel.", "Export Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    End If
+                End Using
+            Else
+                MessageBox.Show("No data available to export.", "Export Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
     End Sub
 End Class

@@ -29,6 +29,7 @@ Partial Class Login
         Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.lbl_pcinfo = New System.Windows.Forms.Label()
         Me.panel_pass = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.txt_password = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
@@ -39,7 +40,6 @@ Partial Class Login
         Me.error_panel = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.Guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.lbl_error = New System.Windows.Forms.Label()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
@@ -120,6 +120,21 @@ Partial Class Login
         Me.panel_pass.Size = New System.Drawing.Size(662, 62)
         Me.panel_pass.TabIndex = 26
         Me.panel_pass.Visible = False
+        '
+        'Guna2Button1
+        '
+        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button1.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button1.Image = CType(resources.GetObject("Guna2Button1.Image"), System.Drawing.Image)
+        Me.Guna2Button1.Location = New System.Drawing.Point(474, 15)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.Size = New System.Drawing.Size(24, 26)
+        Me.Guna2Button1.TabIndex = 25
         '
         'txt_password
         '
@@ -270,22 +285,6 @@ Partial Class Login
         Me.lbl_error.Size = New System.Drawing.Size(119, 17)
         Me.lbl_error.TabIndex = 0
         Me.lbl_error.Text = "Invalid Credentials"
-        '
-        'Guna2Button1
-        '
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Image = CType(resources.GetObject("Guna2Button1.Image"), System.Drawing.Image)
-        Me.Guna2Button1.ImageSize = New System.Drawing.Size(30, 30)
-        Me.Guna2Button1.Location = New System.Drawing.Point(474, 12)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(34, 33)
-        Me.Guna2Button1.TabIndex = 25
         '
         'Login
         '
