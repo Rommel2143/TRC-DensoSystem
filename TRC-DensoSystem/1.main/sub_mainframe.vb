@@ -74,9 +74,19 @@ Public Class sub_mainframe
     End Sub
 
     Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
-        con.Close()
-        Application.Exit()
+        Try
+            ' Close database connection
+            If con IsNot Nothing AndAlso con.State = ConnectionState.Open Then
+                con.Close()
+            End If
 
+            ' Add any cleanup code here if necessary
+
+        Catch ex As Exception
+            MessageBox.Show("Error closing application: " & ex.Message)
+        Finally
+            Application.Exit() ' Ensure the application exits
+        End Try
     End Sub
 
     Private Sub ToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem4.Click

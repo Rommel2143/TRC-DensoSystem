@@ -27,6 +27,7 @@ Public Class edit_tolerance
         Dim edit As New MySqlCommand("UPDATE `denso_parts_masterlist` SET `min`='" & txt_min.Text & "',`max`='" & txt_max.Text & "' WHERE id = '" & dataid & "'", con)
         edit.ExecuteNonQuery()
         dashboard.LoadMemberProfiles()
+        dashboard.reload_graph()
         Me.Close()
     End Sub
 

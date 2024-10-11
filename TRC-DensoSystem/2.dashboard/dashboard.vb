@@ -1,86 +1,147 @@
 ﻿
-
+Imports System.Windows.Forms.DataVisualization.Charting
 Imports MySql.Data.MySqlClient
-Imports System.Drawing ' Ensure this is imported for Color
-Imports Guna.Charts.WinForms
 Imports Guna.UI2.WinForms
 Imports ClosedXML.Excel
 Public Class dashboard
-
+    Dim table As String
+    Dim query As String
+      Dim gunahorizontalbardataset As New DataSet()
     Private Sub memo_analytics_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-
-            reload_all()
+            dt_to.Value = Date.Now
+            dt_from.Value = Date.Now
+            reload_graph()
             LoadMemberProfiles()
 
-            con.Close()
-            con.Open()
-            Dim cmdselect As New MySqlCommand("SELECT DISTINCT(partno) FROM denso_dmtn ORDER BY partno DESC", con)
-            dr = cmdselect.ExecuteReader
-            cmb_partno.Items.Clear()
-            While (dr.Read())
-                cmb_partno.Items.Add(dr.GetString("partno"))
-            End While
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
     End Sub
 
+    Public Sub reload_graph()
+        con.Close()
+        con.Open()
 
-    Private Sub reload_all()
-        Try
-            con.Close()
-            con.Open()
-            Dim cmd As New MySqlCommand("SELECT dp.partno, pm.partname, SUM(qty) AS TOTAL, pm.min, pm.max 
-                                              FROM denso_parts dp
-                                              JOIN denso_parts_masterlist pm ON pm.partno = dp.partno
-                                              WHERE status = 1 
-                                              GROUP BY dp.partno", con)
+        ' SQL query to get partno, partname, sum(qty), min, and max
+        Dim cmd As New MySqlCommand("SELECT dp.partno,dp.color, pm.partname, SUM(qty) AS TOTAL, pm.min, pm.max 
+                                 FROM denso_parts dp
+                                 JOIN denso_parts_masterlist pm ON pm.partno = dp.partno
+                                 WHERE status = 1 
+                                 GROUP BY dp.partno,dp.color
+                                  ORDER BY TOTAL DESC", con)
 
-            Dim adapter As New MySqlDataAdapter(cmd)
-            Dim gunahorizontalbardataset As New DataSet()
+        ' Execute the query and get data into a MySqlDataReader
+        Dim reader As MySqlDataReader = cmd.ExecuteReader()
 
-            ' Fill the dataset with data
-            adapter.Fill(gunahorizontalbardataset, "PARTS STOCK MONITORING")
+        ' Clear existing series, titles, chart areas, and legends
+        Chart1.Series.Clear()
+        Chart1.Titles.Clear()
+        Chart1.ChartAreas.Clear()
+        Chart1.Legends.Clear()
 
-            ' Clear existing points in bardataset by reinitializing it
-            bardataset = New GunaHorizontalBarDataset()
-            bardataset.Label = "Total Stock"
+        ' Create a new chart area
+        Dim chartArea As New ChartArea()
+        chartArea.AxisY.Title = "Total Quantity"
+        chartArea.AxisY.TitleFont = New Font("Segoe UI Semibold", 10)
 
-            ' Populate bardataset with data from the dataset
-            For Each row As DataRow In gunahorizontalbardataset.Tables("PARTS STOCK MONITORING").Rows
-                Dim partName As String = row("partname").ToString()
-                Dim total As Integer = Convert.ToInt32(row("TOTAL"))
-                Dim min As Integer = Convert.ToInt32(row("min"))
-                Dim max As Integer = Convert.ToInt32(row("max"))
+        ' Add the chart area to the chart
+        Chart1.ChartAreas.Add(chartArea)
 
-                ' Determine the color based on stock levels
-                Dim barColor As Color
-                If total < min Then
-                    barColor = Color.Red ' Depleting
-                ElseIf total > max Then
-                    barColor = Color.Orange ' Overstocked
-                Else
-                    barColor = Color.Blue ' Normal stock
-                End If
+        ' Set grid color
+        chartArea.AxisX.MajorGrid.LineColor = Color.LightGray
+        chartArea.AxisY.MajorGrid.LineColor = Color.LightGray
 
-                ' Add the data point with the determined color
-                bardataset.DataPoints.Add(partName, total)
+        ' Create a new series for the chart
+        Dim series As New Series(" ")
+        series.ChartType = SeriesChartType.Bar ' Set the chart type to Bar
+        series.Font = New Font("Segoe UI Semibold", 9)
+        series.IsValueShownAsLabel = True ' Show values on bars
+        series.LabelForeColor = Color.White ' Make label text white
+        series.Color = Color.White
 
 
-            Next
 
-            ' Add bardataset to Chart1 and refresh the chart
-            Chart1.Datasets.Clear()
-            Chart1.Datasets.Add(bardataset)
-            Chart1.Update()
+        Dim legendColors As New Dictionary(Of String, Color) From {
+        {"Critical", Color.Red},
+        {"Normal", Color.SteelBlue},
+          {"Overstock", Color.Orange}
+    }
 
-        Catch ex As MySqlException
-            MessageBox.Show("Database error: " & ex.Message)
-        Catch ex As Exception
-            MessageBox.Show("An unexpected error occurred: " & ex.Message)
-        End Try
+        ' Add legend to the chart
+        Dim legend As New Legend()
+        legend.Docking = Docking.Top ' Dock the legend to the right
+        legend.Font = New Font("Segoe UI", 10)
+        legend.Alignment = StringAlignment.Near ' Align text to the right
+        Chart1.Legends.Add(legend)
+
+        ' Add legend items
+        For Each entry In legendColors
+            ' Create a new legend item
+            Dim legendItem As New LegendItem()
+            legendItem.Name = entry.Key ' Set the name for the legend item
+            legendItem.Color = entry.Value ' Set the color for the legend item
+            legendItem.BorderColor = Color.Transparent ' Optional: set border color
+            legend.CustomItems.Add(legendItem) ' Add the legend item to the custom items
+        Next
+
+
+
+
+        ' Add data points to the series
+        While reader.Read()
+            Dim partno As String = reader("partno").ToString()
+            Dim partname As String = reader("partname").ToString()
+            Dim total As Integer = Convert.ToInt32(reader("TOTAL"))
+            Dim min As Integer = Convert.ToInt32(reader("min"))
+            Dim max As Integer = Convert.ToInt32(reader("max"))
+            Dim colorcode As String = reader("color").ToString()
+            ' Determine the bar color based on the min and max values
+            Dim barColor As Color
+            Dim note As String
+            If total < min Then
+                barColor = Color.Red ' Depleting stock
+                note = "Alert: Critical" ' Depleting stock
+            ElseIf total > max Then
+                barColor = Color.Orange ' Overstocked
+                note = "Alert: Overstocked" ' Overstocked
+            Else
+                barColor = Color.SteelBlue ' Normal stock
+                note = "" ' Normal stock
+            End If
+
+            ' Create the X-axis label with partname, min, and max on two lines
+            Dim xLabel As String = $"{partno}{vbCrLf}{partname}  {colorcode}{vbCrLf}{note}"
+
+            ' Create a new DataPoint and assign the bar color
+            Dim dataPoint As New DataPoint()
+            dataPoint.AxisLabel = xLabel ' Set the X-axis label on two lines
+            dataPoint.YValues = New Double() {total} ' Set the Y-axis value (total qty)
+            dataPoint.Color = barColor ' Set the bar color based on stock status
+            dataPoint.Font = New Font("Segoe UI Semibold", 10, FontStyle.Bold)
+            dataPoint.LabelForeColor = Color.Blue
+            ' Set the tooltip to show on hover
+            dataPoint.ToolTip = $"Min: {min}{vbCrLf}Max: {max}"
+
+            ' Add the data point to the series
+            series.Points.Add(dataPoint)
+        End While
+
+        ' Add the series to the chart (no name set)
+        Chart1.Series.Add(series)
+
+        ' Add a title to the chart
+        Dim title As New Title("Parts Inventory with Stock Status")
+        title.Font = New Font("Segoe UI Semibold", 16, FontStyle.Bold)
+        title.ForeColor = Color.DarkBlue
+        Chart1.Titles.Add(title)
+
+        ' Close the reader and connection
+        reader.Close()
+        con.Close()
     End Sub
+
 
     Public Sub LoadMemberProfiles()
         Try
@@ -98,7 +159,7 @@ Public Class dashboard
             While reader.Read()
                 ' Create a new Guna2Panel for each member
                 Dim memberPanel As New Guna2Panel()
-                memberPanel.Width = (flow_loan.Width / 3) ' Set width so that two panels fit per row with space between them
+                memberPanel.Width = (flow_loan.Width / 3) - 10 ' Set width so that two panels fit per row with space between them
                 memberPanel.Height = 120
                 memberPanel.BackColor = Color.White
                 memberPanel.FillColor = Color.White ' Set the background to white
@@ -205,7 +266,7 @@ Public Class dashboard
                 While reader.Read()
                     ' Create a new Guna2Panel for each member
                     Dim memberPanel As New Guna2Panel()
-                    memberPanel.Width = (flow_loan.Width / 3) ' Set width so that two panels fit per row with space between them
+                    memberPanel.Width = (flow_loan.Width / 3) - 10 ' Set width so that two panels fit per row with space between them
                     memberPanel.Height = 120
                     memberPanel.BackColor = Color.White
                     memberPanel.FillColor = Color.White ' Set the background to white
@@ -286,25 +347,44 @@ Public Class dashboard
         End If
     End Sub
 
-    Private Sub TabPage3_Click(sender As Object, e As EventArgs) Handles TabPage3.Click
-
+    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
+        reload_graph()
     End Sub
 
     Private Sub export_excel_Click(sender As Object, e As EventArgs) Handles export_excel.Click
+        If table = Nothing Then
+            MessageBox.Show("All Fields are required")
+            Exit Sub
+        End If
 
+        If dt_from.Value > dt_to.Value Then
+            MessageBox.Show("Invalid date range")
+            Exit Sub
+        End If
         dt = New DataTable()
             con.Close()
             con.Open()
 
-        Dim query As String = "SELECT * FROM denso_dmtn WHERE partno = @partno AND datein BETWEEN @datefrom AND @dateto ORDER BY datein DESC"
+        Select Case Guna2ComboBox1.Text
+            Case "Date IN"
+                If cmb_partno.Text = "All" Then
+                    query = "SELECT * FROM " & table & "  WHERE datein BETWEEN '" & dt_from.Value.ToString("yyyy-MM-dd") & "' AND '" & dt_to.Value.ToString("yyyy-MM-dd") & "'  ORDER BY datein DESC"
+
+                Else
+                    query = "SELECT * FROM " & table & " WHERE partno = '" & cmb_partno.Text & "' AND datein BETWEEN '" & dt_from.Value.ToString("yyyy-MM-dd") & "' AND '" & dt_to.Value.ToString("yyyy-MM-dd") & "'  ORDER BY datein DESC"
+                End If
+            Case "Date OUT"
+                If cmb_partno.Text = "All" Then
+                    query = "SELECT * FROM " & table & " WHERE  datein BETWEEN '" & dt_from.Value.ToString("yyyy-MM-dd") & "' AND '" & dt_to.Value.ToString("yyyy-MM-dd") & "'  ORDER BY datein DESC"
+
+                Else
+                    query = "SELECT * FROM " & table & " WHERE partno = '" & cmb_partno.Text & "' AND datein BETWEEN '" & dt_from.Value.ToString("yyyy-MM-dd") & "' AND '" & dt_to.Value.ToString("yyyy-MM-dd") & "'  ORDER BY datein DESC"
+                End If
+
+        End Select
         Dim cmd As New MySqlCommand(query, con)
 
-            ' Add parameters to prevent SQL injection
-            cmd.Parameters.AddWithValue("@partno", cmb_partno.Text)
-            cmd.Parameters.AddWithValue("@datefrom", dt_from.Value.ToString("yyyy-MM-dd"))
-            cmd.Parameters.AddWithValue("@dateto", dt_to.Value.ToString("yyyy-MM-dd"))
-
-            da.SelectCommand = cmd
+        da.SelectCommand = cmd
             da.Fill(dt)
 
 
@@ -331,4 +411,50 @@ Public Class dashboard
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
     End Sub
+
+    Private Sub Guna2ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_type.SelectedIndexChanged
+        Select Case cmb_type.Text
+            Case "3T"
+                load_export("denso_3t")
+
+            Case "20CY"
+                load_export("denso_20cy")
+
+            Case "DMTN"
+                load_export("denso_dmtn")
+
+            Case "INTELLI IV"
+                load_export("denso_intelli4")
+
+            Case "JECO"
+                load_export("denso_jeco")
+
+            Case "YT"
+                load_export("denso_yt")
+
+            Case "TDE"
+                load_export("denso_fg_scan")
+
+
+        End Select
+
+
+    End Sub
+    Private Sub load_export(table1 As String)
+        Try
+            table = table1
+            con.Close()
+            con.Open()
+            Dim cmdselect As New MySqlCommand("SELECT DISTINCT(partno) FROM " & table1 & " ORDER BY partno DESC", con)
+            dr = cmdselect.ExecuteReader
+            cmb_partno.Items.Clear()
+            cmb_partno.Items.Add("All")
+            While (dr.Read())
+                cmb_partno.Items.Add(dr.GetString("partno"))
+            End While
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
 End Class
