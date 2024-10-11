@@ -118,7 +118,7 @@ Partial Class dmtn_cml
         Me.datagrid2.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.datagrid2.RowHeadersVisible = False
         Me.datagrid2.RowTemplate.Height = 31
-        Me.datagrid2.Size = New System.Drawing.Size(574, 518)
+        Me.datagrid2.Size = New System.Drawing.Size(574, 310)
         Me.datagrid2.TabIndex = 218
         Me.datagrid2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid2.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -181,7 +181,7 @@ Partial Class dmtn_cml
         Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox3.Location = New System.Drawing.Point(27, 61)
         Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
-        Me.Guna2GroupBox3.Size = New System.Drawing.Size(629, 680)
+        Me.Guna2GroupBox3.Size = New System.Drawing.Size(629, 551)
         Me.Guna2GroupBox3.TabIndex = 221
         Me.Guna2GroupBox3.Text = "STICKER LABEL"
         '
@@ -191,7 +191,7 @@ Partial Class dmtn_cml
         Me.lbl_qty.BackColor = System.Drawing.Color.Transparent
         Me.lbl_qty.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_qty.ForeColor = System.Drawing.Color.Gray
-        Me.lbl_qty.Location = New System.Drawing.Point(547, 590)
+        Me.lbl_qty.Location = New System.Drawing.Point(549, 485)
         Me.lbl_qty.Name = "lbl_qty"
         Me.lbl_qty.Size = New System.Drawing.Size(23, 25)
         Me.lbl_qty.TabIndex = 215
@@ -203,7 +203,7 @@ Partial Class dmtn_cml
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Gray
-        Me.Label3.Location = New System.Drawing.Point(439, 590)
+        Me.Label3.Location = New System.Drawing.Point(441, 485)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(102, 25)
         Me.Label3.TabIndex = 214
@@ -235,7 +235,7 @@ Partial Class dmtn_cml
         Me.lbl_count.BackColor = System.Drawing.Color.Transparent
         Me.lbl_count.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_count.ForeColor = System.Drawing.Color.Gray
-        Me.lbl_count.Location = New System.Drawing.Point(545, 553)
+        Me.lbl_count.Location = New System.Drawing.Point(547, 448)
         Me.lbl_count.Name = "lbl_count"
         Me.lbl_count.Size = New System.Drawing.Size(32, 37)
         Me.lbl_count.TabIndex = 213
@@ -286,7 +286,7 @@ Partial Class dmtn_cml
         Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.datagrid1.RowHeadersVisible = False
         Me.datagrid1.RowTemplate.Height = 31
-        Me.datagrid1.Size = New System.Drawing.Size(574, 434)
+        Me.datagrid1.Size = New System.Drawing.Size(574, 310)
         Me.datagrid1.TabIndex = 208
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -378,7 +378,7 @@ Partial Class dmtn_cml
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Gray
-        Me.Label8.Location = New System.Drawing.Point(437, 553)
+        Me.Label8.Location = New System.Drawing.Point(439, 448)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(106, 37)
         Me.Label8.TabIndex = 212
@@ -460,7 +460,7 @@ Partial Class dmtn_cml
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(722, 61)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(629, 680)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(629, 551)
         Me.Guna2GroupBox1.TabIndex = 222
         Me.Guna2GroupBox1.Text = "CML"
         '

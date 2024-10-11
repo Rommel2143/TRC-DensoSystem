@@ -152,17 +152,19 @@ Public Class Add_item
         Try
             con.Close()
             con.Open()
-            Dim cmdselect As New MySqlCommand("SELECT IDno FROM `denso_scanoperator` WHERE IDno= '" & idno.Text & "'", con)
+            Dim cmdselect As New MySqlCommand("SELECT IDno FROM `denso_scanoperator` WHERE IDno= '" & txt_idno.Text & "'", con)
             dr = cmdselect.ExecuteReader()
             If dr.Read = True Then
                 lbl_duplicate.Visible = True
             Else
                 con.Close()
                 con.Open()
-                Dim cmdinsert As New MySqlCommand(" INSERT INTO `denso_scanoperator`(`IDno`, `Fullname`, `status`) VALUES ('" & idno.Text & "','" & fname.Text & "',0)", con)
+                Dim cmdinsert As New MySqlCommand(" INSERT INTO `denso_scanoperator`(`IDno`, `Fullname`, `status`,password) VALUES ('" & txt_idno.Text & "','" & fname.Text & "',0,NULL)", con)
                 cmdinsert.ExecuteNonQuery()
                 MessageBox.Show("USER Added successfully!")
                 con.Close()
+                fname.Clear()
+                txt_idno.Clear()
                 lbl_duplicate.Visible = False
 
             End If

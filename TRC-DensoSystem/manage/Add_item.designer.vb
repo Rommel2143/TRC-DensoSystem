@@ -48,7 +48,7 @@ Partial Class Add_item
         Me.fname = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.idno = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_idno = New Guna.UI2.WinForms.Guna2TextBox()
         Me.labelerror = New Guna.UI2.WinForms.Guna2Panel()
         Me.texterror = New System.Windows.Forms.Label()
         Me.Guna2GroupBox1 = New Guna.UI2.WinForms.Guna2GroupBox()
@@ -383,7 +383,7 @@ Partial Class Add_item
         Me.Guna2GroupBox3.Controls.Add(Me.fname)
         Me.Guna2GroupBox3.Controls.Add(Me.Guna2Button3)
         Me.Guna2GroupBox3.Controls.Add(Me.Label10)
-        Me.Guna2GroupBox3.Controls.Add(Me.idno)
+        Me.Guna2GroupBox3.Controls.Add(Me.txt_idno)
         Me.Guna2GroupBox3.CustomBorderColor = System.Drawing.SystemColors.MenuHighlight
         Me.Guna2GroupBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.White
@@ -463,24 +463,24 @@ Partial Class Add_item
         Me.Label10.TabIndex = 7
         Me.Label10.Text = "Fullname :"
         '
-        'idno
+        'txt_idno
         '
-        Me.idno.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.idno.DefaultText = ""
-        Me.idno.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.idno.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.idno.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.idno.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.idno.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.idno.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.idno.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.idno.Location = New System.Drawing.Point(43, 77)
-        Me.idno.Name = "idno"
-        Me.idno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.idno.PlaceholderText = "Enter ID no..."
-        Me.idno.SelectedText = ""
-        Me.idno.Size = New System.Drawing.Size(139, 36)
-        Me.idno.TabIndex = 5
+        Me.txt_idno.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_idno.DefaultText = ""
+        Me.txt_idno.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_idno.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_idno.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_idno.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_idno.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_idno.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_idno.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_idno.Location = New System.Drawing.Point(43, 77)
+        Me.txt_idno.Name = "txt_idno"
+        Me.txt_idno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_idno.PlaceholderText = "Enter ID no..."
+        Me.txt_idno.SelectedText = ""
+        Me.txt_idno.Size = New System.Drawing.Size(139, 36)
+        Me.txt_idno.TabIndex = 5
         '
         'labelerror
         '
@@ -773,7 +773,7 @@ Partial Class Add_item
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label10 As Label
     Friend WithEvents txtqr As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents idno As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txt_idno As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txt_color As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label

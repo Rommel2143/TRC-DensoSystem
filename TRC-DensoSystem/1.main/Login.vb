@@ -90,7 +90,8 @@ Public Class Login
                             fname = dr("fullname").ToString()
                             idno = dr("IDno").ToString()
                             user_level = dr.GetInt32("status")
-                            pass = dr.GetString("password")
+                            pass = If(IsDBNull(dr("password")), String.Empty, dr("password").ToString())
+
                             Select Case user_level
                                 Case 0
                                     sub_mainframe.tool_manage.Visible = False

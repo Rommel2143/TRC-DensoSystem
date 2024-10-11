@@ -56,7 +56,6 @@ Partial Class dmtn_inner_tag
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.txtqr_fg = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2GroupBox3 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -64,16 +63,17 @@ Partial Class dmtn_inner_tag
         Me.datagrid2 = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.labelerror.SuspendLayout()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2GroupBox3.SuspendLayout()
         Me.Guna2GroupBox1.SuspendLayout()
         CType(Me.datagrid2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtqr
@@ -212,7 +212,7 @@ Partial Class dmtn_inner_tag
         Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.datagrid1.RowHeadersVisible = False
         Me.datagrid1.RowTemplate.Height = 31
-        Me.datagrid1.Size = New System.Drawing.Size(574, 455)
+        Me.datagrid1.Size = New System.Drawing.Size(574, 333)
         Me.datagrid1.TabIndex = 208
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -318,7 +318,7 @@ Partial Class dmtn_inner_tag
         Me.lbl_qty.BackColor = System.Drawing.Color.Transparent
         Me.lbl_qty.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_qty.ForeColor = System.Drawing.Color.Gray
-        Me.lbl_qty.Location = New System.Drawing.Point(513, 611)
+        Me.lbl_qty.Location = New System.Drawing.Point(495, 501)
         Me.lbl_qty.Name = "lbl_qty"
         Me.lbl_qty.Size = New System.Drawing.Size(23, 25)
         Me.lbl_qty.TabIndex = 215
@@ -330,7 +330,7 @@ Partial Class dmtn_inner_tag
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Gray
-        Me.Label3.Location = New System.Drawing.Point(405, 611)
+        Me.Label3.Location = New System.Drawing.Point(387, 501)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(102, 25)
         Me.Label3.TabIndex = 214
@@ -342,7 +342,7 @@ Partial Class dmtn_inner_tag
         Me.lbl_count.BackColor = System.Drawing.Color.Transparent
         Me.lbl_count.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_count.ForeColor = System.Drawing.Color.Gray
-        Me.lbl_count.Location = New System.Drawing.Point(515, 574)
+        Me.lbl_count.Location = New System.Drawing.Point(497, 464)
         Me.lbl_count.Name = "lbl_count"
         Me.lbl_count.Size = New System.Drawing.Size(32, 37)
         Me.lbl_count.TabIndex = 213
@@ -354,7 +354,7 @@ Partial Class dmtn_inner_tag
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Gray
-        Me.Label8.Location = New System.Drawing.Point(403, 574)
+        Me.Label8.Location = New System.Drawing.Point(385, 464)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(106, 37)
         Me.Label8.TabIndex = 212
@@ -397,18 +397,6 @@ Partial Class dmtn_inner_tag
         Me.txtqr_fg.Size = New System.Drawing.Size(489, 36)
         Me.txtqr_fg.TabIndex = 1
         '
-        'Guna2PictureBox1
-        '
-        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(581, 109)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(218, 431)
-        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Guna2PictureBox1.TabIndex = 213
-        Me.Guna2PictureBox1.TabStop = False
-        '
         'Guna2GroupBox3
         '
         Me.Guna2GroupBox3.Controls.Add(Me.Label2)
@@ -424,7 +412,7 @@ Partial Class dmtn_inner_tag
         Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox3.Location = New System.Drawing.Point(30, 55)
         Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
-        Me.Guna2GroupBox3.Size = New System.Drawing.Size(629, 680)
+        Me.Guna2GroupBox3.Size = New System.Drawing.Size(629, 552)
         Me.Guna2GroupBox3.TabIndex = 214
         Me.Guna2GroupBox3.Text = "INNER TAG"
         '
@@ -463,7 +451,7 @@ Partial Class dmtn_inner_tag
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(725, 55)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(629, 680)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(629, 552)
         Me.Guna2GroupBox1.TabIndex = 217
         Me.Guna2GroupBox1.Text = "STICKER LABEL"
         '
@@ -511,7 +499,7 @@ Partial Class dmtn_inner_tag
         Me.datagrid2.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.datagrid2.RowHeadersVisible = False
         Me.datagrid2.RowTemplate.Height = 31
-        Me.datagrid2.Size = New System.Drawing.Size(574, 535)
+        Me.datagrid2.Size = New System.Drawing.Size(574, 333)
         Me.datagrid2.TabIndex = 218
         Me.datagrid2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid2.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -555,6 +543,18 @@ Partial Class dmtn_inner_tag
         Me.Guna2Panel3.Size = New System.Drawing.Size(1384, 791)
         Me.Guna2Panel3.TabIndex = 218
         '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(579, 98)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(218, 431)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox1.TabIndex = 221
+        Me.Guna2PictureBox1.TabStop = False
+        '
         'dmtn_inner_tag
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -573,7 +573,6 @@ Partial Class dmtn_inner_tag
         Me.labelerror.ResumeLayout(False)
         Me.labelerror.PerformLayout()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2GroupBox3.ResumeLayout(False)
         Me.Guna2GroupBox3.PerformLayout()
         Me.Guna2GroupBox1.ResumeLayout(False)
@@ -581,6 +580,7 @@ Partial Class dmtn_inner_tag
         CType(Me.datagrid2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel3.ResumeLayout(False)
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -609,7 +609,6 @@ Partial Class dmtn_inner_tag
     Friend WithEvents Label8 As Label
     Friend WithEvents lbl_qty As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2GroupBox3 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
@@ -617,4 +616,5 @@ Partial Class dmtn_inner_tag
     Friend WithEvents datagrid2 As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
 End Class
