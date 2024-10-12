@@ -102,10 +102,10 @@ Public Class dashboard
             Dim note As String
             If total < min Then
                 barColor = Color.Red ' Depleting stock
-                note = "Alert: Critical" ' Depleting stock
+                note = "Alert: Critical!" ' Depleting stock
             ElseIf total > max Then
                 barColor = Color.Orange ' Overstocked
-                note = "Alert: Overstocked" ' Overstocked
+                note = "Alert: Overstocked!" ' Overstocked
             Else
                 barColor = Color.SteelBlue ' Normal stock
                 note = "" ' Normal stock
