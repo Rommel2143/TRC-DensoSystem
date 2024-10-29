@@ -144,7 +144,7 @@ Public Class _20cy_in
                                                                             `datein`) 
                                                                     VALUES ('" & txtqr_label.Text & "',
                                                                             '" & partno & "',
-                                                                            '" & cmb_customerno.Text & "',
+                                                                            '" & txt_customer.Text & "',
                                                                             '" & color & "',
                                                                             '" & prod & "',
                                                                             '" & Val(qty) & "',
@@ -191,23 +191,9 @@ Public Class _20cy_in
 
     End Sub
 
-    Private Sub _20cy_in_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-            con.Close()
-            con.Open()
-            Dim cmdselect As New MySqlCommand("SELECT DISTINCT customerno FROM `denso_fg_masterlist` WHERE `qrtype`='20CY'", con)
-            dr = cmdselect.ExecuteReader
-            cmb_customerno.Items.Clear()
-            While (dr.Read())
-                cmb_customerno.Items.Add(dr.GetString("customerno"))
-            End While
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-    End Sub
 
-    Private Sub cmb_customerno_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_customerno.SelectedIndexChanged
-        If cmb_customerno.SelectedIndex = -1 Then
+    Private Sub cmb_customerno_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txt_customer.TextChanged
+        If txt_customer.Text = "" Then
             panelscan.Enabled = False
         Else
             panelscan.Enabled = True
@@ -217,4 +203,6 @@ Public Class _20cy_in
     Private Sub part_IN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtdate.Text = date1
     End Sub
+
+
 End Class
