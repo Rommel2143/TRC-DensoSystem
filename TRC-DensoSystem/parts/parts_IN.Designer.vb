@@ -41,6 +41,9 @@ Partial Class parts_IN
         Me.batchcode = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtqr = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cmb_sup = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.error_panel = New Guna.UI2.WinForms.Guna2GradientPanel()
         Me.btn_close = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
@@ -55,6 +58,7 @@ Partial Class parts_IN
         Me.Guna2GroupBox1.SuspendLayout()
         CType(Me.datagrid2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.error_panel.SuspendLayout()
         CType(Me.btn_close, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,7 +96,7 @@ Partial Class parts_IN
         Me.datagrid1.DefaultCellStyle = DataGridViewCellStyle3
         Me.datagrid1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.datagrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid1.Location = New System.Drawing.Point(0, 299)
+        Me.datagrid1.Location = New System.Drawing.Point(0, 350)
         Me.datagrid1.MultiSelect = False
         Me.datagrid1.Name = "datagrid1"
         Me.datagrid1.ReadOnly = True
@@ -107,7 +111,7 @@ Partial Class parts_IN
         Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.datagrid1.RowHeadersVisible = False
         Me.datagrid1.RowTemplate.Height = 31
-        Me.datagrid1.Size = New System.Drawing.Size(1044, 489)
+        Me.datagrid1.Size = New System.Drawing.Size(1044, 438)
         Me.datagrid1.TabIndex = 5
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -268,7 +272,7 @@ Partial Class parts_IN
         Me.batchcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.batchcode.IconLeft = CType(resources.GetObject("batchcode.IconLeft"), System.Drawing.Image)
         Me.batchcode.IconLeftSize = New System.Drawing.Size(25, 25)
-        Me.batchcode.Location = New System.Drawing.Point(28, 76)
+        Me.batchcode.Location = New System.Drawing.Point(16, 10)
         Me.batchcode.Name = "batchcode"
         Me.batchcode.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.batchcode.PlaceholderText = "Enter Batch..."
@@ -290,7 +294,7 @@ Partial Class parts_IN
         Me.txtqr.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtqr.IconLeft = CType(resources.GetObject("txtqr.IconLeft"), System.Drawing.Image)
         Me.txtqr.IconLeftSize = New System.Drawing.Size(25, 25)
-        Me.txtqr.Location = New System.Drawing.Point(28, 129)
+        Me.txtqr.Location = New System.Drawing.Point(16, 63)
         Me.txtqr.Name = "txtqr"
         Me.txtqr.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr.PlaceholderText = "Scan QR..."
@@ -301,16 +305,54 @@ Partial Class parts_IN
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Controls.Add(Me.Panel1)
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.cmb_sup)
         Me.Panel2.Controls.Add(Me.error_panel)
         Me.Panel2.Controls.Add(Me.Guna2GroupBox1)
-        Me.Panel2.Controls.Add(Me.batchcode)
-        Me.Panel2.Controls.Add(Me.txtqr)
         Me.Panel2.Controls.Add(Me.Guna2Panel2)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1044, 232)
+        Me.Panel2.Size = New System.Drawing.Size(1044, 283)
         Me.Panel2.TabIndex = 3
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.batchcode)
+        Me.Panel1.Controls.Add(Me.txtqr)
+        Me.Panel1.Enabled = False
+        Me.Panel1.Location = New System.Drawing.Point(12, 138)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(484, 121)
+        Me.Panel1.TabIndex = 210
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label1.Location = New System.Drawing.Point(25, 77)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(83, 13)
+        Me.Label1.TabIndex = 209
+        Me.Label1.Text = "Select Supplier"
+        '
+        'cmb_sup
+        '
+        Me.cmb_sup.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_sup.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_sup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_sup.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_sup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_sup.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmb_sup.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_sup.ItemHeight = 30
+        Me.cmb_sup.Items.AddRange(New Object() {"DENSO", "INOAC"})
+        Me.cmb_sup.Location = New System.Drawing.Point(28, 93)
+        Me.cmb_sup.Name = "cmb_sup"
+        Me.cmb_sup.Size = New System.Drawing.Size(211, 36)
+        Me.cmb_sup.TabIndex = 208
         '
         'error_panel
         '
@@ -429,7 +471,7 @@ Partial Class parts_IN
         Me.Guna2GradientPanel1.FillColor = System.Drawing.Color.WhiteSmoke
         Me.Guna2GradientPanel1.FillColor2 = System.Drawing.Color.White
         Me.Guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical
-        Me.Guna2GradientPanel1.Location = New System.Drawing.Point(0, 232)
+        Me.Guna2GradientPanel1.Location = New System.Drawing.Point(0, 283)
         Me.Guna2GradientPanel1.Name = "Guna2GradientPanel1"
         Me.Guna2GradientPanel1.Size = New System.Drawing.Size(1044, 67)
         Me.Guna2GradientPanel1.TabIndex = 6
@@ -453,6 +495,8 @@ Partial Class parts_IN
         Me.Guna2GroupBox1.ResumeLayout(False)
         CType(Me.datagrid2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
         Me.error_panel.ResumeLayout(False)
         Me.error_panel.PerformLayout()
         CType(Me.btn_close, System.ComponentModel.ISupportInitialize).EndInit()
@@ -480,4 +524,7 @@ Partial Class parts_IN
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents txt_search As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2GradientPanel1 As Guna.UI2.WinForms.Guna2GradientPanel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents cmb_sup As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Panel1 As Panel
 End Class

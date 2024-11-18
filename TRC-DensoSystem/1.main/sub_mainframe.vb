@@ -232,4 +232,12 @@ Public Class sub_mainframe
     Private Sub ProfileToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub RETURNToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RETURNToolStripMenuItem.Click
+        display_formscan(parts_RETURN)
+    End Sub
+
+    Private Sub HandCarryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HandCarryToolStripMenuItem.Click
+        display_formscan(dmtn_handcarry)
+    End Sub
 End Class

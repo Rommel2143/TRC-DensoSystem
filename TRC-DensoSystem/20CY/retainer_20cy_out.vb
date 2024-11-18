@@ -103,7 +103,7 @@ Public Class retainer_20cy_out
                                 Case 1
                                     showduplicate(dr.GetString("userout"), dr.GetDateTime("dateout").ToString("yyy-MM-dd"))
                             End Select
-                            reload("SELECT `cyqr`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial` FROM `denso_20cy` 
+                            reload("SELECT  `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial` FROM `denso_20cy` 
                                    WHERE dateout= '" & datedb & "'", datagrid_label)
                         Else
                             showerror("No Record Found!")
@@ -186,9 +186,9 @@ Public Class retainer_20cy_out
 
     Private Sub txt_batchcode_TextChanged(sender As Object, e As EventArgs) Handles txt_batchcode.TextChanged
         If txt_batchcode.Text = "" Then
-            panel_scan.Visible = False
+            panel_scan.Enabled = False
         Else
-            panel_scan.Visible = True
+            panel_scan.Enabled = True
         End If
     End Sub
 

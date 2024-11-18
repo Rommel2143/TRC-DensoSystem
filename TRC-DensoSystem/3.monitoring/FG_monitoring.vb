@@ -8,7 +8,7 @@ Public Class FG_monitoring
         Try
             con.Close()
             con.Open()
-            Dim cmdrefreshgrid As New MySqlCommand("SELECT `partno`, `customerno`, `color`,sum(`qty`) as TOTAL FROM " & table & "  WHERE dateout is NULL GROUP BY `partno`, `customerno`, `color`", con)
+            Dim cmdrefreshgrid As New MySqlCommand("SELECT `partno`, `customerno`, `color`,sum(`qty`) as TOTAL FROM " & table & "  WHERE dateout is NULL GROUP BY `partno`, `customerno`, `color` ORDER BY TOTAL DESC", con)
 
             Dim da As New MySqlDataAdapter(cmdrefreshgrid)
             Dim dt As New DataTable
@@ -55,12 +55,13 @@ Public Class FG_monitoring
             Case "TDE"
                 con.Close()
                 con.Open()
-                Dim cmdrefreshgrid As New MySqlCommand("SELECT `partno`, `customerno`, `partname`,`qty` FROM `denso_fg_masterlist` WHERE qrtype='TDE' and qty != '0' ", con)
-
+                Dim cmdrefreshgrid As New MySqlCommand("SELECT `partno`, `customerno`, `color`,sum(`quantity`) as TOTAL FROM denso_fg_scan  WHERE dateout is NULL GROUP BY `partno`, `customerno`, `color` ORDER BY TOTAL DESC", con)
                 Dim da As New MySqlDataAdapter(cmdrefreshgrid)
                 Dim dt As New DataTable
                 da.Fill(dt)
                 datagrid1.DataSource = dt
+
+
             Case "INTELLI IV"
                 refreshgrid("denso_intelli4")
             Case "YT"
@@ -120,19 +121,19 @@ Public Class FG_monitoring
     Private Sub cmb_type_exp_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_type_exp.SelectedIndexChanged
         Select Case cmb_type_exp.Text
             Case "DMTN"
-                reload("SELECT `id`,`serial`, `partno`, `customerno`,`proddate` FROM `denso_dmtn` WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
+                reload("SELECT `id`,`serial`, `partno`, `customerno`,`qty`,`proddate`,`datein` FROM `denso_dmtn` WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
             Case "20CY"
-                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_20cy`  WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
+                reload("SELECT `id`,`serial`,`partno`, `customerno`,`qty`, `proddate`,`datein` FROM `denso_20cy`  WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
             Case "TDE"
-                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_fg_scan` WHERE type = 'TDE' and dateout is NULL ORDER BY proddate", datagrid1_exp)
+                reload("SELECT `id`,`serial`,`partno`, `customerno`,`quantity`, `proddate`,`datein` FROM `denso_fg_scan` WHERE type = 'TDE' and dateout is NULL ORDER BY proddate", datagrid1_exp)
             Case "INTELLI IV"
-                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_intelli4`  WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
+                reload("SELECT `id`,`serial`,`partno`, `customerno`,`qty`, `proddate`,`datein` FROM `denso_intelli4`  WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
             Case "YT"
-                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_yt`  WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
+                reload("SELECT `id`,`serial`,`partno`, `customerno`, `qty`,`proddate`,`datein` FROM `denso_yt`  WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
             Case "JECO"
-                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_jeco`  WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
+                reload("SELECT `id`,`serial`,`partno`, `customerno`,`qty`, `proddate`,`datein` FROM `denso_jeco`  WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
             Case "3T"
-                reload("SELECT `id`,`serial`,`partno`, `customerno`, `proddate` FROM `denso_3t`  WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
+                reload("SELECT `id`,`serial`,`partno`, `customerno`,`qty`, `proddate`,`datein` FROM `denso_3t`  WHERE dateout is NULL ORDER BY proddate", datagrid1_exp)
         End Select
 
     End Sub
@@ -143,8 +144,8 @@ Public Class FG_monitoring
             Dim proddate As Date
 
             If Date.TryParse(row.Cells("proddate").Value.ToString(), proddate) Then
-                Dim sixMonthsAgo As Date = Date.Today.AddMonths(-6)
-                Dim fourMonthsAgo As Date = Date.Today.AddMonths(-4)
+                Dim sixMonthsAgo As Date = Date.Today.AddMonths(-12)
+                Dim fourMonthsAgo As Date = Date.Today.AddMonths(-6)
 
                 If proddate <= sixMonthsAgo Then
                     row.DefaultCellStyle.BackColor = Color.Red ' Color for 6 months old

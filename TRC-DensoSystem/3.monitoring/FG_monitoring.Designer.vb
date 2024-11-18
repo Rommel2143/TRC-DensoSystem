@@ -47,6 +47,8 @@ Partial Class FG_monitoring
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cmb_type_exp = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Guna2GroupBox3.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,7 +61,6 @@ Partial Class FG_monitoring
         '
         'Guna2GroupBox3
         '
-        Me.Guna2GroupBox3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Guna2GroupBox3.Controls.Add(Me.Guna2PictureBox1)
         Me.Guna2GroupBox3.Controls.Add(Me.datagrid1)
         Me.Guna2GroupBox3.Controls.Add(Me.Panel1)
@@ -67,11 +68,11 @@ Partial Class FG_monitoring
         Me.Guna2GroupBox3.CustomBorderColor = System.Drawing.Color.DarkSlateBlue
         Me.Guna2GroupBox3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox3.Location = New System.Drawing.Point(49, 39)
+        Me.Guna2GroupBox3.Location = New System.Drawing.Point(27, 12)
         Me.Guna2GroupBox3.Name = "Guna2GroupBox3"
         Me.Guna2GroupBox3.ShadowDecoration.Color = System.Drawing.Color.DarkGray
         Me.Guna2GroupBox3.ShadowDecoration.Enabled = True
-        Me.Guna2GroupBox3.Size = New System.Drawing.Size(696, 710)
+        Me.Guna2GroupBox3.Size = New System.Drawing.Size(708, 627)
         Me.Guna2GroupBox3.TabIndex = 20
         Me.Guna2GroupBox3.Text = "         FG Stock"
         '
@@ -133,7 +134,7 @@ Partial Class FG_monitoring
         Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.datagrid1.RowHeadersVisible = False
         Me.datagrid1.RowTemplate.Height = 31
-        Me.datagrid1.Size = New System.Drawing.Size(696, 612)
+        Me.datagrid1.Size = New System.Drawing.Size(708, 529)
         Me.datagrid1.TabIndex = 193
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -164,7 +165,7 @@ Partial Class FG_monitoring
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 40)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(696, 58)
+        Me.Panel1.Size = New System.Drawing.Size(708, 58)
         Me.Panel1.TabIndex = 194
         '
         'cmb_type
@@ -181,6 +182,7 @@ Partial Class FG_monitoring
         Me.cmb_type.Location = New System.Drawing.Point(15, 12)
         Me.cmb_type.Name = "cmb_type"
         Me.cmb_type.Size = New System.Drawing.Size(201, 36)
+        Me.cmb_type.StartIndex = 0
         Me.cmb_type.TabIndex = 30
         '
         'export_excel
@@ -193,14 +195,13 @@ Partial Class FG_monitoring
         Me.export_excel.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.export_excel.ForeColor = System.Drawing.Color.White
         Me.export_excel.Image = CType(resources.GetObject("export_excel.Image"), System.Drawing.Image)
-        Me.export_excel.Location = New System.Drawing.Point(646, 0)
+        Me.export_excel.Location = New System.Drawing.Point(658, 3)
         Me.export_excel.Name = "export_excel"
         Me.export_excel.Size = New System.Drawing.Size(50, 39)
         Me.export_excel.TabIndex = 0
         '
         'Guna2GroupBox1
         '
-        Me.Guna2GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2PictureBox2)
         Me.Guna2GroupBox1.Controls.Add(Me.datagrid1_exp)
         Me.Guna2GroupBox1.Controls.Add(Me.Panel2)
@@ -208,11 +209,11 @@ Partial Class FG_monitoring
         Me.Guna2GroupBox1.CustomBorderColor = System.Drawing.Color.DarkSlateBlue
         Me.Guna2GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.Guna2GroupBox1.Location = New System.Drawing.Point(807, 39)
+        Me.Guna2GroupBox1.Location = New System.Drawing.Point(27, 726)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
         Me.Guna2GroupBox1.ShadowDecoration.Color = System.Drawing.Color.DarkGray
         Me.Guna2GroupBox1.ShadowDecoration.Enabled = True
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(696, 710)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(708, 768)
         Me.Guna2GroupBox1.TabIndex = 21
         Me.Guna2GroupBox1.Text = "         Expiring Stock"
         '
@@ -260,7 +261,7 @@ Partial Class FG_monitoring
         Me.datagrid1_exp.DefaultCellStyle = DataGridViewCellStyle7
         Me.datagrid1_exp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.datagrid1_exp.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid1_exp.Location = New System.Drawing.Point(0, 142)
+        Me.datagrid1_exp.Location = New System.Drawing.Point(0, 131)
         Me.datagrid1_exp.Name = "datagrid1_exp"
         Me.datagrid1_exp.ReadOnly = True
         Me.datagrid1_exp.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -274,7 +275,7 @@ Partial Class FG_monitoring
         Me.datagrid1_exp.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.datagrid1_exp.RowHeadersVisible = False
         Me.datagrid1_exp.RowTemplate.Height = 31
-        Me.datagrid1_exp.Size = New System.Drawing.Size(696, 568)
+        Me.datagrid1_exp.Size = New System.Drawing.Size(708, 637)
         Me.datagrid1_exp.TabIndex = 193
         Me.datagrid1_exp.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid1_exp.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -301,6 +302,8 @@ Partial Class FG_monitoring
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Controls.Add(Me.Label5)
+        Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.Guna2GradientPanel1)
         Me.Panel2.Controls.Add(Me.Label4)
@@ -309,7 +312,7 @@ Partial Class FG_monitoring
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 40)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(696, 102)
+        Me.Panel2.Size = New System.Drawing.Size(708, 91)
         Me.Panel2.TabIndex = 194
         '
         'Label1
@@ -319,7 +322,7 @@ Partial Class FG_monitoring
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.DimGray
-        Me.Label1.Location = New System.Drawing.Point(3, 72)
+        Me.Label1.Location = New System.Drawing.Point(9, 61)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(34, 17)
         Me.Label1.TabIndex = 35
@@ -329,9 +332,9 @@ Partial Class FG_monitoring
         '
         Me.Guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2GradientPanel1.FillColor2 = System.Drawing.Color.Red
-        Me.Guna2GradientPanel1.Location = New System.Drawing.Point(0, 92)
+        Me.Guna2GradientPanel1.Location = New System.Drawing.Point(0, 81)
         Me.Guna2GradientPanel1.Name = "Guna2GradientPanel1"
-        Me.Guna2GradientPanel1.Size = New System.Drawing.Size(696, 10)
+        Me.Guna2GradientPanel1.Size = New System.Drawing.Size(708, 10)
         Me.Guna2GradientPanel1.TabIndex = 38
         '
         'Label4
@@ -340,11 +343,11 @@ Partial Class FG_monitoring
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.DimGray
-        Me.Label4.Location = New System.Drawing.Point(639, 72)
+        Me.Label4.Location = New System.Drawing.Point(609, 61)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(52, 17)
+        Me.Label4.Size = New System.Drawing.Size(96, 17)
         Me.Label4.TabIndex = 37
-        Me.Label4.Text = "Expired"
+        Me.Label4.Text = "Expired (1year)"
         '
         'Label2
         '
@@ -352,11 +355,11 @@ Partial Class FG_monitoring
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DimGray
-        Me.Label2.Location = New System.Drawing.Point(335, 72)
+        Me.Label2.Location = New System.Drawing.Point(278, 61)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(29, 17)
+        Me.Label2.Size = New System.Drawing.Size(118, 17)
         Me.Label2.TabIndex = 36
-        Me.Label2.Text = "Old"
+        Me.Label2.Text = "Dead Stock(6 mos)"
         '
         'cmb_type_exp
         '
@@ -372,6 +375,7 @@ Partial Class FG_monitoring
         Me.cmb_type_exp.Location = New System.Drawing.Point(22, 12)
         Me.cmb_type_exp.Name = "cmb_type_exp"
         Me.cmb_type_exp.Size = New System.Drawing.Size(201, 36)
+        Me.cmb_type_exp.StartIndex = 0
         Me.cmb_type_exp.TabIndex = 30
         '
         'Guna2Button1
@@ -384,21 +388,48 @@ Partial Class FG_monitoring
         Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
         Me.Guna2Button1.Image = CType(resources.GetObject("Guna2Button1.Image"), System.Drawing.Image)
-        Me.Guna2Button1.Location = New System.Drawing.Point(642, 0)
+        Me.Guna2Button1.Location = New System.Drawing.Point(645, 3)
         Me.Guna2Button1.Name = "Guna2Button1"
         Me.Guna2Button1.Size = New System.Drawing.Size(50, 39)
         Me.Guna2Button1.TabIndex = 0
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.DimGray
+        Me.Label3.Location = New System.Drawing.Point(99, 61)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(128, 17)
+        Me.Label3.TabIndex = 39
+        Me.Label3.Text = "Near Expired(3mos.)"
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.DimGray
+        Me.Label5.Location = New System.Drawing.Point(445, 61)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(136, 17)
+        Me.Label5.TabIndex = 40
+        Me.Label5.Text = "Near Expired (11mos)"
         '
         'FG_monitoring
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1552, 788)
+        Me.AutoScroll = True
+        Me.AutoScrollMargin = New System.Drawing.Size(0, 100)
+        Me.ClientSize = New System.Drawing.Size(1044, 788)
         Me.Controls.Add(Me.Guna2GroupBox1)
         Me.Controls.Add(Me.Guna2GroupBox3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FG_monitoring"
-        Me.Text = "stock_monitoring"
+        Me.Text = "212"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Guna2GroupBox3.ResumeLayout(False)
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -429,4 +460,6 @@ Partial Class FG_monitoring
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label3 As Label
 End Class

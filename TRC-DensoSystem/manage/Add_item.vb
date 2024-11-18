@@ -260,15 +260,28 @@ Public Class Add_item
     Private Sub Guna2TextBox5_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_parts.KeyDown
         If e.KeyCode = Keys.Enter Then
             Try
+                Select Case cmb_sup.Text
+                    Case "INOAC"
+                        Dim parts() As String = txtqr_parts.Text.Trim.Split("|")
 
+                        'CON 1 : QR SPLITING
+                        If parts.Length >= 3 Then
+                            txt_parts_partno.Text = parts(1)
+                            Dim lotnumber As String = parts(2)
+                            labelerror.Visible = False
+                        End If
 
-                If processQRcode("PARTS", txtqr_parts) Then
-                    txt_parts_partno.Text = partno
-                    txt_part_customerno.Text = customerno
-                    txt_part_color.Text = color
+                    Case "DENSO"
+                        If processQRcode("PARTS", txtqr_parts) Then
+                            txt_parts_partno.Text = partno
+                            txt_part_customerno.Text = customerno
+                            txt_part_color.Text = color
 
-                    labelerror.Visible = False
-                End If
+                            labelerror.Visible = False
+                        End If
+
+                End Select
+
 
 
                 txtqr_parts.Clear()
@@ -328,5 +341,9 @@ Public Class Add_item
         Else
             btn_part_save.Enabled = False
         End If
+    End Sub
+
+    Private Sub cmb_sup_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_sup.SelectedIndexChanged
+
     End Sub
 End Class

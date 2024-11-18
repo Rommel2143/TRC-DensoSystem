@@ -95,7 +95,7 @@ Partial Class dashboard
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(1138, 753)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Stock Monitoring"
+        Me.TabPage1.Text = "PARTS Monitoring"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'Chart1
@@ -171,7 +171,7 @@ Partial Class dashboard
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Size = New System.Drawing.Size(1138, 753)
         Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Export Data"
+        Me.TabPage3.Text = "Export FG Data"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
         'Guna2Panel3

@@ -106,6 +106,26 @@ Public Class INFG
                     txtqty.Text = qrcode.Substring(25, 2)
                     txtlot.Text = qrcode.Substring(qrcode.Length - 13)
                     saveupdate()
+
+
+
+
+                ElseIf qrcode.Length = 43 And qrcode.Substring(27, 3) = "A29" Then
+                    txtcustomer.Text = qrcode.Substring(0, 15)
+                    txtcolor1.Text = qrcode.Substring(27, 4)
+                    txtcode.Text = qrcode.Substring(15, 10)
+                    txtqty.Text = qrcode.Substring(25, 2)
+                    txtlot.Text = qrcode.Substring(31, 12)
+                    saveupdate43()
+
+                ElseIf qrcode.Length = 43 Then
+                    txtcustomer.Text = qrcode.Substring(0, 15)
+                    txtcolor1.Text = qrcode.Substring(27, 3)
+                    txtcode.Text = qrcode.Substring(15, 10)
+                    txtqty.Text = qrcode.Substring(25, 2)
+                    txtlot.Text = qrcode.Substring(30, 13)
+                    saveupdate43()
+
                 ElseIf qrcode.Length = 42 And qrcode.Contains("--") Then
                     txtcustomer.Text = qrcode.Substring(0, 13)
                         txtcolor1.Text = qrcode.Substring(0, 27)
@@ -215,6 +235,56 @@ Public Class INFG
 
         End If
     End Sub
+
+    Public Sub saveupdate43()
+        Dim sn As String = txtqr.Text
+        Dim fpart As String = txtcolor1.Text
+        Dim lpart As String = txtlot.Text
+        Dim rpart As String = sn.Replace(fpart, "").Replace(lpart, "")
+        txtcolor.Text = rpart
+        Dim prodd As String = txtlot.Text
+        Dim proddate As String = prodd.Substring(0, 6)
+        Dim year As Integer = Integer.Parse(proddate.Substring(0, 2))
+        Dim month As Integer = Integer.Parse(proddate.Substring(2, 2))
+        Dim day As Integer = Integer.Parse(proddate.Substring(4, 2))
+        Dim prodf As New DateTime(2000 + year, month, day)
+        txtproddate.Text = prodf.ToString("yyyy-MM-dd")
+        Dim ddate As String = prodf.ToString("yyyy-MM-dd")
+        con.Close()
+        con.Open()
+        Dim cmd As New MySqlCommand("Select * FROM `denso_fg_scan` where `qrcode` = '" & txtqr.Text & "'", con)
+        dr = cmd.ExecuteReader
+        If dr.Read = True Then
+            labelerror2.Visible = True 'DUPLICATE
+        Else
+            labelerror2.Visible = False
+            con.Close()
+            con.Open()
+            Dim cmd1 As New MySqlCommand("Select * FROM `denso_fg_masterlist` where `partno` = '" & txtcode.Text & "' and `qrtype`='" & boxtype.Text & "' and `color`='" & txtcolor1.Text & "'", con)
+            dr = cmd1.ExecuteReader
+            If dr.Read = True Then
+                labelerror1.Visible = False
+                txtcustomer.Text = (dr.GetString("customerno"))
+                txtmodel.Text = (dr.GetString("model"))
+                txtname.Text = (dr.GetString("partname"))
+                txthide1.Text = (dr.GetInt32("qty"))
+                ' txthide2.Text = (dr.GetString("color"))
+                Dim x As Integer
+                x = Val(txthide1.Text)
+                con.Close()
+                updates("Update `denso_fg_masterlist` set `qty`='" & Val(txtqty.Text) + x & "' where `partno` = '" & txtcode.Text & "' and `qrtype`='" & boxtype.Text & "' and `color`='" & txtcolor1.Text & "'")
+                '  updates("Update `denso_fg_masterlist` set `qty`='" & Val(txtqty.Text) + x & "' where `partno` = '" & txtcode.Text & "' and `qrtype`='" & boxtype.Text & "' and `customerno`='" & txtcustomer.Text & "'and `color`='" & txtcolor.Text & "'")
+                con.Close()
+                insertitem("Insert into `denso_fg_scan` (`status`,`datein`,`shift`,`operator`,`type`,`qrcode`,`partno`,`customerno`,`model`,`color`,`quantity`,`lotnumber`,`proddate`,`serial`,`qrtde`)
+                                    values ('" & txthide.Text & "','" & datedb & "','" & boxshift.Text & "','" & txtoperator.Text & "','" & boxtype.Text & "','" & txtqr.Text & "','" & txtcode.Text & "','" & txtcustomer.Text & "','" & txtmodel.Text & "','" & txtcolor1.Text & "','" & txtqty.Text & "','" & txtlot.Text & "','" & ddate & "','" & tdeserial.Text & "','" & tdeqr.Text & "')")
+                txtqty.Text = Nothing
+            Else
+                labelerror1.Visible = True
+
+            End If
+
+        End If
+    End Sub
     Public Sub reloadgrid()
         Try
             reload("Select * FROM `denso_fg_scan` where `datein` = '" & txtdate.Text & "' and `shift`='" & boxshift.Text & "' and `type`='" & boxtype.Text & "'", datagrid1)
@@ -273,6 +343,10 @@ Public Class INFG
     End Sub
 
     Private Sub tdeqr_TextChanged(sender As Object, e As EventArgs) Handles tdeqr.TextChanged
+
+    End Sub
+
+    Private Sub txtqr_TextChanged(sender As Object, e As EventArgs) Handles txtqr.TextChanged
 
     End Sub
 End Class

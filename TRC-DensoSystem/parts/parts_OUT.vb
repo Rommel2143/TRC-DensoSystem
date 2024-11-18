@@ -1,7 +1,11 @@
-﻿
+﻿Imports Guna.UI2.WinForms
 Imports MySql.Data.MySqlClient
-    Imports Guna.UI2.WinForms
+
+
 Public Class parts_OUT
+
+
+
     Dim qrlenght As Integer
     Dim serialNumber As String = ""
 
@@ -102,57 +106,126 @@ Public Class parts_OUT
     Private Sub txtqr_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr.KeyDown
         If e.KeyCode = Keys.Enter Then
             Try
+                Select Case cmb_sup.Text
+                    Case "DENSO"
 
-
-                If processQRcode("PARTS", txtqr) Then
-                    con.Close()
-                    con.Open()
-                    Dim selectmasterlist As New MySqlCommand("SELECT * FROM `denso_parts_masterlist`
+                        If processQRcode("PARTS", txtqr) Then
+                            con.Close()
+                            con.Open()
+                            Dim selectmasterlist As New MySqlCommand("SELECT * FROM `denso_parts_masterlist`
                                                 WHERE partno='" & partno & "' and customerno ='" & customerno & "'  and color = '" & color & "'", con)
-                    dr = selectmasterlist.ExecuteReader()
-                    If dr.Read = True Then
+                            dr = selectmasterlist.ExecuteReader()
+                            If dr.Read = True Then
 
-                        con.Close()
-                        con.Open()
-                        Dim cmdselect As New MySqlCommand("SELECT qrcode, userin, datein,status FROM `denso_parts`
+                                con.Close()
+                                con.Open()
+                                Dim cmdselect As New MySqlCommand("SELECT qrcode, userin, datein,status FROM `denso_parts`
                                                 WHERE qrcode = '" & txtqr.Text & "'", con)
-                        dr = cmdselect.ExecuteReader()
-                        If dr.Read = True Then
-                            Select Case dr.GetInt32("status")
-                                Case 0
-                                    'duplicate
-                                    display_error("Status : Duplicate " & dr.GetDateTime("datein").ToString("MMMM-dd-yyyy"), 1)
-                                Case 1
-                                    'update
-                                    con.Close()
-                                    con.Open()
-                                    Dim cmdupdate As New MySqlCommand("UPDATE denso_parts SET batchout=@batchout, userout=@userout, dateout=@dateout, status=@status WHERE qrcode=@qrcode", con)
+                                dr = cmdselect.ExecuteReader()
+                                If dr.Read = True Then
+                                    Select Case dr.GetInt32("status")
+                                        Case 0
+                                            'duplicate
+                                            display_error("Status : Duplicate " & dr.GetDateTime("datein").ToString("MMMM-dd-yyyy"), 1)
+                                        Case 1
+                                            'update
+                                            con.Close()
+                                            con.Open()
+                                            Dim cmdupdate As New MySqlCommand("UPDATE denso_parts SET batchout=@batchout, userout=@userout, dateout=@dateout, status=@status WHERE qrcode=@qrcode", con)
 
-                                    ' Add parameters with values
-                                    With cmdupdate.Parameters
-                                        .AddWithValue("@batchout", batchcode.Text)
-                                        .AddWithValue("@userout", idno)
-                                        .AddWithValue("@dateout", datedb)
-                                        .AddWithValue("@status", 0)
-                                        .AddWithValue("@qrcode", txtqr.Text)
-                                    End With
+                                            ' Add parameters with values
+                                            With cmdupdate.Parameters
+                                                .AddWithValue("@batchout", batchcode.Text)
+                                                .AddWithValue("@userout", idno)
+                                                .AddWithValue("@dateout", datedb)
+                                                .AddWithValue("@status", 0)
+                                                .AddWithValue("@qrcode", txtqr.Text)
+                                            End With
 
-                                    cmdupdate.ExecuteNonQuery()
-                                    displaygrid()
-                                    displaygrid2()
-                                    error_panel.Visible = False
-                            End Select
+                                            cmdupdate.ExecuteNonQuery()
+                                            displaygrid()
+                                            displaygrid2()
+                                            error_panel.Visible = False
+                                    End Select
 
-                        Else
-                            'norecord
-                            display_error("No record. Please scan in first", 0)
+                                Else
+                                    'norecord
+                                    display_error("No record. Please scan in first", 0)
+                                End If
+
+                            Else
+                                display_error("No Partcode Exists, Call Leader to Register!", 0)
+                            End If
+
                         End If
 
-                    Else
-                        display_error("No Partcode Exists, Call Leader to Register!", 0)
-                    End If
+                    Case "INOAC"
+                        Dim parts() As String = txtqr.Text.Trim.Split("|")
 
-                End If
+                        'CON 1 : QR SPLITING
+                        If parts.Length >= 3 Then
+                            partno = parts(1)
+                            Dim lotnumber As String = parts(2)
+                            qty = parts(3)
+                            Dim productionDateRaw As String = parts(2).Remove(6, 7).Trim
+
+
+                            Dim year As Integer = Integer.Parse(productionDateRaw.Substring(0, 2))
+                            Dim month As Integer = Integer.Parse(productionDateRaw.Substring(2, 2))
+                            Dim day As Integer = Integer.Parse(productionDateRaw.Substring(4, 2))
+                            Dim productionDateDateTime As New DateTime(2000 + year, month, day)
+                            prod = productionDateDateTime.ToString("yyyy-MM-dd")
+
+                            'CON 2 : IF SCANNED
+                            con.Close()
+                            con.Open()
+                            Dim cmdselect As New MySqlCommand("SELECT `qrcode`,`status` FROM `denso_parts` WHERE `qrcode`='" & txtqr.Text.Trim & "' LIMIT 1", con)
+                            dr = cmdselect.ExecuteReader
+                            If dr.Read = True Then
+                                Dim status As Integer = dr.GetInt32("status")
+
+                                Select Case status
+
+                                    Case "1"
+                                        'update
+                                        con.Close()
+                                        con.Open()
+                                        Dim cmdupdate As New MySqlCommand("UPDATE denso_parts SET batchout=@batchout, userout=@userout, dateout=@dateout, status=@status WHERE qrcode=@qrcode", con)
+
+                                        ' Add parameters with values
+                                        With cmdupdate.Parameters
+                                            .AddWithValue("@batchout", batchcode.Text)
+                                            .AddWithValue("@userout", idno)
+                                            .AddWithValue("@dateout", datedb)
+                                            .AddWithValue("@status", 0)
+                                            .AddWithValue("@qrcode", txtqr.Text.Trim)
+                                        End With
+
+                                        cmdupdate.ExecuteNonQuery()
+                                        displaygrid()
+                                        displaygrid2()
+                                        error_panel.Visible = False
+                                    Case "0"
+                                        'duplicate
+                                        display_error("Duplicate Entry", 2)
+                                End Select
+
+                            Else 'CON 2 : IF NOT SCANNED
+                                display_error("Record doesn't exist", 1)
+
+                            End If
+
+                        Else  'CON 1 : QR SPLITING
+                            display_error("INVALID QR FORMAT!", 1)
+
+                        End If
+
+
+
+                End Select
+
+
+
 
                 txtqr.Clear()
                 txtqr.Focus()
@@ -179,7 +252,7 @@ Public Class parts_OUT
     End Sub
 
 
-    Private Sub datagrid2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid2.CellContentClick
+    Private Sub datagrid2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) 
 
     End Sub
 
@@ -187,5 +260,13 @@ Public Class parts_OUT
         Dim results As New parts_OUT_Results
         results.ShowDialog()
         results.BringToFront()
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+    Private Sub cmb_sup_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_sup.SelectedIndexChanged
+        Panel1.Enabled = True
     End Sub
 End Class

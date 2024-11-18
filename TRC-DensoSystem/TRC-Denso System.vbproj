@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\ptif1-ds\SystemServer\Denso System\</UpdateUrl>
-    <ApplicationRevision>59</ApplicationRevision>
+    <ApplicationRevision>74</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -295,6 +295,12 @@
       <DependentUpon>retainer_3t_rpt.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DMTN\dmtn_handcarry.Designer.vb">
+      <DependentUpon>dmtn_handcarry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DMTN\dmtn_handcarry.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DMTN\dmtn_bypass.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -556,10 +562,22 @@
     <Compile Include="parts\parts_OUT_Results.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="parts\parts_RETURN.Designer.vb">
+      <DependentUpon>parts_RETURN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="parts\parts_RETURN.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="parts\parts_stock.Designer.vb">
       <DependentUpon>parts_stock.vb</DependentUpon>
     </Compile>
     <Compile Include="parts\parts_stock.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TDE\tde_IN.Designer.vb">
+      <DependentUpon>tde_IN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TDE\tde_IN.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="YT\yt_matrix.Designer.vb">
@@ -629,6 +647,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DMTN\dmtn_fgin.resx">
       <DependentUpon>dmtn_fgin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMTN\dmtn_handcarry.resx">
+      <DependentUpon>dmtn_handcarry.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DMTN\dmtn_inner_tag.resx">
       <DependentUpon>dmtn_inner_tag.vb</DependentUpon>
@@ -746,8 +767,14 @@
     <EmbeddedResource Include="parts\parts_OUT_Results.resx">
       <DependentUpon>parts_OUT_Results.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="parts\parts_RETURN.resx">
+      <DependentUpon>parts_RETURN.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="parts\parts_stock.resx">
       <DependentUpon>parts_stock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TDE\tde_IN.resx">
+      <DependentUpon>tde_IN.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="YT\yt_matrix.resx">
       <DependentUpon>yt_matrix.vb</DependentUpon>
@@ -823,10 +850,9 @@
   <ItemGroup>
     <Content Include="INVENTORY %282%29.ico" />
     <Content Include="INVENTORY %283%29.ico" />
+    <None Include="Resources\delivery-completed.gif" />
     <None Include="Resources\edit %282%29.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TDE\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

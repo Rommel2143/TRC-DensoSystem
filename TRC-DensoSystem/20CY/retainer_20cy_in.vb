@@ -12,8 +12,12 @@ Public Class _20cy_in
     Dim process As String
     Dim line As String
     Dim series As String
+    Dim checkcolor As String
+
     Private Function processQRcode(type As String, txtqr As Guna.UI2.WinForms.Guna2TextBox) As Boolean
         Try
+
+
 
             serialNumber = txtqr.Text
 
@@ -27,24 +31,7 @@ Public Class _20cy_in
             dr = cmdselect.ExecuteReader()
             If dr.Read = True Then
 
-                getcoordinates(dr.GetString("partno"), partno)
-                getcoordinates(dr.GetString("qty"), qty)
-                getcoordinates(dr.GetString("customer"), customerno)
-                getcoordinates(dr.GetString("color"), color)
-                getcoordinates(dr.GetString("proddate"), productionDateRaw)
-                getcoordinates(dr.GetString("shift"), shift)
-                getcoordinates(dr.GetString("process"), process)
-                getcoordinates(dr.GetString("line"), line)
-                getcoordinates(dr.GetString("series"), series)
-
-                Dim year As Integer = Integer.Parse(productionDateRaw.Substring(0, 2))
-                Dim month As Integer = Integer.Parse(productionDateRaw.Substring(2, 2))
-                Dim day As Integer = Integer.Parse(productionDateRaw.Substring(4, 2))
-                Dim productionDateDateTime As New DateTime(2000 + year, month, day)
-                prod = productionDateDateTime.ToString("yyyy-MM-dd")
-
-
-                Return True
+                getcoordinates(dr.GetString("color"), checkcolor)
 
             Else
                 showerror("No Qrtype Detected! Please Register first")
@@ -54,12 +41,99 @@ Public Class _20cy_in
             End If
 
 
+            Select Case checkcolor
+
+
+                Case "0--"
+                    con.Close()
+                    con.Open()
+                    Dim cmdselectqr As New MySqlCommand("SELECT `id`, `qrtype`, `qrlenght`, `partno`, `qty`, `customer`, `color`, `proddate`, `shift`, `process`, `line`, `series` FROM `denso_qrtype`
+                                                WHERE qrlenght= 2700 and qrtype  = '" & type & "'", con)
+                    dr = cmdselectqr.ExecuteReader()
+                    If dr.Read = True Then
+
+
+                        getcoordinates(dr.GetString("color"), color)
+                        getcoordinates(dr.GetString("partno"), partno)
+                        getcoordinates(dr.GetString("qty"), qty)
+                        getcoordinates(dr.GetString("customer"), customerno)
+                        getcoordinates(dr.GetString("proddate"), productionDateRaw)
+                        getcoordinates(dr.GetString("shift"), shift)
+                        getcoordinates(dr.GetString("process"), process)
+                        getcoordinates(dr.GetString("line"), line)
+                        getcoordinates(dr.GetString("series"), series)
+
+                        Dim year As Integer = Integer.Parse(productionDateRaw.Substring(0, 2))
+                        Dim month As Integer = Integer.Parse(productionDateRaw.Substring(2, 2))
+                        Dim day As Integer = Integer.Parse(productionDateRaw.Substring(4, 2))
+                        Dim productionDateDateTime As New DateTime(2000 + year, month, day)
+                        prod = productionDateDateTime.ToString("yyyy-MM-dd")
+
+                    Else
+                        showerror("No Qrtype Detected! Please Register first")
+                        txtqr.Clear()
+                        txtqr.Focus()
+                        Return False
+                    End If
+
+
+
+
+                Case Else
+                    con.Close()
+                    con.Open()
+                    Dim cmdselectqr As New MySqlCommand("SELECT `id`, `qrtype`, `qrlenght`, `partno`, `qty`, `customer`, `color`, `proddate`, `shift`, `process`, `line`, `series` FROM `denso_qrtype`
+                                                WHERE qrlenght= '" & qrlenght & "' and qrtype  = '" & type & "'", con)
+                    dr = cmdselectqr.ExecuteReader()
+                    If dr.Read = True Then
+
+
+                        getcoordinates(dr.GetString("color"), color)
+                        getcoordinates(dr.GetString("partno"), partno)
+                        getcoordinates(dr.GetString("qty"), qty)
+                        getcoordinates(dr.GetString("customer"), customerno)
+
+                        getcoordinates(dr.GetString("proddate"), productionDateRaw)
+                        getcoordinates(dr.GetString("shift"), shift)
+                        getcoordinates(dr.GetString("process"), process)
+                        getcoordinates(dr.GetString("line"), line)
+                        getcoordinates(dr.GetString("series"), series)
+
+                        Dim year As Integer = Integer.Parse(productionDateRaw.Substring(0, 2))
+                        Dim month As Integer = Integer.Parse(productionDateRaw.Substring(2, 2))
+                        Dim day As Integer = Integer.Parse(productionDateRaw.Substring(4, 2))
+                        Dim productionDateDateTime As New DateTime(2000 + year, month, day)
+                        prod = productionDateDateTime.ToString("yyyy-MM-dd")
+
+                    Else
+                        showerror("No Qrtype Detected! Please Register first")
+                        txtqr.Clear()
+                        txtqr.Focus()
+                        Return False
+                    End If
+
+
+
+
+            End Select
+
+
+
+
+
+
+            Return True
+
+
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
 
             Return False
         End Try
     End Function
+
+
     Public Sub showerror(text As String)
 
         Try
@@ -80,9 +154,7 @@ Public Class _20cy_in
         txtstring = serialNumber.Substring(partget1, partget2)
 
     End Sub
-    Private Sub txtqr_label_TextChanged(sender As Object, e As EventArgs) Handles txtqr_label.TextChanged
 
-    End Sub
     Private Sub txtqr_fg_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_label.KeyDown
         If e.KeyCode = Keys.Enter Then
             If txtqr_verify.Text = txtqr_label.Text Then
@@ -90,22 +162,28 @@ Public Class _20cy_in
 
 
                     If processQRcode("20CY", txtqr_label) Then
-                        con.Close()
-                        con.Open()
-                        Dim cmdselect As New MySqlCommand("SELECT cyqr, userin, datein,status FROM `denso_20cy`
-                                                WHERE cyqr = '" & txtqr_label.Text & "'", con)
-                        dr = cmdselect.ExecuteReader()
-                        If dr.Read = True Then
-                            'duplicate
 
-                            showduplicate(dr.GetString("userin"), dr.GetDateTime("datein"))
-                        Else
+                        con.Close()
+                                con.Open()
+                                Dim cmdselect As New MySqlCommand("SELECT cyqr, userin, datein,status FROM `denso_20cy`
+                                                WHERE cyqr = '" & txtqr_label.Text & "'", con)
+                                dr = cmdselect.ExecuteReader()
+                                If dr.Read = True Then
+                                    'duplicate
+
+                                    showduplicate(dr.GetString("userin"), dr.GetDateTime("datein"))
+                                Else
+
                             'save
                             saveqr()
+
                             reload("SELECT `cyqr`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial` FROM `denso_20cy` 
                                    WHERE datein= '" & datedb & "'", datagrid_label)
-                            labelerror.Visible = False
-                        End If
+                                    labelerror.Visible = False
+                                End If
+
+
+
                         txtqr_verify.Clear()
                         txtqr_verify.Focus()
 
@@ -187,7 +265,7 @@ Public Class _20cy_in
         End If
     End Sub
 
-    Private Sub Guna2GroupBox1_Click(sender As Object, e As EventArgs) Handles Guna2GroupBox1.Click
+    Private Sub Guna2GroupBox1_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -204,5 +282,7 @@ Public Class _20cy_in
         txtdate.Text = date1
     End Sub
 
+    Private Sub txtqr_label_TextChanged(sender As Object, e As EventArgs) Handles txtqr_label.TextChanged
 
+    End Sub
 End Class

@@ -118,7 +118,7 @@ Public Class dmtn_inner_tag
         txtstring = serialNumber.Substring(partget1, partget2)
 
     End Sub
-
+    Private controlIndex As Integer = 0
     Private Sub txtqr_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr.KeyDown
         If e.KeyCode = Keys.Enter Then
             Try
@@ -137,6 +137,33 @@ Public Class dmtn_inner_tag
                     If processQRcode("DMTN-IT", txtqr) Then
 
                         displaygrid(datagrid1)
+                        Select Case controlIndex
+                            Case 0
+                                inner_1.Show()
+                            Case 1
+                                inner_2.Show()
+                            Case 2
+                                inner_3.Show()
+                            Case 3
+                                inner_4.Show()
+                            Case 4
+                                inner_5.Show()
+                            Case 5
+                                inner_6.Show()
+                            Case 6
+                                inner_7.Show()
+                            Case 7
+                                inner_8.Show()
+                            Case Else
+                                ' If all controls have been shown, do nothing
+                                Return
+                        End Select
+
+                        ' Increment the controlIndex to show the next control on the next key press
+                        controlIndex += 1
+
+
+
 
                     End If
 
@@ -175,10 +202,9 @@ Public Class dmtn_inner_tag
                                 txtqr_fg.Clear()
                                 txtqr_fg.Enabled = False
                                 txtqr.Enabled = True
+                                btndelete.PerformClick()
                                 txtqr.Clear()
                                 txtqr.Focus()
-                                lbl_count.Text = "0"
-                                lbl_qty.Text = "0"
                             Else
                                 showerror("QTY does'nt match the given Inner Tags!")
                             End If
@@ -263,7 +289,7 @@ Public Class dmtn_inner_tag
                 .AddWithValue("@datein", datedb)
             End With
             cmdinsertdmtn.ExecuteNonQuery()
-            reload("SELECT `dmtn`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial` FROM `denso_dmtn`", datagrid2)
+            reload("SELECT `dmtn`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial` FROM `denso_dmtn` WHERE datein='" & datedb & "'", datagrid2)
             datagrid1.Rows.Clear()
         Catch ex As MySqlException
             MessageBox.Show(ex.Message)
@@ -296,6 +322,25 @@ Public Class dmtn_inner_tag
 
     Private Sub btndelete_Click(sender As Object, e As EventArgs) Handles btndelete.Click
         datagrid1.Rows.Clear()
+
+        inner_1.Hide()
+
+        inner_2.Hide()
+
+        inner_3.Hide()
+
+        inner_4.Hide()
+
+        inner_5.Hide()
+
+        inner_6.Hide()
+
+        inner_7.Hide()
+
+        inner_8.Hide()
+        controlIndex = 0
+        lbl_count.Text = "0"
+        lbl_qty.Text = "0"
     End Sub
 
 
@@ -310,11 +355,23 @@ Public Class dmtn_inner_tag
         End If
     End Sub
 
-    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
+    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
 
     Private Sub txtqr_TextChanged(sender As Object, e As EventArgs) Handles txtqr.TextChanged
+
+    End Sub
+
+    Private Sub lbl_count_Click(sender As Object, e As EventArgs) Handles lbl_count.Click
+
+    End Sub
+
+    Private Sub txtqr_fg_TextChanged(sender As Object, e As EventArgs) Handles txtqr_fg.TextChanged
+
+    End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

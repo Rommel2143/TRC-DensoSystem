@@ -65,6 +65,8 @@ Partial Class Add_item
         Me.btn_part_save = New Guna.UI2.WinForms.Guna2Button()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txt_parts_partno = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cmb_sup = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Guna2GroupBox3.SuspendLayout()
         Me.labelerror.SuspendLayout()
@@ -507,6 +509,8 @@ Partial Class Add_item
         '
         'Guna2GroupBox1
         '
+        Me.Guna2GroupBox1.Controls.Add(Me.Label1)
+        Me.Guna2GroupBox1.Controls.Add(Me.cmb_sup)
         Me.Guna2GroupBox1.Controls.Add(Me.txt_part_password)
         Me.Guna2GroupBox1.Controls.Add(Me.Guna2Separator2)
         Me.Guna2GroupBox1.Controls.Add(Me.Label2)
@@ -525,7 +529,7 @@ Partial Class Add_item
         Me.Guna2GroupBox1.ForeColor = System.Drawing.Color.White
         Me.Guna2GroupBox1.Location = New System.Drawing.Point(543, 27)
         Me.Guna2GroupBox1.Name = "Guna2GroupBox1"
-        Me.Guna2GroupBox1.Size = New System.Drawing.Size(505, 416)
+        Me.Guna2GroupBox1.Size = New System.Drawing.Size(500, 584)
         Me.Guna2GroupBox1.TabIndex = 43
         Me.Guna2GroupBox1.Text = "PARTS"
         '
@@ -542,7 +546,7 @@ Partial Class Add_item
         Me.txt_part_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_part_password.IconLeft = CType(resources.GetObject("txt_part_password.IconLeft"), System.Drawing.Image)
         Me.txt_part_password.IconLeftSize = New System.Drawing.Size(30, 30)
-        Me.txt_part_password.Location = New System.Drawing.Point(88, 295)
+        Me.txt_part_password.Location = New System.Drawing.Point(88, 395)
         Me.txt_part_password.Name = "txt_part_password"
         Me.txt_part_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_part_password.PlaceholderText = ""
@@ -554,7 +558,7 @@ Partial Class Add_item
         'Guna2Separator2
         '
         Me.Guna2Separator2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Separator2.Location = New System.Drawing.Point(28, 103)
+        Me.Guna2Separator2.Location = New System.Drawing.Point(28, 203)
         Me.Guna2Separator2.Name = "Guna2Separator2"
         Me.Guna2Separator2.Size = New System.Drawing.Size(449, 10)
         Me.Guna2Separator2.TabIndex = 38
@@ -564,7 +568,7 @@ Partial Class Add_item
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.White
         Me.Label2.ForeColor = System.Drawing.Color.Tomato
-        Me.Label2.Location = New System.Drawing.Point(312, 278)
+        Me.Label2.Location = New System.Drawing.Point(312, 378)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(108, 15)
         Me.Label2.TabIndex = 31
@@ -583,7 +587,7 @@ Partial Class Add_item
         Me.txt_part_color.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_part_color.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txt_part_color.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_part_color.Location = New System.Drawing.Point(190, 216)
+        Me.txt_part_color.Location = New System.Drawing.Point(190, 316)
         Me.txt_part_color.Name = "txt_part_color"
         Me.txt_part_color.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_part_color.PlaceholderText = "Enter Colorcode..."
@@ -597,7 +601,7 @@ Partial Class Add_item
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.White
         Me.Label4.ForeColor = System.Drawing.Color.Gray
-        Me.Label4.Location = New System.Drawing.Point(187, 200)
+        Me.Label4.Location = New System.Drawing.Point(187, 300)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(65, 15)
         Me.Label4.TabIndex = 20
@@ -608,7 +612,7 @@ Partial Class Add_item
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.White
         Me.Label13.ForeColor = System.Drawing.Color.Gray
-        Me.Label13.Location = New System.Drawing.Point(42, 200)
+        Me.Label13.Location = New System.Drawing.Point(42, 300)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(87, 15)
         Me.Label13.TabIndex = 18
@@ -626,7 +630,7 @@ Partial Class Add_item
         Me.txt_part_customerno.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_part_customerno.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txt_part_customerno.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_part_customerno.Location = New System.Drawing.Point(44, 216)
+        Me.txt_part_customerno.Location = New System.Drawing.Point(44, 316)
         Me.txt_part_customerno.Name = "txt_part_customerno"
         Me.txt_part_customerno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_part_customerno.PlaceholderText = "Enter Customer No..."
@@ -646,7 +650,7 @@ Partial Class Add_item
         Me.txtqr_parts.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtqr_parts.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtqr_parts.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtqr_parts.Location = New System.Drawing.Point(43, 59)
+        Me.txtqr_parts.Location = New System.Drawing.Point(43, 159)
         Me.txtqr_parts.Name = "txtqr_parts"
         Me.txtqr_parts.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr_parts.PlaceholderText = "Scan QR..."
@@ -659,7 +663,7 @@ Partial Class Add_item
         Me.Label16.AutoSize = True
         Me.Label16.BackColor = System.Drawing.Color.White
         Me.Label16.ForeColor = System.Drawing.Color.Gray
-        Me.Label16.Location = New System.Drawing.Point(186, 131)
+        Me.Label16.Location = New System.Drawing.Point(186, 231)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(64, 15)
         Me.Label16.TabIndex = 9
@@ -678,7 +682,7 @@ Partial Class Add_item
         Me.txt_parts_partname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_parts_partname.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txt_parts_partname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_parts_partname.Location = New System.Drawing.Point(188, 147)
+        Me.txt_parts_partname.Location = New System.Drawing.Point(188, 247)
         Me.txt_parts_partname.Name = "txt_parts_partname"
         Me.txt_parts_partname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_parts_partname.PlaceholderText = "Enter Partname..."
@@ -697,7 +701,7 @@ Partial Class Add_item
         Me.btn_part_save.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.btn_part_save.ForeColor = System.Drawing.Color.White
         Me.btn_part_save.Image = CType(resources.GetObject("btn_part_save.Image"), System.Drawing.Image)
-        Me.btn_part_save.Location = New System.Drawing.Point(306, 296)
+        Me.btn_part_save.Location = New System.Drawing.Point(306, 396)
         Me.btn_part_save.Name = "btn_part_save"
         Me.btn_part_save.Size = New System.Drawing.Size(126, 37)
         Me.btn_part_save.TabIndex = 6
@@ -708,7 +712,7 @@ Partial Class Add_item
         Me.Label17.AutoSize = True
         Me.Label17.BackColor = System.Drawing.Color.White
         Me.Label17.ForeColor = System.Drawing.Color.Gray
-        Me.Label17.Location = New System.Drawing.Point(41, 131)
+        Me.Label17.Location = New System.Drawing.Point(41, 231)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(48, 15)
         Me.Label17.TabIndex = 7
@@ -726,7 +730,7 @@ Partial Class Add_item
         Me.txt_parts_partno.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_parts_partno.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txt_parts_partno.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_parts_partno.Location = New System.Drawing.Point(43, 147)
+        Me.txt_parts_partno.Location = New System.Drawing.Point(43, 247)
         Me.txt_parts_partno.Name = "txt_parts_partno"
         Me.txt_parts_partno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_parts_partno.PlaceholderText = "Enter Partno..."
@@ -734,6 +738,34 @@ Partial Class Add_item
         Me.txt_parts_partno.SelectedText = ""
         Me.txt_parts_partno.Size = New System.Drawing.Size(139, 36)
         Me.txt_parts_partno.TabIndex = 5
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label1.Location = New System.Drawing.Point(42, 61)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(83, 13)
+        Me.Label1.TabIndex = 211
+        Me.Label1.Text = "Select Supplier"
+        '
+        'cmb_sup
+        '
+        Me.cmb_sup.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_sup.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_sup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_sup.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_sup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cmb_sup.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmb_sup.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_sup.ItemHeight = 30
+        Me.cmb_sup.Items.AddRange(New Object() {"DENSO", "INOAC"})
+        Me.cmb_sup.Location = New System.Drawing.Point(45, 77)
+        Me.cmb_sup.Name = "cmb_sup"
+        Me.cmb_sup.Size = New System.Drawing.Size(211, 36)
+        Me.cmb_sup.TabIndex = 210
         '
         'Add_item
         '
@@ -802,4 +834,6 @@ Partial Class Add_item
     Friend WithEvents btn_part_save As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label17 As Label
     Friend WithEvents txt_parts_partno As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents cmb_sup As Guna.UI2.WinForms.Guna2ComboBox
 End Class
