@@ -98,6 +98,10 @@ Public Class INFG
                 txtqty.Text = qrcode.Substring(10, 2)
                 txtlot.Text = qrcode.Substring(qrcode.Length - 11)
                 saveupdate()
+
+
+
+
             ElseIf boxtype.Text = "TDE" Then
                 If qrcode.Length = 44 Then
                     txtcustomer.Text = qrcode.Substring(0, 13)
@@ -106,9 +110,6 @@ Public Class INFG
                     txtqty.Text = qrcode.Substring(25, 2)
                     txtlot.Text = qrcode.Substring(qrcode.Length - 13)
                     saveupdate()
-
-
-
 
                 ElseIf qrcode.Length = 43 And qrcode.Substring(27, 3) = "A29" Then
                     txtcustomer.Text = qrcode.Substring(0, 15)

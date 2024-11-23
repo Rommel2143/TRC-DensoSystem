@@ -850,7 +850,7 @@ Partial Class QR_identifier
         Me.cmb_type.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cmb_type.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmb_type.ItemHeight = 30
-        Me.cmb_type.Items.AddRange(New Object() {"DMTN", "DMTN-Inner Tag", "DMTN-CML", "INTELLI IV", "TDE", "20CY", "VT", "YT", "YT-Matrix", "2T", "JECO", "JECO-CML", "3T", "3T-Matrix", "PARTS"})
+        Me.cmb_type.Items.AddRange(New Object() {"DMTN", "DMTN-Inner Tag", "DMTN-CML", "INTELLI IV", "TDE-QR", "TDE-STICKER LABEL", "20CY", "VT", "YT", "YT-Matrix", "2T", "JECO", "JECO-CML", "3T", "3T-Matrix", "PARTS"})
         Me.cmb_type.Location = New System.Drawing.Point(390, 515)
         Me.cmb_type.Name = "cmb_type"
         Me.cmb_type.Size = New System.Drawing.Size(200, 36)

@@ -240,4 +240,8 @@ Public Class sub_mainframe
     Private Sub HandCarryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HandCarryToolStripMenuItem.Click
         display_formscan(dmtn_handcarry)
     End Sub
+
+    Private Sub TdeToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles TdeToolStripMenuItem.Click
+        display_formscan(tde_IN)
+    End Sub
 End Class

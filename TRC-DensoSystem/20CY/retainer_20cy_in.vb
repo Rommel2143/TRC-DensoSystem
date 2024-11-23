@@ -285,4 +285,8 @@ Public Class _20cy_in
     Private Sub txtqr_label_TextChanged(sender As Object, e As EventArgs) Handles txtqr_label.TextChanged
 
     End Sub
+
+    Private Sub Guna2Panel4_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel4.Paint
+
+    End Sub
 End Class

@@ -196,4 +196,8 @@ Public Class retainer_20cy_out
         retainer_20cy_report.Show()
         retainer_20cy_report.BringToFront()
     End Sub
+
+    Private Sub Guna2ShadowPanel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2ShadowPanel1.Paint
+
+    End Sub
 End Class
