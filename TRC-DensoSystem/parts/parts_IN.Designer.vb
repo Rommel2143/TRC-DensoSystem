@@ -273,6 +273,7 @@ Partial Class parts_IN
         Me.batchcode.IconLeft = CType(resources.GetObject("batchcode.IconLeft"), System.Drawing.Image)
         Me.batchcode.IconLeftSize = New System.Drawing.Size(25, 25)
         Me.batchcode.Location = New System.Drawing.Point(16, 10)
+        Me.batchcode.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.batchcode.Name = "batchcode"
         Me.batchcode.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.batchcode.PlaceholderText = "Enter Batch..."
@@ -295,6 +296,7 @@ Partial Class parts_IN
         Me.txtqr.IconLeft = CType(resources.GetObject("txtqr.IconLeft"), System.Drawing.Image)
         Me.txtqr.IconLeftSize = New System.Drawing.Size(25, 25)
         Me.txtqr.Location = New System.Drawing.Point(16, 63)
+        Me.txtqr.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtqr.Name = "txtqr"
         Me.txtqr.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr.PlaceholderText = "Scan QR..."
@@ -345,10 +347,10 @@ Partial Class parts_IN
         Me.cmb_sup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_sup.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmb_sup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cmb_sup.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cmb_sup.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_sup.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmb_sup.ItemHeight = 30
-        Me.cmb_sup.Items.AddRange(New Object() {"DENSO", "INOAC"})
+        Me.cmb_sup.Items.AddRange(New Object() {"DENSO", "INOAC", "TRC"})
         Me.cmb_sup.Location = New System.Drawing.Point(28, 93)
         Me.cmb_sup.Name = "cmb_sup"
         Me.cmb_sup.Size = New System.Drawing.Size(211, 36)

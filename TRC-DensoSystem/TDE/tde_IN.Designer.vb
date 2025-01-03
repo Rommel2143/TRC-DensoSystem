@@ -27,7 +27,7 @@ Partial Class tde_IN
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.txtqr_tde = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtqr_customer = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtqr_sticker = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.Guna2Separator9 = New Guna.UI2.WinForms.Guna2Separator()
@@ -45,6 +45,7 @@ Partial Class tde_IN
         Me.Guna2CircleButton2 = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.Guna2CircleButton1 = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lbl_serial = New System.Windows.Forms.Label()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.labelerror = New Guna.UI2.WinForms.Guna2Panel()
         Me.texterror = New System.Windows.Forms.Label()
@@ -62,25 +63,25 @@ Partial Class tde_IN
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'txtqr_tde
+        'txtqr_customer
         '
-        Me.txtqr_tde.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtqr_tde.DefaultText = ""
-        Me.txtqr_tde.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtqr_tde.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtqr_tde.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtqr_tde.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtqr_tde.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtqr_tde.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtqr_tde.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtqr_tde.IconLeft = CType(resources.GetObject("txtqr_tde.IconLeft"), System.Drawing.Image)
-        Me.txtqr_tde.Location = New System.Drawing.Point(205, 281)
-        Me.txtqr_tde.Name = "txtqr_tde"
-        Me.txtqr_tde.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtqr_tde.PlaceholderText = "Scan Sticker Label..."
-        Me.txtqr_tde.SelectedText = ""
-        Me.txtqr_tde.Size = New System.Drawing.Size(468, 36)
-        Me.txtqr_tde.TabIndex = 2
+        Me.txtqr_customer.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtqr_customer.DefaultText = ""
+        Me.txtqr_customer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtqr_customer.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtqr_customer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtqr_customer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtqr_customer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtqr_customer.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txtqr_customer.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtqr_customer.IconLeft = CType(resources.GetObject("txtqr_customer.IconLeft"), System.Drawing.Image)
+        Me.txtqr_customer.Location = New System.Drawing.Point(205, 281)
+        Me.txtqr_customer.Name = "txtqr_customer"
+        Me.txtqr_customer.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtqr_customer.PlaceholderText = "Scan Sticker Label..."
+        Me.txtqr_customer.SelectedText = ""
+        Me.txtqr_customer.Size = New System.Drawing.Size(468, 36)
+        Me.txtqr_customer.TabIndex = 2
         '
         'txtqr_sticker
         '
@@ -90,6 +91,7 @@ Partial Class tde_IN
         Me.txtqr_sticker.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtqr_sticker.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtqr_sticker.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtqr_sticker.Enabled = False
         Me.txtqr_sticker.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtqr_sticker.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txtqr_sticker.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -222,12 +224,12 @@ Partial Class tde_IN
         Me.Guna2Shapes4.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Shapes4.BorderThickness = 1
         Me.Guna2Shapes4.LineThickness = 2
-        Me.Guna2Shapes4.Location = New System.Drawing.Point(451, 77)
+        Me.Guna2Shapes4.Location = New System.Drawing.Point(410, 98)
         Me.Guna2Shapes4.Name = "Guna2Shapes4"
         Me.Guna2Shapes4.PolygonSkip = 1
         Me.Guna2Shapes4.Rotate = 150.0!
         Me.Guna2Shapes4.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line
-        Me.Guna2Shapes4.Size = New System.Drawing.Size(150, 98)
+        Me.Guna2Shapes4.Size = New System.Drawing.Size(222, 74)
         Me.Guna2Shapes4.TabIndex = 249
         Me.Guna2Shapes4.Text = "Guna2Shapes4"
         Me.Guna2Shapes4.UseTransparentBackground = True
@@ -238,7 +240,7 @@ Partial Class tde_IN
         Me.Guna2Shapes1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Shapes1.BorderThickness = 1
         Me.Guna2Shapes1.LineThickness = 2
-        Me.Guna2Shapes1.Location = New System.Drawing.Point(169, 212)
+        Me.Guna2Shapes1.Location = New System.Drawing.Point(169, 203)
         Me.Guna2Shapes1.Name = "Guna2Shapes1"
         Me.Guna2Shapes1.PolygonSkip = 1
         Me.Guna2Shapes1.Rotate = 98.0!
@@ -287,19 +289,32 @@ Partial Class tde_IN
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.txtqr_customer)
+        Me.Panel1.Controls.Add(Me.txtqr_sticker)
+        Me.Panel1.Controls.Add(Me.lbl_serial)
         Me.Panel1.Controls.Add(Me.Guna2PictureBox1)
         Me.Panel1.Controls.Add(Me.Guna2CircleButton2)
         Me.Panel1.Controls.Add(Me.Guna2CircleButton1)
         Me.Panel1.Controls.Add(Me.Guna2Shapes4)
         Me.Panel1.Controls.Add(Me.Guna2Shapes1)
         Me.Panel1.Controls.Add(Me.Guna2ShadowPanel1)
-        Me.Panel1.Controls.Add(Me.txtqr_sticker)
-        Me.Panel1.Controls.Add(Me.txtqr_tde)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 39)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1150, 359)
+        Me.Panel1.Size = New System.Drawing.Size(1150, 389)
         Me.Panel1.TabIndex = 252
+        '
+        'lbl_serial
+        '
+        Me.lbl_serial.AutoSize = True
+        Me.lbl_serial.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_serial.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_serial.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.lbl_serial.Location = New System.Drawing.Point(202, 320)
+        Me.lbl_serial.Name = "lbl_serial"
+        Me.lbl_serial.Size = New System.Drawing.Size(28, 21)
+        Me.lbl_serial.TabIndex = 253
+        Me.lbl_serial.Text = "---"
         '
         'Guna2PictureBox1
         '
@@ -390,17 +405,17 @@ Partial Class tde_IN
         Me.datagrid1.AllowUserToAddRows = False
         Me.datagrid1.AllowUserToDeleteRows = False
         Me.datagrid1.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(242, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.datagrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(204, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(204, Byte), Integer))
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.datagrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
@@ -408,15 +423,15 @@ Partial Class tde_IN
         Me.datagrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datagrid1.DefaultCellStyle = DataGridViewCellStyle3
         Me.datagrid1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.datagrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid1.Location = New System.Drawing.Point(0, 398)
+        Me.datagrid1.Location = New System.Drawing.Point(0, 428)
         Me.datagrid1.Name = "datagrid1"
         Me.datagrid1.ReadOnly = True
         Me.datagrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -430,7 +445,7 @@ Partial Class tde_IN
         Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.datagrid1.RowHeadersVisible = False
         Me.datagrid1.RowTemplate.Height = 31
-        Me.datagrid1.Size = New System.Drawing.Size(1150, 336)
+        Me.datagrid1.Size = New System.Drawing.Size(1150, 306)
         Me.datagrid1.TabIndex = 255
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -470,6 +485,7 @@ Partial Class tde_IN
         Me.Guna2ShadowPanel1.ResumeLayout(False)
         Me.Guna2ShadowPanel1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.labelerror.ResumeLayout(False)
         Me.labelerror.PerformLayout()
@@ -481,7 +497,7 @@ Partial Class tde_IN
 
     End Sub
 
-    Friend WithEvents txtqr_tde As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtqr_customer As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtqr_sticker As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2ShadowPanel1 As Guna.UI2.WinForms.Guna2ShadowPanel
     Friend WithEvents Guna2Separator9 As Guna.UI2.WinForms.Guna2Separator
@@ -507,4 +523,5 @@ Partial Class tde_IN
     Friend WithEvents txtdate As Label
     Friend WithEvents datagrid1 As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents lbl_serial As Label
 End Class

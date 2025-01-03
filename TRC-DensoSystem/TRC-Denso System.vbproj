@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\ptif1-ds\SystemServer\Denso System\</UpdateUrl>
-    <ApplicationRevision>75</ApplicationRevision>
+    <ApplicationRevision>84</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -574,10 +574,28 @@
     <Compile Include="parts\parts_stock.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TDE\tdereport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tdereport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TDE\tde_IN.Designer.vb">
       <DependentUpon>tde_IN.vb</DependentUpon>
     </Compile>
     <Compile Include="TDE\tde_IN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TDE\tde_OUT.Designer.vb">
+      <DependentUpon>tde_OUT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TDE\tde_OUT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TDE\tde_Report.Designer.vb">
+      <DependentUpon>tde_Report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TDE\tde_Report.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="YT\yt_matrix.Designer.vb">
@@ -773,8 +791,18 @@
     <EmbeddedResource Include="parts\parts_stock.resx">
       <DependentUpon>parts_stock.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TDE\tdereport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>tdereport.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="TDE\tde_IN.resx">
       <DependentUpon>tde_IN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TDE\tde_OUT.resx">
+      <DependentUpon>tde_OUT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TDE\tde_Report.resx">
+      <DependentUpon>tde_Report.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="YT\yt_matrix.resx">
       <DependentUpon>yt_matrix.vb</DependentUpon>

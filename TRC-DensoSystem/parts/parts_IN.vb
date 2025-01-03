@@ -150,12 +150,12 @@ Public Class parts_IN
                         Dim parts() As String = txtqr.Text.Trim.Split("|")
 
                         'CON 1 : QR SPLITING
-                        If parts.Length >= 3 Then
+                        If parts.Length >= 4 Then
                             partno = parts(1)
                             Dim lotnumber As String = parts(2)
                             qty = parts(3)
                             Dim productionDateRaw As String = parts(2).Remove(6, 7).Trim
-
+                            Dim series As String = parts(4)
 
                             Dim year As Integer = Integer.Parse(productionDateRaw.Substring(0, 2))
                             Dim month As Integer = Integer.Parse(productionDateRaw.Substring(2, 2))
@@ -189,8 +189,8 @@ Public Class parts_IN
                                     'SAVING
                                     'save
                                     color = ""
-                                    insertrecord("INSERT INTO `denso_parts`(`qrcode`, `partno`, `qty`, `color`, `proddate`, `batchin`, `userin`, `datein`, `batchout`, `userout`, `dateout`, `status`,`lotnumber`)
-                                                        VALUES ('" & txtqr.Text & "','" & partno & "','" & qty & "','" & color & "','" & prod & "','" & batchcode.Text & "','" & idno & "','" & datedb & "','','',NULL,1,'" & lotnumber & "')")
+                                    insertrecord("INSERT INTO `denso_parts`(`qrcode`, `partno`, `qty`, `color`, `proddate`, `batchin`, `userin`, `datein`, `batchout`, `userout`, `dateout`, `status`,`lotnumber`,`series`)
+                                                        VALUES ('" & txtqr.Text & "','" & partno & "','" & qty & "','" & color & "','" & prod & "','" & batchcode.Text & "','" & idno & "','" & datedb & "','','',NULL,1,'" & lotnumber & "','" & series & "')")
                                     displaygrid()
                                     displaygrid2()
                                     error_panel.Visible = False
@@ -206,7 +206,65 @@ Public Class parts_IN
 
                         End If
 
+                    Case "TRC"
 
+                        Dim parts() As String = txtqr.Text.Trim.Split("|")
+
+                        'CON 1 : QR SPLITING
+
+                        If parts.Length >= 5 AndAlso parts.Length <= 8 Then
+                            partno = parts(0).Remove(0, 2).Trim
+
+                            qty = parts(3).Remove(0, 2).Trim
+                            Dim lotnumber As String = parts(2).Remove(0, 2).Trim
+                            Dim productionDateRaw As String = parts(2).Substring(13, 6).Trim
+                            Dim year As Integer = Integer.Parse(productionDateRaw.Substring(0, 2))
+                            Dim month As Integer = Integer.Parse(productionDateRaw.Substring(2, 2))
+                            Dim day As Integer = Integer.Parse(productionDateRaw.Substring(4, 2))
+                            Dim productionDateDateTime As New DateTime(2000 + year, month, day)
+                            prod = productionDateDateTime.ToString("yyyy-MM-dd")
+                            Dim seriestrc As String = parts(5).Remove(0, 2).Trim
+                            'CON 2 : IF SCANNED
+                            con.Close()
+                            con.Open()
+                            Dim cmdselect As New MySqlCommand("SELECT `qrcode`,`status`,`datein` FROM `denso_parts` WHERE `qrcode`='" & txtqr.Text.Trim & "' LIMIT 1", con)
+                            dr = cmdselect.ExecuteReader
+                            If dr.Read = True Then
+                                Dim status As Integer = dr.GetInt32("status")
+                                Dim datein As Date = dr.GetDateTime("datein")
+
+                                Select Case status
+                                    Case "1"
+                                        display_error("Already Scanned on " & datein.ToString("MMMM-dd-yyyy"), 2)
+                                    Case "0"
+                                        display_error("Status : OUT", 1)
+                                End Select
+
+                            Else 'CON 2 : IF NOT SCANNED
+                                con.Close()
+                                con.Open()
+                                Dim cmdpartcode As New MySqlCommand("SELECT `partno` FROM `denso_parts_masterlist` WHERE `partno`='" & partno & "' LIMIT 1", con)
+                                dr = cmdpartcode.ExecuteReader
+                                If dr.Read = True Then
+                                    'SAVING
+                                    'save
+                                    color = ""
+                                    insertrecord("INSERT INTO `denso_parts`(`qrcode`, `partno`, `qty`, `color`, `proddate`, `batchin`, `userin`, `datein`, `batchout`, `userout`, `dateout`, `status`,`lotnumber`,`series`)
+                                                        VALUES ('" & txtqr.Text & "','" & partno & "','" & qty & "','" & color & "','" & prod & "','" & batchcode.Text & "','" & idno & "','" & datedb & "','','',NULL,1,'" & lotnumber & "','" & seriestrc & "')")
+                                    displaygrid()
+                                    displaygrid2()
+                                    error_panel.Visible = False
+
+
+                                Else  'CON 3 : PARTCODE
+                                    display_error("No Partcode Exists!", 1)
+                                End If
+                            End If
+
+                        Else  'CON 1 : QR SPLITING
+                                display_error("INVALID QR FORMAT!", 1)
+
+                        End If
 
 
                 End Select

@@ -178,15 +178,16 @@ Public Class sub_mainframe
     End Sub
 
     Private Sub INToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles INToolStripMenuItem4.Click
-        display_formscan(INFG)
+        '   display_formscan(INFG)
+        display_formscan(tde_IN)
     End Sub
 
     Private Sub OUTToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles OUTToolStripMenuItem5.Click
-        display_formscan(OUTFG_TDE)
+        display_formscan(tde_OUT)
     End Sub
 
     Private Sub ReportToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ReportToolStripMenuItem1.Click
-        display_formscan(REPORT_TDE)
+        display_formscan(tde_Report)
     End Sub
 
     Private Sub PrintCMLReportsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrintCMLReportsToolStripMenuItem.Click
@@ -241,7 +242,11 @@ Public Class sub_mainframe
         display_formscan(dmtn_handcarry)
     End Sub
 
-    Private Sub TdeToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles TdeToolStripMenuItem.Click
-        display_formscan(tde_IN)
+    Private Sub TdeToolStripMenuItem_Click_1(sender As Object, e As EventArgs) 
+
+    End Sub
+
+    Private Sub TdeOutToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+
     End Sub
 End Class

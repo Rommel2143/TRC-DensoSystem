@@ -134,7 +134,7 @@ Public Class QR_identifier
                 con.Close()
                 con.Open()
                 Dim cmdselect As New MySqlCommand("SELECT `qrtype`, `qrlenght` FROM `denso_qrtype`
-                                                WHERE qrlenght= '" & qrlenght & "' and qrtype  = '" & cmbselect & "'", con)
+                                                WHERE qrlenght= '" & qrlenght & "' and qrtype  = '" & cmbselect & "' and type='" & cmb_no.Text & "'", con)
                 dr = cmdselect.ExecuteReader()
                 If dr.Read = True Then
                     'DUPLICATE
@@ -154,7 +154,8 @@ Public Class QR_identifier
                                                                             `shift`,
                                                                             `process`,
                                                                             `line`, 
-                                                                            `series`)
+                                                                            `series`,
+                                                                             `type`)
                                                                     VALUES ('" & cmbselect & "',
                                                                             '" & qrlenght & "',
                                                                             '" & val_partno.Text & "',
@@ -165,8 +166,8 @@ Public Class QR_identifier
                                                                             '" & val_shift.Text & "',
                                                                             '" & val_machine.Text & "',
                                                                             '" & val_line.Text & "',
-                                                                            '" & val_series.Text & "'
-                                                                            )", con)
+                                                                            '" & val_series.Text & "',
+                                                                            '" & cmb_no.Text & "')", con)
                     cmdinsert.ExecuteNonQuery()
                     MessageBox.Show("USER Added successfully!")
                     con.Close()
@@ -199,10 +200,12 @@ Public Class QR_identifier
                 cmbselect = "DMTN-CML"
             Case "INTELLI IV"
                 cmbselect = "INT4"
-            Case "TDE-QR"
-                cmbselect = "TDE"
-            Case "TDE-STICKER LABEL"
+            Case "TDE-Customer QR"
+                cmbselect = "TDE-C"
+            Case "TDE-STICKER LABEL QR"
                 cmbselect = "TDE-SL"
+            Case "TDE-CML"
+                cmbselect = "TDE-CML"
             Case "20CY"
                 cmbselect = "20CY"
             Case "VT"
@@ -224,6 +227,7 @@ Public Class QR_identifier
             Case "PARTS"
                 cmbselect = "PARTS"
         End Select
+        txt_qr.Enabled = True
     End Sub
 
     Private Sub Guna2ImageButton1_Click(sender As Object, e As EventArgs) Handles Guna2ImageButton1.Click
@@ -275,5 +279,18 @@ Public Class QR_identifier
 
     Private Sub Guna2GroupBox1_Click(sender As Object, e As EventArgs)
 
+    End Sub
+
+    Private Sub qr_lenght_TextChanged(sender As Object, e As EventArgs) Handles qr_lenght.TextChanged
+        con.Close()
+        con.Open()
+        Dim cmdselect As New MySqlCommand("SELECT count(id)+1 AS count FROM `denso_qrtype`
+                                                WHERE qrlenght= '" & qrlenght & "' and qrtype  = '" & cmbselect & "'", con)
+        dr = cmdselect.ExecuteReader()
+        If dr.Read = True Then
+            cmb_no.Text = dr.GetInt32(0).ToString
+        Else
+            cmb_no.Text = "1"
+        End If
     End Sub
 End Class

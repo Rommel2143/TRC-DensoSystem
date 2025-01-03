@@ -1,8 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class tde_IN
 
-
-    Dim qrlenght As Integer
+    Dim type As Integer = 1
     Dim serialNumber As String = ""
     Dim partno As String
     Dim qty As String
@@ -16,9 +15,9 @@ Public Class tde_IN
     Dim checkcolor As String
     Dim tdeserial As String
 
+    Dim customer_serial As String
 
-
-    Private Function processQRcodeTDE(type As String, txtqr As Guna.UI2.WinForms.Guna2TextBox) As Boolean
+    Private Function processQRcode_customer(type As String, txtqr As Guna.UI2.WinForms.Guna2TextBox) As Boolean
         Try
 
 
@@ -26,7 +25,7 @@ Public Class tde_IN
             serialNumber = txtqr.Text
 
             'Qr Lenght
-            qrlenght = serialNumber.Length
+            Dim qrlenght As String = serialNumber.Length
             Dim productionDateRaw As String = ""
 
 
@@ -38,7 +37,7 @@ Public Class tde_IN
             If dr.Read = True Then
 
 
-                getcoordinates(dr.GetString("series"), tdeserial)
+                getcoordinates(dr.GetString("series"), customer_serial)
 
             Else
                 showerror("No Qrtype Detected! Please Register first")
@@ -60,26 +59,22 @@ Public Class tde_IN
     End Function
 
 
-    Private Function processQRcode(type As String, txtqr As Guna.UI2.WinForms.Guna2TextBox) As Boolean
+    Private Function processQRcode(txtqr As Guna.UI2.WinForms.Guna2TextBox) As Boolean
         Try
             serialNumber = txtqr.Text
 
             'Qr Lenght
-            qrlenght = serialNumber.Length
+            Dim qrlenght As String = serialNumber.Length
 
-            Select Case qrlenght
-                Case 43
 
-                Case Else
-
-            End Select
             Dim productionDateRaw As String = ""
 
 
             con.Close()
             con.Open()
-            Dim cmdselectqr As New MySqlCommand("SELECT `id`, `qrtype`, `qrlenght`, `partno`, `qty`, `customer`, `color`, `proddate`, `shift`, `process`, `line`, `series` FROM `denso_qrtype`
-                                                WHERE qrlenght= '" & qrlenght & "' and qrtype  = '" & type & "'", con)
+            Dim query As String = "SELECT `id`, `qrtype`, `qrlenght`, `partno`, `qty`, `customer`, `color`, `proddate`, `shift`, `process`, `line`, `series` FROM `denso_qrtype`
+                                                WHERE qrlenght= '" & qrlenght & "' and qrtype  = 'TDE-SL' and type='" & type & "'"
+            Dim cmdselectqr As New MySqlCommand(query, con)
             dr = cmdselectqr.ExecuteReader()
             If dr.Read = True Then
 
@@ -107,11 +102,7 @@ Public Class tde_IN
                 txtqr.Focus()
                 Return False
             End If
-
-
             Return True
-
-
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -119,6 +110,7 @@ Public Class tde_IN
             Return False
         End Try
     End Function
+
 
     Private Sub getcoordinates(partdb As String, ByRef txtstring As String)
 
@@ -149,22 +141,23 @@ Public Class tde_IN
             MessageBox.Show(ex.Message)
         End Try
     End Sub
-    Private Sub txtqr_label_TextChanged(sender As Object, e As EventArgs) Handles txtqr_tde.TextChanged
+    Private Sub txtqr_label_TextChanged(sender As Object, e As EventArgs) Handles txtqr_customer.TextChanged
 
     End Sub
 
-    Private Sub txtqr_label_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_tde.KeyDown
+    Private Sub txtqr_label_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_customer.KeyDown
         If e.KeyCode = Keys.Enter Then
 
             Try
 
 
-                If processQRcodeTDE("TDE", txtqr_tde) Then
+
+                If processQRcode_customer("TDE-C", txtqr_customer) Then
 
                     con.Close()
                     con.Open()
-                    Dim cmdselect As New MySqlCommand("SELECT tdeqr, userin, datein FROM `denso_tde`
-                                                WHERE tdeqr = '" & txtqr_tde.Text & "'", con)
+                    Dim cmdselect As New MySqlCommand("SELECT customer_qr, userin, datein FROM `denso_tde`
+                                                WHERE customer_qr = '" & txtqr_customer.Text & "'", con)
                     dr = cmdselect.ExecuteReader()
                     If dr.Read = True Then
                         'duplicate
@@ -172,9 +165,12 @@ Public Class tde_IN
                         showduplicate(dr.GetString("userin"), dr.GetDateTime("datein"))
                     Else
 
-                        MessageBox.Show(tdeserial)
+                        lbl_serial.Text = "Serial No : " & customer_serial
                         labelerror.Visible = False
+                        txtqr_sticker.Enabled = True
+                        txtqr_customer.Enabled = False
                     End If
+
 
 
 
@@ -182,51 +178,6 @@ Public Class tde_IN
 
 
 
-
-            Catch ex As MySqlException
-                    MessageBox.Show(ex.Message)
-                Finally
-                    con.Close()
-                End Try
-
-        End If
-
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
-
-    Private Sub txtqr_sticker_TextChanged(sender As Object, e As EventArgs) Handles txtqr_sticker.TextChanged
-
-    End Sub
-
-    Private Sub txtqr_sticker_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_sticker.KeyDown
-        If e.KeyCode = Keys.Enter Then
-
-            Try
-
-
-                If processQRcode("TDE-SL", txtqr_sticker) Then
-
-                    con.Close()
-                    con.Open()
-                    Dim cmdselect As New MySqlCommand("SELECT qrcode, userin, datein FROM `denso_tde`
-                                                WHERE qrcode = '" & txtqr_tde.Text & "'", con)
-                    dr = cmdselect.ExecuteReader()
-                    If dr.Read = True Then
-                        'duplicate
-
-                        showduplicate(dr.GetString("userin"), dr.GetDateTime("datein"))
-                    Else
-
-                        MessageBox.Show(tdeserial & "-" & partno & "-" & customerno & "-" & qty & "-" & series)
-                        labelerror.Visible = False
-                    End If
-
-
-
-                End If
 
             Catch ex As MySqlException
                 MessageBox.Show(ex.Message)
@@ -235,6 +186,107 @@ Public Class tde_IN
             End Try
 
         End If
+
+    End Sub
+
+
+    Private Sub txtqr_sticker_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_sticker.KeyDown
+        If e.KeyCode = Keys.Enter Then
+
+            Dim qrcode As String = txtqr_sticker.Text
+            Dim qrlenght As Integer = qrcode.Length
+
+            Try
+                Select Case qrlenght
+
+                    Case 42 And qrcode.Contains("--")
+                        type = 2
+                    Case 43 And (qrcode.Substring(27, 4) = "A299" Or qrcode.Substring(27, 4) = "A2A2")
+                        type = 2
+
+                    Case Else
+                        type = 1
+
+                End Select
+
+
+
+                If processQRcode(txtqr_sticker) Then
+
+                            con.Close()
+                            con.Open()
+                            Dim cmdselect As New MySqlCommand("SELECT tdeqr, userin, datein FROM `denso_tde`
+                                                WHERE tdeqr = '" & txtqr_sticker.Text & "'", con)
+                            dr = cmdselect.ExecuteReader()
+                            If dr.Read = True Then
+                                'duplicate
+
+                                showduplicate(dr.GetString("userin"), dr.GetDateTime("datein"))
+                            Else
+
+                                savedata()
+
+                        labelerror.Visible = False
+                        txtqr_customer.Enabled = True
+                        txtqr_sticker.Enabled = False
+                    End If
+                        End If
+
+
+
+            Catch ex As MySqlException
+                MessageBox.Show(ex.Message)
+            Finally
+                con.Close()
+                txtqr_customer.Clear()
+                txtqr_sticker.Clear()
+                lbl_serial.Text = ""
+                txtqr_customer.Focus()
+            End Try
+
+        End If
+
+    End Sub
+
+    Public Sub savedata()
+        Try
+
+            Dim query As String = "INSERT INTO `denso_tde`(`tdeqr`, `customer_qr`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`,
+                                                        `line`, `serial`, `customer_serial`, `cml`, `cml_serial`, `userin`, `datein`, `userout`, `dateout`)
+                                                VALUES ('" & txtqr_sticker.Text & "',
+                                                        '" & txtqr_customer.Text & "',
+                                                        '" & partno & "',
+                                                        '" & customerno & "',
+                                                        '" & color & "',
+                                                        '" & prod & "',
+                                                        '" & qty & "',
+                                                        '" & shift & "',
+                                                        '" & process & "',
+                                                        '" & line & "',
+                                                        '" & series & "',
+                                                        '" & customer_serial & "',
+                                                        '',
+                                                        '',
+                                                        '" & idno & "',
+                                                        '" & datedb & "',
+                                                        '',
+                                                        NULL)"
+            con.Close()
+
+            con.Open()
+            Dim insertdata As New MySqlCommand(query, con)
+            insertdata.ExecuteNonQuery()
+            reload("SELECT `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial`, `customer_serial` FROM `denso_tde` WHERE datein ='" & datedb & "'", datagrid1)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub txtqr_sticker_TextChanged(sender As Object, e As EventArgs) Handles txtqr_sticker.TextChanged
 
     End Sub
 End Class

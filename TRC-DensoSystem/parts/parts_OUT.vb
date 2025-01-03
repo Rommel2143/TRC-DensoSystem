@@ -220,7 +220,68 @@ Public Class parts_OUT
 
                         End If
 
+                    Case "TRC"
 
+                        Dim parts() As String = txtqr.Text.Trim.Split("|")
+
+                        'CON 1 : QR SPLITING
+
+                        If parts.Length >= 5 AndAlso parts.Length <= 8 Then
+                            partno = parts(0).Remove(0, 2).Trim
+
+                            qty = parts(3).Remove(0, 2).Trim
+                            Dim lotnumber As String = parts(2).Remove(0, 2).Trim
+                            Dim productionDateRaw As String = parts(2).Substring(13, 6).Trim
+                            Dim year As Integer = Integer.Parse(productionDateRaw.Substring(0, 2))
+                            Dim month As Integer = Integer.Parse(productionDateRaw.Substring(2, 2))
+                            Dim day As Integer = Integer.Parse(productionDateRaw.Substring(4, 2))
+                            Dim productionDateDateTime As New DateTime(2000 + year, month, day)
+                            prod = productionDateDateTime.ToString("yyyy-MM-dd")
+
+
+                            'CON 2 : IF SCANNED
+                            con.Close()
+                            con.Open()
+                            Dim cmdselect As New MySqlCommand("SELECT `qrcode`,`status` FROM `denso_parts` WHERE `qrcode`='" & txtqr.Text.Trim & "' LIMIT 1", con)
+                            dr = cmdselect.ExecuteReader
+                            If dr.Read = True Then
+                                Dim status As Integer = dr.GetInt32("status")
+
+                                Select Case status
+
+                                    Case "1"
+                                        'update
+                                        con.Close()
+                                        con.Open()
+                                        Dim cmdupdate As New MySqlCommand("UPDATE denso_parts SET batchout=@batchout, userout=@userout, dateout=@dateout, status=@status WHERE qrcode=@qrcode", con)
+
+                                        ' Add parameters with values
+                                        With cmdupdate.Parameters
+                                            .AddWithValue("@batchout", batchcode.Text)
+                                            .AddWithValue("@userout", idno)
+                                            .AddWithValue("@dateout", datedb)
+                                            .AddWithValue("@status", 0)
+                                            .AddWithValue("@qrcode", txtqr.Text.Trim)
+                                        End With
+
+                                        cmdupdate.ExecuteNonQuery()
+                                        displaygrid()
+                                        displaygrid2()
+                                        error_panel.Visible = False
+                                    Case "0"
+                                        'duplicate
+                                        display_error("Duplicate Entry", 2)
+                                End Select
+
+                            Else 'CON 2 : IF NOT SCANNED
+                                display_error("Record doesn't exist", 1)
+
+                            End If
+
+                        Else  'CON 1 : QR SPLITING
+                            display_error("INVALID QR FORMAT!", 1)
+
+                        End If
 
                 End Select
 

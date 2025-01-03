@@ -12,7 +12,7 @@
   <xs:element name="Dataset1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Dataset1" msprop:Generator_UserDSName="Dataset1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="jeco" msprop:Generator_TableClassName="jecoDataTable" msprop:Generator_TableVarName="tablejeco" msprop:Generator_RowChangedName="jecoRowChanged" msprop:Generator_TablePropName="jeco" msprop:Generator_RowDeletingName="jecoRowDeleting" msprop:Generator_RowChangingName="jecoRowChanging" msprop:Generator_RowEvHandlerName="jecoRowChangeEventHandler" msprop:Generator_RowDeletedName="jecoRowDeleted" msprop:Generator_RowClassName="jecoRow" msprop:Generator_UserTableName="jeco" msprop:Generator_RowEvArgName="jecoRowChangeEvent">
+        <xs:element name="jeco" msprop:Generator_TableClassName="jecoDataTable" msprop:Generator_TableVarName="tablejeco" msprop:Generator_TablePropName="jeco" msprop:Generator_RowDeletingName="jecoRowDeleting" msprop:Generator_RowChangingName="jecoRowChanging" msprop:Generator_RowEvHandlerName="jecoRowChangeEventHandler" msprop:Generator_RowDeletedName="jecoRowDeleted" msprop:Generator_UserTableName="jeco" msprop:Generator_RowChangedName="jecoRowChanged" msprop:Generator_RowEvArgName="jecoRowChangeEvent" msprop:Generator_RowClassName="jecoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -33,7 +33,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="intelli4" msprop:Generator_TableClassName="intelli4DataTable" msprop:Generator_TableVarName="tableintelli4" msprop:Generator_RowChangedName="intelli4RowChanged" msprop:Generator_TablePropName="intelli4" msprop:Generator_RowDeletingName="intelli4RowDeleting" msprop:Generator_RowChangingName="intelli4RowChanging" msprop:Generator_RowEvHandlerName="intelli4RowChangeEventHandler" msprop:Generator_RowDeletedName="intelli4RowDeleted" msprop:Generator_RowClassName="intelli4Row" msprop:Generator_UserTableName="intelli4" msprop:Generator_RowEvArgName="intelli4RowChangeEvent">
+        <xs:element name="intelli4" msprop:Generator_TableClassName="intelli4DataTable" msprop:Generator_TableVarName="tableintelli4" msprop:Generator_TablePropName="intelli4" msprop:Generator_RowDeletingName="intelli4RowDeleting" msprop:Generator_RowChangingName="intelli4RowChanging" msprop:Generator_RowEvHandlerName="intelli4RowChangeEventHandler" msprop:Generator_RowDeletedName="intelli4RowDeleted" msprop:Generator_UserTableName="intelli4" msprop:Generator_RowChangedName="intelli4RowChanged" msprop:Generator_RowEvArgName="intelli4RowChangeEvent" msprop:Generator_RowClassName="intelli4Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -50,7 +50,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="yt" msprop:Generator_TableClassName="ytDataTable" msprop:Generator_TableVarName="tableyt" msprop:Generator_RowChangedName="ytRowChanged" msprop:Generator_TablePropName="yt" msprop:Generator_RowDeletingName="ytRowDeleting" msprop:Generator_RowChangingName="ytRowChanging" msprop:Generator_RowEvHandlerName="ytRowChangeEventHandler" msprop:Generator_RowDeletedName="ytRowDeleted" msprop:Generator_RowClassName="ytRow" msprop:Generator_UserTableName="yt" msprop:Generator_RowEvArgName="ytRowChangeEvent">
+        <xs:element name="yt" msprop:Generator_TableClassName="ytDataTable" msprop:Generator_TableVarName="tableyt" msprop:Generator_TablePropName="yt" msprop:Generator_RowDeletingName="ytRowDeleting" msprop:Generator_RowChangingName="ytRowChanging" msprop:Generator_RowEvHandlerName="ytRowChangeEventHandler" msprop:Generator_RowDeletedName="ytRowDeleted" msprop:Generator_UserTableName="yt" msprop:Generator_RowChangedName="ytRowChanged" msprop:Generator_RowEvArgName="ytRowChangeEvent" msprop:Generator_RowClassName="ytRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -67,7 +67,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="_x0032_0cy" msprop:Generator_TableClassName="_20cyDataTable" msprop:Generator_TableVarName="table20cy" msprop:Generator_RowChangedName="_20cyRowChanged" msprop:Generator_TablePropName="_20cy" msprop:Generator_RowDeletingName="_20cyRowDeleting" msprop:Generator_RowChangingName="_20cyRowChanging" msprop:Generator_RowEvHandlerName="_20cyRowChangeEventHandler" msprop:Generator_RowDeletedName="_20cyRowDeleted" msprop:Generator_RowClassName="_20cyRow" msprop:Generator_UserTableName="20cy" msprop:Generator_RowEvArgName="_20cyRowChangeEvent">
+        <xs:element name="_x0032_0cy" msprop:Generator_TableClassName="_20cyDataTable" msprop:Generator_TableVarName="table20cy" msprop:Generator_TablePropName="_20cy" msprop:Generator_RowDeletingName="_20cyRowDeleting" msprop:Generator_RowChangingName="_20cyRowChanging" msprop:Generator_RowEvHandlerName="_20cyRowChangeEventHandler" msprop:Generator_RowDeletedName="_20cyRowDeleted" msprop:Generator_UserTableName="20cy" msprop:Generator_RowChangedName="_20cyRowChanged" msprop:Generator_RowEvArgName="_20cyRowChangeEvent" msprop:Generator_RowClassName="_20cyRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -87,7 +87,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="_x0033_t" msprop:Generator_TableClassName="_3tDataTable" msprop:Generator_TableVarName="table3t" msprop:Generator_TablePropName="_3t" msprop:Generator_RowDeletingName="_3tRowDeleting" msprop:Generator_RowChangingName="_3tRowChanging" msprop:Generator_RowEvHandlerName="_3tRowChangeEventHandler" msprop:Generator_RowDeletedName="_3tRowDeleted" msprop:Generator_UserTableName="3t" msprop:Generator_RowChangedName="_3tRowChanged" msprop:Generator_RowEvArgName="_3tRowChangeEvent" msprop:Generator_RowClassName="_3tRow">
+        <xs:element name="_x0033_t" msprop:Generator_TableClassName="_3tDataTable" msprop:Generator_TableVarName="table3t" msprop:Generator_RowChangedName="_3tRowChanged" msprop:Generator_TablePropName="_3t" msprop:Generator_RowDeletingName="_3tRowDeleting" msprop:Generator_RowChangingName="_3tRowChanging" msprop:Generator_RowEvHandlerName="_3tRowChangeEventHandler" msprop:Generator_RowDeletedName="_3tRowDeleted" msprop:Generator_RowClassName="_3tRow" msprop:Generator_UserTableName="3t" msprop:Generator_RowEvArgName="_3tRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -101,6 +101,28 @@
               <xs:element name="batchcode" msprop:Generator_ColumnVarNameInTable="columnbatchcode" msprop:Generator_ColumnPropNameInRow="batchcode" msprop:Generator_ColumnPropNameInTable="batchcodeColumn" msprop:Generator_UserColumnName="batchcode" type="xs:string" minOccurs="0" />
               <xs:element name="userout" msprop:Generator_ColumnVarNameInTable="columnuserout" msprop:Generator_ColumnPropNameInRow="userout" msprop:Generator_ColumnPropNameInTable="useroutColumn" msprop:Generator_UserColumnName="userout" type="xs:string" minOccurs="0" />
               <xs:element name="dateout" msprop:Generator_ColumnVarNameInTable="columndateout" msprop:Generator_ColumnPropNameInRow="dateout" msprop:Generator_ColumnPropNameInTable="dateoutColumn" msprop:Generator_UserColumnName="dateout" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TDE" msprop:Generator_TableClassName="TDEDataTable" msprop:Generator_TableVarName="tableTDE" msprop:Generator_TablePropName="TDE" msprop:Generator_RowDeletingName="TDERowDeleting" msprop:Generator_RowChangingName="TDERowChanging" msprop:Generator_RowEvHandlerName="TDERowChangeEventHandler" msprop:Generator_RowDeletedName="TDERowDeleted" msprop:Generator_UserTableName="TDE" msprop:Generator_RowChangedName="TDERowChanged" msprop:Generator_RowEvArgName="TDERowChangeEvent" msprop:Generator_RowClassName="TDERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
+              <xs:element name="tdeqr" msdata:Caption="jecoqr" msprop:Generator_ColumnVarNameInTable="columntdeqr" msprop:Generator_ColumnPropNameInRow="tdeqr" msprop:Generator_ColumnPropNameInTable="tdeqrColumn" msprop:Generator_UserColumnName="tdeqr" type="xs:string" minOccurs="0" />
+              <xs:element name="partno" msprop:Generator_ColumnVarNameInTable="columnpartno" msprop:Generator_ColumnPropNameInRow="partno" msprop:Generator_ColumnPropNameInTable="partnoColumn" msprop:Generator_UserColumnName="partno" type="xs:string" minOccurs="0" />
+              <xs:element name="customerno" msprop:Generator_ColumnVarNameInTable="columncustomerno" msprop:Generator_ColumnPropNameInRow="customerno" msprop:Generator_ColumnPropNameInTable="customernoColumn" msprop:Generator_UserColumnName="customerno" type="xs:string" minOccurs="0" />
+              <xs:element name="color" msprop:Generator_ColumnVarNameInTable="columncolor" msprop:Generator_ColumnPropNameInRow="color" msprop:Generator_ColumnPropNameInTable="colorColumn" msprop:Generator_UserColumnName="color" type="xs:string" minOccurs="0" />
+              <xs:element name="proddate" msprop:Generator_ColumnVarNameInTable="columnproddate" msprop:Generator_ColumnPropNameInRow="proddate" msprop:Generator_ColumnPropNameInTable="proddateColumn" msprop:Generator_UserColumnName="proddate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:int" minOccurs="0" />
+              <xs:element name="serial" msprop:Generator_ColumnVarNameInTable="columnserial" msprop:Generator_ColumnPropNameInRow="serial" msprop:Generator_ColumnPropNameInTable="serialColumn" msprop:Generator_UserColumnName="serial" type="xs:string" minOccurs="0" />
+              <xs:element name="cml" msdata:Caption="cmlqr" msprop:Generator_ColumnVarNameInTable="columncml" msprop:Generator_ColumnPropNameInRow="cml" msprop:Generator_ColumnPropNameInTable="cmlColumn" msprop:Generator_UserColumnName="cml" type="xs:string" minOccurs="0" />
+              <xs:element name="userout" msprop:Generator_ColumnVarNameInTable="columnuserout" msprop:Generator_ColumnPropNameInRow="userout" msprop:Generator_ColumnPropNameInTable="useroutColumn" msprop:Generator_UserColumnName="userout" type="xs:string" minOccurs="0" />
+              <xs:element name="dateout" msprop:Generator_ColumnVarNameInTable="columndateout" msprop:Generator_ColumnPropNameInRow="dateout" msprop:Generator_ColumnPropNameInTable="dateoutColumn" msprop:Generator_UserColumnName="dateout" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cml_serial" msdata:Caption="cmlserial" msprop:Generator_ColumnVarNameInTable="columncml_serial" msprop:Generator_ColumnPropNameInRow="cml_serial" msprop:Generator_ColumnPropNameInTable="cml_serialColumn" msprop:Generator_UserColumnName="cml_serial" type="xs:string" minOccurs="0" />
+              <xs:element name="shift" msprop:Generator_ColumnVarNameInTable="columnshift" msprop:Generator_ColumnPropNameInRow="shift" msprop:Generator_ColumnPropNameInTable="shiftColumn" msprop:Generator_UserColumnName="shift" type="xs:string" minOccurs="0" />
+              <xs:element name="process" msprop:Generator_ColumnVarNameInTable="columnprocess" msprop:Generator_ColumnPropNameInRow="process" msprop:Generator_ColumnPropNameInTable="processColumn" msprop:Generator_UserColumnName="process" type="xs:string" minOccurs="0" />
+              <xs:element name="line" msprop:Generator_ColumnVarNameInTable="columnline" msprop:Generator_ColumnPropNameInRow="line" msprop:Generator_ColumnPropNameInTable="lineColumn" msprop:Generator_UserColumnName="line" type="xs:string" minOccurs="0" />
+              <xs:element name="customer_qr" msprop:Generator_ColumnVarNameInTable="columncustomer_qr" msprop:Generator_ColumnPropNameInRow="customer_qr" msprop:Generator_ColumnPropNameInTable="customer_qrColumn" msprop:Generator_UserColumnName="customer_qr" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -124,6 +146,10 @@
     </xs:unique>
     <xs:unique name="_x0033_t_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:_x0033_t" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="TDE_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TDE" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>
