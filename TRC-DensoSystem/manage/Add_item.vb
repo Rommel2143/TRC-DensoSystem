@@ -229,7 +229,7 @@ Public Class Add_item
             Case "INTELLI IV"
                 cmbselect = "INT4"
             Case "TDE"
-                cmbselect = "TDE"
+                cmbselect = "TDE-SL"
             Case "20CY"
                 cmbselect = "20CY"
             Case "VT"

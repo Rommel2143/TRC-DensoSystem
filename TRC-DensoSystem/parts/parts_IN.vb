@@ -217,7 +217,7 @@ Public Class parts_IN
 
                             qty = parts(3).Remove(0, 2).Trim
                             Dim lotnumber As String = parts(2).Remove(0, 2).Trim
-                            Dim productionDateRaw As String = parts(2).Substring(13, 6).Trim
+                            Dim productionDateRaw As String = parts(2).Substring(12, 6).Trim
                             Dim year As Integer = Integer.Parse(productionDateRaw.Substring(0, 2))
                             Dim month As Integer = Integer.Parse(productionDateRaw.Substring(2, 2))
                             Dim day As Integer = Integer.Parse(productionDateRaw.Substring(4, 2))
