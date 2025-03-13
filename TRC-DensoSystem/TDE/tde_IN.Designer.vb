@@ -77,7 +77,6 @@ Partial Class tde_IN
         Me.txtqr_customer.IconLeft = CType(resources.GetObject("txtqr_customer.IconLeft"), System.Drawing.Image)
         Me.txtqr_customer.Location = New System.Drawing.Point(205, 281)
         Me.txtqr_customer.Name = "txtqr_customer"
-        Me.txtqr_customer.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr_customer.PlaceholderText = "Scan Sticker Label..."
         Me.txtqr_customer.SelectedText = ""
         Me.txtqr_customer.Size = New System.Drawing.Size(468, 36)
@@ -98,7 +97,6 @@ Partial Class tde_IN
         Me.txtqr_sticker.IconLeft = CType(resources.GetObject("txtqr_sticker.IconLeft"), System.Drawing.Image)
         Me.txtqr_sticker.Location = New System.Drawing.Point(588, 77)
         Me.txtqr_sticker.Name = "txtqr_sticker"
-        Me.txtqr_sticker.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr_sticker.PlaceholderText = "Scan Sticker Label..."
         Me.txtqr_sticker.SelectedText = ""
         Me.txtqr_sticker.Size = New System.Drawing.Size(430, 36)

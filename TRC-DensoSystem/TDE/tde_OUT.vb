@@ -29,6 +29,7 @@ Public Class tde_OUT
                         For Each row As DataGridViewRow In datagrid1.Rows
                             If row.Cells(0).Value IsNot Nothing AndAlso row.Cells(0).Value.ToString() = dataid Then
                                 isDuplicate = True
+
                                 Exit For
                             End If
                         Next
@@ -41,13 +42,14 @@ Public Class tde_OUT
 
 
                             gp_box.Text = "Box Count: " & rowCount
+                            labelerror.Visible = False
 
                         Else
                             showerror("Duplicate Scan. Check data table!")
                         End If
 
 
-                        labelerror.Visible = False
+
                         txtqr_sticker.Clear()
                         txtqr_customer.Enabled = True
                         txtqr_sticker.Enabled = False

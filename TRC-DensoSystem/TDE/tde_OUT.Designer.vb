@@ -447,7 +447,6 @@ Partial Class tde_OUT
         Me.txtqr_cml.Location = New System.Drawing.Point(0, 361)
         Me.txtqr_cml.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtqr_cml.Name = "txtqr_cml"
-        Me.txtqr_cml.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr_cml.PlaceholderText = "Scan Sticker Label..."
         Me.txtqr_cml.SelectedText = ""
         Me.txtqr_cml.Size = New System.Drawing.Size(291, 36)
@@ -468,7 +467,6 @@ Partial Class tde_OUT
         Me.txtqr_customer.Location = New System.Drawing.Point(218, 311)
         Me.txtqr_customer.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtqr_customer.Name = "txtqr_customer"
-        Me.txtqr_customer.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr_customer.PlaceholderText = "Scan Customer QR..."
         Me.txtqr_customer.SelectedText = ""
         Me.txtqr_customer.Size = New System.Drawing.Size(251, 36)
@@ -507,7 +505,6 @@ Partial Class tde_OUT
         Me.txtqr_sticker.Location = New System.Drawing.Point(568, 73)
         Me.txtqr_sticker.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtqr_sticker.Name = "txtqr_sticker"
-        Me.txtqr_sticker.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr_sticker.PlaceholderText = "Scan Sticker Label..."
         Me.txtqr_sticker.SelectedText = ""
         Me.txtqr_sticker.Size = New System.Drawing.Size(243, 36)

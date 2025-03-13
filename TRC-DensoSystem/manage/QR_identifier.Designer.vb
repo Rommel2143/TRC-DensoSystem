@@ -132,7 +132,6 @@ Partial Class QR_identifier
         Me.qr_lenght.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.qr_lenght.Location = New System.Drawing.Point(847, 32)
         Me.qr_lenght.Name = "qr_lenght"
-        Me.qr_lenght.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.qr_lenght.PlaceholderText = "..."
         Me.qr_lenght.ReadOnly = True
         Me.qr_lenght.SelectedText = ""
@@ -381,7 +380,6 @@ Partial Class QR_identifier
         Me.val_qty.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_qty.Location = New System.Drawing.Point(241, 379)
         Me.val_qty.Name = "val_qty"
-        Me.val_qty.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_qty.PlaceholderText = "..."
         Me.val_qty.ReadOnly = True
         Me.val_qty.SelectedText = ""
@@ -414,7 +412,6 @@ Partial Class QR_identifier
         Me.txt_qty.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_qty.Location = New System.Drawing.Point(91, 379)
         Me.txt_qty.Name = "txt_qty"
-        Me.txt_qty.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_qty.PlaceholderText = "..."
         Me.txt_qty.ReadOnly = True
         Me.txt_qty.SelectedText = ""
@@ -572,7 +569,6 @@ Partial Class QR_identifier
         Me.val_prod.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_prod.Location = New System.Drawing.Point(241, 515)
         Me.val_prod.Name = "val_prod"
-        Me.val_prod.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_prod.PlaceholderText = "..."
         Me.val_prod.ReadOnly = True
         Me.val_prod.SelectedText = ""
@@ -605,7 +601,6 @@ Partial Class QR_identifier
         Me.txt_prod.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_prod.Location = New System.Drawing.Point(91, 515)
         Me.txt_prod.Name = "txt_prod"
-        Me.txt_prod.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_prod.PlaceholderText = "..."
         Me.txt_prod.ReadOnly = True
         Me.txt_prod.SelectedText = ""
@@ -626,7 +621,6 @@ Partial Class QR_identifier
         Me.val_series.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_series.Location = New System.Drawing.Point(540, 442)
         Me.val_series.Name = "val_series"
-        Me.val_series.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_series.PlaceholderText = "..."
         Me.val_series.ReadOnly = True
         Me.val_series.SelectedText = ""
@@ -659,7 +653,6 @@ Partial Class QR_identifier
         Me.txt_series.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_series.Location = New System.Drawing.Point(390, 442)
         Me.txt_series.Name = "txt_series"
-        Me.txt_series.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_series.PlaceholderText = "..."
         Me.txt_series.ReadOnly = True
         Me.txt_series.SelectedText = ""
@@ -680,7 +673,6 @@ Partial Class QR_identifier
         Me.val_line.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_line.Location = New System.Drawing.Point(540, 372)
         Me.val_line.Name = "val_line"
-        Me.val_line.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_line.PlaceholderText = "..."
         Me.val_line.ReadOnly = True
         Me.val_line.SelectedText = ""
@@ -713,7 +705,6 @@ Partial Class QR_identifier
         Me.txt_line.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_line.Location = New System.Drawing.Point(390, 372)
         Me.txt_line.Name = "txt_line"
-        Me.txt_line.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_line.PlaceholderText = "..."
         Me.txt_line.ReadOnly = True
         Me.txt_line.SelectedText = ""
@@ -734,7 +725,6 @@ Partial Class QR_identifier
         Me.val_machine.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_machine.Location = New System.Drawing.Point(540, 304)
         Me.val_machine.Name = "val_machine"
-        Me.val_machine.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_machine.PlaceholderText = "..."
         Me.val_machine.ReadOnly = True
         Me.val_machine.SelectedText = ""
@@ -767,7 +757,6 @@ Partial Class QR_identifier
         Me.txt_machine.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_machine.Location = New System.Drawing.Point(390, 304)
         Me.txt_machine.Name = "txt_machine"
-        Me.txt_machine.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_machine.PlaceholderText = "..."
         Me.txt_machine.ReadOnly = True
         Me.txt_machine.SelectedText = ""
@@ -788,7 +777,6 @@ Partial Class QR_identifier
         Me.val_shift.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_shift.Location = New System.Drawing.Point(540, 236)
         Me.val_shift.Name = "val_shift"
-        Me.val_shift.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_shift.PlaceholderText = "..."
         Me.val_shift.ReadOnly = True
         Me.val_shift.SelectedText = ""
@@ -821,7 +809,6 @@ Partial Class QR_identifier
         Me.txt_shift.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_shift.Location = New System.Drawing.Point(390, 236)
         Me.txt_shift.Name = "txt_shift"
-        Me.txt_shift.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_shift.PlaceholderText = "..."
         Me.txt_shift.ReadOnly = True
         Me.txt_shift.SelectedText = ""
@@ -842,7 +829,6 @@ Partial Class QR_identifier
         Me.val_color.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_color.Location = New System.Drawing.Point(241, 442)
         Me.val_color.Name = "val_color"
-        Me.val_color.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_color.PlaceholderText = "..."
         Me.val_color.ReadOnly = True
         Me.val_color.SelectedText = ""
@@ -875,7 +861,6 @@ Partial Class QR_identifier
         Me.txt_color.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_color.Location = New System.Drawing.Point(91, 442)
         Me.txt_color.Name = "txt_color"
-        Me.txt_color.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_color.PlaceholderText = "..."
         Me.txt_color.ReadOnly = True
         Me.txt_color.SelectedText = ""
@@ -896,7 +881,6 @@ Partial Class QR_identifier
         Me.val_customer.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_customer.Location = New System.Drawing.Point(241, 236)
         Me.val_customer.Name = "val_customer"
-        Me.val_customer.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_customer.PlaceholderText = "..."
         Me.val_customer.ReadOnly = True
         Me.val_customer.SelectedText = ""
@@ -929,7 +913,6 @@ Partial Class QR_identifier
         Me.txt_customerno.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_customerno.Location = New System.Drawing.Point(91, 236)
         Me.txt_customerno.Name = "txt_customerno"
-        Me.txt_customerno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_customerno.PlaceholderText = "..."
         Me.txt_customerno.ReadOnly = True
         Me.txt_customerno.SelectedText = ""
@@ -950,7 +933,6 @@ Partial Class QR_identifier
         Me.val_partno.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.val_partno.Location = New System.Drawing.Point(241, 313)
         Me.val_partno.Name = "val_partno"
-        Me.val_partno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.val_partno.PlaceholderText = "..."
         Me.val_partno.ReadOnly = True
         Me.val_partno.SelectedText = ""
@@ -983,7 +965,6 @@ Partial Class QR_identifier
         Me.txt_partno.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_partno.Location = New System.Drawing.Point(91, 313)
         Me.txt_partno.Name = "txt_partno"
-        Me.txt_partno.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_partno.PlaceholderText = "..."
         Me.txt_partno.ReadOnly = True
         Me.txt_partno.SelectedText = ""
@@ -1048,7 +1029,6 @@ Partial Class QR_identifier
         Me.txt_qr.IconLeftSize = New System.Drawing.Size(30, 30)
         Me.txt_qr.Location = New System.Drawing.Point(267, 32)
         Me.txt_qr.Name = "txt_qr"
-        Me.txt_qr.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_qr.PlaceholderText = "Scan QR..."
         Me.txt_qr.SelectedText = ""
         Me.txt_qr.Size = New System.Drawing.Size(559, 36)
@@ -1139,7 +1119,6 @@ Partial Class QR_identifier
         Me.cmb_no.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmb_no.Location = New System.Drawing.Point(946, 32)
         Me.cmb_no.Name = "cmb_no"
-        Me.cmb_no.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.cmb_no.PlaceholderText = "..."
         Me.cmb_no.ReadOnly = True
         Me.cmb_no.SelectedText = ""
