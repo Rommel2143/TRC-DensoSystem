@@ -232,7 +232,6 @@ Partial Class _20cy_in
         Me.txt_customer.Location = New System.Drawing.Point(36, 163)
         Me.txt_customer.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txt_customer.Name = "txt_customer"
-        Me.txt_customer.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_customer.PlaceholderText = "Enter exact customer no..."
         Me.txt_customer.SelectedText = ""
         Me.txt_customer.Size = New System.Drawing.Size(270, 37)
@@ -313,7 +312,7 @@ Partial Class _20cy_in
         Me.Guna2Shapes1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Shapes1.BorderThickness = 1
         Me.Guna2Shapes1.LineThickness = 2
-        Me.Guna2Shapes1.Location = New System.Drawing.Point(-14, 205)
+        Me.Guna2Shapes1.Location = New System.Drawing.Point(67, 179)
         Me.Guna2Shapes1.Name = "Guna2Shapes1"
         Me.Guna2Shapes1.PolygonSkip = 1
         Me.Guna2Shapes1.Rotate = 98.0!
@@ -419,7 +418,6 @@ Partial Class _20cy_in
         Me.txtqr_verify.IconLeft = CType(resources.GetObject("txtqr_verify.IconLeft"), System.Drawing.Image)
         Me.txtqr_verify.Location = New System.Drawing.Point(51, 321)
         Me.txtqr_verify.Name = "txtqr_verify"
-        Me.txtqr_verify.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr_verify.PlaceholderText = "Scan Sticker Label..."
         Me.txtqr_verify.SelectedText = ""
         Me.txtqr_verify.Size = New System.Drawing.Size(354, 36)
@@ -465,7 +463,6 @@ Partial Class _20cy_in
         Me.txtqr_label.IconLeft = CType(resources.GetObject("txtqr_label.IconLeft"), System.Drawing.Image)
         Me.txtqr_label.Location = New System.Drawing.Point(372, 137)
         Me.txtqr_label.Name = "txtqr_label"
-        Me.txtqr_label.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr_label.PlaceholderText = "Scan Sticker Label..."
         Me.txtqr_label.SelectedText = ""
         Me.txtqr_label.Size = New System.Drawing.Size(338, 36)
