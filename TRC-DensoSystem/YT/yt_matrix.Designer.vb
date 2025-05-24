@@ -231,7 +231,6 @@ Partial Class yt_matrix
         Me.txtqr_matrix.IconLeft = CType(resources.GetObject("txtqr_matrix.IconLeft"), System.Drawing.Image)
         Me.txtqr_matrix.Location = New System.Drawing.Point(28, 74)
         Me.txtqr_matrix.Name = "txtqr_matrix"
-        Me.txtqr_matrix.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr_matrix.PlaceholderText = "Scan InnerTag..."
         Me.txtqr_matrix.SelectedText = ""
         Me.txtqr_matrix.Size = New System.Drawing.Size(481, 36)
@@ -587,7 +586,6 @@ Partial Class yt_matrix
         Me.txtqr_label.IconLeft = CType(resources.GetObject("txtqr_label.IconLeft"), System.Drawing.Image)
         Me.txtqr_label.Location = New System.Drawing.Point(27, 74)
         Me.txtqr_label.Name = "txtqr_label"
-        Me.txtqr_label.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtqr_label.PlaceholderText = "Scan Sticker Label..."
         Me.txtqr_label.SelectedText = ""
         Me.txtqr_label.Size = New System.Drawing.Size(574, 36)
