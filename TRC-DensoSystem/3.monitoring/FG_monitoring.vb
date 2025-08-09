@@ -53,13 +53,7 @@ Public Class FG_monitoring
             Case "20CY"
                 refreshgrid("denso_20cy")
             Case "TDE"
-                con.Close()
-                con.Open()
-                Dim cmdrefreshgrid As New MySqlCommand("SELECT `partno`, `customerno`, `color`,sum(`quantity`) as TOTAL FROM denso_fg_scan  WHERE dateout is NULL GROUP BY `partno`, `customerno`, `color` ORDER BY TOTAL DESC", con)
-                Dim da As New MySqlDataAdapter(cmdrefreshgrid)
-                Dim dt As New DataTable
-                da.Fill(dt)
-                datagrid1.DataSource = dt
+                refreshgrid("denso_tde")
 
 
             Case "INTELLI IV"
