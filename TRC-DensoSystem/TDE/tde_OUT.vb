@@ -11,7 +11,7 @@ Public Class tde_OUT
             Try
                 con.Close()
                 con.Open()
-                Dim cmdselect As New MySqlCommand("SELECT id, dateout, userout FROM `denso_tde` 
+                Dim cmdselect As New MySqlCommand("SELECT id, dateout, userout,customerno FROM `denso_tde` 
                                            WHERE tdeqr = @tdeqr AND customer_qr = @customer_qr", con)
                 cmdselect.Parameters.AddWithValue("@tdeqr", txtqr_sticker.Text)
                 cmdselect.Parameters.AddWithValue("@customer_qr", txtqr_customer.Text)
@@ -22,9 +22,10 @@ Public Class tde_OUT
                     If dr.IsDBNull(dr.GetOrdinal("dateout")) Then
                         ' Update
                         Dim dataid As Integer = dr.GetInt32("id")
-
+                        Dim customerno As String = dr.GetString("customerno")
                         ' Check if dataid already exists in datagrid1
                         Dim isDuplicate As Boolean = False
+
 
                         For Each row As DataGridViewRow In datagrid1.Rows
                             If row.Cells(0).Value IsNot Nothing AndAlso row.Cells(0).Value.ToString() = dataid Then
@@ -35,18 +36,34 @@ Public Class tde_OUT
                         Next
 
                         If Not isDuplicate Then
+                            Dim isDuplicateCustomer As Boolean = False
 
-                            datagrid1.Rows.Add(dataid, txtqr_sticker.Text)
+                            ' If no rows, automatically allow
+                            If datagrid1.Rows.Count = 0 Then
+                                isDuplicateCustomer = True
+                            Else
+                                ' Otherwise, check if customerno matches at least one row
+                                For Each row As DataGridViewRow In datagrid1.Rows
+                                    If row.Cells(1).Value IsNot Nothing AndAlso row.Cells(1).Value.ToString() = customerno Then
+                                        isDuplicateCustomer = True
+                                        Exit For
+                                    End If
+                                Next
+                            End If
 
-                            Dim rowCount As Integer = datagrid1.Rows.Count
+                            If isDuplicateCustomer Then
+                                datagrid1.Rows.Add(dataid, customerno, txtqr_sticker.Text)
 
-
-                            gp_box.Text = "Box Count: " & rowCount
-                            labelerror.Visible = False
-
+                                Dim rowCount As Integer = datagrid1.Rows.Count
+                                gp_box.Text = "Box Count: " & rowCount
+                                labelerror.Visible = False
+                            Else
+                                showerror("INVALID CUSTOMER NUMBER SCANNED. Check LABEL!")
+                            End If
                         Else
                             showerror("Duplicate Scan. Check data table!")
                         End If
+
 
 
 
@@ -255,10 +272,27 @@ Public Class tde_OUT
             txtqr_cml.Enabled = True
             txtqr_customer.Enabled = False
             txtqr_cml.Focus()
+
         Else
 
         End If
     End Sub
+
+    Private Function checkpartno(dataID) As String
+        Dim query As String = "SELECT customerno FROM denso tde where id=" & dataID & ""
+        con.Close()
+        con.Open()
+
+        Using cmd As New MySqlCommand
+            If dr.Read = True Then
+                Return dr(0)
+            End If
+
+        End Using
+
+        Return ""
+    End Function
+
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btn_reset.Click
         datagrid1.Rows.Clear()
