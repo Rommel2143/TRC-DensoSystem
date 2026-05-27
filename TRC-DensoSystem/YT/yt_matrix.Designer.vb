@@ -611,7 +611,7 @@ Partial Class yt_matrix
         Me.Controls.Add(Me.Guna2Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "yt_matrix"
-        Me.Text = "yt_matrix"
+        Me.Text = " "
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.labelerror.ResumeLayout(False)
         Me.labelerror.PerformLayout()
