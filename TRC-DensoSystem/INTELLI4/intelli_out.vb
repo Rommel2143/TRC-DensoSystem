@@ -70,6 +70,33 @@ Public Class INTELLI_out
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+    Private Sub LoadPartcodes(qrType As String)
+
+        Try
+
+            Dim handler As New FGHandler()
+
+            Dim fgList As List(Of FGDto) =
+                handler.GetByQRType(qrType)
+
+            cmbPartcode.DataSource = Nothing
+
+            cmbPartcode.DisplayMember = NameOf(FGDto.PartNo)
+            cmbPartcode.ValueMember = NameOf(FGDto.Id)
+            cmbPartcode.DataSource = fgList
+
+        Catch ex As Exception
+
+            MessageBox.Show(
+                $"Failed to load partcodes.{Environment.NewLine}{ex.Message}",
+                "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error
+            )
+
+        End Try
+
+    End Sub
     Private Sub getcoordinates(partdb As String, ByRef txtstring As String)
 
         Dim partno() As String = partdb.Split(",")
@@ -84,49 +111,156 @@ Public Class INTELLI_out
 
     End Sub
     Private Sub txtqr_fg_KeyDown(sender As Object, e As KeyEventArgs) Handles txtqr_label.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            If txtqr_verify.Text = txtqr_label.Text Then
-                Try
 
+        If e.KeyCode <> Keys.Enter Then Return
 
-                    If processQRcode("INT4", txtqr_label) Then
-                        con.Close()
-                        con.Open()
-                        Dim cmdselect As New MySqlCommand("SELECT intelliqr, userout, dateout,status FROM `denso_intelli4`
-                                                WHERE intelliqr = '" & txtqr_label.Text & "'", con)
-                        dr = cmdselect.ExecuteReader()
-                        If dr.Read = True Then
-                            'saveqr
-                            Select Case dr.GetInt32("status")
-                                Case 0
-                                    updateqr()
-                                Case 1
-                                    showduplicate(dr.GetString("userout"), dr.GetDateTime("dateout").ToString("yyy-MM-dd"))
-                            End Select
-                            reload("SELECT `intelliqr`, `partno`, `customerno`, `color`, `proddate`, `qty`, `shift`, `process`, `line`, `serial` FROM `denso_intelli4` 
-                                   WHERE dateout= '" & datedb & "'", datagrid_label)
-                        Else
-                            showerror("No Record Found!")
+        e.SuppressKeyPress = True
 
-                        End If
-                        txtqr_verify.Clear()
-                        txtqr_verify.Focus()
+        Dim qrLabel As String = txtqr_label.Text.Trim()
+        Dim qrVerify As String = txtqr_verify.Text.Trim()
+        Dim partCode As String = cmbPartcode.Text.Trim()
+
+        ' Validate QR inputs
+        If String.IsNullOrWhiteSpace(qrLabel) Then
+            showerror("QR Code is Required!")
+            txtqr_label.Focus()
+            Return
+        End If
+
+        If String.IsNullOrWhiteSpace(qrVerify) Then
+            showerror("Verify QR Code is Required!")
+            txtqr_verify.Focus()
+            Return
+        End If
+
+        ' Check if both QR codes are the same
+        If Not String.Equals(qrVerify, qrLabel, StringComparison.Ordinal) Then
+            showerror("QR not the same!")
+            txtqr_verify.Focus()
+            Return
+        End If
+
+        ' Check Partcode
+        If String.IsNullOrWhiteSpace(partCode) Then
+            showerror("Please select a Partcode!")
+            cmbPartcode.Focus()
+            Return
+        End If
+
+        ' Check whether QR contains the selected partcode
+        If Not qrLabel.Contains(partCode) Then
+            showerror("Partcode Not Equal")
+            txtqr_label.Focus()
+            Return
+        End If
+
+        Try
+
+            ' Process QR
+            If Not processQRcode("INT4", txtqr_label) Then
+                Return
+            End If
+
+            con.Close()
+            con.Open()
+
+            Const sql As String =
+            "SELECT intelliqr, userout, dateout, status " &
+            "FROM denso_intelli4 " &
+            "WHERE intelliqr = @intelliqr " &
+            "LIMIT 1"
+
+            Using cmdselect As New MySqlCommand(sql, con)
+
+                cmdselect.Parameters.Add(
+                "@intelliqr",
+                MySqlDbType.VarChar
+            ).Value = qrLabel
+
+                Using dr As MySqlDataReader = cmdselect.ExecuteReader()
+
+                    If dr.Read() Then
+
+                        Dim status As Integer =
+                        If(dr.IsDBNull(dr.GetOrdinal("status")),
+                           0,
+                           Convert.ToInt32(dr("status")))
+
+                        Select Case status
+
+                            Case 0
+
+                                ' Save / update QR
+                                dr.Close()
+
+                                updateqr()
+
+                            Case 1
+
+                                Dim userOut As String =
+                                If(dr.IsDBNull(dr.GetOrdinal("userout")),
+                                   String.Empty,
+                                   Convert.ToString(dr("userout")))
+
+                                Dim dateOut As String = String.Empty
+
+                                If Not dr.IsDBNull(dr.GetOrdinal("dateout")) Then
+                                    dateOut =
+                                    Convert.ToDateTime(dr("dateout")).
+                                    ToString("yyyy-MM-dd")
+                                End If
+
+                                showduplicate(userOut, dateOut)
+
+                        End Select
+
+                    Else
+
+                        showerror("No Record Found!")
 
                     End If
 
+                End Using
+            End Using
 
+            ' Reload grid
+            reload(
+            "SELECT `intelliqr`, `partno`, `customerno`, `color`, " &
+            "`proddate`, `qty`, `shift`, `process`, `line`, `serial` " &
+            "FROM `denso_intelli4` " &
+            "WHERE dateout = '" & datedb & "'",
+            datagrid_label
+        )
 
+            txtqr_verify.Clear()
+            txtqr_verify.Focus()
 
-                Catch ex As MySqlException
-                    MessageBox.Show(ex.Message)
-                Finally
-                    con.Close()
-                End Try
-            Else
-                showerror("QR not the same!")
+        Catch ex As MySqlException
+
+            MessageBox.Show(
+            ex.Message,
+            "Database Error",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error
+        )
+
+        Catch ex As Exception
+
+            MessageBox.Show(
+            ex.Message,
+            "Error",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error
+        )
+
+        Finally
+
+            If con.State <> ConnectionState.Closed Then
+                con.Close()
             End If
 
-        End If
+        End Try
+
     End Sub
     Private Sub updateqr()
         Try
@@ -169,7 +303,7 @@ Public Class INTELLI_out
     End Sub
 
     Private Sub jeco_out_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        LoadPartcodes("INT4")
     End Sub
 
     Private Sub txtqr_verify_TextChanged(sender As Object, e As EventArgs) Handles txtqr_verify.TextChanged

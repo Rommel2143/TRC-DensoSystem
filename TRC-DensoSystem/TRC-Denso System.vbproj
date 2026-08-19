@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\ptif1-ds\SystemServer\Denso System\</UpdateUrl>
-    <ApplicationRevision>93</ApplicationRevision>
+    <ApplicationRevision>94</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -378,6 +378,8 @@
       <DependentUpon>report_dmtn_innertag.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Features\FG\GetListByType\FGDto.vb" />
+    <Compile Include="Features\FG\GetListByType\FGHandler.vb" />
     <Compile Include="INFG\INFG.designer.vb">
       <DependentUpon>INFG.vb</DependentUpon>
     </Compile>
